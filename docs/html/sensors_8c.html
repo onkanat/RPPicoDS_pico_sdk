@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: sensors.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Makrolar</a> &#124;
+<a href="#func-members">Fonksiyonlar</a>  </div>
+  <div class="headertitle"><div class="title">sensors.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+sensors.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c__incl.png" border="0" usemap="#asensors_8c" alt=""/></div>
+<map name="asensors_8c" id="asensors_8c">
+<area shape="rect" title="Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması" alt="" coords="436,5,515,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Makrolar</h2></td></tr>
+<tr class="memitem:ae73d78f8ad1955fc7efc65b109987632" id="r_ae73d78f8ad1955fc7efc65b109987632"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae73d78f8ad1955fc7efc65b109987632">SOUND_SPEED</a>&#160;&#160;&#160;343.0f</td></tr>
+<tr class="separator:ae73d78f8ad1955fc7efc65b109987632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a2da9c8115152359067820613055ae" id="r_a14a2da9c8115152359067820613055ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14a2da9c8115152359067820613055ae">SENSOR_TIMEOUT</a>&#160;&#160;&#160;26100</td></tr>
+<tr class="separator:a14a2da9c8115152359067820613055ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e97eae3eb2560c642cf1085e6a7642" id="r_a86e97eae3eb2560c642cf1085e6a7642"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86e97eae3eb2560c642cf1085e6a7642">TRIGGER_PULSE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a86e97eae3eb2560c642cf1085e6a7642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:a45e774fb9ec2c151678550b5857847c4" id="r_a45e774fb9ec2c151678550b5857847c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45e774fb9ec2c151678550b5857847c4">init_pir</a> (void)</td></tr>
+<tr class="memdesc:a45e774fb9ec2c151678550b5857847c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIR hareket sensörünü başlatır.  <br /></td></tr>
+<tr class="separator:a45e774fb9ec2c151678550b5857847c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d72618a59f5257cb5fbe8cbcbe7e5ce" id="r_a0d72618a59f5257cb5fbe8cbcbe7e5ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d72618a59f5257cb5fbe8cbcbe7e5ce">detect_motion</a> (void)</td></tr>
+<tr class="memdesc:a0d72618a59f5257cb5fbe8cbcbe7e5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder.  <br /></td></tr>
+<tr class="separator:a0d72618a59f5257cb5fbe8cbcbe7e5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38f5ef820a2c8d443994ae6ead83789" id="r_af38f5ef820a2c8d443994ae6ead83789"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af38f5ef820a2c8d443994ae6ead83789">init_ultrasonic</a> (void)</td></tr>
+<tr class="memdesc:af38f5ef820a2c8d443994ae6ead83789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ultrasonik sensör pinlerini başlatır.  <br /></td></tr>
+<tr class="separator:af38f5ef820a2c8d443994ae6ead83789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73c79319e4f5c31f9da551784c5e8de" id="r_aa73c79319e4f5c31f9da551784c5e8de"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa73c79319e4f5c31f9da551784c5e8de">measure_distance</a> (void)</td></tr>
+<tr class="memdesc:aa73c79319e4f5c31f9da551784c5e8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ultrasonik sensör kullanarak mesafe ölçer.  <br /></td></tr>
+<tr class="separator:aa73c79319e4f5c31f9da551784c5e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61dcd1031a5ef723aadad8a4acd0a9f" id="r_af61dcd1031a5ef723aadad8a4acd0a9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af61dcd1031a5ef723aadad8a4acd0a9f">wait_for_motion</a> (uint32_t timeout_ms)</td></tr>
+<tr class="memdesc:af61dcd1031a5ef723aadad8a4acd0a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zaman aşımı ile hareket algılamayı bekler.  <br /></td></tr>
+<tr class="separator:af61dcd1031a5ef723aadad8a4acd0a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4628d8d278604d424be0693fd587e661" id="r_a4628d8d278604d424be0693fd587e661"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4628d8d278604d424be0693fd587e661">get_average_distance</a> (uint8_t num_samples, uint32_t delay_ms)</td></tr>
+<tr class="memdesc:a4628d8d278604d424be0693fd587e661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Birden fazla ölçümden ortalama mesafeyi alır.  <br /></td></tr>
+<tr class="separator:a4628d8d278604d424be0693fd587e661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması </p>
+</div><h2 class="groupheader">Makro Dokümantasyonu</h2>
+<a id="a14a2da9c8115152359067820613055ae" name="a14a2da9c8115152359067820613055ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a2da9c8115152359067820613055ae">&#9670;&#160;</a></span>SENSOR_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SENSOR_TIMEOUT&#160;&#160;&#160;26100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae73d78f8ad1955fc7efc65b109987632" name="ae73d78f8ad1955fc7efc65b109987632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73d78f8ad1955fc7efc65b109987632">&#9670;&#160;</a></span>SOUND_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SOUND_SPEED&#160;&#160;&#160;343.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86e97eae3eb2560c642cf1085e6a7642" name="a86e97eae3eb2560c642cf1085e6a7642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e97eae3eb2560c642cf1085e6a7642">&#9670;&#160;</a></span>TRIGGER_PULSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRIGGER_PULSE&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="a0d72618a59f5257cb5fbe8cbcbe7e5ce" name="a0d72618a59f5257cb5fbe8cbcbe7e5ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d72618a59f5257cb5fbe8cbcbe7e5ce">&#9670;&#160;</a></span>detect_motion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool detect_motion </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder. </p>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>Hareket algılandıysa true, aksi halde false </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce_icgraph.png" border="0" usemap="#asensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce_icgraph" alt=""/></div>
+<map name="asensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce_icgraph" id="asensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce_icgraph">
+<area shape="rect" title="PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder." alt="" coords="167,5,270,31"/>
+<area shape="rect" href="sensors_8c.html#af61dcd1031a5ef723aadad8a4acd0a9f" title="Zaman aşımı ile hareket algılamayı bekler." alt="" coords="5,5,119,31"/>
+<area shape="poly" title=" " alt="" coords="151,21,119,21,119,16,151,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4628d8d278604d424be0693fd587e661" name="a4628d8d278604d424be0693fd587e661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4628d8d278604d424be0693fd587e661">&#9670;&#160;</a></span>get_average_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float get_average_distance </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>num_samples</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>delay_ms</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Birden fazla ölçümden ortalama mesafeyi alır. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_samples</td><td>Ortalama alınacak örnek sayısı </td></tr>
+    <tr><td class="paramname">delay_ms</td><td>Örnekler arasındaki gecikme süresi (milisaniye) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -1.0 </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c_a4628d8d278604d424be0693fd587e661_cgraph.png" border="0" usemap="#asensors_8c_a4628d8d278604d424be0693fd587e661_cgraph" alt=""/></div>
+<map name="asensors_8c_a4628d8d278604d424be0693fd587e661_cgraph" id="asensors_8c_a4628d8d278604d424be0693fd587e661_cgraph">
+<area shape="rect" title="Birden fazla ölçümden ortalama mesafeyi alır." alt="" coords="5,5,154,31"/>
+<area shape="rect" href="sensors_8c.html#aa73c79319e4f5c31f9da551784c5e8de" title="Ultrasonik sensör kullanarak mesafe ölçer." alt="" coords="202,5,329,31"/>
+<area shape="poly" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45e774fb9ec2c151678550b5857847c4" name="a45e774fb9ec2c151678550b5857847c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e774fb9ec2c151678550b5857847c4">&#9670;&#160;</a></span>init_pir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_pir </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PIR hareket sensörünü başlatır. </p>
+<p>PIR sensör pinini giriş olarak yapılandırır </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c_a45e774fb9ec2c151678550b5857847c4_icgraph.png" border="0" usemap="#asensors_8c_a45e774fb9ec2c151678550b5857847c4_icgraph" alt=""/></div>
+<map name="asensors_8c_a45e774fb9ec2c151678550b5857847c4_icgraph" id="asensors_8c_a45e774fb9ec2c151678550b5857847c4_icgraph">
+<area shape="rect" title="PIR hareket sensörünü başlatır." alt="" coords="228,5,287,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="212,21,180,21,180,16,212,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af38f5ef820a2c8d443994ae6ead83789" name="af38f5ef820a2c8d443994ae6ead83789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38f5ef820a2c8d443994ae6ead83789">&#9670;&#160;</a></span>init_ultrasonic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_ultrasonic </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ultrasonik sensör pinlerini başlatır. </p>
+<p>Tetikleme pinini çıkış ve yankı pinini giriş olarak yapılandırır </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph.png" border="0" usemap="#asensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph" alt=""/></div>
+<map name="asensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph" id="asensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph">
+<area shape="rect" title="Ultrasonik sensör pinlerini başlatır." alt="" coords="228,5,329,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="212,21,180,21,180,16,212,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa73c79319e4f5c31f9da551784c5e8de" name="aa73c79319e4f5c31f9da551784c5e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73c79319e4f5c31f9da551784c5e8de">&#9670;&#160;</a></span>measure_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float measure_distance </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ultrasonik sensör kullanarak mesafe ölçer. </p>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -1.0 </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c_aa73c79319e4f5c31f9da551784c5e8de_icgraph.png" border="0" usemap="#asensors_8c_aa73c79319e4f5c31f9da551784c5e8de_icgraph" alt=""/></div>
+<map name="asensors_8c_aa73c79319e4f5c31f9da551784c5e8de_icgraph" id="asensors_8c_aa73c79319e4f5c31f9da551784c5e8de_icgraph">
+<area shape="rect" title="Ultrasonik sensör kullanarak mesafe ölçer." alt="" coords="202,5,329,31"/>
+<area shape="rect" href="sensors_8c.html#a4628d8d278604d424be0693fd587e661" title="Birden fazla ölçümden ortalama mesafeyi alır." alt="" coords="5,5,154,31"/>
+<area shape="poly" title=" " alt="" coords="186,21,154,21,154,16,186,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af61dcd1031a5ef723aadad8a4acd0a9f" name="af61dcd1031a5ef723aadad8a4acd0a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61dcd1031a5ef723aadad8a4acd0a9f">&#9670;&#160;</a></span>wait_for_motion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool wait_for_motion </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timeout_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zaman aşımı ile hareket algılamayı bekler. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout_ms</td><td>Beklenecek maksimum süre (milisaniye), 0 ise zaman aşımı yok </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>Hareket algılandıysa true, zaman aşımı oluştuysa false </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f_cgraph.png" border="0" usemap="#asensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f_cgraph" alt=""/></div>
+<map name="asensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f_cgraph" id="asensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f_cgraph">
+<area shape="rect" title="Zaman aşımı ile hareket algılamayı bekler." alt="" coords="5,5,119,31"/>
+<area shape="rect" href="sensors_8c.html#a0d72618a59f5257cb5fbe8cbcbe7e5ce" title="PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder." alt="" coords="167,5,270,31"/>
+<area shape="poly" title=" " alt="" coords="119,16,151,16,151,21,119,21"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,9 @@
+<map id="play_notes" name="play_notes">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,90,56"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#a796bbc24fde48e1a34a660bd6a38dbae" title="Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar." alt="" coords="138,5,241,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,33,122,27,123,33,91,39"/>
+<area shape="rect" id="Node000003" href="$buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="151,55,228,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="91,48,136,56,135,61,90,53"/>
+<area shape="rect" id="Node000004" href="$buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="289,55,427,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="228,65,273,65,273,70,228,70"/>
+</map>

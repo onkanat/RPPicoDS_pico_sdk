@@ -1,0 +1,194 @@
+\doxysection{sensors.\+c Dosya Referansı}
+\hypertarget{sensors_8c}{}\label{sensors_8c}\index{sensors.c@{sensors.c}}
+
+
+Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+sensors.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sensors_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Makrolar}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sensors_8c_ae73d78f8ad1955fc7efc65b109987632}{SOUND\+\_\+\+SPEED}}~343.\+0f
+\item 
+\#define \mbox{\hyperlink{sensors_8c_a14a2da9c8115152359067820613055ae}{SENSOR\+\_\+\+TIMEOUT}}~26100
+\item 
+\#define \mbox{\hyperlink{sensors_8c_a86e97eae3eb2560c642cf1085e6a7642}{TRIGGER\+\_\+\+PULSE}}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sensors_8c_a45e774fb9ec2c151678550b5857847c4}{init\+\_\+pir}} (void)
+\begin{DoxyCompactList}\small\item\em PIR hareket sensörünü başlatır. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\+\_\+motion}} (void)
+\begin{DoxyCompactList}\small\item\em PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sensors_8c_af38f5ef820a2c8d443994ae6ead83789}{init\+\_\+ultrasonic}} (void)
+\begin{DoxyCompactList}\small\item\em Ultrasonik sensör pinlerini başlatır. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{sensors_8c_aa73c79319e4f5c31f9da551784c5e8de}{measure\+\_\+distance}} (void)
+\begin{DoxyCompactList}\small\item\em Ultrasonik sensör kullanarak mesafe ölçer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f}{wait\+\_\+for\+\_\+motion}} (uint32\+\_\+t timeout\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Zaman aşımı ile hareket algılamayı bekler. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{sensors_8c_a4628d8d278604d424be0693fd587e661}{get\+\_\+average\+\_\+distance}} (uint8\+\_\+t num\+\_\+samples, uint32\+\_\+t delay\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Birden fazla ölçümden ortalama mesafeyi alır. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması 
+
+
+
+\doxysubsection{Makro Dokümantasyonu}
+\Hypertarget{sensors_8c_a14a2da9c8115152359067820613055ae}\index{sensors.c@{sensors.c}!SENSOR\_TIMEOUT@{SENSOR\_TIMEOUT}}
+\index{SENSOR\_TIMEOUT@{SENSOR\_TIMEOUT}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{SENSOR\_TIMEOUT}{SENSOR\_TIMEOUT}}
+{\footnotesize\ttfamily \label{sensors_8c_a14a2da9c8115152359067820613055ae} 
+\#define SENSOR\+\_\+\+TIMEOUT~26100}
+
+\Hypertarget{sensors_8c_ae73d78f8ad1955fc7efc65b109987632}\index{sensors.c@{sensors.c}!SOUND\_SPEED@{SOUND\_SPEED}}
+\index{SOUND\_SPEED@{SOUND\_SPEED}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{SOUND\_SPEED}{SOUND\_SPEED}}
+{\footnotesize\ttfamily \label{sensors_8c_ae73d78f8ad1955fc7efc65b109987632} 
+\#define SOUND\+\_\+\+SPEED~343.\+0f}
+
+\Hypertarget{sensors_8c_a86e97eae3eb2560c642cf1085e6a7642}\index{sensors.c@{sensors.c}!TRIGGER\_PULSE@{TRIGGER\_PULSE}}
+\index{TRIGGER\_PULSE@{TRIGGER\_PULSE}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{TRIGGER\_PULSE}{TRIGGER\_PULSE}}
+{\footnotesize\ttfamily \label{sensors_8c_a86e97eae3eb2560c642cf1085e6a7642} 
+\#define TRIGGER\+\_\+\+PULSE~10}
+
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{sensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce}\index{sensors.c@{sensors.c}!detect\_motion@{detect\_motion}}
+\index{detect\_motion@{detect\_motion}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{detect\_motion()}{detect\_motion()}}
+{\footnotesize\ttfamily \label{sensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce} 
+bool detect\+\_\+motion (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder. 
+
+\begin{DoxyReturn}{Döndürdüğü değer}
+Hareket algılandıysa true, aksi halde false 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{sensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sensors_8c_a4628d8d278604d424be0693fd587e661}\index{sensors.c@{sensors.c}!get\_average\_distance@{get\_average\_distance}}
+\index{get\_average\_distance@{get\_average\_distance}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{get\_average\_distance()}{get\_average\_distance()}}
+{\footnotesize\ttfamily \label{sensors_8c_a4628d8d278604d424be0693fd587e661} 
+float get\+\_\+average\+\_\+distance (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num\+\_\+samples}{, }\item[{uint32\+\_\+t}]{delay\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Birden fazla ölçümden ortalama mesafeyi alır. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em num\+\_\+samples} & Ortalama alınacak örnek sayısı \\
+\hline
+{\em delay\+\_\+ms} & Örnekler arasındaki gecikme süresi (milisaniye) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -\/1.\+0 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{sensors_8c_a4628d8d278604d424be0693fd587e661_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sensors_8c_a45e774fb9ec2c151678550b5857847c4}\index{sensors.c@{sensors.c}!init\_pir@{init\_pir}}
+\index{init\_pir@{init\_pir}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{init\_pir()}{init\_pir()}}
+{\footnotesize\ttfamily \label{sensors_8c_a45e774fb9ec2c151678550b5857847c4} 
+void init\+\_\+pir (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+PIR hareket sensörünü başlatır. 
+
+PIR sensör pinini giriş olarak yapılandırır Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{sensors_8c_a45e774fb9ec2c151678550b5857847c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sensors_8c_af38f5ef820a2c8d443994ae6ead83789}\index{sensors.c@{sensors.c}!init\_ultrasonic@{init\_ultrasonic}}
+\index{init\_ultrasonic@{init\_ultrasonic}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{init\_ultrasonic()}{init\_ultrasonic()}}
+{\footnotesize\ttfamily \label{sensors_8c_af38f5ef820a2c8d443994ae6ead83789} 
+void init\+\_\+ultrasonic (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Ultrasonik sensör pinlerini başlatır. 
+
+Tetikleme pinini çıkış ve yankı pinini giriş olarak yapılandırır Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{sensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sensors_8c_aa73c79319e4f5c31f9da551784c5e8de}\index{sensors.c@{sensors.c}!measure\_distance@{measure\_distance}}
+\index{measure\_distance@{measure\_distance}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{measure\_distance()}{measure\_distance()}}
+{\footnotesize\ttfamily \label{sensors_8c_aa73c79319e4f5c31f9da551784c5e8de} 
+float measure\+\_\+distance (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Ultrasonik sensör kullanarak mesafe ölçer. 
+
+\begin{DoxyReturn}{Döndürdüğü değer}
+float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -\/1.\+0 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{sensors_8c_aa73c79319e4f5c31f9da551784c5e8de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f}\index{sensors.c@{sensors.c}!wait\_for\_motion@{wait\_for\_motion}}
+\index{wait\_for\_motion@{wait\_for\_motion}!sensors.c@{sensors.c}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_motion()}{wait\_for\_motion()}}
+{\footnotesize\ttfamily \label{sensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f} 
+bool wait\+\_\+for\+\_\+motion (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Zaman aşımı ile hareket algılamayı bekler. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em timeout\+\_\+ms} & Beklenecek maksimum süre (milisaniye), 0 ise zaman aşımı yok \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+Hareket algılandıysa true, zaman aşımı oluştuysa false 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{sensors_8c_af61dcd1031a5ef723aadad8a4acd0a9f_cgraph}
+\end{center}
+\end{figure}

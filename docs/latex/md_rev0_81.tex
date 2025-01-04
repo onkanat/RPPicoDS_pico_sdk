@@ -1,0 +1,1081 @@
+\chapter{Raspberry Pi Pico Eğitim Kartı}
+\hypertarget{md_rev0_81}{}\label{md_rev0_81}\index{Raspberry Pi Pico Eğitim Kartı@{Raspberry Pi Pico Eğitim Kartı}}
+\label{md_rev0_81_autotoc_md15}%
+\Hypertarget{md_rev0_81_autotoc_md15}%
+ \hypertarget{md_rev0_81_autotoc_md16}{}\doxysection{\texorpdfstring{Genel Bakış}{Genel Bakış}}\label{md_rev0_81_autotoc_md16}
+Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.\hypertarget{md_rev0_81_autotoc_md17}{}\doxysection{\texorpdfstring{Pin Grupları ve Fonksiyonları}{Pin Grupları ve Fonksiyonları}}\label{md_rev0_81_autotoc_md17}
+\hypertarget{md_rev0_81_autotoc_md18}{}\doxysubsection{\texorpdfstring{1. Analog Girişler}{1. Analog Girişler}}\label{md_rev0_81_autotoc_md18}
+
+\begin{DoxyItemize}
+\item {\bfseries{Keypad (GPIO28)}}
+\begin{DoxyItemize}
+\item 3x4 matris keypad için analog okuma
+\item Tuş takımı düzeni\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{|\ 1\ |\ 2\ |\ 3\ |}
+\DoxyCodeLine{|\ 4\ |\ 5\ |\ 6\ |}
+\DoxyCodeLine{|\ 7\ |\ 8\ |\ 9\ |}
+\DoxyCodeLine{|\ *\ |\ 0\ |\ \#\ |}
+
+\end{DoxyCode}
+
+\item {\ttfamily \doxylink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypad\+Oku()}} fonksiyonu ile kontrol edilir
+\item ADC değer aralıkları tanımlıdır
+\end{DoxyItemize}
+\item {\bfseries{Potansiyometre (GPIO27)}}
+\begin{DoxyItemize}
+\item Analog değer okuma
+\item 0-\/4095 arası ADC değeri
+\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile okunur
+\end{DoxyItemize}
+\item {\bfseries{LDR Sensör (GPIO26)}}
+\begin{DoxyItemize}
+\item Işık seviyesi ölçümü
+\item Analog değer okuma
+\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile okunur
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md19}{}\doxysubsection{\texorpdfstring{2. Dijital Butonlar}{2. Dijital Butonlar}}\label{md_rev0_81_autotoc_md19}
+
+\begin{DoxyItemize}
+\item {\bfseries{Buton Grubu}}
+\begin{DoxyItemize}
+\item BUTTON\+\_\+\+UP (GPIO5)\+: Yukarı ok tuşu
+\item BUTTON\+\_\+\+OK (GPIO6)\+: Onay/\+Enter tuşu
+\item BUTTON\+\_\+\+DOWN (GPIO7)\+: Aşağı ok tuşu
+\item Debounce korumalı okuma
+\item {\ttfamily \doxylink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\+\_\+pressed()}} ve {\ttfamily \doxylink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\+\_\+button\+\_\+event()}} fonksiyonları ile kontrol
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md20}{}\doxysubsection{\texorpdfstring{3. LED Çıkışları}{3. LED Çıkışları}}\label{md_rev0_81_autotoc_md20}
+
+\begin{DoxyItemize}
+\item {\bfseries{Basit LED\textquotesingle{}ler}}
+\begin{DoxyItemize}
+\item RED (GPIO4)\+: Kırmızı LED
+\item YELLOW (GPIO3)\+: Sarı LED
+\item GREEN (GPIO2)\+: Yeşil LED
+\item Dijital çıkış veya PWM kontrolü
+\end{DoxyItemize}
+\item {\bfseries{RGB LED (PWM Kontrollü)}}
+\begin{DoxyItemize}
+\item RGB\+\_\+R (GPIO16)\+: Kırmızı kanal
+\item RGB\+\_\+G (GPIO17)\+: Yeşil kanal
+\item RGB\+\_\+B (GPIO18)\+: Mavi kanal
+\item PWM ile parlaklık kontrolü
+\item {\ttfamily \doxylink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\+\_\+led\+\_\+pwm()}} fonksiyonu ile kontrol
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md21}{}\doxysubsection{\texorpdfstring{4. Ses Çıkışı}{4. Ses Çıkışı}}\label{md_rev0_81_autotoc_md21}
+
+\begin{DoxyItemize}
+\item {\bfseries{Buzzer (GPIO10)}}
+\begin{DoxyItemize}
+\item PWM kontrollü ses üretimi
+\item Nota çalma kapasitesi
+\item {\ttfamily \doxylink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note()}} ve {\ttfamily \doxylink{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes()}} fonksiyonları
+\item Frekans ve süre parametreleri ile kontrol
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md22}{}\doxysubsection{\texorpdfstring{5. Step Motor}{5. Step Motor}}\label{md_rev0_81_autotoc_md22}
+
+\begin{DoxyItemize}
+\item {\bfseries{4-\/Pin Kontrol}}
+\begin{DoxyItemize}
+\item A1 (GPIO11)
+\item A2 (GPIO12)
+\item B1 (GPIO13)
+\item B2 (GPIO14)
+\item Tam adım ve yarım adım kontrol
+\item {\ttfamily stepper\+\_\+move()} fonksiyonu ile kontrol
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md23}{}\doxysubsection{\texorpdfstring{6. Sensör Modülleri}{6. Sensör Modülleri}}\label{md_rev0_81_autotoc_md23}
+
+\begin{DoxyItemize}
+\item {\bfseries{Ultrasonik Sensör}}
+\begin{DoxyItemize}
+\item TR (GPIO8)\+: Trigger pin
+\item EC (GPIO9)\+: Echo pin
+\item Mesafe ölçümü yapılır
+\item {\ttfamily \doxylink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\+\_\+distance()}} fonksiyonu ile kontrol
+\end{DoxyItemize}
+\item {\bfseries{PIR Sensör (GPIO19)}}
+\begin{DoxyItemize}
+\item Hareket algılama
+\item Dijital giriş
+\item {\ttfamily check\+\_\+motion()} fonksiyonu ile kontrol
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md24}{}\doxysubsection{\texorpdfstring{7. Haberleşme Modülleri}{7. Haberleşme Modülleri}}\label{md_rev0_81_autotoc_md24}
+
+\begin{DoxyItemize}
+\item {\bfseries{Bluetooth}}
+\begin{DoxyItemize}
+\item TX (GPIO0)
+\item RX (GPIO1)
+\item UART haberleşme
+\end{DoxyItemize}
+\item {\bfseries{I2C LCD Display}}
+\begin{DoxyItemize}
+\item SDA (GPIO20)
+\item SCL (GPIO21)
+\item Adres\+: 0x27
+\item 2x16 karakter gösterim
+\item {\ttfamily \doxylink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init()}}, {\ttfamily \doxylink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear()}}, {\ttfamily \doxylink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\+\_\+string()}} fonksiyonları
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md25}{}\doxysection{\texorpdfstring{Başlatma ve Konfigürasyon}{Başlatma ve Konfigürasyon}}\label{md_rev0_81_autotoc_md25}
+Tüm komponentler {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} fonksiyonu ile başlatılır. Bu fonksiyon\+:
+
+
+\begin{DoxyItemize}
+\item ADC başlatma
+\item PWM konfigürasyonu
+\item GPIO yönlendirmeleri
+\item I2C başlatma
+\item LCD başlatma işlemlerini gerçekleştirir.
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md26}{}\doxysection{\texorpdfstring{Kullanım Örnekleri}{Kullanım Örnekleri}}\label{md_rev0_81_autotoc_md26}
+Her komponent grubu için örnek kullanımlar ve temel fonksiyonlar {\ttfamily \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}} header dosyasında tanımlıdır. Detaylı implementasyonlar ilgili {\ttfamily .c} dosyalarında bulunmaktadır.\hypertarget{md_rev0_81_autotoc_md27}{}\doxysubsection{\texorpdfstring{1. Analog Girişler bölümünü detaylı açıklayalım}{1. Analog Girişler bölümünü detaylı açıklayalım}}\label{md_rev0_81_autotoc_md27}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Keypad (GPIO28) Kullanımı}}
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypad\+Oku()}} fonksiyonu ile tuş okuma yapılır\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ key\ =\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(key\ !=\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Bir\ tuşa\ basıldı}}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}Basılan\ tuş:\ \%c\(\backslash\)n"{}},\ key);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Fonksiyon geri dönüş değerleri\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}0\textquotesingle{} ile \textquotesingle{}9\textquotesingle{} arası rakamlar
+\item \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} ve \textquotesingle{}\#\textquotesingle{} özel karakterler
+\item Tuşa basılmadığında 0 döndürür
+\end{DoxyItemize}
+\item Her tuş basımında kısa bir buzzer sesi çalar (tactile feedback)
+\item ADC değerleri her tuş için belirli aralıklarda tanımlı
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md28}{}\doxysubsection{\texorpdfstring{2. {\bfseries{Potansiyometre (GPIO27) Kullanımı}}}{2. {\bfseries{Potansiyometre (GPIO27) Kullanımı}}}}\label{md_rev0_81_autotoc_md28}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile değer okuma\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ pot\_value\ =\ \mbox{\hyperlink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\_analog}}(\mbox{\hyperlink{group__analog__inputs_gaffff0423c6054b6a30d51db5c9a2b66a}{POT\_1}});}
+\DoxyCodeLine{\textcolor{comment}{//\ pot\_value\ 0.0\ ile\ 3.3V\ arası\ değer\ döndürür}}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint16\_t\ raw\_adc\ =\ adc\_read();\ }
+\DoxyCodeLine{\textcolor{comment}{//\ raw\_adc\ 0-\/4095\ arası\ ham\ ADC\ değeri\ döndürür}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Kullanım örnekleri\+:
+\begin{DoxyItemize}
+\item LED parlaklık kontrolü
+\item Ses seviyesi ayarı
+\item Menü seçimi
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{3. {\bfseries{LDR Sensör (GPIO26) Kullanımı}}}{3. {\bfseries{LDR Sensör (GPIO26) Kullanımı}}}}\label{md_rev0_81_autotoc_md29}
+
+\begin{DoxyItemize}
+\item Aynı {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu kullanılır\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ light\_level\ =\ \mbox{\hyperlink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\_analog}}(\mbox{\hyperlink{group__analog__inputs_ga6961ef798f9e5d5c38e1abfba0c7ff71}{LDR\_1}});}
+\DoxyCodeLine{\textcolor{comment}{//\ Işık\ seviyesi\ yükseldikçe\ değer\ düşer\ (pull-\/down\ direnç)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Örnek\ ışık\ seviyesi\ kontrolü}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(light\_level\ <\ 1.0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Ortam\ karanlık}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ LED'leri\ yak}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Kullanım örnekleri\+:
+\begin{DoxyItemize}
+\item Otomatik aydınlatma kontrolü
+\item Gece/gündüz modu tespiti
+\item Işığa bağlı alarm sistemleri
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md30}{}\doxysubsection{\texorpdfstring{4. {\bfseries{Genel Analog Giriş Özellikleri}}}{4. {\bfseries{Genel Analog Giriş Özellikleri}}}}\label{md_rev0_81_autotoc_md30}
+
+\begin{DoxyItemize}
+\item 12-\/bit ADC çözünürlüğü (0-\/4095 arası değerler)
+\item 3.\+3V referans voltajı
+\item Örnekleme hızı\+: 500ksps
+\item {\ttfamily \doxylink{init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e}{init\+\_\+adc()}} fonksiyonu ile başlatma gerekir\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e}{init\_adc}}();\ \ \textcolor{comment}{//\ ADC\ başlatma}}
+\DoxyCodeLine{adc\_gpio\_init(26);\ \ \textcolor{comment}{//\ LDR\ pin}}
+\DoxyCodeLine{adc\_gpio\_init(27);\ \ \textcolor{comment}{//\ POT\ pin}}
+\DoxyCodeLine{adc\_gpio\_init(28);\ \ \textcolor{comment}{//\ Keypad\ pin}}
+
+\end{DoxyCode}
+
+
+Bu analog girişler genellikle kullanıcı arayüzü, sensör okuma ve kontrol uygulamalarında kullanılır. Keypad menü navigasyonu için, potansiyometre değer ayarları için ve LDR ortam ışığına bağlı kontroller için idealdir.\hypertarget{md_rev0_81_autotoc_md31}{}\doxysection{\texorpdfstring{2. Dijital Butonlar bölümünü detaylı açıklayalım}{2. Dijital Butonlar bölümünü detaylı açıklayalım}}\label{md_rev0_81_autotoc_md31}
+\hypertarget{md_rev0_81_autotoc_md32}{}\doxysubsection{\texorpdfstring{1. {\bfseries{Temel Buton Okuma (button\+\_\+pressed)}}}{1. {\bfseries{Temel Buton Okuma (button\+\_\+pressed)}}}}\label{md_rev0_81_autotoc_md32}
+
+\begin{DoxyItemize}
+\item Debounce korumalı basit okuma için kullanılır\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Yukarı\ ok\ tuşuna\ basıldı}}
+\DoxyCodeLine{\ \ \ \ current\_item-\/-\/;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Enter/Onay\ tuşuna\ basıldı}}
+\DoxyCodeLine{\ \ \ \ select\_menu\_item();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item 200ms debounce koruması vardır
+\item Aktif-\/\+Yüksek mantığı ile çalışır (basıldığında 1 döndürür)
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md33}{}\doxysubsection{\texorpdfstring{2. {\bfseries{Gelişmiş Buton Olayları (check\+\_\+button\+\_\+event)}}}{2. {\bfseries{Gelişmiş Buton Olayları (check\+\_\+button\+\_\+event)}}}}\label{md_rev0_81_autotoc_md33}
+
+\begin{DoxyItemize}
+\item Farklı buton olaylarını algılar\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Buton\ basma\ olayını\ kontrol\ et}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\_button\_event}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}},\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b}{BUTTON\_PRESSED}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Tuşa\ yeni\ basıldı}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Buton\ bırakma\ olayını\ kontrol\ et}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\_button\_event}}(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}},\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461}{BUTTON\_RELEASED}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Tuş\ bırakıldı}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Uzun\ basma\ olayını\ kontrol\ et\ (1\ saniye)}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\_button\_event}}(\mbox{\hyperlink{group__button__inputs_ga7e8516b8781963aa69154f9fc67b658a}{BUTTON\_DOWN}},\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c}{BUTTON\_HELD}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Tuşa\ uzun\ basıldı}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md34}{}\doxysection{\texorpdfstring{3. {\bfseries{Buton Bekleme (wait\+\_\+for\+\_\+button\+\_\+press)}}}{3. {\bfseries{Buton Bekleme (wait\+\_\+for\+\_\+button\+\_\+press)}}}}\label{md_rev0_81_autotoc_md34}
+
+\begin{DoxyItemize}
+\item Herhangi bir tuşa basılmasını bekler\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint\ gpio\ =\ \mbox{\hyperlink{buttons_8c_a00fcf54730781bcc9d059ee8542bb047}{wait\_for\_button\_press}}(1000);\ \textcolor{comment}{//\ 1\ saniye\ timeout}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(gpio\ ==\ \mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Yukarı\ ok\ tuşuna\ basıldı}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(gpio\ ==\ \mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Enter\ tuşuna\ basıldı}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(gpio\ ==\ UINT\_MAX)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Timeout\ oldu}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md35}{}\doxysubsection{\texorpdfstring{4. {\bfseries{Buton Basma Süresi}}}{4. {\bfseries{Buton Basma Süresi}}}}\label{md_rev0_81_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Bir butonun ne kadar süre basılı tutulduğunu kontrol eder\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint32\_t\ duration\ =\ \mbox{\hyperlink{buttons_8c_a222bee6cd95d229864afc60d474825ab}{get\_button\_hold\_duration}}(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(duration\ >\ 2000)\ \{\ \ \textcolor{comment}{//\ 2\ saniye}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Uzun\ basma\ işlemi}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(duration\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Normal\ basma\ işlemi}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md36}{}\doxysubsection{\texorpdfstring{5. {\bfseries{Kullanım Örnekleri}}}{5. {\bfseries{Kullanım Örnekleri}}}}\label{md_rev0_81_autotoc_md36}
+
+\begin{DoxyItemize}
+\item Menü Navigasyonu\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ menu\_navigate(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ menu\_index-\/-\/;}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7e8516b8781963aa69154f9fc67b658a}{BUTTON\_DOWN}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ menu\_index++;}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\_button\_event}}(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}},\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c}{BUTTON\_HELD}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ exit\_menu();\ \ \textcolor{comment}{//\ Uzun\ basışta\ menüden\ çık}}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ select\_menu\_item();\ \ \textcolor{comment}{//\ Normal\ basışta\ seç}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Değer Ayarlama\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ adjust\_value(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\_button\_event}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}},\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c}{BUTTON\_HELD}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hızlı\ artır}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ value\ +=\ 10;}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tek\ tek\ artır}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ value++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Bu buton fonksiyonları debounce koruması sayesinde güvenilir okuma sağlar ve farklı basma senaryolarını (kısa basma, uzun basma, bırakma) destekler. Özellikle menü kontrolleri ve değer ayarlamaları için idealdir.\hypertarget{md_rev0_81_autotoc_md37}{}\doxysection{\texorpdfstring{3. LED kontrolü için fonksiyonların kullanımını açıklayalım. {\ttfamily led\+\_\+control.\+c} için detaylı kullanım kılavuzu}{3. LED kontrolü için fonksiyonların kullanımını açıklayalım. {\ttfamily led\+\_\+control.\+c} için detaylı kullanım kılavuzu}}\label{md_rev0_81_autotoc_md37}
+\hypertarget{md_rev0_81_autotoc_md38}{}\doxysection{\texorpdfstring{LED Kontrol Fonksiyonları Kullanım Kılavuzu}{LED Kontrol Fonksiyonları Kullanım Kılavuzu}}\label{md_rev0_81_autotoc_md38}
+\hypertarget{md_rev0_81_autotoc_md39}{}\doxysection{\texorpdfstring{1. Basit LED Kontrolü}{1. Basit LED Kontrolü}}\label{md_rev0_81_autotoc_md39}
+\hypertarget{md_rev0_81_autotoc_md40}{}\doxysubsection{\texorpdfstring{Dijital Kontrol}{Dijital Kontrol}}\label{md_rev0_81_autotoc_md40}
+
+\begin{DoxyItemize}
+\item LED\textquotesingle{}leri açıp kapatmak için doğrudan GPIO kontrolü\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gpio\_put(\mbox{\hyperlink{group__led__outputs_ga31e20330f8ce94e0dd10b005a15c5898}{LED\_RED}},\ \mbox{\hyperlink{pico__training__board_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}});\ \ \ \ \textcolor{comment}{//\ Kırmızı\ LED\ açık}}
+\DoxyCodeLine{gpio\_put(\mbox{\hyperlink{group__led__outputs_gae3c73853c6d0a1eca2c7d9797f6494ea}{LED\_YELLOW}},\ \mbox{\hyperlink{pico__training__board_8h_ab811d8c6ff3a505312d3276590444289}{LOW}});\ \ \textcolor{comment}{//\ Sarı\ LED\ kapalı}}
+\DoxyCodeLine{gpio\_put(\mbox{\hyperlink{group__led__outputs_gaca338dbd19d7940923334629f6e5f3b7}{LED\_GREEN}},\ \mbox{\hyperlink{pico__training__board_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}});\ \ \textcolor{comment}{//\ Yeşil\ LED\ açık}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md41}{}\doxysubsection{\texorpdfstring{PWM Kontrol}{PWM Kontrol}}\label{md_rev0_81_autotoc_md41}
+
+\begin{DoxyItemize}
+\item Parlaklık ayarı için PWM kontrolü (0-\/4095 arası değer)\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_ga31e20330f8ce94e0dd10b005a15c5898}{LED\_RED}},\ 2048);\ \ \ \ \textcolor{comment}{//\ \%50\ parlaklık}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gae3c73853c6d0a1eca2c7d9797f6494ea}{LED\_YELLOW}},\ 4095);\ \textcolor{comment}{//\ Tam\ parlaklık}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gaca338dbd19d7940923334629f6e5f3b7}{LED\_GREEN}},\ 1024);\ \ \textcolor{comment}{//\ \%25\ parlaklık}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md42}{}\doxysection{\texorpdfstring{2. RGB LED Kontrolü}{2. RGB LED Kontrolü}}\label{md_rev0_81_autotoc_md42}
+\hypertarget{md_rev0_81_autotoc_md43}{}\doxysubsection{\texorpdfstring{Tam Renk Kontrolü}{Tam Renk Kontrolü}}\label{md_rev0_81_autotoc_md43}
+
+\begin{DoxyItemize}
+\item Her renk kanalı için ayrı PWM kontrolü\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Mor\ renk\ için}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gad3052df7f150d5b6e595ea42ab777ac2}{RGB\_R}},\ 4095);\ \textcolor{comment}{//\ Kırmızı\ tam}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_ga9041eb560a6978081284bfe76a1acee1}{RGB\_G}},\ 0);\ \ \ \ \textcolor{comment}{//\ Yeşil\ kapalı}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gaebb50762b1606456d88be7b8223549b2}{RGB\_B}},\ 4095);\ \textcolor{comment}{//\ Mavi\ tam}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Turkuaz\ renk\ için}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gad3052df7f150d5b6e595ea42ab777ac2}{RGB\_R}},\ 0);\ \ \ \ \textcolor{comment}{//\ Kırmızı\ kapalı}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_ga9041eb560a6978081284bfe76a1acee1}{RGB\_G}},\ 4095);\ \textcolor{comment}{//\ Yeşil\ tam}}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gaebb50762b1606456d88be7b8223549b2}{RGB\_B}},\ 4095);\ \textcolor{comment}{//\ Mavi\ tam}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md44}{}\doxysubsection{\texorpdfstring{Renk Geçişleri}{Renk Geçişleri}}\label{md_rev0_81_autotoc_md44}
+
+\begin{DoxyItemize}
+\item Yumuşak renk geçişleri için kademeli PWM değişimi\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Kırmızıdan\ maviye\ geçiş\ örneği}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ 4095;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gad3052df7f150d5b6e595ea42ab777ac2}{RGB\_R}},\ 4095-\/i);\ \textcolor{comment}{//\ Kırmızı\ azalır}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gaebb50762b1606456d88be7b8223549b2}{RGB\_B}},\ i);\ \ \ \ \ \ \textcolor{comment}{//\ Mavi\ artar}}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Geçiş\ hızı\ ayarı}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md45}{}\doxysection{\texorpdfstring{3. Özel Efektler}{3. Özel Efektler}}\label{md_rev0_81_autotoc_md45}
+\hypertarget{md_rev0_81_autotoc_md46}{}\doxysubsection{\texorpdfstring{Yanıp Sönme Efekti}{Yanıp Sönme Efekti}}\label{md_rev0_81_autotoc_md46}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Tüm\ LED'leri\ sırayla\ yakıp\ söndürme}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ led\_sequence(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_ga31e20330f8ce94e0dd10b005a15c5898}{LED\_RED}},\ \mbox{\hyperlink{pico__training__board_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}});}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(200);}
+\DoxyCodeLine{\ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_ga31e20330f8ce94e0dd10b005a15c5898}{LED\_RED}},\ \mbox{\hyperlink{pico__training__board_8h_ab811d8c6ff3a505312d3276590444289}{LOW}});}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_gae3c73853c6d0a1eca2c7d9797f6494ea}{LED\_YELLOW}},\ \mbox{\hyperlink{pico__training__board_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}});}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(200);}
+\DoxyCodeLine{\ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_gae3c73853c6d0a1eca2c7d9797f6494ea}{LED\_YELLOW}},\ \mbox{\hyperlink{pico__training__board_8h_ab811d8c6ff3a505312d3276590444289}{LOW}});}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_gaca338dbd19d7940923334629f6e5f3b7}{LED\_GREEN}},\ \mbox{\hyperlink{pico__training__board_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}});}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(200);}
+\DoxyCodeLine{\ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_gaca338dbd19d7940923334629f6e5f3b7}{LED\_GREEN}},\ \mbox{\hyperlink{pico__training__board_8h_ab811d8c6ff3a505312d3276590444289}{LOW}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md47}{}\doxysubsection{\texorpdfstring{RGB Gökkuşağı Efekti}{RGB Gökkuşağı Efekti}}\label{md_rev0_81_autotoc_md47}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ RGB\ LED\ ile\ gökkuşağı\ efekti}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ rainbow\_cycle(\textcolor{keywordtype}{int}\ duration\_ms)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4095;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Renk\ geçişleri\ için\ sinüs\ dalgaları\ kullan}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gad3052df7f150d5b6e595ea42ab777ac2}{RGB\_R}},\ (sin(i\ *\ 0.002)\ +\ 1)\ *\ 2047);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_ga9041eb560a6978081284bfe76a1acee1}{RGB\_G}},\ (sin(i\ *\ 0.002\ +\ 2)\ +\ 1)\ *\ 2047);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(\mbox{\hyperlink{group__led__outputs_gaebb50762b1606456d88be7b8223549b2}{RGB\_B}},\ (sin(i\ *\ 0.002\ +\ 4)\ +\ 1)\ *\ 2047);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(duration\_ms\ /\ 4095);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md48}{}\doxysection{\texorpdfstring{4. Kullanım Notları}{4. Kullanım Notları}}\label{md_rev0_81_autotoc_md48}
+\hypertarget{md_rev0_81_autotoc_md49}{}\doxysubsection{\texorpdfstring{Başlatma}{Başlatma}}\label{md_rev0_81_autotoc_md49}
+
+\begin{DoxyItemize}
+\item LED\textquotesingle{}leri kullanmadan önce \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()} fonksiyonunu çağırın
+\item PWM kontrolü için ilgili pinlerin PWM modunda olduğundan emin olun
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md50}{}\doxysubsection{\texorpdfstring{Güç Tüketimi}{Güç Tüketimi}}\label{md_rev0_81_autotoc_md50}
+
+\begin{DoxyItemize}
+\item Tüm LED\textquotesingle{}leri aynı anda maksimum parlaklıkta kullanmaktan kaçının
+\item Uzun süreli kullanımlarda düşük parlaklık tercih edin
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md51}{}\doxysubsection{\texorpdfstring{PWM Değerleri}{PWM Değerleri}}\label{md_rev0_81_autotoc_md51}
+
+\begin{DoxyItemize}
+\item PWM değer aralığı\+: 0-\/4095
+\item 0\+: Tamamen kapalı
+\item 4095\+: Tam parlaklık
+\item 2048\+: \%50 parlaklık
+\end{DoxyItemize}
+
+Bu fonksiyonlar ile LED\textquotesingle{}leri tek tek kontrol edebilir, renk geçişleri yapabilir ve çeşitli ışık efektleri oluşturabilirsiniz. RGB LED için renk karışımlarını deneyerek farklı renkler elde edebilirsiniz.
+
+Bu kılavuz, LED kontrolü için temel kullanımdan ileri seviye uygulamalara kadar geniş bir yelpazede örnek ve açıklama sunuyor. Kullanıcılar bu örnekleri temel alarak kendi LED kontrol uygulamalarını geliştirebilirler.\hypertarget{md_rev0_81_autotoc_md52}{}\doxysection{\texorpdfstring{4. Buzzer Kullanım Kılavuzu}{4. Buzzer Kullanım Kılavuzu}}\label{md_rev0_81_autotoc_md52}
+Buzzer kontrolü için detaylı kullanım kılavuzu hazırlayalım. Bu GPIO10\textquotesingle{}a bağlı buzzer PWM kontrollü ve müzikal notalar çalabilme kapasitesine sahip.\hypertarget{md_rev0_81_autotoc_md53}{}\doxysubsection{\texorpdfstring{1. {\bfseries{Temel Nota Çalma}}}{1. {\bfseries{Temel Nota Çalma}}}}\label{md_rev0_81_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Tek\ bir\ nota\ çalma\ (frekans\ ve\ süre\ belirterek)}}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(\mbox{\hyperlink{pico__training__board_8h_adbed706152a3d7114327fc5af3c7e07c}{NOTE\_C4}},\ 500);\ \ \ \ \textcolor{comment}{//\ Do\ notası,\ 500ms\ }}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(\mbox{\hyperlink{pico__training__board_8h_a588324691d836c7cdf1dd8cc071eeecc}{NOTE\_G4}},\ 250);\ \ \ \ \textcolor{comment}{//\ Sol\ notası,\ 250ms}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md54}{}\doxysubsection{\texorpdfstring{2. {\bfseries{Öntanımlı Notalar}}}{2. {\bfseries{Öntanımlı Notalar}}}}\label{md_rev0_81_autotoc_md54}
+Kullanılabilir nota tanımları\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_adbed706152a3d7114327fc5af3c7e07c}{NOTE\_C4}}\ \ (261.63\ Hz)\ -\/\ Do}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_a6162f78ec6fc3457a077602a77e36992}{NOTE\_D4}}\ \ (293.66\ Hz)\ -\/\ Re\ \ }
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_a147e4663d8161df841c418859a70f66f}{NOTE\_E4}}\ \ (329.63\ Hz)\ -\/\ Mi}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_aff20d9abb2ef6f25afeb44245129eba6}{NOTE\_F4}}\ \ (349.23\ Hz)\ -\/\ Fa}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_a588324691d836c7cdf1dd8cc071eeecc}{NOTE\_G4}}\ \ (392.00\ Hz)\ -\/\ Sol}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_a4ede898d3fa744ffb02d5e9b66994ef3}{NOTE\_A4}}\ \ (440.00\ Hz)\ -\/\ La\ }
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_a9ed6d5c8563ae60e6d2716e13d261386}{NOTE\_B4}}\ \ (493.88\ Hz)\ -\/\ Si}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md55}{}\doxysubsection{\texorpdfstring{3. {\bfseries{Melodi Çalma}}}{3. {\bfseries{Melodi Çalma}}}}\label{md_rev0_81_autotoc_md55}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Nota\ dizisi\ tanımlama}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *melody[][2]\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C4"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \textcolor{comment}{//\ Do\ notası}}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}E4"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \textcolor{comment}{//\ Mi\ notası\ }}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}G4"{}},\ \textcolor{stringliteral}{"{}4"{}}\}\ \ \textcolor{comment}{//\ Sol\ notası}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Melodiyi\ çalma}}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(melody,\ 3,\ 250);\ \textcolor{comment}{//\ 3\ nota,\ her\ biri\ 250ms}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md56}{}\doxysubsection{\texorpdfstring{4. {\bfseries{PWM Frekans Kontrolü}}}{4. {\bfseries{PWM Frekans Kontrolü}}}}\label{md_rev0_81_autotoc_md56}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Manuel\ frekans\ kontrolü}}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(slice\_num,\ 440.0f);\ \ \textcolor{comment}{//\ 440\ Hz\ (La\ notası)}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md57}{}\doxysubsection{\texorpdfstring{5. {\bfseries{Kullanım İpuçları}}}{5. {\bfseries{Kullanım İpuçları}}}}\label{md_rev0_81_autotoc_md57}
+
+\begin{DoxyItemize}
+\item Her nota çalmadan önce {\ttfamily \doxylink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\+\_\+pwm()}} fonksiyonunun çağrılmış olduğundan emin olun
+\item Notalar arası geçişlerde küçük boşluklar bırakılır (50μs)
+\item Geçerli frekans aralığı\+: 20Hz -\/ 20k\+Hz
+\item Süre değeri milisaniye cinsinden verilir
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md58}{}\doxysubsection{\texorpdfstring{6. {\bfseries{Örnek Melodiler}}}{6. {\bfseries{Örnek Melodiler}}}}\label{md_rev0_81_autotoc_md58}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Basit\ bir\ melodi\ örneği\ (Süslü\ Kasımpaşalı)}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *melody[][2]\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C4"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \ \textcolor{comment}{//\ Do\ }}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}E4"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \ \textcolor{comment}{//\ Mi}}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}G4"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \ \textcolor{comment}{//\ Sol}}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C4"{}},\ \textcolor{stringliteral}{"{}4"{}}\}\ \ \ \textcolor{comment}{//\ Do}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ play\_simple\_melody(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}();\ \ \textcolor{comment}{//\ PWM\ başlatma}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(melody,\ 4,\ 300);\ \ \textcolor{comment}{//\ 4\ nota,\ her\ biri\ 300ms}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md59}{}\doxysubsection{\texorpdfstring{7. {\bfseries{Hata Kontrolü}}}{7. {\bfseries{Hata Kontrolü}}}}\label{md_rev0_81_autotoc_md59}
+
+\begin{DoxyItemize}
+\item Frekans değeri 0\textquotesingle{}dan büyük olmalı
+\item Süre değeri pozitif olmalı
+\item Geçersiz parametrelerle çağrıldığında fonksiyon sessizce return eder
+\end{DoxyItemize}
+
+Bu kontroller sayesinde buzzer\textquotesingle{}ı hem basit uyarı sesi üretmek için hem de melodi çalmak için güvenli bir şekilde kullanabilirsiniz. Tüm fonksiyonlar {\ttfamily \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}} içinde tanımlı ve PWM kontrolü optimize edilmiş durumda.
+
+\DoxyHorRuler{0}
+\hypertarget{md_rev0_81_autotoc_md61}{}\doxysection{\texorpdfstring{5. STEP MOTOR}{5. STEP MOTOR}}\label{md_rev0_81_autotoc_md61}
+Step motor kullanımı için kapsamlı bir kılavuz hazırlayalım. Bu kılavuz {\ttfamily \doxylink{stepper_8c}{stepper.\+c}} dosyasının kullanımını açıklayacak.\hypertarget{md_rev0_81_autotoc_md62}{}\doxysubsection{\texorpdfstring{Step Motor Kontrol Kılavuzu}{Step Motor Kontrol Kılavuzu}}\label{md_rev0_81_autotoc_md62}
+\hypertarget{md_rev0_81_autotoc_md63}{}\doxysubsection{\texorpdfstring{1. Temel Fonksiyonlar}{1. Temel Fonksiyonlar}}\label{md_rev0_81_autotoc_md63}
+\hypertarget{md_rev0_81_autotoc_md64}{}\doxysubsection{\texorpdfstring{Step Motor Dönüş Kontrolü}{Step Motor Dönüş Kontrolü}}\label{md_rev0_81_autotoc_md64}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\_direction\_t}}\ direction,\ uint\ speed,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Parametreler\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily direction}\+: Dönüş yönü (CW\+: Saat yönü, CCW\+: Saatin tersi)
+\item {\ttfamily speed}\+: Motor hızı (1-\/100 arası)
+\item {\ttfamily revolutions}\+: Dönüş turu (NAN\+: sürekli dönüş)
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md65}{}\doxysubsection{\texorpdfstring{Acil Durdurma}{Acil Durdurma}}\label{md_rev0_81_autotoc_md65}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\_stop}}(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Motoru anında durdurur
+\item Tüm motor pinlerini devre dışı bırakır
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md66}{}\doxysubsection{\texorpdfstring{Durum Kontrolü}{Durum Kontrolü}}\label{md_rev0_81_autotoc_md66}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}{is\_motor\_running}}(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Motorun çalışıp çalışmadığını kontrol eder
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md67}{}\doxysection{\texorpdfstring{2. Kullanım Örnekleri}{2. Kullanım Örnekleri}}\label{md_rev0_81_autotoc_md67}
+\hypertarget{md_rev0_81_autotoc_md68}{}\doxysubsection{\texorpdfstring{Basit Dönüş}{Basit Dönüş}}\label{md_rev0_81_autotoc_md68}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ 2\ tur\ saat\ yönünde\ dönüş}}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ 50,\ 2.0);\ \ \textcolor{comment}{//\ \%50\ hızla\ 2\ tur}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Saatin\ tersi\ yönde\ sürekli\ dönüş}}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487}{CCW}},\ 75,\ NAN);\ \ \textcolor{comment}{//\ \%75\ hızla\ sürekli\ dönüş}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md69}{}\doxysubsection{\texorpdfstring{Hız Kontrolü}{Hız Kontrolü}}\label{md_rev0_81_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Minimum\ hızda\ dönüş}}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ 1,\ 1.0);\ \ \ \textcolor{comment}{//\ En\ yavaş\ hızda\ 1\ tur}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Maksimum\ hızda\ dönüş}}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487}{CCW}},\ 100,\ 1.0);\ \textcolor{comment}{//\ En\ hızlı\ şekilde\ 1\ tur}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md70}{}\doxysubsection{\texorpdfstring{Acil Durum Kontrolü}{Acil Durum Kontrolü}}\label{md_rev0_81_autotoc_md70}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Örnek:\ Limit\ switch\ kontrolü\ ile\ durdurma}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(gpio\_get(LIMIT\_SWITCH))\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\_stop}}();\ \ \textcolor{comment}{//\ Motoru\ durdur}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Örnek:\ Çalışma\ kontrolü}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}{is\_motor\_running}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Motor\ çalışıyorsa\ yapılacak\ işlemler}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md71}{}\doxysection{\texorpdfstring{3. Güvenlik ve Performans İpuçları}{3. Güvenlik ve Performans İpuçları}}\label{md_rev0_81_autotoc_md71}
+\hypertarget{md_rev0_81_autotoc_md72}{}\doxysubsection{\texorpdfstring{Güvenli Kullanım}{Güvenli Kullanım}}\label{md_rev0_81_autotoc_md72}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Başlatma Kontrolü\+:}}
+\begin{DoxyItemize}
+\item Her kullanım öncesi {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} fonksiyonunun çağrıldığından emin olun
+\item Motor pinlerinin doğru yapılandırıldığını kontrol edin
+\end{DoxyItemize}
+\item {\bfseries{Hız Limitleri\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Güvenli\ hız\ aralığı\ kullanımı}}
+\DoxyCodeLine{uint\ safe\_speed\ =\ (speed\ >\ 100)\ ?\ 100\ :\ (speed\ <\ 1)\ ?\ 1\ :\ speed;}
+
+\end{DoxyCode}
+
+\item {\bfseries{Acil Durum Yönetimi\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Örnek:\ Buton\ ile\ acil\ durdurma}}
+\DoxyCodeLine{gpio\_set\_irq\_enabled\_with\_callback(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}},\ }
+\DoxyCodeLine{\ \ \ \ GPIO\_IRQ\_EDGE\_RISE,\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{true},\ }
+\DoxyCodeLine{\ \ \ \ \&emergency\_stop\_callback);}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_rev0_81_autotoc_md73}{}\doxysubsection{\texorpdfstring{Performans Optimizasyonu}{Performans Optimizasyonu}}\label{md_rev0_81_autotoc_md73}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Yavaş Başlangıç/\+Bitiş\+:}}
+\begin{DoxyItemize}
+\item Ani hızlanma/yavaşlama için rampa kullanın
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Kademeli\ hızlanma\ örneği}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 10;\ i\ <=\ target\_speed;\ i\ +=\ 5)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(direction,\ i,\ 0.1);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Isınma Kontrolü\+:}}
+\begin{DoxyItemize}
+\item Uzun süreli çalışmalarda periyodik dinlenme
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Her\ 10\ turda\ bir\ kısa\ dinlenme}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(turn\_count\ \%\ 10\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(1000);\ \ \textcolor{comment}{//\ 1\ sn\ dinlenme}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_rev0_81_autotoc_md74}{}\doxysection{\texorpdfstring{4. Örnek Uygulamalar}{4. Örnek Uygulamalar}}\label{md_rev0_81_autotoc_md74}
+\hypertarget{md_rev0_81_autotoc_md75}{}\doxysubsection{\texorpdfstring{Otomatik Pozisyonlama}{Otomatik Pozisyonlama}}\label{md_rev0_81_autotoc_md75}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ position\_control(\textcolor{keywordtype}{float}\ target\_position)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{float}\ current\_position\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(current\_position\ <\ target\_position)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ 50,\ 0.1);\ \ \textcolor{comment}{//\ 0.1\ tur\ adımlarla\ hareket}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ current\_position\ +=\ 0.1;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md76}{}\doxysubsection{\texorpdfstring{Hız Profili}{Hız Profili}}\label{md_rev0_81_autotoc_md76}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ speed\_profile(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Yavaşça\ hızlan}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 10;\ i\ <=\ 100;\ i\ +=\ 10)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ i,\ 0.5);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Yavaşça\ yavaşla}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 90;\ i\ >=\ 10;\ i\ -\/=\ 10)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ i,\ 0.5);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md77}{}\doxysection{\texorpdfstring{5. Hata Kontrolü}{5. Hata Kontrolü}}\label{md_rev0_81_autotoc_md77}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Motor\ durum\ kontrolü}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(!\mbox{\hyperlink{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}{is\_motor\_running}}())\ \{}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}Motor\ durdu\ veya\ çalışmıyor!\(\backslash\)n"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Hata\ durumu\ işleme}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Aşırı\ yük\ kontrolü\ örneği}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(motor\_currentCURRENT)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\_stop}}();}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}Aşırı\ yük\ tespit\ edildi!\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Bu kılavuz, step motor kontrolü için temel kullanımdan ileri seviye uygulamalara kadar geniş bir yelpazede örnek ve açıklama sunuyor. Kullanıcılar bu örnekleri temel alarak kendi uygulamalarını geliştirebilirler.
+
+\DoxyHorRuler{0}
+\hypertarget{md_rev0_81_autotoc_md79}{}\doxysection{\texorpdfstring{6. Sensör modüllerinin fonksiyonlarını detaylı açıklayalım}{6. Sensör modüllerinin fonksiyonlarını detaylı açıklayalım}}\label{md_rev0_81_autotoc_md79}
+\hypertarget{md_rev0_81_autotoc_md80}{}\doxysubsection{\texorpdfstring{1. Ultrasonik Sensör Fonksiyonları}{1. Ultrasonik Sensör Fonksiyonları}}\label{md_rev0_81_autotoc_md80}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ \mbox{\hyperlink{pico__training__board_8h_a4628d8d278604d424be0693fd587e661}{get\_average\_distance}}(\textcolor{keywordtype}{int}\ num\_samples,\ \textcolor{keywordtype}{int}\ delay\_ms)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{float}\ total\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ valid\_samples\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_samples;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\_distance}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(distance\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ distance;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ valid\_samples++;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(delay\_ms);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ valid\_samples\ >\ 0\ ?\ total\ /\ valid\_samples\ :\ -\/1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Kullanım örneği\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Ultrasonik\ sensörden\ 3\ örnek\ al,\ aralarında\ 10ms\ bekle}}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{pico__training__board_8h_a4628d8d278604d424be0693fd587e661}{get\_average\_distance}}(3,\ 10);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(distance\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}Mesafe:\ \%.1f\ cm\(\backslash\)n"{}},\ distance);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md81}{}\doxysubsection{\texorpdfstring{2. PIR Sensör Fonksiyonları}{2. PIR Sensör Fonksiyonları}}\label{md_rev0_81_autotoc_md81}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\_motion}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ absolute\_time\_t\ last\_trigger\ =\ \{0\};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ COOLDOWN\_MS\ =\ 2000;\ \textcolor{comment}{//\ Yeniden\ tetikleme\ için\ bekleme\ süresi}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(gpio\_get(\mbox{\hyperlink{pico__training__board_8h_a8edd6b5035160b9ed4aa48e99c257feb}{PIR\_DETECTOR}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ absolute\_time\_t\ now\ =\ get\_absolute\_time();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(absolute\_time\_diff\_us(last\_trigger,\ now)\ >\ COOLDOWN\_MS\ *\ 1000)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ last\_trigger\ =\ now;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Kullanım örneği\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Ana\ döngüde\ hareket\ ve\ mesafe\ kontrolü}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Hareket\ kontrolü}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\_motion}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hareket\ algılandığında\ mesafe\ ölç}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{pico__training__board_8h_a4628d8d278604d424be0693fd587e661}{get\_average\_distance}}(3,\ 10);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(distance\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Hareket\ algılandı!\ Nesne\ \%.1f\ cm\ uzakta\(\backslash\)n"{}},\ distance);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(440,\ distance);\ \textcolor{comment}{//\ Mesafeye\ göre\ ses\ çal}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(100);\ \textcolor{comment}{//\ Küçük\ gecikme}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md82}{}\doxysubsection{\texorpdfstring{Sensör Başlatma Fonksiyonu}{Sensör Başlatma Fonksiyonu}}\label{md_rev0_81_autotoc_md82}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ init\_sensors(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Ultrasonik\ sensör\ pinlerini\ yapılandır}}
+\DoxyCodeLine{\ \ \ \ gpio\_init(\mbox{\hyperlink{pico__training__board_8h_a608bbec30c43f7862ef0887bb2e6f9ab}{ULTRA\_SONIC\_TR}});}
+\DoxyCodeLine{\ \ \ \ gpio\_init(\mbox{\hyperlink{pico__training__board_8h_a2cd2c278a736a7cafacf4d7d4dfa59fb}{ULTRA\_SONIC\_EC}});}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_dir(\mbox{\hyperlink{pico__training__board_8h_a608bbec30c43f7862ef0887bb2e6f9ab}{ULTRA\_SONIC\_TR}},\ GPIO\_OUT);}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_dir(\mbox{\hyperlink{pico__training__board_8h_a2cd2c278a736a7cafacf4d7d4dfa59fb}{ULTRA\_SONIC\_EC}},\ GPIO\_IN);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ PIR\ sensör\ pinini\ yapılandır}}
+\DoxyCodeLine{\ \ \ \ gpio\_init(\mbox{\hyperlink{pico__training__board_8h_a8edd6b5035160b9ed4aa48e99c257feb}{PIR\_DETECTOR}});}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_dir(\mbox{\hyperlink{pico__training__board_8h_a8edd6b5035160b9ed4aa48e99c257feb}{PIR\_DETECTOR}},\ GPIO\_IN);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md83}{}\doxysubsection{\texorpdfstring{Önemli Kullanım Notları}{Önemli Kullanım Notları}}\label{md_rev0_81_autotoc_md83}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Ultrasonik Sensör}}\+:
+\begin{DoxyItemize}
+\item Ölçüm öncesi {\ttfamily init\+\_\+sensors()} fonksiyonu çağrılmalı
+\item Tek ölçüm yerine ortalama değer almak daha güvenilir
+\item Sensör 2cm-\/400cm arası mesafeleri ölçebilir
+\item Yüksek frekanslı ölçümlerden kaçının (sensör ısınabilir)
+\end{DoxyItemize}
+\item {\bfseries{PIR Sensör}}\+:
+\begin{DoxyItemize}
+\item Sensör başlangıçta kalibre olması için 30-\/60 sn bekleyin
+\item Yanlış alarmları önlemek için cooldown süresi kullanın
+\item Ortam sıcaklığındaki ani değişimler yanlış tetikleme yapabilir
+\item Algılama mesafesi yaklaşık 7 metredir
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_rev0_81_autotoc_md84}{}\doxysubsection{\texorpdfstring{Örnek Uygulama}{Örnek Uygulama}}\label{md_rev0_81_autotoc_md84}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ stdio\_init\_all();}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Sensörleri\ başlat}}
+\DoxyCodeLine{\ \ \ \ init\_sensors();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}();\ \textcolor{comment}{//\ Buzzer\ için}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Ana\ döngü}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hareket\ kontrolü}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\_motion}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hareket\ algılandığında\ mesafe\ ölç}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ \mbox{\hyperlink{pico__training__board_8h_a4628d8d278604d424be0693fd587e661}{get\_average\_distance}}(3,\ 10);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(distance\ >\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Hareket\ algılandı!\ Nesne\ \%.1f\ cm\ uzakta\(\backslash\)n"{}},\ distance);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(440,\ distance);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(100);\ \textcolor{comment}{//\ Küçük\ gecikme}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Bu örnekte hareket algılandığında ultrasonik sensör ile mesafe ölçümü yapılıyor ve mesafeye göre buzzer ile ses çalınıyor. Sensörler birlikte kullanılarak daha karmaşık uygulamalar geliştirilebilir.\hypertarget{md_rev0_81_autotoc_md85}{}\doxysection{\texorpdfstring{7. Haberleşme Modülleri}{7. Haberleşme Modülleri}}\label{md_rev0_81_autotoc_md85}
+LCD fonksiyonlarının kullanımı için detaylı bir kılavuz hazırlayalım\+:\hypertarget{md_rev0_81_autotoc_md86}{}\doxysubsection{\texorpdfstring{I2C LCD Display (16x2) Kullanım Kılavuzu}{I2C LCD Display (16x2) Kullanım Kılavuzu}}\label{md_rev0_81_autotoc_md86}
+\hypertarget{md_rev0_81_autotoc_md87}{}\doxysubsection{\texorpdfstring{1. Bağlantı ve Başlatma}{1. Bağlantı ve Başlatma}}\label{md_rev0_81_autotoc_md87}
+LCD ekran I2C protokolü üzerinden haberleşir\+:
+
+
+\begin{DoxyItemize}
+\item SDA (GPIO20)\+: Veri hattı
+\item SCL (GPIO21)\+: Clock hattı
+\item I2C Adresi\+: 0x27
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md88}{}\doxysubsection{\texorpdfstring{Başlatma İşlemi}{Başlatma İşlemi}}\label{md_rev0_81_autotoc_md88}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pico__training__board_8h}{pico\_training\_board.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ I2C\ başlatma}}
+\DoxyCodeLine{\ \ \ \ i2c\_init(\mbox{\hyperlink{pico__training__board_8h_ad9ecf80e1eac083d16ec47f9d3aeb39f}{I2C\_PORT}},\ 400*1000);\ \ \textcolor{comment}{//\ 400kHz\ hızında}}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_function(\mbox{\hyperlink{pico__training__board_8h_a18aefd12ad84d4c33dc97923cb821e47}{I2C\_SDA}},\ GPIO\_FUNC\_I2C);}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_function(\mbox{\hyperlink{pico__training__board_8h_a212ca328a6409c98f8c3dfbbe1ba561d}{I2C\_SCL}},\ GPIO\_FUNC\_I2C);}
+\DoxyCodeLine{\ \ \ \ gpio\_pull\_up(\mbox{\hyperlink{pico__training__board_8h_a18aefd12ad84d4c33dc97923cb821e47}{I2C\_SDA}});}
+\DoxyCodeLine{\ \ \ \ gpio\_pull\_up(\mbox{\hyperlink{pico__training__board_8h_a212ca328a6409c98f8c3dfbbe1ba561d}{I2C\_SCL}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ LCD\ başlatma}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\_init}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md89}{}\doxysection{\texorpdfstring{2. Temel Fonksiyonlar}{2. Temel Fonksiyonlar}}\label{md_rev0_81_autotoc_md89}
+\hypertarget{md_rev0_81_autotoc_md90}{}\doxysubsection{\texorpdfstring{lcd\+\_\+init()}{lcd\+\_\+init()}}\label{md_rev0_81_autotoc_md90}
+LCD\textquotesingle{}yi kullanıma hazırlar. Program başlangıcında bir kez çağrılmalıdır.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\_init}}();\ \ \textcolor{comment}{//\ LCD'yi\ başlat}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md91}{}\doxysubsection{\texorpdfstring{lcd\+\_\+clear()}{lcd\+\_\+clear()}}\label{md_rev0_81_autotoc_md91}
+Ekranı temizler ve imleci başlangıç konumuna getirir.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();\ \ \textcolor{comment}{//\ Ekranı\ temizle}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md92}{}\doxysubsection{\texorpdfstring{lcd\+\_\+string()}{lcd\+\_\+string()}}\label{md_rev0_81_autotoc_md92}
+Metni LCD\textquotesingle{}de gösterir.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Merhaba\ Dünya"{}});\ \ \textcolor{comment}{//\ Metin\ yazdır}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md93}{}\doxysubsection{\texorpdfstring{lcd\+\_\+set\+\_\+cursor()}{lcd\+\_\+set\+\_\+cursor()}}\label{md_rev0_81_autotoc_md93}
+İmleci istenen konuma getirir.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(0,\ 0);\ \ \textcolor{comment}{//\ İlk\ satır,\ ilk\ karakter}}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);\ \ \textcolor{comment}{//\ İkinci\ satır,\ ilk\ karakter}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md94}{}\doxysection{\texorpdfstring{3. Kullanım Örnekleri}{3. Kullanım Örnekleri}}\label{md_rev0_81_autotoc_md94}
+\hypertarget{md_rev0_81_autotoc_md95}{}\doxysubsection{\texorpdfstring{Örnek 1\+: Basit Mesaj Gösterme}{Örnek 1\+: Basit Mesaj Gösterme}}\label{md_rev0_81_autotoc_md95}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ I2C\ ve\ LCD\ başlatma\ işlemleri...}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Merhaba\ Dünya!"{}});}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(2000);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Raspberry\ Pi"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Pico"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md96}{}\doxysubsection{\texorpdfstring{Örnek 2\+: Değişken Değer Gösterme}{Örnek 2\+: Değişken Değer Gösterme}}\label{md_rev0_81_autotoc_md96}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ display\_temperature(\textcolor{keywordtype}{float}\ temp)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ buffer[16];}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Sicaklik:"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\ \ \ \ sprintf(buffer,\ \textcolor{stringliteral}{"{}\%.1f\ C"{}},\ temp);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(buffer);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md97}{}\doxysubsection{\texorpdfstring{Örnek 3\+: Menü Gösterimi}{Örnek 3\+: Menü Gösterimi}}\label{md_rev0_81_autotoc_md97}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ show\_menu\_item(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ item,\ \textcolor{keywordtype}{int}\ selected)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (selected)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}>\ "{}});}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}\ \ "{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(item);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md98}{}\doxysection{\texorpdfstring{4. Önemli Notlar ve İpuçları}{4. Önemli Notlar ve İpuçları}}\label{md_rev0_81_autotoc_md98}
+4.\+1. {\bfseries{Zamanlama}}
+
+
+\begin{DoxyItemize}
+\item İki yazma işlemi arasında kısa bir gecikme (örn\+: 5ms) kullanın
+\item Ekranı temizledikten sonra 2ms bekleyin
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{sleep\_ms(2);\ \ \textcolor{comment}{//\ Ekran\ temizleme\ için\ bekleme}}
+
+\end{DoxyCode}
+
+
+4.\+2. {\bfseries{Satır Uzunluğu}}
+
+
+\begin{DoxyItemize}
+\item Her satır maksimum 16 karakter alabilir
+\item Daha uzun metinler kesilebilir
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Uzun\ metin\ kontrolü}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ safe\_lcd\_string(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ buffer[17];\ \ \textcolor{comment}{//\ 16\ karakter\ +\ null\ terminator}}
+\DoxyCodeLine{\ \ \ \ strncpy(buffer,\ text,\ 16);}
+\DoxyCodeLine{\ \ \ \ buffer[16]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(buffer);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+4.\+3. {\bfseries{Özel Karakterler}}
+
+
+\begin{DoxyItemize}
+\item Türkçe karakterler LCD\textquotesingle{}de farklı görünebilir
+\item ASCII karakterlerini tercih edin
+\end{DoxyItemize}
+
+4.\+4. {\bfseries{Güç Tüketimi}}
+
+
+\begin{DoxyItemize}
+\item LCD arka ışığı sürekli açık kalır
+\item Enerji tasarrufu için kullanılmadığında ekranı temizleyin
+\end{DoxyItemize}\hypertarget{md_rev0_81_autotoc_md99}{}\doxysection{\texorpdfstring{5. Hata Kontrolü}{5. Hata Kontrolü}}\label{md_rev0_81_autotoc_md99}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ lcd\_check\_connection()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ I2C\ bağlantısını\ kontrol\ et}}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ dummy\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ i2c\_read\_blocking(\mbox{\hyperlink{pico__training__board_8h_ad9ecf80e1eac083d16ec47f9d3aeb39f}{I2C\_PORT}},\ \mbox{\hyperlink{pico__training__board_8h_a6a90c49be18cd45434c04afd79b0bf9d}{LCD\_ADDR}},\ \&dummy,\ 1,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (ret\ >=\ 0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_rev0_81_autotoc_md100}{}\doxysection{\texorpdfstring{6. Örnek Uygulama\+: Sayaç}{6. Örnek Uygulama\+: Sayaç}}\label{md_rev0_81_autotoc_md100}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ display\_counter(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ counter\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ buffer[16];}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Sayac:"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sprintf(buffer,\ \textcolor{stringliteral}{"{}\%d"{}},\ counter++);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(buffer);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(1000);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Bu kılavuz, LCD ekranın temel kullanımını ve yaygın senaryoları kapsamaktadır. LCD fonksiyonlarını kendi uygulamalarınızda bu örnekleri temel alarak kullanabilirsiniz. 

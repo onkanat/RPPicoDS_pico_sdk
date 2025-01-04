@@ -1,0 +1,5 @@
+<map id="detect_motion" name="detect_motion">
+<area shape="rect" id="Node000001" title="PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder." alt="" coords="167,5,270,31"/>
+<area shape="rect" id="Node000002" href="$sensors_8c.html#af61dcd1031a5ef723aadad8a4acd0a9f" title="Zaman aşımı ile hareket algılamayı bekler." alt="" coords="5,5,119,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,21,119,21,119,16,151,16"/>
+</map>

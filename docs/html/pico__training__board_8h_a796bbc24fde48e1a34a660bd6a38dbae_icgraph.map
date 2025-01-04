@@ -1,0 +1,5 @@
+<map id="get_frequency" name="get_frequency">
+<area shape="rect" id="Node000001" title="Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar." alt="" coords="138,5,241,31"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919" title=" " alt="" coords="5,5,90,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,21,90,21,90,16,122,16"/>
+</map>

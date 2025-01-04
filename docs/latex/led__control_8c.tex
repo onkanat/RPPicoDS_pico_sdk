@@ -1,0 +1,132 @@
+\doxysection{led\+\_\+control.\+c Dosya Referansı}
+\hypertarget{led__control_8c}{}\label{led__control_8c}\index{led\_control.c@{led\_control.c}}
+
+
+Pico Eğitim Kartı için led ve rgb kontrolü uygulaması  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+led\+\_\+control.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{led__control_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f}{init\+\_\+rgb\+\_\+pwm}} (void)
+\begin{DoxyCompactList}\small\item\em RGB LED pinleri için PWM\textquotesingle{}i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led__control_8c_a30c79869aed334b91ce300139ba2fb92}{init\+\_\+led\+\_\+pwm}} (void)
+\begin{DoxyCompactList}\small\item\em Standart LED çıkışları için PWM\textquotesingle{}i başlatır Kırmızı, Sarı ve Yeşil LED\textquotesingle{}ler için PWM\textquotesingle{}i yapılandırır. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\+\_\+led\+\_\+pwm}} (uint gpio, uint16\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Bir LED için PWM görev döngüsünü ayarlar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab}{set\+\_\+rgb\+\_\+color}} (uint16\+\_\+t red, uint16\+\_\+t green, uint16\+\_\+t blue)
+\begin{DoxyCompactList}\small\item\em PWM kullanarak RGB LED rengini ayarlar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Pico Eğitim Kartı için led ve rgb kontrolü uygulaması 
+
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{led__control_8c_a30c79869aed334b91ce300139ba2fb92}\index{led\_control.c@{led\_control.c}!init\_led\_pwm@{init\_led\_pwm}}
+\index{init\_led\_pwm@{init\_led\_pwm}!led\_control.c@{led\_control.c}}
+\doxysubsubsection{\texorpdfstring{init\_led\_pwm()}{init\_led\_pwm()}}
+{\footnotesize\ttfamily \label{led__control_8c_a30c79869aed334b91ce300139ba2fb92} 
+void init\+\_\+led\+\_\+pwm (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Standart LED çıkışları için PWM\textquotesingle{}i başlatır Kırmızı, Sarı ve Yeşil LED\textquotesingle{}ler için PWM\textquotesingle{}i yapılandırır. 
+
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{led__control_8c_a30c79869aed334b91ce300139ba2fb92_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{led__control_8c_a30c79869aed334b91ce300139ba2fb92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f}\index{led\_control.c@{led\_control.c}!init\_rgb\_pwm@{init\_rgb\_pwm}}
+\index{init\_rgb\_pwm@{init\_rgb\_pwm}!led\_control.c@{led\_control.c}}
+\doxysubsubsection{\texorpdfstring{init\_rgb\_pwm()}{init\_rgb\_pwm()}}
+{\footnotesize\ttfamily \label{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f} 
+void init\+\_\+rgb\+\_\+pwm (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+RGB LED pinleri için PWM\textquotesingle{}i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır. 
+
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}\index{led\_control.c@{led\_control.c}!set\_led\_pwm@{set\_led\_pwm}}
+\index{set\_led\_pwm@{set\_led\_pwm}!led\_control.c@{led\_control.c}}
+\doxysubsubsection{\texorpdfstring{set\_led\_pwm()}{set\_led\_pwm()}}
+{\footnotesize\ttfamily \label{led__control_8c_a63002d9e1a92cb83d1ece6899b442452} 
+void set\+\_\+led\+\_\+pwm (\begin{DoxyParamCaption}\item[{uint}]{gpio}{, }\item[{uint16\+\_\+t}]{duty}{}\end{DoxyParamCaption})}
+
+
+
+Bir LED için PWM görev döngüsünü ayarlar. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & LED\textquotesingle{}in GPIO pin numarası \\
+\hline
+{\em duty} & Görev döngüsü değeri (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{led__control_8c_a63002d9e1a92cb83d1ece6899b442452_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab}\index{led\_control.c@{led\_control.c}!set\_rgb\_color@{set\_rgb\_color}}
+\index{set\_rgb\_color@{set\_rgb\_color}!led\_control.c@{led\_control.c}}
+\doxysubsubsection{\texorpdfstring{set\_rgb\_color()}{set\_rgb\_color()}}
+{\footnotesize\ttfamily \label{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab} 
+void set\+\_\+rgb\+\_\+color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{red}{, }\item[{uint16\+\_\+t}]{green}{, }\item[{uint16\+\_\+t}]{blue}{}\end{DoxyParamCaption})}
+
+
+
+PWM kullanarak RGB LED rengini ayarlar. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em red} & Kırmızı bileşen (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
+\hline
+{\em green} & Yeşil bileşen (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
+\hline
+{\em blue} & Mavi bileşen (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab_cgraph}
+\end{center}
+\end{figure}

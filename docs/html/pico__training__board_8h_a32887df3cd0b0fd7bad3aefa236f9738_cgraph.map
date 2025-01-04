@@ -1,0 +1,5 @@
+<map id="play_note" name="play_note">
+<area shape="rect" id="Node000001" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="5,5,83,31"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="131,5,269,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,16,115,16,115,21,83,21"/>
+</map>

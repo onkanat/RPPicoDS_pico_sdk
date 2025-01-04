@@ -1,0 +1,5 @@
+<map id="check_button_event" name="check_button_event">
+<area shape="rect" id="Node000001" title="Çeşitli zamanlama kontrolleriyle buton basma kontrolü" alt="" coords="5,5,144,31"/>
+<area shape="rect" id="Node000002" href="$buttons_8c.html#a4b8c57f5812628bb7892c3126085a7cb" title="GPIO pininden buton indeksini al." alt="" coords="192,5,312,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,16,176,16,176,21,144,21"/>
+</map>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: Raspberry Pi Pico Eğitim Kartı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">Raspberry Pi Pico Eğitim Kartı</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md15"></a> </p>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Genel Bakış</h1>
+<p>Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.</p>
+<h1><a class="anchor" id="autotoc_md17"></a>
+Pin Grupları ve Fonksiyonları</h1>
+<h2><a class="anchor" id="autotoc_md18"></a>
+1. Analog Girişler</h2>
+<ul>
+<li><b>Keypad (GPIO28)</b><ul>
+<li>3x4 matris keypad için analog okuma</li>
+<li><p class="startli">Tuş takımı düzeni:</p>
+<div class="fragment"><div class="line">| 1 | 2 | 3 |</div>
+<div class="line">| 4 | 5 | 6 |</div>
+<div class="line">| 7 | 8 | 9 |</div>
+<div class="line">| * | 0 | # |</div>
+</div><!-- fragment --></li>
+<li><code><a class="el" href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b" title="Analog tuş takımını okur ve basılan tuşu döndürür.">keypadOku()</a></code> fonksiyonu ile kontrol edilir</li>
+<li>ADC değer aralıkları tanımlıdır</li>
+</ul>
+</li>
+<li><b>Potansiyometre (GPIO27)</b><ul>
+<li>Analog değer okuma</li>
+<li>0-4095 arası ADC değeri</li>
+<li><code><a class="el" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur.">read_analog()</a></code> fonksiyonu ile okunur</li>
+</ul>
+</li>
+<li><b>LDR Sensör (GPIO26)</b><ul>
+<li>Işık seviyesi ölçümü</li>
+<li>Analog değer okuma</li>
+<li><code><a class="el" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur.">read_analog()</a></code> fonksiyonu ile okunur</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md19"></a>
+2. Dijital Butonlar</h2>
+<ul>
+<li><b>Buton Grubu</b><ul>
+<li>BUTTON_UP (GPIO5): Yukarı ok tuşu</li>
+<li>BUTTON_OK (GPIO6): Onay/Enter tuşu</li>
+<li>BUTTON_DOWN (GPIO7): Aşağı ok tuşu</li>
+<li>Debounce korumalı okuma</li>
+<li><code><a class="el" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf" title="Debounce korumalı temel buton basma kontrolü">button_pressed()</a></code> ve <code><a class="el" href="buttons_8c.html#a6b963b48e656f166999ae77284356434" title="Çeşitli zamanlama kontrolleriyle buton basma kontrolü">check_button_event()</a></code> fonksiyonları ile kontrol</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md20"></a>
+3. LED Çıkışları</h2>
+<ul>
+<li><b>Basit LED'ler</b><ul>
+<li>RED (GPIO4): Kırmızı LED</li>
+<li>YELLOW (GPIO3): Sarı LED</li>
+<li>GREEN (GPIO2): Yeşil LED</li>
+<li>Dijital çıkış veya PWM kontrolü</li>
+</ul>
+</li>
+<li><b>RGB LED (PWM Kontrollü)</b><ul>
+<li>RGB_R (GPIO16): Kırmızı kanal</li>
+<li>RGB_G (GPIO17): Yeşil kanal</li>
+<li>RGB_B (GPIO18): Mavi kanal</li>
+<li>PWM ile parlaklık kontrolü</li>
+<li><code><a class="el" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452" title="Bir LED için PWM görev döngüsünü ayarlar.">set_led_pwm()</a></code> fonksiyonu ile kontrol</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md21"></a>
+4. Ses Çıkışı</h2>
+<ul>
+<li><b>Buzzer (GPIO10)</b><ul>
+<li>PWM kontrollü ses üretimi</li>
+<li>Nota çalma kapasitesi</li>
+<li><code><a class="el" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar.">play_note()</a></code> ve <code><a class="el" href="pico__training__board_8h.html#ad3b93659dae6daec910b9f79e4546919">play_notes()</a></code> fonksiyonları</li>
+<li>Frekans ve süre parametreleri ile kontrol</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md22"></a>
+5. Step Motor</h2>
+<ul>
+<li><b>4-Pin Kontrol</b><ul>
+<li>A1 (GPIO11)</li>
+<li>A2 (GPIO12)</li>
+<li>B1 (GPIO13)</li>
+<li>B2 (GPIO14)</li>
+<li>Tam adım ve yarım adım kontrol</li>
+<li><code>stepper_move()</code> fonksiyonu ile kontrol</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md23"></a>
+6. Sensör Modülleri</h2>
+<ul>
+<li><b>Ultrasonik Sensör</b><ul>
+<li>TR (GPIO8): Trigger pin</li>
+<li>EC (GPIO9): Echo pin</li>
+<li>Mesafe ölçümü yapılır</li>
+<li><code><a class="el" href="pico__training__board_8h.html#aa73c79319e4f5c31f9da551784c5e8de" title="Measure distance using ultrasonic sensor.">measure_distance()</a></code> fonksiyonu ile kontrol</li>
+</ul>
+</li>
+<li><b>PIR Sensör (GPIO19)</b><ul>
+<li>Hareket algılama</li>
+<li>Dijital giriş</li>
+<li><code>check_motion()</code> fonksiyonu ile kontrol</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md24"></a>
+7. Haberleşme Modülleri</h2>
+<ul>
+<li><b>Bluetooth</b><ul>
+<li>TX (GPIO0)</li>
+<li>RX (GPIO1)</li>
+<li>UART haberleşme</li>
+</ul>
+</li>
+<li><b>I2C LCD Display</b><ul>
+<li>SDA (GPIO20)</li>
+<li>SCL (GPIO21)</li>
+<li>Adres: 0x27</li>
+<li>2x16 karakter gösterim</li>
+<li><code><a class="el" href="lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="LCD ekranını başlatır.">lcd_init()</a></code>, <code><a class="el" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="LCD ekranını temizler.">lcd_clear()</a></code>, <code><a class="el" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056" title="LCD&#39;ye bir metin dizisi gönderir.">lcd_string()</a></code> fonksiyonları</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md25"></a>
+Başlatma ve Konfigürasyon</h1>
+<p>Tüm komponentler <code><a class="el" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır.">init_board()</a></code> fonksiyonu ile başlatılır. Bu fonksiyon:</p>
+<ul>
+<li>ADC başlatma</li>
+<li>PWM konfigürasyonu</li>
+<li>GPIO yönlendirmeleri</li>
+<li>I2C başlatma</li>
+<li>LCD başlatma işlemlerini gerçekleştirir.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md26"></a>
+Kullanım Örnekleri</h1>
+<p>Her komponent grubu için örnek kullanımlar ve temel fonksiyonlar <code><a class="el" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları">pico_training_board.h</a></code> header dosyasında tanımlıdır. Detaylı implementasyonlar ilgili <code>.c</code> dosyalarında bulunmaktadır.</p>
+<h2><a class="anchor" id="autotoc_md27"></a>
+1. Analog Girişler bölümünü detaylı açıklayalım</h2>
+<ol type="1">
+<li><b>Keypad (GPIO28) Kullanımı</b></li>
+</ol>
+<ul>
+<li><code><a class="el" href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b" title="Analog tuş takımını okur ve basılan tuşu döndürür.">keypadOku()</a></code> fonksiyonu ile tuş okuma yapılır:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordtype">char</span> key = <a class="code hl_function" href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b">keypadOku</a>();</div>
+<div class="line"><span class="keywordflow">if</span>(key != 0) {</div>
+<div class="line">    <span class="comment">// Bir tuşa basıldı</span></div>
+<div class="line">    printf(<span class="stringliteral">&quot;Basılan tuş: %c\n&quot;</span>, key);</div>
+<div class="line">}</div>
+<div class="ttc" id="akeypad_8c_html_aebb08491c3a53f97ff6598fa73ab671b"><div class="ttname"><a href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b">keypadOku</a></div><div class="ttdeci">char keypadOku(void)</div><div class="ttdoc">Analog tuş takımını okur ve basılan tuşu döndürür.</div><div class="ttdef"><b>Definition</b> keypad.c:21</div></div>
+</div><!-- fragment --><ul>
+<li>Fonksiyon geri dönüş değerleri:<ul>
+<li>'0' ile '9' arası rakamlar</li>
+<li>'*' ve '#' özel karakterler</li>
+<li>Tuşa basılmadığında 0 döndürür</li>
+</ul>
+</li>
+<li>Her tuş basımında kısa bir buzzer sesi çalar (tactile feedback)</li>
+<li>ADC değerleri her tuş için belirli aralıklarda tanımlı</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md28"></a>
+2. <b>Potansiyometre (GPIO27) Kullanımı</b></h2>
+<ul>
+<li><code><a class="el" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur.">read_analog()</a></code> fonksiyonu ile değer okuma:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordtype">float</span> pot_value = <a class="code hl_function" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995">read_analog</a>(<a class="code hl_define" href="group__analog__inputs.html#gaffff0423c6054b6a30d51db5c9a2b66a">POT_1</a>);</div>
+<div class="line"><span class="comment">// pot_value 0.0 ile 3.3V arası değer döndürür</span></div>
+<div class="line"> </div>
+<div class="line">uint16_t raw_adc = adc_read(); </div>
+<div class="line"><span class="comment">// raw_adc 0-4095 arası ham ADC değeri döndürür</span></div>
+<div class="ttc" id="agroup__analog__inputs_html_gaffff0423c6054b6a30d51db5c9a2b66a"><div class="ttname"><a href="group__analog__inputs.html#gaffff0423c6054b6a30d51db5c9a2b66a">POT_1</a></div><div class="ttdeci">#define POT_1</div><div class="ttdef"><b>Definition</b> pico_training_board.h:30</div></div>
+<div class="ttc" id="akeypad_8c_html_aab6ffb1c01ffbbec732bb22dc297a995"><div class="ttname"><a href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995">read_analog</a></div><div class="ttdeci">uint16_t read_analog(uint8_t pin)</div><div class="ttdoc">Analog değeri okur.</div><div class="ttdef"><b>Definition</b> keypad.c:95</div></div>
+</div><!-- fragment --><ul>
+<li>Kullanım örnekleri:<ul>
+<li>LED parlaklık kontrolü</li>
+<li>Ses seviyesi ayarı</li>
+<li>Menü seçimi</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md29"></a>
+3. <b>LDR Sensör (GPIO26) Kullanımı</b></h3>
+<ul>
+<li>Aynı <code><a class="el" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur.">read_analog()</a></code> fonksiyonu kullanılır:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordtype">float</span> light_level = <a class="code hl_function" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995">read_analog</a>(<a class="code hl_define" href="group__analog__inputs.html#ga6961ef798f9e5d5c38e1abfba0c7ff71">LDR_1</a>);</div>
+<div class="line"><span class="comment">// Işık seviyesi yükseldikçe değer düşer (pull-down direnç)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Örnek ışık seviyesi kontrolü</span></div>
+<div class="line"><span class="keywordflow">if</span>(light_level &lt; 1.0) {</div>
+<div class="line">    <span class="comment">// Ortam karanlık</span></div>
+<div class="line">    <span class="comment">// LED&#39;leri yak</span></div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__analog__inputs_html_ga6961ef798f9e5d5c38e1abfba0c7ff71"><div class="ttname"><a href="group__analog__inputs.html#ga6961ef798f9e5d5c38e1abfba0c7ff71">LDR_1</a></div><div class="ttdeci">#define LDR_1</div><div class="ttdef"><b>Definition</b> pico_training_board.h:31</div></div>
+</div><!-- fragment --><ul>
+<li>Kullanım örnekleri:<ul>
+<li>Otomatik aydınlatma kontrolü</li>
+<li>Gece/gündüz modu tespiti</li>
+<li>Işığa bağlı alarm sistemleri</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md30"></a>
+4. <b>Genel Analog Giriş Özellikleri</b></h2>
+<ul>
+<li>12-bit ADC çözünürlüğü (0-4095 arası değerler)</li>
+<li>3.3V referans voltajı</li>
+<li>Örnekleme hızı: 500ksps</li>
+<li><code><a class="el" href="init__functions_8c.html#ab15cf82f0329bc4d7262c03559eaaa8e" title="Analog girişler için ADC&#39;yi başlatır.">init_adc()</a></code> fonksiyonu ile başlatma gerekir:</li>
+</ul>
+<div class="fragment"><div class="line"><a class="code hl_function" href="init__functions_8c.html#ab15cf82f0329bc4d7262c03559eaaa8e">init_adc</a>();  <span class="comment">// ADC başlatma</span></div>
+<div class="line">adc_gpio_init(26);  <span class="comment">// LDR pin</span></div>
+<div class="line">adc_gpio_init(27);  <span class="comment">// POT pin</span></div>
+<div class="line">adc_gpio_init(28);  <span class="comment">// Keypad pin</span></div>
+<div class="ttc" id="ainit__functions_8c_html_ab15cf82f0329bc4d7262c03559eaaa8e"><div class="ttname"><a href="init__functions_8c.html#ab15cf82f0329bc4d7262c03559eaaa8e">init_adc</a></div><div class="ttdeci">void init_adc(void)</div><div class="ttdoc">Analog girişler için ADC'yi başlatır.</div><div class="ttdef"><b>Definition</b> init_functions.c:16</div></div>
+</div><!-- fragment --><p>Bu analog girişler genellikle kullanıcı arayüzü, sensör okuma ve kontrol uygulamalarında kullanılır. Keypad menü navigasyonu için, potansiyometre değer ayarları için ve LDR ortam ışığına bağlı kontroller için idealdir.</p>
+<h1><a class="anchor" id="autotoc_md31"></a>
+2. Dijital Butonlar bölümünü detaylı açıklayalım</h1>
+<h2><a class="anchor" id="autotoc_md32"></a>
+1. <b>Temel Buton Okuma (button_pressed)</b></h2>
+<ul>
+<li>Debounce korumalı basit okuma için kullanılır:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>)) {</div>
+<div class="line">    <span class="comment">// Yukarı ok tuşuna basıldı</span></div>
+<div class="line">    current_item--;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>)) {</div>
+<div class="line">    <span class="comment">// Enter/Onay tuşuna basıldı</span></div>
+<div class="line">    select_menu_item();</div>
+<div class="line">}</div>
+<div class="ttc" id="abuttons_8c_html_a6863517b8b3b39834aa6aaaab29c4eaf"><div class="ttname"><a href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a></div><div class="ttdeci">bool button_pressed(uint gpio)</div><div class="ttdoc">Debounce korumalı temel buton basma kontrolü</div><div class="ttdef"><b>Definition</b> buttons.c:38</div></div>
+<div class="ttc" id="agroup__button__inputs_html_ga024aa4942c463926f0b7e023e7776421"><div class="ttname"><a href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a></div><div class="ttdeci">#define BUTTON_OK</div><div class="ttdef"><b>Definition</b> pico_training_board.h:39</div></div>
+<div class="ttc" id="agroup__button__inputs_html_ga7639b378d6f757175ed0f9e8552e6cea"><div class="ttname"><a href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a></div><div class="ttdeci">#define BUTTON_UP</div><div class="ttdef"><b>Definition</b> pico_training_board.h:38</div></div>
+</div><!-- fragment --><ul>
+<li>200ms debounce koruması vardır</li>
+<li>Aktif-Yüksek mantığı ile çalışır (basıldığında 1 döndürür)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md33"></a>
+2. <b>Gelişmiş Buton Olayları (check_button_event)</b></h2>
+<ul>
+<li>Farklı buton olaylarını algılar:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Buton basma olayını kontrol et</span></div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6b963b48e656f166999ae77284356434">check_button_event</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>, <a class="code hl_enumvalue" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b">BUTTON_PRESSED</a>)) {</div>
+<div class="line">    <span class="comment">// Tuşa yeni basıldı</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Buton bırakma olayını kontrol et</span></div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6b963b48e656f166999ae77284356434">check_button_event</a>(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>, <a class="code hl_enumvalue" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461">BUTTON_RELEASED</a>)) {</div>
+<div class="line">    <span class="comment">// Tuş bırakıldı</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Uzun basma olayını kontrol et (1 saniye)</span></div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6b963b48e656f166999ae77284356434">check_button_event</a>(<a class="code hl_define" href="group__button__inputs.html#ga7e8516b8781963aa69154f9fc67b658a">BUTTON_DOWN</a>, <a class="code hl_enumvalue" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c">BUTTON_HELD</a>)) {</div>
+<div class="line">    <span class="comment">// Tuşa uzun basıldı</span></div>
+<div class="line">}</div>
+<div class="ttc" id="abuttons_8c_html_a6b963b48e656f166999ae77284356434"><div class="ttname"><a href="buttons_8c.html#a6b963b48e656f166999ae77284356434">check_button_event</a></div><div class="ttdeci">bool check_button_event(uint gpio, ButtonEvent event)</div><div class="ttdoc">Çeşitli zamanlama kontrolleriyle buton basma kontrolü</div><div class="ttdef"><b>Definition</b> buttons.c:107</div></div>
+<div class="ttc" id="agroup__button__inputs_html_ga7e8516b8781963aa69154f9fc67b658a"><div class="ttname"><a href="group__button__inputs.html#ga7e8516b8781963aa69154f9fc67b658a">BUTTON_DOWN</a></div><div class="ttdeci">#define BUTTON_DOWN</div><div class="ttdef"><b>Definition</b> pico_training_board.h:40</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c"><div class="ttname"><a href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c">BUTTON_HELD</a></div><div class="ttdeci">@ BUTTON_HELD</div><div class="ttdef"><b>Definition</b> pico_training_board.h:189</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461"><div class="ttname"><a href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461">BUTTON_RELEASED</a></div><div class="ttdeci">@ BUTTON_RELEASED</div><div class="ttdef"><b>Definition</b> pico_training_board.h:188</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b"><div class="ttname"><a href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b">BUTTON_PRESSED</a></div><div class="ttdeci">@ BUTTON_PRESSED</div><div class="ttdef"><b>Definition</b> pico_training_board.h:187</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md34"></a>
+3. <b>Buton Bekleme (wait_for_button_press)</b></h1>
+<ul>
+<li>Herhangi bir tuşa basılmasını bekler:</li>
+</ul>
+<div class="fragment"><div class="line">uint gpio = <a class="code hl_function" href="buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047">wait_for_button_press</a>(1000); <span class="comment">// 1 saniye timeout</span></div>
+<div class="line"><span class="keywordflow">if</span>(gpio == <a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>) {</div>
+<div class="line">    <span class="comment">// Yukarı ok tuşuna basıldı</span></div>
+<div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span>(gpio == <a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>) {</div>
+<div class="line">    <span class="comment">// Enter tuşuna basıldı</span></div>
+<div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span>(gpio == UINT_MAX) {</div>
+<div class="line">    <span class="comment">// Timeout oldu</span></div>
+<div class="line">}</div>
+<div class="ttc" id="abuttons_8c_html_a00fcf54730781bcc9d059ee8542bb047"><div class="ttname"><a href="buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047">wait_for_button_press</a></div><div class="ttdeci">uint wait_for_button_press(uint32_t timeout_ms)</div><div class="ttdoc">Herhangi bir buton basılmasını bekle.</div><div class="ttdef"><b>Definition</b> buttons.c:181</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md35"></a>
+4. <b>Buton Basma Süresi</b></h2>
+<ul>
+<li>Bir butonun ne kadar süre basılı tutulduğunu kontrol eder:</li>
+</ul>
+<div class="fragment"><div class="line">uint32_t duration = <a class="code hl_function" href="buttons_8c.html#a222bee6cd95d229864afc60d474825ab">get_button_hold_duration</a>(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>);</div>
+<div class="line"><span class="keywordflow">if</span>(duration &gt; 2000) {  <span class="comment">// 2 saniye</span></div>
+<div class="line">    <span class="comment">// Uzun basma işlemi</span></div>
+<div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span>(duration &gt; 0) {</div>
+<div class="line">    <span class="comment">// Normal basma işlemi</span></div>
+<div class="line">}</div>
+<div class="ttc" id="abuttons_8c_html_a222bee6cd95d229864afc60d474825ab"><div class="ttname"><a href="buttons_8c.html#a222bee6cd95d229864afc60d474825ab">get_button_hold_duration</a></div><div class="ttdeci">uint32_t get_button_hold_duration(uint gpio)</div><div class="ttdoc">Bir butonun ne kadar süre al.</div><div class="ttdef"><b>Definition</b> buttons.c:158</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md36"></a>
+5. <b>Kullanım Örnekleri</b></h2>
+<ul>
+<li>Menü Navigasyonu:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> menu_navigate(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>)) {</div>
+<div class="line">        menu_index--;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7e8516b8781963aa69154f9fc67b658a">BUTTON_DOWN</a>)) {</div>
+<div class="line">        menu_index++;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6b963b48e656f166999ae77284356434">check_button_event</a>(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>, <a class="code hl_enumvalue" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c">BUTTON_HELD</a>)) {</div>
+<div class="line">        exit_menu();  <span class="comment">// Uzun basışta menüden çık</span></div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>)) {</div>
+<div class="line">        select_menu_item();  <span class="comment">// Normal basışta seç</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><ul>
+<li>Değer Ayarlama:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> adjust_value(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6b963b48e656f166999ae77284356434">check_button_event</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>, <a class="code hl_enumvalue" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c">BUTTON_HELD</a>)) {</div>
+<div class="line">        <span class="comment">// Hızlı artır</span></div>
+<div class="line">        value += 10;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>)) {</div>
+<div class="line">        <span class="comment">// Tek tek artır</span></div>
+<div class="line">        value++;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Bu buton fonksiyonları debounce koruması sayesinde güvenilir okuma sağlar ve farklı basma senaryolarını (kısa basma, uzun basma, bırakma) destekler. Özellikle menü kontrolleri ve değer ayarlamaları için idealdir.</p>
+<h1><a class="anchor" id="autotoc_md37"></a>
+3. LED kontrolü için fonksiyonların kullanımını açıklayalım. <code>led_control.c</code> için detaylı kullanım kılavuzu</h1>
+<h1><a class="anchor" id="autotoc_md38"></a>
+LED Kontrol Fonksiyonları Kullanım Kılavuzu</h1>
+<h1><a class="anchor" id="autotoc_md39"></a>
+1. Basit LED Kontrolü</h1>
+<h2><a class="anchor" id="autotoc_md40"></a>
+Dijital Kontrol</h2>
+<ul>
+<li>LED'leri açıp kapatmak için doğrudan GPIO kontrolü:</li>
+</ul>
+<div class="fragment"><div class="line">gpio_put(<a class="code hl_define" href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>, <a class="code hl_define" href="pico__training__board_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>);    <span class="comment">// Kırmızı LED açık</span></div>
+<div class="line">gpio_put(<a class="code hl_define" href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>, <a class="code hl_define" href="pico__training__board_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a>);  <span class="comment">// Sarı LED kapalı</span></div>
+<div class="line">gpio_put(<a class="code hl_define" href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a>, <a class="code hl_define" href="pico__training__board_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>);  <span class="comment">// Yeşil LED açık</span></div>
+<div class="ttc" id="agroup__led__outputs_html_ga31e20330f8ce94e0dd10b005a15c5898"><div class="ttname"><a href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a></div><div class="ttdeci">#define LED_RED</div><div class="ttdef"><b>Definition</b> pico_training_board.h:47</div></div>
+<div class="ttc" id="agroup__led__outputs_html_gaca338dbd19d7940923334629f6e5f3b7"><div class="ttname"><a href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a></div><div class="ttdeci">#define LED_GREEN</div><div class="ttdef"><b>Definition</b> pico_training_board.h:49</div></div>
+<div class="ttc" id="agroup__led__outputs_html_gae3c73853c6d0a1eca2c7d9797f6494ea"><div class="ttname"><a href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a></div><div class="ttdeci">#define LED_YELLOW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:48</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a5bb885982ff66a2e0a0a45a8ee9c35e2"><div class="ttname"><a href="pico__training__board_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a></div><div class="ttdeci">#define HIGH</div><div class="ttdef"><b>Definition</b> pico_training_board.h:154</div></div>
+<div class="ttc" id="apico__training__board_8h_html_ab811d8c6ff3a505312d3276590444289"><div class="ttname"><a href="pico__training__board_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a></div><div class="ttdeci">#define LOW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:155</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
+PWM Kontrol</h2>
+<ul>
+<li>Parlaklık ayarı için PWM kontrolü (0-4095 arası değer):</li>
+</ul>
+<div class="fragment"><div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>, 2048);    <span class="comment">// %50 parlaklık</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>, 4095); <span class="comment">// Tam parlaklık</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a>, 1024);  <span class="comment">// %25 parlaklık</span></div>
+<div class="ttc" id="aled__control_8c_html_a63002d9e1a92cb83d1ece6899b442452"><div class="ttname"><a href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a></div><div class="ttdeci">void set_led_pwm(uint gpio, uint16_t duty)</div><div class="ttdoc">Bir LED için PWM görev döngüsünü ayarlar.</div><div class="ttdef"><b>Definition</b> led_control.c:35</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md42"></a>
+2. RGB LED Kontrolü</h1>
+<h2><a class="anchor" id="autotoc_md43"></a>
+Tam Renk Kontrolü</h2>
+<ul>
+<li>Her renk kanalı için ayrı PWM kontrolü:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Mor renk için</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gad3052df7f150d5b6e595ea42ab777ac2">RGB_R</a>, 4095); <span class="comment">// Kırmızı tam</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#ga9041eb560a6978081284bfe76a1acee1">RGB_G</a>, 0);    <span class="comment">// Yeşil kapalı</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gaebb50762b1606456d88be7b8223549b2">RGB_B</a>, 4095); <span class="comment">// Mavi tam</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Turkuaz renk için</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gad3052df7f150d5b6e595ea42ab777ac2">RGB_R</a>, 0);    <span class="comment">// Kırmızı kapalı</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#ga9041eb560a6978081284bfe76a1acee1">RGB_G</a>, 4095); <span class="comment">// Yeşil tam</span></div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gaebb50762b1606456d88be7b8223549b2">RGB_B</a>, 4095); <span class="comment">// Mavi tam</span></div>
+<div class="ttc" id="agroup__led__outputs_html_ga9041eb560a6978081284bfe76a1acee1"><div class="ttname"><a href="group__led__outputs.html#ga9041eb560a6978081284bfe76a1acee1">RGB_G</a></div><div class="ttdeci">#define RGB_G</div><div class="ttdef"><b>Definition</b> pico_training_board.h:51</div></div>
+<div class="ttc" id="agroup__led__outputs_html_gad3052df7f150d5b6e595ea42ab777ac2"><div class="ttname"><a href="group__led__outputs.html#gad3052df7f150d5b6e595ea42ab777ac2">RGB_R</a></div><div class="ttdeci">#define RGB_R</div><div class="ttdef"><b>Definition</b> pico_training_board.h:50</div></div>
+<div class="ttc" id="agroup__led__outputs_html_gaebb50762b1606456d88be7b8223549b2"><div class="ttname"><a href="group__led__outputs.html#gaebb50762b1606456d88be7b8223549b2">RGB_B</a></div><div class="ttdeci">#define RGB_B</div><div class="ttdef"><b>Definition</b> pico_training_board.h:52</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md44"></a>
+Renk Geçişleri</h2>
+<ul>
+<li>Yumuşak renk geçişleri için kademeli PWM değişimi:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Kırmızıdan maviye geçiş örneği</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt;= 4095; i++) {</div>
+<div class="line">    <a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gad3052df7f150d5b6e595ea42ab777ac2">RGB_R</a>, 4095-i); <span class="comment">// Kırmızı azalır</span></div>
+<div class="line">    <a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gaebb50762b1606456d88be7b8223549b2">RGB_B</a>, i);      <span class="comment">// Mavi artar</span></div>
+<div class="line">    sleep_ms(1);                <span class="comment">// Geçiş hızı ayarı</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md45"></a>
+3. Özel Efektler</h1>
+<h2><a class="anchor" id="autotoc_md46"></a>
+Yanıp Sönme Efekti</h2>
+<div class="fragment"><div class="line"><span class="comment">// Tüm LED&#39;leri sırayla yakıp söndürme</span></div>
+<div class="line"><span class="keywordtype">void</span> led_sequence(<span class="keywordtype">void</span>) {</div>
+<div class="line">    gpio_put(<a class="code hl_define" href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>, <a class="code hl_define" href="pico__training__board_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>);</div>
+<div class="line">    sleep_ms(200);</div>
+<div class="line">    gpio_put(<a class="code hl_define" href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>, <a class="code hl_define" href="pico__training__board_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a>);</div>
+<div class="line">    </div>
+<div class="line">    gpio_put(<a class="code hl_define" href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>, <a class="code hl_define" href="pico__training__board_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>);</div>
+<div class="line">    sleep_ms(200);</div>
+<div class="line">    gpio_put(<a class="code hl_define" href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>, <a class="code hl_define" href="pico__training__board_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a>);</div>
+<div class="line">    </div>
+<div class="line">    gpio_put(<a class="code hl_define" href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a>, <a class="code hl_define" href="pico__training__board_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>);</div>
+<div class="line">    sleep_ms(200);</div>
+<div class="line">    gpio_put(<a class="code hl_define" href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a>, <a class="code hl_define" href="pico__training__board_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md47"></a>
+RGB Gökkuşağı Efekti</h2>
+<div class="fragment"><div class="line"><span class="comment">// RGB LED ile gökkuşağı efekti</span></div>
+<div class="line"><span class="keywordtype">void</span> rainbow_cycle(<span class="keywordtype">int</span> duration_ms) {</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4095; i++) {</div>
+<div class="line">        <span class="comment">// Renk geçişleri için sinüs dalgaları kullan</span></div>
+<div class="line">        <a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gad3052df7f150d5b6e595ea42ab777ac2">RGB_R</a>, (sin(i * 0.002) + 1) * 2047);</div>
+<div class="line">        <a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#ga9041eb560a6978081284bfe76a1acee1">RGB_G</a>, (sin(i * 0.002 + 2) + 1) * 2047);</div>
+<div class="line">        <a class="code hl_function" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a>(<a class="code hl_define" href="group__led__outputs.html#gaebb50762b1606456d88be7b8223549b2">RGB_B</a>, (sin(i * 0.002 + 4) + 1) * 2047);</div>
+<div class="line">        sleep_ms(duration_ms / 4095);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md48"></a>
+4. Kullanım Notları</h1>
+<h2><a class="anchor" id="autotoc_md49"></a>
+Başlatma</h2>
+<ul>
+<li>LED'leri kullanmadan önce <a class="el" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır.">init_board()</a> fonksiyonunu çağırın</li>
+<li>PWM kontrolü için ilgili pinlerin PWM modunda olduğundan emin olun</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md50"></a>
+Güç Tüketimi</h2>
+<ul>
+<li>Tüm LED'leri aynı anda maksimum parlaklıkta kullanmaktan kaçının</li>
+<li>Uzun süreli kullanımlarda düşük parlaklık tercih edin</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md51"></a>
+PWM Değerleri</h2>
+<ul>
+<li>PWM değer aralığı: 0-4095</li>
+<li>0: Tamamen kapalı</li>
+<li>4095: Tam parlaklık</li>
+<li>2048: %50 parlaklık</li>
+</ul>
+<p>Bu fonksiyonlar ile LED'leri tek tek kontrol edebilir, renk geçişleri yapabilir ve çeşitli ışık efektleri oluşturabilirsiniz. RGB LED için renk karışımlarını deneyerek farklı renkler elde edebilirsiniz.</p>
+<p>Bu kılavuz, LED kontrolü için temel kullanımdan ileri seviye uygulamalara kadar geniş bir yelpazede örnek ve açıklama sunuyor. Kullanıcılar bu örnekleri temel alarak kendi LED kontrol uygulamalarını geliştirebilirler.</p>
+<h1><a class="anchor" id="autotoc_md52"></a>
+4. Buzzer Kullanım Kılavuzu</h1>
+<p>Buzzer kontrolü için detaylı kullanım kılavuzu hazırlayalım. Bu GPIO10'a bağlı buzzer PWM kontrollü ve müzikal notalar çalabilme kapasitesine sahip.</p>
+<h2><a class="anchor" id="autotoc_md53"></a>
+1. <b>Temel Nota Çalma</b></h2>
+<div class="fragment"><div class="line"><span class="comment">// Tek bir nota çalma (frekans ve süre belirterek)</span></div>
+<div class="line"><a class="code hl_function" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a>(<a class="code hl_define" href="pico__training__board_8h.html#adbed706152a3d7114327fc5af3c7e07c">NOTE_C4</a>, 500);    <span class="comment">// Do notası, 500ms </span></div>
+<div class="line"><a class="code hl_function" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a>(<a class="code hl_define" href="pico__training__board_8h.html#a588324691d836c7cdf1dd8cc071eeecc">NOTE_G4</a>, 250);    <span class="comment">// Sol notası, 250ms</span></div>
+<div class="ttc" id="abuzzer_8c_html_a32887df3cd0b0fd7bad3aefa236f9738"><div class="ttname"><a href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a></div><div class="ttdeci">void play_note(float frequency, int duration_ms)</div><div class="ttdoc">Belirtilen frekans ve sürede buzzer'da bir nota çalar.</div><div class="ttdef"><b>Definition</b> buzzer.c:136</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a588324691d836c7cdf1dd8cc071eeecc"><div class="ttname"><a href="pico__training__board_8h.html#a588324691d836c7cdf1dd8cc071eeecc">NOTE_G4</a></div><div class="ttdeci">#define NOTE_G4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:174</div></div>
+<div class="ttc" id="apico__training__board_8h_html_adbed706152a3d7114327fc5af3c7e07c"><div class="ttname"><a href="pico__training__board_8h.html#adbed706152a3d7114327fc5af3c7e07c">NOTE_C4</a></div><div class="ttdeci">#define NOTE_C4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:167</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md54"></a>
+2. <b>Öntanımlı Notalar</b></h2>
+<p>Kullanılabilir nota tanımları:</p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="pico__training__board_8h.html#adbed706152a3d7114327fc5af3c7e07c">NOTE_C4</a>  (261.63 Hz) - Do</div>
+<div class="line"><a class="code hl_define" href="pico__training__board_8h.html#a6162f78ec6fc3457a077602a77e36992">NOTE_D4</a>  (293.66 Hz) - Re  </div>
+<div class="line"><a class="code hl_define" href="pico__training__board_8h.html#a147e4663d8161df841c418859a70f66f">NOTE_E4</a>  (329.63 Hz) - Mi</div>
+<div class="line"><a class="code hl_define" href="pico__training__board_8h.html#aff20d9abb2ef6f25afeb44245129eba6">NOTE_F4</a>  (349.23 Hz) - Fa</div>
+<div class="line"><a class="code hl_define" href="pico__training__board_8h.html#a588324691d836c7cdf1dd8cc071eeecc">NOTE_G4</a>  (392.00 Hz) - Sol</div>
+<div class="line"><a class="code hl_define" href="pico__training__board_8h.html#a4ede898d3fa744ffb02d5e9b66994ef3">NOTE_A4</a>  (440.00 Hz) - La </div>
+<div class="line"><a class="code hl_define" href="pico__training__board_8h.html#a9ed6d5c8563ae60e6d2716e13d261386">NOTE_B4</a>  (493.88 Hz) - Si</div>
+<div class="ttc" id="apico__training__board_8h_html_a147e4663d8161df841c418859a70f66f"><div class="ttname"><a href="pico__training__board_8h.html#a147e4663d8161df841c418859a70f66f">NOTE_E4</a></div><div class="ttdeci">#define NOTE_E4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:171</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a4ede898d3fa744ffb02d5e9b66994ef3"><div class="ttname"><a href="pico__training__board_8h.html#a4ede898d3fa744ffb02d5e9b66994ef3">NOTE_A4</a></div><div class="ttdeci">#define NOTE_A4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:176</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a6162f78ec6fc3457a077602a77e36992"><div class="ttname"><a href="pico__training__board_8h.html#a6162f78ec6fc3457a077602a77e36992">NOTE_D4</a></div><div class="ttdeci">#define NOTE_D4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:169</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a9ed6d5c8563ae60e6d2716e13d261386"><div class="ttname"><a href="pico__training__board_8h.html#a9ed6d5c8563ae60e6d2716e13d261386">NOTE_B4</a></div><div class="ttdeci">#define NOTE_B4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:178</div></div>
+<div class="ttc" id="apico__training__board_8h_html_aff20d9abb2ef6f25afeb44245129eba6"><div class="ttname"><a href="pico__training__board_8h.html#aff20d9abb2ef6f25afeb44245129eba6">NOTE_F4</a></div><div class="ttdeci">#define NOTE_F4</div><div class="ttdef"><b>Definition</b> pico_training_board.h:172</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md55"></a>
+3. <b>Melodi Çalma</b></h2>
+<div class="fragment"><div class="line"><span class="comment">// Nota dizisi tanımlama</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> *melody[][2] = {</div>
+<div class="line">    {<span class="stringliteral">&quot;C4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>}, <span class="comment">// Do notası</span></div>
+<div class="line">    {<span class="stringliteral">&quot;E4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>}, <span class="comment">// Mi notası </span></div>
+<div class="line">    {<span class="stringliteral">&quot;G4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>}  <span class="comment">// Sol notası</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Melodiyi çalma</span></div>
+<div class="line"><a class="code hl_function" href="pico__training__board_8h.html#ad3b93659dae6daec910b9f79e4546919">play_notes</a>(melody, 3, 250); <span class="comment">// 3 nota, her biri 250ms</span></div>
+<div class="ttc" id="apico__training__board_8h_html_ad3b93659dae6daec910b9f79e4546919"><div class="ttname"><a href="pico__training__board_8h.html#ad3b93659dae6daec910b9f79e4546919">play_notes</a></div><div class="ttdeci">void play_notes(const char *notes[][2], int num_notes, int duration)</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
+4. <b>PWM Frekans Kontrolü</b></h2>
+<div class="fragment"><div class="line"><span class="comment">// Manuel frekans kontrolü</span></div>
+<div class="line"><a class="code hl_function" href="buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9">set_pwm_frequency</a>(slice_num, 440.0f);  <span class="comment">// 440 Hz (La notası)</span></div>
+<div class="ttc" id="abuzzer_8c_html_abdecc1e0fa9f62344cd44d0797ed27d9"><div class="ttname"><a href="buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9">set_pwm_frequency</a></div><div class="ttdeci">void set_pwm_frequency(uint slice_num, float frequency)</div><div class="ttdoc">Belirtilen dilim için PWM frekansını ayarlar.</div><div class="ttdef"><b>Definition</b> buzzer.c:75</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
+5. <b>Kullanım İpuçları</b></h2>
+<ul>
+<li>Her nota çalmadan önce <code><a class="el" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır.">init_pwm()</a></code> fonksiyonunun çağrılmış olduğundan emin olun</li>
+<li>Notalar arası geçişlerde küçük boşluklar bırakılır (50μs)</li>
+<li>Geçerli frekans aralığı: 20Hz - 20kHz</li>
+<li>Süre değeri milisaniye cinsinden verilir</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md58"></a>
+6. <b>Örnek Melodiler</b></h2>
+<div class="fragment"><div class="line"><span class="comment">// Basit bir melodi örneği (Süslü Kasımpaşalı)</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> *melody[][2] = {</div>
+<div class="line">    {<span class="stringliteral">&quot;C4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>},  <span class="comment">// Do </span></div>
+<div class="line">    {<span class="stringliteral">&quot;E4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>},  <span class="comment">// Mi</span></div>
+<div class="line">    {<span class="stringliteral">&quot;G4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>},  <span class="comment">// Sol</span></div>
+<div class="line">    {<span class="stringliteral">&quot;C4&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>}   <span class="comment">// Do</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> play_simple_melody(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <a class="code hl_function" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562">init_pwm</a>();  <span class="comment">// PWM başlatma</span></div>
+<div class="line">    <a class="code hl_function" href="pico__training__board_8h.html#ad3b93659dae6daec910b9f79e4546919">play_notes</a>(melody, 4, 300);  <span class="comment">// 4 nota, her biri 300ms</span></div>
+<div class="line">}</div>
+<div class="ttc" id="ainit__functions_8c_html_a3b053b746b94dc3174b4c7c5c6370562"><div class="ttname"><a href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562">init_pwm</a></div><div class="ttdeci">void init_pwm(void)</div><div class="ttdoc">Buzzer ve LED çıkışları için PWM'i başlatır.</div><div class="ttdef"><b>Definition</b> init_functions.c:30</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md59"></a>
+7. <b>Hata Kontrolü</b></h2>
+<ul>
+<li>Frekans değeri 0'dan büyük olmalı</li>
+<li>Süre değeri pozitif olmalı</li>
+<li>Geçersiz parametrelerle çağrıldığında fonksiyon sessizce return eder</li>
+</ul>
+<p>Bu kontroller sayesinde buzzer'ı hem basit uyarı sesi üretmek için hem de melodi çalmak için güvenli bir şekilde kullanabilirsiniz. Tüm fonksiyonlar <code><a class="el" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları">pico_training_board.h</a></code> içinde tanımlı ve PWM kontrolü optimize edilmiş durumda.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md61"></a>
+5. STEP MOTOR</h1>
+<p>Step motor kullanımı için kapsamlı bir kılavuz hazırlayalım. Bu kılavuz <code><a class="el" href="stepper_8c.html" title="Step motor kontrol fonksiyonları">stepper.c</a></code> dosyasının kullanımını açıklayacak.</p>
+<h2><a class="anchor" id="autotoc_md62"></a>
+Step Motor Kontrol Kılavuzu</h2>
+<h2><a class="anchor" id="autotoc_md63"></a>
+1. Temel Fonksiyonlar</h2>
+<h2><a class="anchor" id="autotoc_md64"></a>
+Step Motor Dönüş Kontrolü</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumeration" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abd">motor_direction_t</a> direction, uint speed, <span class="keywordtype">float</span> <a class="code hl_variable" href="main_8c.html#a723654056ec2af24511008f45c2058fe">revolutions</a>);</div>
+<div class="ttc" id="amain_8c_html_a723654056ec2af24511008f45c2058fe"><div class="ttname"><a href="main_8c.html#a723654056ec2af24511008f45c2058fe">revolutions</a></div><div class="ttdeci">float revolutions</div><div class="ttdef"><b>Definition</b> main.c:107</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a6dd01ecf36ba5b10af977e38a9168abd"><div class="ttname"><a href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abd">motor_direction_t</a></div><div class="ttdeci">motor_direction_t</div><div class="ttdoc">Motor yönü numaralandırması</div><div class="ttdef"><b>Definition</b> pico_training_board.h:85</div></div>
+<div class="ttc" id="apico__training__board_8h_html_ada890c90b978fea21eb7ea4c8c0467b8"><div class="ttname"><a href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a></div><div class="ttdeci">void step_turn(motor_direction_t direction, uint speed, float revolutions)</div><div class="ttdoc">Controls stepper motor rotation with specified direction, speed and revolutions.</div><div class="ttdef"><b>Definition</b> stepper.c:133</div></div>
+</div><!-- fragment --><ul>
+<li><b>Parametreler:</b><ul>
+<li><code>direction</code>: Dönüş yönü (CW: Saat yönü, CCW: Saatin tersi)</li>
+<li><code>speed</code>: Motor hızı (1-100 arası)</li>
+<li><code>revolutions</code>: Dönüş turu (NAN: sürekli dönüş)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md65"></a>
+Acil Durdurma</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0">step_stop</a>(<span class="keywordtype">void</span>);</div>
+<div class="ttc" id="apico__training__board_8h_html_a91a1a65f783ef1d3040dfc483143d3e0"><div class="ttname"><a href="pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0">step_stop</a></div><div class="ttdeci">void step_stop(void)</div><div class="ttdoc">Emergency stop function for stepper motor.</div><div class="ttdef"><b>Definition</b> stepper.c:100</div></div>
+</div><!-- fragment --><ul>
+<li>Motoru anında durdurur</li>
+<li>Tüm motor pinlerini devre dışı bırakır</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md66"></a>
+Durum Kontrolü</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">bool</span> <a class="code hl_function" href="pico__training__board_8h.html#a968353a2852db9fae36f19a4985e2906">is_motor_running</a>(<span class="keywordtype">void</span>);</div>
+<div class="ttc" id="apico__training__board_8h_html_a968353a2852db9fae36f19a4985e2906"><div class="ttname"><a href="pico__training__board_8h.html#a968353a2852db9fae36f19a4985e2906">is_motor_running</a></div><div class="ttdeci">bool is_motor_running(void)</div><div class="ttdef"><b>Definition</b> stepper.c:73</div></div>
+</div><!-- fragment --><ul>
+<li>Motorun çalışıp çalışmadığını kontrol eder</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md67"></a>
+2. Kullanım Örnekleri</h1>
+<h2><a class="anchor" id="autotoc_md68"></a>
+Basit Dönüş</h2>
+<div class="fragment"><div class="line"><span class="comment">// 2 tur saat yönünde dönüş</span></div>
+<div class="line"><a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, 50, 2.0);  <span class="comment">// %50 hızla 2 tur</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Saatin tersi yönde sürekli dönüş</span></div>
+<div class="line"><a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487">CCW</a>, 75, NAN);  <span class="comment">// %75 hızla sürekli dönüş</span></div>
+<div class="ttc" id="apico__training__board_8h_html_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487"><div class="ttname"><a href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487">CCW</a></div><div class="ttdeci">@ CCW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:87</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419"><div class="ttname"><a href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a></div><div class="ttdeci">@ CW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:86</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md69"></a>
+Hız Kontrolü</h2>
+<div class="fragment"><div class="line"><span class="comment">// Minimum hızda dönüş</span></div>
+<div class="line"><a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, 1, 1.0);   <span class="comment">// En yavaş hızda 1 tur</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Maksimum hızda dönüş</span></div>
+<div class="line"><a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487">CCW</a>, 100, 1.0); <span class="comment">// En hızlı şekilde 1 tur</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md70"></a>
+Acil Durum Kontrolü</h2>
+<div class="fragment"><div class="line"><span class="comment">// Örnek: Limit switch kontrolü ile durdurma</span></div>
+<div class="line"><span class="keywordflow">if</span>(gpio_get(LIMIT_SWITCH)) {</div>
+<div class="line">    <a class="code hl_function" href="pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0">step_stop</a>();  <span class="comment">// Motoru durdur</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Örnek: Çalışma kontrolü</span></div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="pico__training__board_8h.html#a968353a2852db9fae36f19a4985e2906">is_motor_running</a>()) {</div>
+<div class="line">    <span class="comment">// Motor çalışıyorsa yapılacak işlemler</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md71"></a>
+3. Güvenlik ve Performans İpuçları</h1>
+<h2><a class="anchor" id="autotoc_md72"></a>
+Güvenli Kullanım</h2>
+<ol type="1">
+<li><b>Başlatma Kontrolü:</b><ul>
+<li>Her kullanım öncesi <code><a class="el" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır.">init_board()</a></code> fonksiyonunun çağrıldığından emin olun</li>
+<li>Motor pinlerinin doğru yapılandırıldığını kontrol edin</li>
+</ul>
+</li>
+<li><p class="startli"><b>Hız Limitleri:</b></p>
+<div class="fragment"><div class="line"><span class="comment">// Güvenli hız aralığı kullanımı</span></div>
+<div class="line">uint safe_speed = (speed &gt; 100) ? 100 : (speed &lt; 1) ? 1 : speed;</div>
+</div><!-- fragment --></li>
+<li><p class="startli"><b>Acil Durum Yönetimi:</b></p>
+<div class="fragment"><div class="line"><span class="comment">// Örnek: Buton ile acil durdurma</span></div>
+<div class="line">gpio_set_irq_enabled_with_callback(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>, </div>
+<div class="line">    GPIO_IRQ_EDGE_RISE, </div>
+<div class="line">    <span class="keyword">true</span>, </div>
+<div class="line">    &amp;emergency_stop_callback);</div>
+</div><!-- fragment --></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md73"></a>
+Performans Optimizasyonu</h2>
+<ol type="1">
+<li><p class="startli"><b>Yavaş Başlangıç/Bitiş:</b></p><ul>
+<li>Ani hızlanma/yavaşlama için rampa kullanın</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Kademeli hızlanma örneği</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 10; i &lt;= target_speed; i += 5) {</div>
+<div class="line">    <a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(direction, i, 0.1);</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><p class="startli"><b>Isınma Kontrolü:</b></p><ul>
+<li>Uzun süreli çalışmalarda periyodik dinlenme</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Her 10 turda bir kısa dinlenme</span></div>
+<div class="line"><span class="keywordflow">if</span>(turn_count % 10 == 0) {</div>
+<div class="line">    sleep_ms(1000);  <span class="comment">// 1 sn dinlenme</span></div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md74"></a>
+4. Örnek Uygulamalar</h1>
+<h2><a class="anchor" id="autotoc_md75"></a>
+Otomatik Pozisyonlama</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> position_control(<span class="keywordtype">float</span> target_position) {</div>
+<div class="line">    <span class="keywordtype">float</span> current_position = 0;</div>
+<div class="line">    <span class="keywordflow">while</span>(current_position &lt; target_position) {</div>
+<div class="line">        <a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, 50, 0.1);  <span class="comment">// 0.1 tur adımlarla hareket</span></div>
+<div class="line">        current_position += 0.1;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
+Hız Profili</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> speed_profile(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="comment">// Yavaşça hızlan</span></div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 10; i &lt;= 100; i += 10) {</div>
+<div class="line">        <a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, i, 0.5);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Yavaşça yavaşla</span></div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 90; i &gt;= 10; i -= 10) {</div>
+<div class="line">        <a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, i, 0.5);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md77"></a>
+5. Hata Kontrolü</h1>
+<div class="fragment"><div class="line"><span class="comment">// Motor durum kontrolü</span></div>
+<div class="line"><span class="keywordflow">if</span>(!<a class="code hl_function" href="pico__training__board_8h.html#a968353a2852db9fae36f19a4985e2906">is_motor_running</a>()) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Motor durdu veya çalışmıyor!\n&quot;</span>);</div>
+<div class="line">    <span class="comment">// Hata durumu işleme</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Aşırı yük kontrolü örneği</span></div>
+<div class="line"><span class="keywordflow">if</span>(motor_currentCURRENT) {</div>
+<div class="line">    <a class="code hl_function" href="pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0">step_stop</a>();</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Aşırı yük tespit edildi!\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Bu kılavuz, step motor kontrolü için temel kullanımdan ileri seviye uygulamalara kadar geniş bir yelpazede örnek ve açıklama sunuyor. Kullanıcılar bu örnekleri temel alarak kendi uygulamalarını geliştirebilirler.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md79"></a>
+6. Sensör modüllerinin fonksiyonlarını detaylı açıklayalım</h1>
+<h2><a class="anchor" id="autotoc_md80"></a>
+1. Ultrasonik Sensör Fonksiyonları</h2>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keywordtype">float</span> <a class="code hl_function" href="pico__training__board_8h.html#a4628d8d278604d424be0693fd587e661">get_average_distance</a>(<span class="keywordtype">int</span> num_samples, <span class="keywordtype">int</span> delay_ms) {</div>
+<div class="line">    <span class="keywordtype">float</span> total = 0;</div>
+<div class="line">    <span class="keywordtype">int</span> valid_samples = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; num_samples; i++) {</div>
+<div class="line">        <span class="keywordtype">float</span> distance = <a class="code hl_function" href="pico__training__board_8h.html#aa73c79319e4f5c31f9da551784c5e8de">measure_distance</a>();</div>
+<div class="line">        <span class="keywordflow">if</span>(distance &gt; 0) {</div>
+<div class="line">            total += distance;</div>
+<div class="line">            valid_samples++;</div>
+<div class="line">        }</div>
+<div class="line">        sleep_ms(delay_ms);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> valid_samples &gt; 0 ? total / valid_samples : -1;</div>
+<div class="line">}</div>
+<div class="ttc" id="apico__training__board_8h_html_a4628d8d278604d424be0693fd587e661"><div class="ttname"><a href="pico__training__board_8h.html#a4628d8d278604d424be0693fd587e661">get_average_distance</a></div><div class="ttdeci">float get_average_distance(uint8_t num_samples, uint32_t delay_ms)</div><div class="ttdoc">Get the average distance from multiple measurements.</div><div class="ttdef"><b>Definition</b> sensors.c:118</div></div>
+<div class="ttc" id="apico__training__board_8h_html_aa73c79319e4f5c31f9da551784c5e8de"><div class="ttname"><a href="pico__training__board_8h.html#aa73c79319e4f5c31f9da551784c5e8de">measure_distance</a></div><div class="ttdeci">float measure_distance(void)</div><div class="ttdoc">Measure distance using ultrasonic sensor.</div><div class="ttdef"><b>Definition</b> sensors.c:45</div></div>
+</div><!-- fragment --><p>Kullanım örneği:</p>
+<div class="fragment"><div class="line"><span class="comment">// Ultrasonik sensörden 3 örnek al, aralarında 10ms bekle</span></div>
+<div class="line"><span class="keywordtype">float</span> distance = <a class="code hl_function" href="pico__training__board_8h.html#a4628d8d278604d424be0693fd587e661">get_average_distance</a>(3, 10);</div>
+<div class="line"><span class="keywordflow">if</span>(distance &gt; 0) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Mesafe: %.1f cm\n&quot;</span>, distance);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
+2. PIR Sensör Fonksiyonları</h2>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code hl_function" href="pico__training__board_8h.html#a0d72618a59f5257cb5fbe8cbcbe7e5ce">detect_motion</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="keyword">static</span> absolute_time_t last_trigger = {0};</div>
+<div class="line">    <span class="keyword">const</span> uint32_t COOLDOWN_MS = 2000; <span class="comment">// Yeniden tetikleme için bekleme süresi</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span>(gpio_get(<a class="code hl_define" href="pico__training__board_8h.html#a8edd6b5035160b9ed4aa48e99c257feb">PIR_DETECTOR</a>)) {</div>
+<div class="line">        absolute_time_t now = get_absolute_time();</div>
+<div class="line">        <span class="keywordflow">if</span>(absolute_time_diff_us(last_trigger, now) &gt; COOLDOWN_MS * 1000) {</div>
+<div class="line">            last_trigger = now;</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="apico__training__board_8h_html_a0d72618a59f5257cb5fbe8cbcbe7e5ce"><div class="ttname"><a href="pico__training__board_8h.html#a0d72618a59f5257cb5fbe8cbcbe7e5ce">detect_motion</a></div><div class="ttdeci">bool detect_motion(void)</div><div class="ttdoc">Check if motion is detected by PIR sensor.</div><div class="ttdef"><b>Definition</b> sensors.c:87</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a8edd6b5035160b9ed4aa48e99c257feb"><div class="ttname"><a href="pico__training__board_8h.html#a8edd6b5035160b9ed4aa48e99c257feb">PIR_DETECTOR</a></div><div class="ttdeci">#define PIR_DETECTOR</div><div class="ttdef"><b>Definition</b> pico_training_board.h:107</div></div>
+</div><!-- fragment --><p>Kullanım örneği:</p>
+<div class="fragment"><div class="line"><span class="comment">// Ana döngüde hareket ve mesafe kontrolü</span></div>
+<div class="line"><span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
+<div class="line">    <span class="comment">// Hareket kontrolü</span></div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code hl_function" href="pico__training__board_8h.html#a0d72618a59f5257cb5fbe8cbcbe7e5ce">detect_motion</a>()) {</div>
+<div class="line">        <span class="comment">// Hareket algılandığında mesafe ölç</span></div>
+<div class="line">        <span class="keywordtype">float</span> distance = <a class="code hl_function" href="pico__training__board_8h.html#a4628d8d278604d424be0693fd587e661">get_average_distance</a>(3, 10);</div>
+<div class="line">        <span class="keywordflow">if</span>(distance &gt; 0) {</div>
+<div class="line">            printf(<span class="stringliteral">&quot;Hareket algılandı! Nesne %.1f cm uzakta\n&quot;</span>, distance);</div>
+<div class="line">            <a class="code hl_function" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a>(440, distance); <span class="comment">// Mesafeye göre ses çal</span></div>
+<div class="line">        }</div>
+<div class="line">        sleep_ms(100); <span class="comment">// Küçük gecikme</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md82"></a>
+Sensör Başlatma Fonksiyonu</h2>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> init_sensors(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="comment">// Ultrasonik sensör pinlerini yapılandır</span></div>
+<div class="line">    gpio_init(<a class="code hl_define" href="pico__training__board_8h.html#a608bbec30c43f7862ef0887bb2e6f9ab">ULTRA_SONIC_TR</a>);</div>
+<div class="line">    gpio_init(<a class="code hl_define" href="pico__training__board_8h.html#a2cd2c278a736a7cafacf4d7d4dfa59fb">ULTRA_SONIC_EC</a>);</div>
+<div class="line">    gpio_set_dir(<a class="code hl_define" href="pico__training__board_8h.html#a608bbec30c43f7862ef0887bb2e6f9ab">ULTRA_SONIC_TR</a>, GPIO_OUT);</div>
+<div class="line">    gpio_set_dir(<a class="code hl_define" href="pico__training__board_8h.html#a2cd2c278a736a7cafacf4d7d4dfa59fb">ULTRA_SONIC_EC</a>, GPIO_IN);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// PIR sensör pinini yapılandır</span></div>
+<div class="line">    gpio_init(<a class="code hl_define" href="pico__training__board_8h.html#a8edd6b5035160b9ed4aa48e99c257feb">PIR_DETECTOR</a>);</div>
+<div class="line">    gpio_set_dir(<a class="code hl_define" href="pico__training__board_8h.html#a8edd6b5035160b9ed4aa48e99c257feb">PIR_DETECTOR</a>, GPIO_IN);</div>
+<div class="line">}</div>
+<div class="ttc" id="apico__training__board_8h_html_a2cd2c278a736a7cafacf4d7d4dfa59fb"><div class="ttname"><a href="pico__training__board_8h.html#a2cd2c278a736a7cafacf4d7d4dfa59fb">ULTRA_SONIC_EC</a></div><div class="ttdeci">#define ULTRA_SONIC_EC</div><div class="ttdef"><b>Definition</b> pico_training_board.h:100</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a608bbec30c43f7862ef0887bb2e6f9ab"><div class="ttname"><a href="pico__training__board_8h.html#a608bbec30c43f7862ef0887bb2e6f9ab">ULTRA_SONIC_TR</a></div><div class="ttdeci">#define ULTRA_SONIC_TR</div><div class="ttdef"><b>Definition</b> pico_training_board.h:99</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
+Önemli Kullanım Notları</h2>
+<ol type="1">
+<li><b>Ultrasonik Sensör</b>:<ul>
+<li>Ölçüm öncesi <code>init_sensors()</code> fonksiyonu çağrılmalı</li>
+<li>Tek ölçüm yerine ortalama değer almak daha güvenilir</li>
+<li>Sensör 2cm-400cm arası mesafeleri ölçebilir</li>
+<li>Yüksek frekanslı ölçümlerden kaçının (sensör ısınabilir)</li>
+</ul>
+</li>
+<li><b>PIR Sensör</b>:<ul>
+<li>Sensör başlangıçta kalibre olması için 30-60 sn bekleyin</li>
+<li>Yanlış alarmları önlemek için cooldown süresi kullanın</li>
+<li>Ortam sıcaklığındaki ani değişimler yanlış tetikleme yapabilir</li>
+<li>Algılama mesafesi yaklaşık 7 metredir</li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md84"></a>
+Örnek Uygulama</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    stdio_init_all();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Sensörleri başlat</span></div>
+<div class="line">    init_sensors();</div>
+<div class="line">    <a class="code hl_function" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562">init_pwm</a>(); <span class="comment">// Buzzer için</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Ana döngü</span></div>
+<div class="line">    <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
+<div class="line">        <span class="comment">// Hareket kontrolü</span></div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code hl_function" href="pico__training__board_8h.html#a0d72618a59f5257cb5fbe8cbcbe7e5ce">detect_motion</a>()) {</div>
+<div class="line">            <span class="comment">// Hareket algılandığında mesafe ölç</span></div>
+<div class="line">            <span class="keywordtype">float</span> distance = <a class="code hl_function" href="pico__training__board_8h.html#a4628d8d278604d424be0693fd587e661">get_average_distance</a>(3, 10);</div>
+<div class="line">            <span class="keywordflow">if</span>(distance &gt; 0) {</div>
+<div class="line">                printf(<span class="stringliteral">&quot;Hareket algılandı! Nesne %.1f cm uzakta\n&quot;</span>, distance);</div>
+<div class="line">                <a class="code hl_function" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a>(440, distance);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        sleep_ms(100); <span class="comment">// Küçük gecikme</span></div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> main.c:166</div></div>
+</div><!-- fragment --><p>Bu örnekte hareket algılandığında ultrasonik sensör ile mesafe ölçümü yapılıyor ve mesafeye göre buzzer ile ses çalınıyor. Sensörler birlikte kullanılarak daha karmaşık uygulamalar geliştirilebilir.</p>
+<h1><a class="anchor" id="autotoc_md85"></a>
+7. Haberleşme Modülleri</h1>
+<p>LCD fonksiyonlarının kullanımı için detaylı bir kılavuz hazırlayalım:</p>
+<h2><a class="anchor" id="autotoc_md86"></a>
+I2C LCD Display (16x2) Kullanım Kılavuzu</h2>
+<h2><a class="anchor" id="autotoc_md87"></a>
+1. Bağlantı ve Başlatma</h2>
+<p>LCD ekran I2C protokolü üzerinden haberleşir:</p>
+<ul>
+<li>SDA (GPIO20): Veri hattı</li>
+<li>SCL (GPIO21): Clock hattı</li>
+<li>I2C Adresi: 0x27</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md88"></a>
+Başlatma İşlemi</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="pico__training__board_8h.html">pico_training_board.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">// I2C başlatma</span></div>
+<div class="line">    i2c_init(<a class="code hl_define" href="pico__training__board_8h.html#ad9ecf80e1eac083d16ec47f9d3aeb39f">I2C_PORT</a>, 400*1000);  <span class="comment">// 400kHz hızında</span></div>
+<div class="line">    gpio_set_function(<a class="code hl_define" href="pico__training__board_8h.html#a18aefd12ad84d4c33dc97923cb821e47">I2C_SDA</a>, GPIO_FUNC_I2C);</div>
+<div class="line">    gpio_set_function(<a class="code hl_define" href="pico__training__board_8h.html#a212ca328a6409c98f8c3dfbbe1ba561d">I2C_SCL</a>, GPIO_FUNC_I2C);</div>
+<div class="line">    gpio_pull_up(<a class="code hl_define" href="pico__training__board_8h.html#a18aefd12ad84d4c33dc97923cb821e47">I2C_SDA</a>);</div>
+<div class="line">    gpio_pull_up(<a class="code hl_define" href="pico__training__board_8h.html#a212ca328a6409c98f8c3dfbbe1ba561d">I2C_SCL</a>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// LCD başlatma</span></div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="alcd__i2c_8c_html_a6842775ba83d166f02b8fef8bb63b1e6"><div class="ttname"><a href="lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a></div><div class="ttdeci">void lcd_init(void)</div><div class="ttdoc">LCD ekranını başlatır.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:94</div></div>
+<div class="ttc" id="apico__training__board_8h_html"><div class="ttname"><a href="pico__training__board_8h.html">pico_training_board.h</a></div><div class="ttdoc">Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a18aefd12ad84d4c33dc97923cb821e47"><div class="ttname"><a href="pico__training__board_8h.html#a18aefd12ad84d4c33dc97923cb821e47">I2C_SDA</a></div><div class="ttdeci">#define I2C_SDA</div><div class="ttdef"><b>Definition</b> pico_training_board.h:110</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a212ca328a6409c98f8c3dfbbe1ba561d"><div class="ttname"><a href="pico__training__board_8h.html#a212ca328a6409c98f8c3dfbbe1ba561d">I2C_SCL</a></div><div class="ttdeci">#define I2C_SCL</div><div class="ttdef"><b>Definition</b> pico_training_board.h:111</div></div>
+<div class="ttc" id="apico__training__board_8h_html_ad9ecf80e1eac083d16ec47f9d3aeb39f"><div class="ttname"><a href="pico__training__board_8h.html#ad9ecf80e1eac083d16ec47f9d3aeb39f">I2C_PORT</a></div><div class="ttdeci">#define I2C_PORT</div><div class="ttdef"><b>Definition</b> pico_training_board.h:113</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md89"></a>
+2. Temel Fonksiyonlar</h1>
+<h2><a class="anchor" id="autotoc_md90"></a>
+lcd_init()</h2>
+<p>LCD'yi kullanıma hazırlar. Program başlangıcında bir kez çağrılmalıdır.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</a>();  <span class="comment">// LCD&#39;yi başlat</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md91"></a>
+lcd_clear()</h2>
+<p>Ekranı temizler ve imleci başlangıç konumuna getirir.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();  <span class="comment">// Ekranı temizle</span></div>
+<div class="ttc" id="alcd__i2c_8c_html_ad235a86241458b1e7b8771688bfdaf9a"><div class="ttname"><a href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a></div><div class="ttdeci">void lcd_clear(void)</div><div class="ttdoc">LCD ekranını temizler.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:53</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md92"></a>
+lcd_string()</h2>
+<p>Metni LCD'de gösterir.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Merhaba Dünya&quot;</span>);  <span class="comment">// Metin yazdır</span></div>
+<div class="ttc" id="alcd__i2c_8c_html_aa4fb28cf57e5ade779793927a072f056"><div class="ttname"><a href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a></div><div class="ttdeci">void lcd_string(const char *s)</div><div class="ttdoc">LCD'ye bir metin dizisi gönderir.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:82</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md93"></a>
+lcd_set_cursor()</h2>
+<p>İmleci istenen konuma getirir.</p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(0, 0);  <span class="comment">// İlk satır, ilk karakter</span></div>
+<div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(1, 0);  <span class="comment">// İkinci satır, ilk karakter</span></div>
+<div class="ttc" id="alcd__i2c_8c_html_a9d654d1616bd1fb53ea0f25f09d499a2"><div class="ttname"><a href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(int line, int position)</div><div class="ttdoc">LCD imlecini belirtilen konuma ayarlar.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:63</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md94"></a>
+3. Kullanım Örnekleri</h1>
+<h2><a class="anchor" id="autotoc_md95"></a>
+Örnek 1: Basit Mesaj Gösterme</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">// I2C ve LCD başlatma işlemleri...</span></div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Merhaba Dünya!&quot;</span>);</div>
+<div class="line">    sleep_ms(2000);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Raspberry Pi&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(1, 0);</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Pico&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md96"></a>
+Örnek 2: Değişken Değer Gösterme</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> display_temperature(<span class="keywordtype">float</span> temp) {</div>
+<div class="line">    <span class="keywordtype">char</span> buffer[16];</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Sicaklik:&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(1, 0);</div>
+<div class="line">    sprintf(buffer, <span class="stringliteral">&quot;%.1f C&quot;</span>, temp);</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(buffer);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md97"></a>
+Örnek 3: Menü Gösterimi</h2>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> show_menu_item(<span class="keyword">const</span> <span class="keywordtype">char</span>* item, <span class="keywordtype">int</span> selected) {</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (selected) {</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;&gt; &quot;</span>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;  &quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(item);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md98"></a>
+4. Önemli Notlar ve İpuçları</h1>
+<p>4.1. <b>Zamanlama</b></p>
+<ul>
+<li>İki yazma işlemi arasında kısa bir gecikme (örn: 5ms) kullanın</li>
+<li>Ekranı temizledikten sonra 2ms bekleyin</li>
+</ul>
+<div class="fragment"><div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line">sleep_ms(2);  <span class="comment">// Ekran temizleme için bekleme</span></div>
+</div><!-- fragment --><p>4.2. <b>Satır Uzunluğu</b></p>
+<ul>
+<li>Her satır maksimum 16 karakter alabilir</li>
+<li>Daha uzun metinler kesilebilir</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// Uzun metin kontrolü</span></div>
+<div class="line"><span class="keywordtype">void</span> safe_lcd_string(<span class="keyword">const</span> <span class="keywordtype">char</span>* text) {</div>
+<div class="line">    <span class="keywordtype">char</span> buffer[17];  <span class="comment">// 16 karakter + null terminator</span></div>
+<div class="line">    strncpy(buffer, text, 16);</div>
+<div class="line">    buffer[16] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(buffer);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>4.3. <b>Özel Karakterler</b></p>
+<ul>
+<li>Türkçe karakterler LCD'de farklı görünebilir</li>
+<li>ASCII karakterlerini tercih edin</li>
+</ul>
+<p>4.4. <b>Güç Tüketimi</b></p>
+<ul>
+<li>LCD arka ışığı sürekli açık kalır</li>
+<li>Enerji tasarrufu için kullanılmadığında ekranı temizleyin</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md99"></a>
+5. Hata Kontrolü</h1>
+<div class="fragment"><div class="line"><span class="keywordtype">bool</span> lcd_check_connection() {</div>
+<div class="line">    <span class="comment">// I2C bağlantısını kontrol et</span></div>
+<div class="line">    uint8_t dummy = 0;</div>
+<div class="line">    <span class="keywordtype">int</span> ret = i2c_read_blocking(<a class="code hl_define" href="pico__training__board_8h.html#ad9ecf80e1eac083d16ec47f9d3aeb39f">I2C_PORT</a>, <a class="code hl_define" href="pico__training__board_8h.html#a6a90c49be18cd45434c04afd79b0bf9d">LCD_ADDR</a>, &amp;dummy, 1, <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> (ret &gt;= 0);</div>
+<div class="line">}</div>
+<div class="ttc" id="apico__training__board_8h_html_a6a90c49be18cd45434c04afd79b0bf9d"><div class="ttname"><a href="pico__training__board_8h.html#a6a90c49be18cd45434c04afd79b0bf9d">LCD_ADDR</a></div><div class="ttdeci">#define LCD_ADDR</div><div class="ttdef"><b>Definition</b> pico_training_board.h:112</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md100"></a>
+6. Örnek Uygulama: Sayaç</h1>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> display_counter(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line">    <span class="keywordtype">char</span> buffer[16];</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">while</span>(1) {</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Sayac:&quot;</span>);</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(1, 0);</div>
+<div class="line">        sprintf(buffer, <span class="stringliteral">&quot;%d&quot;</span>, counter++);</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(buffer);</div>
+<div class="line">        sleep_ms(1000);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Bu kılavuz, LCD ekranın temel kullanımını ve yaygın senaryoları kapsamaktadır. LCD fonksiyonlarını kendi uygulamalarınızda bu örnekleri temel alarak kullanabilirsiniz. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

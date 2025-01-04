@@ -1,0 +1,13 @@
+<map id="init_pwm" name="init_pwm">
+<area shape="rect" id="Node000001" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="5,55,79,80"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#abeed4b38208cb0179851d68db47de935" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="127,5,246,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,53,131,34,133,39,80,58"/>
+<area shape="rect" id="Node000004" href="$led__control_8c.html#a30c79869aed334b91ce300139ba2fb92" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="138,55,235,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="79,65,122,65,122,70,79,70"/>
+<area shape="rect" id="Node000005" href="$led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="137,104,236,130"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="80,77,133,96,131,101,78,82"/>
+<area shape="rect" id="Node000003" href="$init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="294,55,391,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,29,286,47,284,52,229,34"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="235,65,278,65,278,70,235,70"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="229,101,284,83,286,88,230,106"/>
+</map>

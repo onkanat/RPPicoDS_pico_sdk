@@ -1,0 +1,375 @@
+\chapter{Raspberry pi pico eğitim kartı}
+\hypertarget{md_pin__number}{}\label{md_pin__number}\index{Raspberry pi pico eğitim kartı@{Raspberry pi pico eğitim kartı}}
+\label{md_pin__number_autotoc_md0}%
+\Hypertarget{md_pin__number_autotoc_md0}%
+ \hypertarget{md_pin__number_autotoc_md1}{}\doxysection{\texorpdfstring{Pin Listesi}{Pin Listesi}}\label{md_pin__number_autotoc_md1}
+Toplam 12 grup kompenent bağlı bunlar ile uygulama geliştirilebileceği gibi C programlama ve Pico-\/\+SDK eğitimi için yararlanılabilr.\hypertarget{md_pin__number_autotoc_md2}{}\doxysubsection{\texorpdfstring{ihtiyaç olan fonksiyonlar}{ihtiyaç olan fonksiyonlar}}\label{md_pin__number_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Keypad analog 28 nolu pini kullanıyor.
+\item POT\+\_\+1 analog 27 nolu pin kullanıyor.
+\item LDR\+\_\+1 analog 26 nolu pin kullanılıyor.
+\item {\bfseries{Buton grubu}}
+\begin{DoxyItemize}
+\item BUTTON\+\_\+\+UP 5 // Digital input (Arrow Up)
+\item BUTTON\+\_\+\+OK 6 // Digital input Arrow OK. or ENTER or RETURN
+\item BUTTON\+\_\+\+DOWN 7 // Digital input Arrow Down
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//Board\ Raspberry\ pi\ pico}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Analog\ inputs}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ KEYPAD\ 28\ }\textcolor{comment}{//\ Analog\ giriş}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ POT\_1\ 27\ }\textcolor{comment}{//\ Analog\ giriş}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ LDR\_1\ 26\ }\textcolor{comment}{//\ Analog\ giriş}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Buttons\ inputs}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUTTON\_UP\ 5\ }\textcolor{comment}{//\ Digital\ input\ (Arrow\ Up)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUTTON\_OK\ 6\ }\textcolor{comment}{//\ Digital\ input\ Arrow\ OK.\ or\ ENTER\ or\ RETURN}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUTTON\_DOWN\ 7\ }\textcolor{comment}{//\ Digital\ input\ Arrow\ Down}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ LED\ outputs}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RED\ 4\ }\textcolor{comment}{//\ Digital\ output\ Red\ led}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ YELLOW\ 3\ }\textcolor{comment}{//\ Digital\ output\ Red\ led}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ GREEN\ 2\ }\textcolor{comment}{//\ Digital\ output\ Red\ led}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RGB\_R\ 16\ }\textcolor{comment}{//\ Digital\ output\ (PWM)\ red}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RGB\_G\ 17\ }\textcolor{comment}{//\ Digital\ output\ (PWM)\ green}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RGB\_B\ 18\ }\textcolor{comment}{//\ //\ Digital\ output\ (PWM)\ blue}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Sound}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10\ }\textcolor{comment}{//\ Digital\ output\ Alarm\ etc.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Step\ motor\ module}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A1\ 11}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A2\ 12}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B1\ 13}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B2\ 14}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Ultra\ sonic\ sensor\ module}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_TR\ 8.\ }\textcolor{comment}{//TR\ time}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_EC\ \ 9\ }\textcolor{comment}{//\ EC\ time}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Bluetooth\ module}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BLT\_TX\ 0}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BLT\_RX\ 1}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//PIR\ module}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ PIR\_DEDECTOR\ 19}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ LCD\ Display\ I2C\ üzerinden\ bağlı\ i2c0\ (static\ int\ lcd\_addr\ =\ 0x27)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SDA\ 20}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SCL\ 21}}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ lcd\_addr\ =\ 0x27}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\itshape Fonksiyon name\+:} {\bfseries{keypad\+\_\+read(\+KEYPAD)}} Bu fonksiyon 28 nolu analog girişe bağlanan seri buton ve resistorlerden oluşan tuş takımıdır
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\multicolumn{3}{|c|}{\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }}\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\multicolumn{3}{|c|}{\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }}\\\cline{1-3}
+\endhead
+1   &2   &3    \\\cline{1-3}
+4   &5   &6    \\\cline{1-3}
+7   &8   &9    \\\cline{1-3}
+\texorpdfstring{$\ast$}{*}   &0   &\#   \\\cline{1-3}
+\end{longtabu}
+
+
+fonksiyon return ile basılan tuşu char olarak geri döndürür.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ read\ the\ keypad\ and\ return\ the\ corresponding\ character}}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ adc\_select\_input(2);\ \textcolor{comment}{//\ Selecting\ ADC\ input\ 2\ for\ GPIO\ 28}}
+\DoxyCodeLine{\ \ \ \ uint16\_t\ deger\ =\ adc\_read();\ \textcolor{comment}{//\ Read\ the\ ADC\ value\ from\ GPIO\ 28}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ basilan\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 12-\/bit\ conversion,\ assume\ max\ value\ ==\ ADC\_VREF\ ==\ 3.3\ V}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ conversion\_factor\ =\ 3.3f\ /\ (1\ <<\ 12);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//printf("{}Raw\ value:\ \%d,\ voltage:\ \%f\ V\(\backslash\)n"{},\ deger,\ deger\ *\ conversion\_factor);}}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(100);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (deger\ >\ 0\ \&\&\ deger\ <\ 251)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ No\ button\ pressed}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deger\ >\ 2090)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 1385)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 735)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'3'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 620)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'4'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 574)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'5'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 530)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'6'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 401)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'7'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 361)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'8'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 340)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'9'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 281)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'*'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 261)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 248)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ basilan\ =\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(200);\ \textcolor{comment}{//\ Button\ press\ debounce}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ basilan;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ daha sade ve derli toplu oldu. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ read\ the\ keypad\ and\ return\ the\ corresponding\ character}}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}()\ \{}
+\DoxyCodeLine{\ \ \ \ adc\_select\_input(2);\ \textcolor{comment}{//\ Selecting\ ADC\ input\ 2\ for\ GPIO\ 28}}
+\DoxyCodeLine{\ \ \ \ uint16\_t\ deger\ =\ adc\_read();\ \textcolor{comment}{//\ Read\ the\ ADC\ value\ from\ GPIO\ 28}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (deger\ >\ 0\ \&\&\ deger\ <\ 251)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ No\ button\ pressed}}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpret\ the\ pressed\ button\ based\ on\ the\ ADC\ value}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deger\ >\ 2090)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 1385)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'2'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 735)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'3'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 620)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'4'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 574)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'5'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 530)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'6'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 401)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'7'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 361)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'8'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 340)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'9'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 281)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'*'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 261)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (deger\ >\ 248)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ butonlara basılmasını kontrol eden fonksiyonlar
+
+{\bfseries{Digital IO\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(uint\ gpio)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ absolute\_time\_t\ last\_time;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (gpio\_get(gpio)\ \&\&\ (absolute\_time\_diff\_us(last\_time,\ get\_absolute\_time())\ >\ 200000))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ last\_time\ =\ get\_absolute\_time();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\bfseries{Analog IO\+:}} True, False geri döndürür. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keypad_8c_ab2bff14828e4757d93fe24490da85228}{analog\_button\_pressed}}(uint\ gpio,\ uint16\_t\ adc\_value)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ absolute\_time\_t\ last\_time;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Debounce\ the\ button\ press\ by\ checking\ the\ time\ difference}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (adc\_get(gpio)\ \&\&\ (absolute\_time\_diff\_us(last\_time,\ get\_absolute\_time())\ >\ 200000))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ last\_time\ =\ get\_absolute\_time();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Yada analog için bu da kullanılabilir. Basılan tuşu döndürür. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keypad_8c_ab2bff14828e4757d93fe24490da85228}{analog\_button\_pressed}}(uint\ gpio)\ \{}
+\DoxyCodeLine{\ \ \ \ uint16\_t\ adc\_value\ =\ adc\_read();\ \textcolor{comment}{//\ Read\ the\ ADC\ value\ from\ GPIO\ 28}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}(adc\_value);\ \textcolor{comment}{//\ Interpret\ the\ button\ press\ based\ on\ the\ ADC\ value}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\bfseries{Buzzer pin ayarları ve {\itshape PWM} nota çalma}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}pico/stdlib.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}hardware/pwm.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Define\ the\ buzzer\ pin}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ initialize\ PWM\ on\ the\ buzzer\ pin}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}()\ \{}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_function(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}},\ GPIO\_FUNC\_PWM);}
+\DoxyCodeLine{\ \ \ \ uint\ slice\_num\ =\ pwm\_gpio\_to\_slice\_num(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}});}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_enabled(slice\_num,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ set\ the\ frequency\ of\ the\ PWM\ signal}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(uint\ slice\_num,\ \textcolor{keywordtype}{float}\ frequency)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ wrap\ value\ for\ the\ desired\ frequency}}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ clock\ =\ 125000000;\ \textcolor{comment}{//\ Default\ clock\ frequency\ for\ the\ Pico}}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ divider16\ =\ (uint32\_t)(clock\ /\ frequency\ /\ 4096);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (((uint32\_t)(clock\ /\ frequency))\ \%4096\ !=\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ divider16\ +=\ 1;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (divider16\ /\ 16\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ divider16\ =\ 16;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_clkdiv\_int\_frac(slice\_num,\ divider16\ /\ 16,\ divider16\ \&\ 0xF);}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_wrap(slice\_num,\ 4095);}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_gpio\_level(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}},\ 2048);\ \textcolor{comment}{//\ 50\%\ duty\ cycle}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ play\ a\ note\ for\ a\ specific\ duration}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(\textcolor{keywordtype}{float}\ frequency,\ \textcolor{keywordtype}{int}\ duration\_ms)\ \{}
+\DoxyCodeLine{\ \ \ \ uint\ slice\_num\ =\ pwm\_gpio\_to\_slice\_num(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(slice\_num,\ frequency);}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(duration\_ms);}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_gpio\_level(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}},\ 0);\ \textcolor{comment}{//\ Turn\ off\ the\ buzzer}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ stdio\_init\_all();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Example:\ Play\ a\ C\ note\ (261.63\ Hz)\ for\ 500\ ms}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(261.63,\ 500);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Add\ more\ notes\ as\ needed}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ play\_note(frequency,\ duration);}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Bu kodu C library haline getirelim. {\bfseries{buzzer.\+h}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ BUZZER\_H}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUZZER\_H}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}pico/stdlib.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}hardware/pwm.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Define\ the\ buzzer\ pin}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ prototypes}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(uint\ slice\_num,\ \textcolor{keywordtype}{float}\ frequency);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(\textcolor{keywordtype}{float}\ frequency,\ \textcolor{keywordtype}{int}\ duration\_ms);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUZZER\_H}}
+
+\end{DoxyCode}
+ {\bfseries{\doxylink{buzzer_8c}{buzzer.\+c}}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}buzzer.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ initialize\ PWM\ on\ the\ buzzer\ pin}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}()\ \{}
+\DoxyCodeLine{\ \ \ \ gpio\_set\_function(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}},\ GPIO\_FUNC\_PWM);}
+\DoxyCodeLine{\ \ \ \ uint\ slice\_num\ =\ pwm\_gpio\_to\_slice\_num(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}});}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_enabled(slice\_num,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ set\ the\ frequency\ of\ the\ PWM\ signal}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(uint\ slice\_num,\ \textcolor{keywordtype}{float}\ frequency)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Calculate\ the\ wrap\ value\ for\ the\ desired\ frequency}}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ clock\ =\ 125000000;\ \textcolor{comment}{//\ Default\ clock\ frequency\ for\ the\ Pico}}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ divider16\ =\ (uint32\_t)(clock\ /\ frequency\ /\ 4096);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (((uint32\_t)(clock\ /\ frequency))\ \%\ 4096\ !=\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ divider16\ +=\ 1;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (divider16\ /\ 16\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ divider16\ =\ 16;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_clkdiv\_int\_frac(slice\_num,\ divider16\ /\ 16,\ divider16\ \&\ 0xF);}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_wrap(slice\_num,\ 4095);}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_gpio\_level(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}},\ 2048);\ \textcolor{comment}{//\ 50\%\ duty\ cycle}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Function\ to\ play\ a\ note\ for\ a\ specific\ duration}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(\textcolor{keywordtype}{float}\ frequency,\ \textcolor{keywordtype}{int}\ duration\_ms)\ \{}
+\DoxyCodeLine{\ \ \ \ uint\ slice\_num\ =\ pwm\_gpio\_to\_slice\_num(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(slice\_num,\ frequency);}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(duration\_ms);}
+\DoxyCodeLine{\ \ \ \ pwm\_set\_gpio\_level(\mbox{\hyperlink{pico__training__board_8h_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\_PIN}},\ 0);\ \textcolor{comment}{//\ Turn\ off\ the\ buzzer}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\bfseries{Örnek kullanım şekli}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}buzzer.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ stdio\_init\_all();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Example:\ Play\ a\ C\ note\ (261.63\ Hz)\ for\ 500\ ms}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(261.63,\ 500);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Add\ more\ notes\ as\ needed}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ play\_note(frequency,\ duration);}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

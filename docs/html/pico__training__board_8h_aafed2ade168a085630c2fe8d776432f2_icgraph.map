@@ -1,0 +1,7 @@
+<map id="init_lcd" name="init_lcd">
+<area shape="rect" id="Node000001" title="I2C LCD ekranını başlatır." alt="" coords="228,5,290,31"/>
+<area shape="rect" id="Node000002" href="$init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,21,181,21,181,16,212,16"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

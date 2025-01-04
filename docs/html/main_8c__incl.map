@@ -1,0 +1,25 @@
+<map id="main.c" name="main.c">
+<area shape="rect" id="Node000001" title="Ana program, adım motoru kontrolü için Raspberry Pi Pico Eğitim Kartı&#39;nı başlatır." alt="" coords="445,5,506,31"/>
+<area shape="rect" id="Node000002" href="$pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>

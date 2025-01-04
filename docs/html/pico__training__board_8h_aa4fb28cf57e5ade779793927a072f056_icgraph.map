@@ -1,0 +1,15 @@
+<map id="lcd_string" name="lcd_string">
+<area shape="rect" id="Node000001" title="LCD&#39;ye bir metin dizisi gönderir." alt="" coords="496,35,574,60"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="299,5,448,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="481,40,447,34,448,29,482,35"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a089559d7b66bf6918dba57f2864a0b15" title=" " alt="" coords="306,59,442,84"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="481,58,443,64,442,59,481,53"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,59,55,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,20,195,26,103,42,56,61,54,56,102,37,195,21,283,15"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a7d8ac2b24aa8295048d311bb604dd6bd" title=" " alt="" coords="112,51,242,92"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="290,74,242,74,242,69,290,69"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#ab4495781c60f7539b4bd7ff5209151c3" title=" " alt="" coords="103,117,251,157"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="319,92,241,118,240,113,317,87"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="97,74,55,74,55,69,97,69"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="115,112,54,85,56,80,117,107"/>
+</map>

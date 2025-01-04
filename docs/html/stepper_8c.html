@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: stepper.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonksiyonlar</a> &#124;
+<a href="#var-members">Değişkenler</a>  </div>
+  <div class="headertitle"><div class="title">stepper.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Step motor kontrol fonksiyonları  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+stepper.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="stepper_8c__incl.png" border="0" usemap="#astepper_8c" alt=""/></div>
+<map name="astepper_8c" id="astepper_8c">
+<area shape="rect" title="Step motor kontrol fonksiyonları" alt="" coords="438,5,513,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:a8d8f8f8a9dde232c7092dbf83cc101af" id="r_a8d8f8f8a9dde232c7092dbf83cc101af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d8f8f8a9dde232c7092dbf83cc101af">init_step_motor</a> (void)</td></tr>
+<tr class="memdesc:a8d8f8f8a9dde232c7092dbf83cc101af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step motor GPIO pinlerini başlatır.  <br /></td></tr>
+<tr class="separator:a8d8f8f8a9dde232c7092dbf83cc101af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968353a2852db9fae36f19a4985e2906" id="r_a968353a2852db9fae36f19a4985e2906"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a968353a2852db9fae36f19a4985e2906">is_motor_running</a> (void)</td></tr>
+<tr class="separator:a968353a2852db9fae36f19a4985e2906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac91c34166ec5420fe03bc8e353b52354" id="r_ac91c34166ec5420fe03bc8e353b52354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__training__board_8h.html#ab261a5f660ee185f6574b191c393ded6">motor_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91c34166ec5420fe03bc8e353b52354">get_motor_state</a> (void)</td></tr>
+<tr class="separator:ac91c34166ec5420fe03bc8e353b52354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a1a65f783ef1d3040dfc483143d3e0" id="r_a91a1a65f783ef1d3040dfc483143d3e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91a1a65f783ef1d3040dfc483143d3e0">step_stop</a> (void)</td></tr>
+<tr class="memdesc:a91a1a65f783ef1d3040dfc483143d3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step motor için acil durdurma fonksiyonu.  <br /></td></tr>
+<tr class="separator:a91a1a65f783ef1d3040dfc483143d3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada890c90b978fea21eb7ea4c8c0467b8" id="r_ada890c90b978fea21eb7ea4c8c0467b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a> (<a class="el" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abd">motor_direction_t</a> direction, uint speed, float <a class="el" href="main_8c.html#a723654056ec2af24511008f45c2058fe">revolutions</a>)</td></tr>
+<tr class="memdesc:ada890c90b978fea21eb7ea4c8c0467b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder.  <br /></td></tr>
+<tr class="separator:ada890c90b978fea21eb7ea4c8c0467b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Değişkenler</h2></td></tr>
+<tr class="memitem:a9edcd7c81b99b7127211b0d4d0d69ef0" id="r_a9edcd7c81b99b7127211b0d4d0d69ef0"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9edcd7c81b99b7127211b0d4d0d69ef0">step_sequence</a> [8][4]</td></tr>
+<tr class="memdesc:a9edcd7c81b99b7127211b0d4d0d69ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step motoru yarım adım sekans deseni.  <br /></td></tr>
+<tr class="separator:a9edcd7c81b99b7127211b0d4d0d69ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac19a09119ddb28c85599b12224e66fc7" id="r_ac19a09119ddb28c85599b12224e66fc7"><td class="memItemLeft" align="right" valign="top">static const uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac19a09119ddb28c85599b12224e66fc7">motor_pins</a> [4]</td></tr>
+<tr class="separator:ac19a09119ddb28c85599b12224e66fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ccad2156e1b99c1a0fbfb8b4ebf366" id="r_a66ccad2156e1b99c1a0fbfb8b4ebf366"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="pico__training__board_8h.html#ab261a5f660ee185f6574b191c393ded6">motor_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66ccad2156e1b99c1a0fbfb8b4ebf366">motor_state</a> = <a class="el" href="pico__training__board_8h.html#ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a">MOTOR_STOPPED</a></td></tr>
+<tr class="separator:a66ccad2156e1b99c1a0fbfb8b4ebf366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6785a75beb196aef377ee7fa9b30137" id="r_ae6785a75beb196aef377ee7fa9b30137"><td class="memItemLeft" align="right" valign="top">static volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6785a75beb196aef377ee7fa9b30137">emergency_stop</a> = false</td></tr>
+<tr class="separator:ae6785a75beb196aef377ee7fa9b30137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Step motor kontrol fonksiyonları </p>
+</div><h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="ac91c34166ec5420fe03bc8e353b52354" name="ac91c34166ec5420fe03bc8e353b52354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac91c34166ec5420fe03bc8e353b52354">&#9670;&#160;</a></span>get_motor_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pico__training__board_8h.html#ab261a5f660ee185f6574b191c393ded6">motor_state_t</a> get_motor_state </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d8f8f8a9dde232c7092dbf83cc101af" name="a8d8f8f8a9dde232c7092dbf83cc101af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8f8f8a9dde232c7092dbf83cc101af">&#9670;&#160;</a></span>init_step_motor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_step_motor </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Step motor GPIO pinlerini başlatır. </p>
+<p>Bu fonksiyon, 4 fazlı bir step motorunu kontrol etmek için kullanılan GPIO pinlerini yapılandırır. Her pini başlatır ve motor bobinlerini sürmek için çıkış olarak ayarlar.</p>
+<dl class="section note"><dt>Not</dt><dd>motor_pins[] dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır</dd></dl>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td>Giriş parametresi yok </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>void Geri dönüş değeri yok </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="stepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af_icgraph.png" border="0" usemap="#astepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af_icgraph" alt=""/></div>
+<map name="astepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af_icgraph" id="astepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af_icgraph">
+<area shape="rect" title="Step motor GPIO pinlerini başlatır." alt="" coords="362,5,473,31"/>
+<area shape="rect" href="stepper_8c.html#ada890c90b978fea21eb7ea4c8c0467b8" title="Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder." alt="" coords="239,5,314,31"/>
+<area shape="poly" title=" " alt="" coords="347,21,315,21,315,16,347,16"/>
+<area shape="rect" href="main_8c.html#ab148110bebfeb5468545d63e65d8095f" title="Core 1&#39;de çalışacak işlev." alt="" coords="103,5,191,31"/>
+<area shape="poly" title=" " alt="" coords="224,21,192,21,192,16,224,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a968353a2852db9fae36f19a4985e2906" name="a968353a2852db9fae36f19a4985e2906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968353a2852db9fae36f19a4985e2906">&#9670;&#160;</a></span>is_motor_running()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_motor_running </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91a1a65f783ef1d3040dfc483143d3e0" name="a91a1a65f783ef1d3040dfc483143d3e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a1a65f783ef1d3040dfc483143d3e0">&#9670;&#160;</a></span>step_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void step_stop </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Step motor için acil durdurma fonksiyonu. </p>
+<p>Bu fonksiyon, step motorunu acil olarak durdurur:</p><ul>
+<li>Acil durdurma bayrağını ayarlar</li>
+<li>Motor durumunu durdurulmuş olarak günceller</li>
+<li>Tüm motor bobinlerini enerjisiz hale getirir (GPIO pinlerini düşük seviyeye ayarlar)</li>
+</ul>
+<dl class="section note"><dt>Not</dt><dd>motor_pins[] dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır</dd></dl>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td>Giriş parametresi yok </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>void Geri dönüş değeri yok</dd></dl>
+<dl class="section warning"><dt>Uyarı</dt><dd>Bu fonksiyon, motoru yavaşlatmadan hemen durdurur, bu da mekanik strese neden olabilir </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="stepper_8c_a91a1a65f783ef1d3040dfc483143d3e0_icgraph.png" border="0" usemap="#astepper_8c_a91a1a65f783ef1d3040dfc483143d3e0_icgraph" alt=""/></div>
+<map name="astepper_8c_a91a1a65f783ef1d3040dfc483143d3e0_icgraph" id="astepper_8c_a91a1a65f783ef1d3040dfc483143d3e0_icgraph">
+<area shape="rect" title="Step motor için acil durdurma fonksiyonu." alt="" coords="439,31,518,56"/>
+<area shape="rect" href="main_8c.html#adc9c0b00da41b4f750a502323595b1e6" title="Button interrupt callback function." alt="" coords="279,5,391,31"/>
+<area shape="poly" title=" " alt="" coords="423,37,391,31,392,25,424,31"/>
+<area shape="rect" href="stepper_8c.html#ada890c90b978fea21eb7ea4c8c0467b8" title="Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder." alt="" coords="298,55,373,80"/>
+<area shape="poly" title=" " alt="" coords="424,55,374,64,373,59,423,50"/>
+<area shape="rect" href="main_8c.html#ac28c401d97df35ec8dca9ad6535a4815" title="Initialize button interrupts for motor control." alt="" coords="103,5,231,31"/>
+<area shape="poly" title=" " alt="" coords="264,21,231,21,231,16,264,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,56"/>
+<area shape="poly" title=" " alt="" coords="88,36,56,42,55,36,87,30"/>
+<area shape="rect" href="main_8c.html#ab148110bebfeb5468545d63e65d8095f" title="Core 1&#39;de çalışacak işlev." alt="" coords="123,55,211,80"/>
+<area shape="poly" title=" " alt="" coords="282,70,211,70,211,65,282,65"/>
+<area shape="poly" title=" " alt="" coords="107,60,55,50,56,45,108,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ada890c90b978fea21eb7ea4c8c0467b8" name="ada890c90b978fea21eb7ea4c8c0467b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada890c90b978fea21eb7ea4c8c0467b8">&#9670;&#160;</a></span>step_turn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void step_turn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abd">motor_direction_t</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>revolutions</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>Motor dönüş yönü (CW veya CCW) </td></tr>
+    <tr><td class="paramname">speed</td><td>Motor hızı (adım/saniye) </td></tr>
+    <tr><td class="paramname">revolutions</td><td>Yapılacak tam devir sayısı</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Bu fonksiyon, yarım adım modu (her devir için 8 adım) kullanarak bir step motoru kontrol eder. Motor durumu yönetimi, acil durdurma işlevselliği ve hassas zamanlama kontrolü sağlar. Motor zaten çalışıyorsa fonksiyon başlamaz.</p>
+<dl class="section note"><dt>Not</dt><dd>Fonksiyon, motor_pins[] dizisinde tanımlanan GPIO pinlerini ve step_sequence[][] dizisinde tanımlanan adım sekanslarını kullanır.</dd></dl>
+<p>Kullanılan global değişkenler:</p><ul>
+<li>motor_state: Motorun mevcut durumu</li>
+<li>emergency_stop: Acil durdurma bayrağı</li>
+<li>motor_pins[]: Motor kontrolü için GPIO pin numaraları dizisi</li>
+<li>step_sequence[][]: Adım sekans desenlerini içeren dizi</li>
+</ul>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>void </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_cgraph.png" border="0" usemap="#astepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_cgraph" alt=""/></div>
+<map name="astepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_cgraph" id="astepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_cgraph">
+<area shape="rect" title="Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder." alt="" coords="5,31,81,56"/>
+<area shape="rect" href="stepper_8c.html#a8d8f8f8a9dde232c7092dbf83cc101af" title="Step motor GPIO pinlerini başlatır." alt="" coords="129,5,239,31"/>
+<area shape="poly" title=" " alt="" coords="81,34,113,28,114,33,81,39"/>
+<area shape="rect" href="stepper_8c.html#a91a1a65f783ef1d3040dfc483143d3e0" title="Step motor için acil durdurma fonksiyonu." alt="" coords="145,55,223,80"/>
+<area shape="poly" title=" " alt="" coords="81,47,130,56,129,61,81,52"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_icgraph.png" border="0" usemap="#astepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_icgraph" alt=""/></div>
+<map name="astepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_icgraph" id="astepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_icgraph">
+<area shape="rect" title="Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder." alt="" coords="239,5,314,31"/>
+<area shape="rect" href="main_8c.html#ab148110bebfeb5468545d63e65d8095f" title="Core 1&#39;de çalışacak işlev." alt="" coords="103,5,191,31"/>
+<area shape="poly" title=" " alt="" coords="224,21,192,21,192,16,224,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Değişken Dokümantasyonu</h2>
+<a id="ae6785a75beb196aef377ee7fa9b30137" name="ae6785a75beb196aef377ee7fa9b30137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6785a75beb196aef377ee7fa9b30137">&#9670;&#160;</a></span>emergency_stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool emergency_stop = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac19a09119ddb28c85599b12224e66fc7" name="ac19a09119ddb28c85599b12224e66fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac19a09119ddb28c85599b12224e66fc7">&#9670;&#160;</a></span>motor_pins</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint motor_pins[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>İlk değer:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <a class="code hl_define" href="group__stepper__motor.html#ga50001e7c29a28cd671033e08aa6d0a70">STEP_MOTOR_A1</a>,</div>
+<div class="line">    <a class="code hl_define" href="group__stepper__motor.html#ga026044984617dae4a9802188e6af7396">STEP_MOTOR_A2</a>,</div>
+<div class="line">    <a class="code hl_define" href="group__stepper__motor.html#ga689c19f870f487db42b6cdc7764fa6ef">STEP_MOTOR_B1</a>,</div>
+<div class="line">    <a class="code hl_define" href="group__stepper__motor.html#ga05840ec752b5cbc2337ff7e76bf96940">STEP_MOTOR_B2</a></div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__stepper__motor_html_ga026044984617dae4a9802188e6af7396"><div class="ttname"><a href="group__stepper__motor.html#ga026044984617dae4a9802188e6af7396">STEP_MOTOR_A2</a></div><div class="ttdeci">#define STEP_MOTOR_A2</div><div class="ttdef"><b>Definition</b> pico_training_board.h:66</div></div>
+<div class="ttc" id="agroup__stepper__motor_html_ga05840ec752b5cbc2337ff7e76bf96940"><div class="ttname"><a href="group__stepper__motor.html#ga05840ec752b5cbc2337ff7e76bf96940">STEP_MOTOR_B2</a></div><div class="ttdeci">#define STEP_MOTOR_B2</div><div class="ttdef"><b>Definition</b> pico_training_board.h:68</div></div>
+<div class="ttc" id="agroup__stepper__motor_html_ga50001e7c29a28cd671033e08aa6d0a70"><div class="ttname"><a href="group__stepper__motor.html#ga50001e7c29a28cd671033e08aa6d0a70">STEP_MOTOR_A1</a></div><div class="ttdeci">#define STEP_MOTOR_A1</div><div class="ttdef"><b>Definition</b> pico_training_board.h:65</div></div>
+<div class="ttc" id="agroup__stepper__motor_html_ga689c19f870f487db42b6cdc7764fa6ef"><div class="ttname"><a href="group__stepper__motor.html#ga689c19f870f487db42b6cdc7764fa6ef">STEP_MOTOR_B1</a></div><div class="ttdeci">#define STEP_MOTOR_B1</div><div class="ttdef"><b>Definition</b> pico_training_board.h:67</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a66ccad2156e1b99c1a0fbfb8b4ebf366" name="a66ccad2156e1b99c1a0fbfb8b4ebf366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66ccad2156e1b99c1a0fbfb8b4ebf366">&#9670;&#160;</a></span>motor_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="pico__training__board_8h.html#ab261a5f660ee185f6574b191c393ded6">motor_state_t</a> motor_state = <a class="el" href="pico__training__board_8h.html#ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a">MOTOR_STOPPED</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9edcd7c81b99b7127211b0d4d0d69ef0" name="a9edcd7c81b99b7127211b0d4d0d69ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edcd7c81b99b7127211b0d4d0d69ef0">&#9670;&#160;</a></span>step_sequence</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t step_sequence[8][4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>İlk değer:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {1, 0, 0, 0},  </div>
+<div class="line">    {1, 1, 0, 0},  </div>
+<div class="line">    {0, 1, 0, 0},  </div>
+<div class="line">    {0, 1, 1, 0},  </div>
+<div class="line">    {0, 0, 1, 0},  </div>
+<div class="line">    {0, 0, 1, 1},  </div>
+<div class="line">    {0, 0, 0, 1},  </div>
+<div class="line">    {1, 0, 0, 1}   </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Step motoru yarım adım sekans deseni. </p>
+<p>Bu dizi, 4 fazlı bir step motorunu yarım adım modunda kontrol etmek için 8 adımlı bir sekans tanımlar. Her satır, sekanstaki bir adımı ve her sütun bir motor bobininin durumunu temsil eder (1 = enerjili, 0 = enerjisiz).</p>
+<p>Sekans, tek bobinleri ve bitişik bobin çiftlerini sırayla enerjilendirerek daha düzgün motor dönüşü sağlar:</p><ul>
+<li>Sekans başına 8 adım (satırlar)</li>
+<li>4 bobin/faz (sütunlar)</li>
+<li>Saat yönünde dönüş için standart yarım adım deseni izler</li>
+</ul>
+<dl class="section note"><dt>Not</dt><dd>Sürekli dönüş sağlamak için sekans son adımdan ilk adıma döner </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

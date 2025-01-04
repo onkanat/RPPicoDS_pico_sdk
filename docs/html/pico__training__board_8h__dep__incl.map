@@ -1,0 +1,21 @@
+<map id="pico_training_board.h" name="pico_training_board.h">
+<area shape="rect" id="Node000001" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="395,5,539,31"/>
+<area shape="rect" id="Node000002" href="$buttons_8c.html" title="Pico Eğitim Kartı için buton kontrol implementasyonu." alt="" coords="5,79,81,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,34,245,55,94,82,82,84,81,79,93,76,244,50,379,29"/>
+<area shape="rect" id="Node000003" href="$buzzer_8c.html" title="Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu." alt="" coords="105,79,176,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="393,37,188,82,177,84,175,79,186,76,392,32"/>
+<area shape="rect" id="Node000004" href="$init__functions_8c.html" title="Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu." alt="" coords="199,79,308,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="418,39,291,81,289,76,416,34"/>
+<area shape="rect" id="Node000005" href="$keypad_8c.html" title="Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu." alt="" coords="333,79,407,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="440,43,388,81,384,76,437,38"/>
+<area shape="rect" id="Node000006" href="$lcd__i2c_8c.html" title="I2C iletişimi kullanan LCD kontrol fonksiyonları" alt="" coords="430,79,504,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="470,46,470,79,464,79,464,46"/>
+<area shape="rect" id="Node000007" href="$led__control_8c.html" title="Pico Eğitim Kartı için led ve rgb kontrolü uygulaması" alt="" coords="527,79,623,105"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="500,38,558,76,555,81,497,42"/>
+<area shape="rect" id="Node000008" href="$main_8c.html" title="Ana program, adım motoru kontrolü için Raspberry Pi Pico Eğitim Kartı&#39;nı başlatır." alt="" coords="646,79,707,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="517,34,647,78,645,83,516,39"/>
+<area shape="rect" id="Node000009" href="$sensors_8c.html" title="Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması" alt="" coords="731,79,809,105"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="534,32,731,79,730,84,533,38"/>
+<area shape="rect" id="Node000010" href="$stepper_8c.html" title="Step motor kontrol fonksiyonları" alt="" coords="833,79,907,105"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="555,30,821,76,833,79,831,84,820,82,554,35"/>
+</map>

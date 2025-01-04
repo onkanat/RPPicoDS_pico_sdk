@@ -1,0 +1,9 @@
+<map id="init_step_motor" name="init_step_motor">
+<area shape="rect" id="Node000001" title="Step motor GPIO pinlerini başlatır." alt="" coords="362,5,473,31"/>
+<area shape="rect" id="Node000002" href="$stepper_8c.html#ada890c90b978fea21eb7ea4c8c0467b8" title="Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder." alt="" coords="239,5,314,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,21,315,21,315,16,347,16"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ab148110bebfeb5468545d63e65d8095f" title="Core 1&#39;de çalışacak işlev." alt="" coords="103,5,191,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,21,192,21,192,16,224,16"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

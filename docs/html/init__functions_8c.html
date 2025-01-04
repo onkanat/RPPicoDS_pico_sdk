@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: init_functions.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonksiyonlar</a>  </div>
+  <div class="headertitle"><div class="title">init_functions.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu.  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+init_functions.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c__incl.png" border="0" usemap="#ainit__functions_8c" alt=""/></div>
+<map name="ainit__functions_8c" id="ainit__functions_8c">
+<area shape="rect" title="Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu." alt="" coords="421,5,530,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:ab15cf82f0329bc4d7262c03559eaaa8e" id="r_ab15cf82f0329bc4d7262c03559eaaa8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab15cf82f0329bc4d7262c03559eaaa8e">init_adc</a> (void)</td></tr>
+<tr class="memdesc:ab15cf82f0329bc4d7262c03559eaaa8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog girişler için ADC'yi başlatır.  <br /></td></tr>
+<tr class="separator:ab15cf82f0329bc4d7262c03559eaaa8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b053b746b94dc3174b4c7c5c6370562" id="r_a3b053b746b94dc3174b4c7c5c6370562"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b053b746b94dc3174b4c7c5c6370562">init_pwm</a> (void)</td></tr>
+<tr class="memdesc:a3b053b746b94dc3174b4c7c5c6370562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buzzer ve LED çıkışları için PWM'i başlatır.  <br /></td></tr>
+<tr class="separator:a3b053b746b94dc3174b4c7c5c6370562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e29c0194abe54781cea1d434aa4d2d" id="r_a26e29c0194abe54781cea1d434aa4d2d"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e29c0194abe54781cea1d434aa4d2d">init_pwm_pin</a> (uint gpio, float frequency, uint16_t duty)</td></tr>
+<tr class="memdesc:a26e29c0194abe54781cea1d434aa4d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Belirli bir GPIO pini için PWM'i başlatır.  <br /></td></tr>
+<tr class="separator:a26e29c0194abe54781cea1d434aa4d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafed2ade168a085630c2fe8d776432f2" id="r_aafed2ade168a085630c2fe8d776432f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafed2ade168a085630c2fe8d776432f2">init_lcd</a> (void)</td></tr>
+<tr class="memdesc:aafed2ade168a085630c2fe8d776432f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C LCD ekranını başlatır.  <br /></td></tr>
+<tr class="separator:aafed2ade168a085630c2fe8d776432f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98133f3bc8c62b912d63da405e2adb15" id="r_a98133f3bc8c62b912d63da405e2adb15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98133f3bc8c62b912d63da405e2adb15">init_board</a> (void)</td></tr>
+<tr class="memdesc:a98133f3bc8c62b912d63da405e2adb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tüm kart bileşenlerini başlatır.  <br /></td></tr>
+<tr class="separator:a98133f3bc8c62b912d63da405e2adb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu. </p>
+</div><h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="ab15cf82f0329bc4d7262c03559eaaa8e" name="ab15cf82f0329bc4d7262c03559eaaa8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15cf82f0329bc4d7262c03559eaaa8e">&#9670;&#160;</a></span>init_adc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_adc </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analog girişler için ADC'yi başlatır. </p>
+<p>Aşağıdakiler için ADC'yi yapılandırır ve GPIO pinlerini başlatır:</p><ul>
+<li>Tuş takımı (GPIO28)</li>
+<li>Potansiyometre (GPIO27)</li>
+<li>Işık sensörü (GPIO26) </li>
+</ul>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e_icgraph.png" border="0" usemap="#ainit__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e_icgraph" alt=""/></div>
+<map name="ainit__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e_icgraph" id="ainit__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e_icgraph">
+<area shape="rect" title="Analog girişler için ADC&#39;yi başlatır." alt="" coords="228,5,294,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="213,21,180,21,180,16,213,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a98133f3bc8c62b912d63da405e2adb15" name="a98133f3bc8c62b912d63da405e2adb15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98133f3bc8c62b912d63da405e2adb15">&#9670;&#160;</a></span>init_board()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_board </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tüm kart bileşenlerini başlatır. </p>
+<p>Diğer tüm başlatma fonksiyonlarını çağıran ve butonlar ve LED'ler için GPIO pinlerini ayarlayan ana başlatma fonksiyonu </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_a98133f3bc8c62b912d63da405e2adb15_cgraph.png" border="0" usemap="#ainit__functions_8c_a98133f3bc8c62b912d63da405e2adb15_cgraph" alt=""/></div>
+<map name="ainit__functions_8c_a98133f3bc8c62b912d63da405e2adb15_cgraph" id="ainit__functions_8c_a98133f3bc8c62b912d63da405e2adb15_cgraph">
+<area shape="rect" title="Tüm kart bileşenlerini başlatır." alt="" coords="5,155,83,180"/>
+<area shape="rect" href="init__functions_8c.html#ab15cf82f0329bc4d7262c03559eaaa8e" title="Analog girişler için ADC&#39;yi başlatır." alt="" coords="148,5,215,31"/>
+<area shape="poly" title=" " alt="" coords="49,153,79,100,102,68,129,40,133,37,137,41,132,44,106,72,84,103,54,155"/>
+<area shape="rect" href="buttons_8c.html#afe0b498404852847e48c5539c4d651e8" title="Tüm buton GPIO pinlerini başlat." alt="" coords="137,55,226,80"/>
+<area shape="poly" title=" " alt="" coords="56,153,88,122,129,89,134,86,137,91,132,94,91,126,60,156"/>
+<area shape="rect" href="buzzer_8c.html#abeed4b38208cb0179851d68db47de935" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="280,168,399,194"/>
+<area shape="poly" title=" " alt="" coords="83,167,265,175,264,180,83,172"/>
+<area shape="rect" href="init__functions_8c.html#aafed2ade168a085630c2fe8d776432f2" title="I2C LCD ekranını başlatır." alt="" coords="150,104,213,130"/>
+<area shape="poly" title=" " alt="" coords="80,152,134,131,136,136,82,157"/>
+<area shape="rect" href="sensors_8c.html#a45e774fb9ec2c151678550b5857847c4" title="PIR hareket sensörünü başlatır." alt="" coords="152,205,211,231"/>
+<area shape="poly" title=" " alt="" coords="82,178,138,200,137,205,80,183"/>
+<area shape="rect" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="145,255,218,280"/>
+<area shape="poly" title=" " alt="" coords="60,179,91,209,132,241,137,244,134,249,129,246,88,213,56,182"/>
+<area shape="rect" href="sensors_8c.html#af38f5ef820a2c8d443994ae6ead83789" title="Ultrasonik sensör pinlerini başlatır." alt="" coords="131,304,232,330"/>
+<area shape="poly" title=" " alt="" coords="54,180,84,232,106,263,132,291,136,293,132,298,129,295,102,267,79,235,49,182"/>
+<area shape="rect" href="init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="461,217,559,243"/>
+<area shape="poly" title=" " alt="" coords="388,192,449,210,448,215,386,197"/>
+<area shape="rect" href="lcd__i2c_8c.html#a31b5bba75b8e9f4d67830f7fad24e0c7" title="LCD&#39;ye bir byte veri gönderir." alt="" coords="287,104,392,130"/>
+<area shape="poly" title=" " alt="" coords="213,114,271,114,271,120,213,120"/>
+<area shape="rect" href="lcd__i2c_8c.html#ac3ec1b5d06ce5dd1a315251049f94ab6" title="I2C LCD&#39;ye tek byte veri yazar." alt="" coords="621,117,726,143"/>
+<area shape="poly" title=" " alt="" coords="393,122,447,128,605,130,605,135,447,133,393,127"/>
+<area shape="rect" href="lcd__i2c_8c.html#af425a04959f9e02cd8fa53c77dce73e1" title="LCD&#39;nin enable pinini değiştirir." alt="" coords="447,92,573,118"/>
+<area shape="poly" title=" " alt="" coords="392,110,431,108,432,113,393,116"/>
+<area shape="poly" title=" " alt="" coords="573,112,606,117,605,122,573,117"/>
+<area shape="poly" title=" " alt="" coords="212,252,230,241,254,222,279,203,286,198,289,203,281,207,258,226,234,246,214,256"/>
+<area shape="rect" href="led__control_8c.html#a30c79869aed334b91ce300139ba2fb92" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="291,267,388,292"/>
+<area shape="poly" title=" " alt="" coords="219,268,275,272,275,277,218,273"/>
+<area shape="rect" href="led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="291,217,389,243"/>
+<area shape="poly" title=" " alt="" coords="218,256,275,243,276,248,219,262"/>
+<area shape="poly" title=" " alt="" coords="386,263,448,245,449,250,388,269"/>
+<area shape="poly" title=" " alt="" coords="389,228,446,228,446,233,389,233"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_a98133f3bc8c62b912d63da405e2adb15_icgraph.png" border="0" usemap="#ainit__functions_8c_a98133f3bc8c62b912d63da405e2adb15_icgraph" alt=""/></div>
+<map name="ainit__functions_8c_a98133f3bc8c62b912d63da405e2adb15_icgraph" id="ainit__functions_8c_a98133f3bc8c62b912d63da405e2adb15_icgraph">
+<area shape="rect" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aafed2ade168a085630c2fe8d776432f2" name="aafed2ade168a085630c2fe8d776432f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafed2ade168a085630c2fe8d776432f2">&#9670;&#160;</a></span>init_lcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_lcd </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C LCD ekranını başlatır. </p>
+<p>I2C iletişimini yapılandırır ve LCD ekranını standart 16x2 yapılandırması ile başlatır </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_aafed2ade168a085630c2fe8d776432f2_cgraph.png" border="0" usemap="#ainit__functions_8c_aafed2ade168a085630c2fe8d776432f2_cgraph" alt=""/></div>
+<map name="ainit__functions_8c_aafed2ade168a085630c2fe8d776432f2_cgraph" id="ainit__functions_8c_aafed2ade168a085630c2fe8d776432f2_cgraph">
+<area shape="rect" title="I2C LCD ekranını başlatır." alt="" coords="5,5,68,31"/>
+<area shape="rect" href="lcd__i2c_8c.html#a31b5bba75b8e9f4d67830f7fad24e0c7" title="LCD&#39;ye bir byte veri gönderir." alt="" coords="116,5,221,31"/>
+<area shape="poly" title=" " alt="" coords="68,16,100,16,100,21,68,21"/>
+<area shape="rect" href="lcd__i2c_8c.html#ac3ec1b5d06ce5dd1a315251049f94ab6" title="I2C LCD&#39;ye tek byte veri yazar." alt="" coords="442,5,548,31"/>
+<area shape="poly" title=" " alt="" coords="221,16,427,16,427,21,221,21"/>
+<area shape="rect" href="lcd__i2c_8c.html#af425a04959f9e02cd8fa53c77dce73e1" title="LCD&#39;nin enable pinini değiştirir." alt="" coords="269,31,394,56"/>
+<area shape="poly" title=" " alt="" coords="222,24,254,29,253,34,221,29"/>
+<area shape="poly" title=" " alt="" coords="394,31,427,26,427,31,395,36"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_aafed2ade168a085630c2fe8d776432f2_icgraph.png" border="0" usemap="#ainit__functions_8c_aafed2ade168a085630c2fe8d776432f2_icgraph" alt=""/></div>
+<map name="ainit__functions_8c_aafed2ade168a085630c2fe8d776432f2_icgraph" id="ainit__functions_8c_aafed2ade168a085630c2fe8d776432f2_icgraph">
+<area shape="rect" title="I2C LCD ekranını başlatır." alt="" coords="228,5,290,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="212,21,181,21,181,16,212,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b053b746b94dc3174b4c7c5c6370562" name="a3b053b746b94dc3174b4c7c5c6370562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b053b746b94dc3174b4c7c5c6370562">&#9670;&#160;</a></span>init_pwm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_pwm </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buzzer ve LED çıkışları için PWM'i başlatır. </p>
+<p>Aşağıdakiler için PWM kanallarını yapılandırır:</p><ul>
+<li>Buzzer</li>
+<li>RGB LED çıkışları </li>
+</ul>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_cgraph.png" border="0" usemap="#ainit__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_cgraph" alt=""/></div>
+<map name="ainit__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_cgraph" id="ainit__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_cgraph">
+<area shape="rect" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="5,55,79,80"/>
+<area shape="rect" href="buzzer_8c.html#abeed4b38208cb0179851d68db47de935" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="127,5,246,31"/>
+<area shape="poly" title=" " alt="" coords="78,53,131,34,133,39,80,58"/>
+<area shape="rect" href="led__control_8c.html#a30c79869aed334b91ce300139ba2fb92" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="138,55,235,80"/>
+<area shape="poly" title=" " alt="" coords="79,65,122,65,122,70,79,70"/>
+<area shape="rect" href="led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="137,104,236,130"/>
+<area shape="poly" title=" " alt="" coords="80,77,133,96,131,101,78,82"/>
+<area shape="rect" href="init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="294,55,391,80"/>
+<area shape="poly" title=" " alt="" coords="230,29,286,47,284,52,229,34"/>
+<area shape="poly" title=" " alt="" coords="235,65,278,65,278,70,235,70"/>
+<area shape="poly" title=" " alt="" coords="229,101,284,83,286,88,230,106"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_icgraph.png" border="0" usemap="#ainit__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_icgraph" alt=""/></div>
+<map name="ainit__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_icgraph" id="ainit__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_icgraph">
+<area shape="rect" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="228,5,301,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="213,21,180,21,180,16,213,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26e29c0194abe54781cea1d434aa4d2d" name="a26e29c0194abe54781cea1d434aa4d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e29c0194abe54781cea1d434aa4d2d">&#9670;&#160;</a></span>init_pwm_pin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint init_pwm_pin </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>frequency</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>duty</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Belirli bir GPIO pini için PWM'i başlatır. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>PWM için başlatılacak GPIO pin numarası </td></tr>
+    <tr><td class="paramname">frequency</td><td>Başlangıç PWM frekansı Hz cinsinden (uygulanabilirse, varsayılan için 0) </td></tr>
+    <tr><td class="paramname">duty</td><td>Başlangıç görev döngüsü (0-PWM_DUTY_MAX) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>uint Yapılandırılmış PWM dilim numarası </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="init__functions_8c_a26e29c0194abe54781cea1d434aa4d2d_icgraph.png" border="0" usemap="#ainit__functions_8c_a26e29c0194abe54781cea1d434aa4d2d_icgraph" alt=""/></div>
+<map name="ainit__functions_8c_a26e29c0194abe54781cea1d434aa4d2d_icgraph" id="ainit__functions_8c_a26e29c0194abe54781cea1d434aa4d2d_icgraph">
+<area shape="rect" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="517,55,614,80"/>
+<area shape="rect" href="buzzer_8c.html#abeed4b38208cb0179851d68db47de935" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="349,5,469,31"/>
+<area shape="poly" title=" " alt="" coords="507,52,451,34,453,29,509,47"/>
+<area shape="rect" href="led__control_8c.html#a30c79869aed334b91ce300139ba2fb92" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="360,55,458,80"/>
+<area shape="poly" title=" " alt="" coords="501,70,458,70,458,65,501,65"/>
+<area shape="rect" href="led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="360,104,458,130"/>
+<area shape="poly" title=" " alt="" coords="509,88,453,106,451,101,507,83"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,31,180,56"/>
+<area shape="poly" title=" " alt="" coords="334,28,181,43,180,37,334,23"/>
+<area shape="rect" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="228,56,301,82"/>
+<area shape="poly" title=" " alt="" coords="357,39,303,59,301,54,355,34"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,56"/>
+<area shape="poly" title=" " alt="" coords="87,46,55,46,55,41,87,41"/>
+<area shape="poly" title=" " alt="" coords="212,61,180,54,181,49,213,56"/>
+<area shape="poly" title=" " alt="" coords="345,71,302,71,302,66,345,65"/>
+<area shape="poly" title=" " alt="" coords="353,101,301,83,303,78,355,96"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

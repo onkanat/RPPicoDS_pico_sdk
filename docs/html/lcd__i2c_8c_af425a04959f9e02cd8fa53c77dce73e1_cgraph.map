@@ -1,0 +1,5 @@
+<map id="lcd_toggle_enable" name="lcd_toggle_enable">
+<area shape="rect" id="Node000001" title="LCD&#39;nin enable pinini değiştirir." alt="" coords="5,5,131,31"/>
+<area shape="rect" id="Node000002" href="$lcd__i2c_8c.html#ac3ec1b5d06ce5dd1a315251049f94ab6" title="I2C LCD&#39;ye tek byte veri yazar." alt="" coords="179,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,16,163,16,163,21,131,21"/>
+</map>

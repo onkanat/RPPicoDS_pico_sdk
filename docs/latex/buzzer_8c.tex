@@ -1,0 +1,241 @@
+\doxysection{buzzer.\+c Dosya Referansı}
+\hypertarget{buzzer_8c}{}\label{buzzer_8c}\index{buzzer.c@{buzzer.c}}
+
+
+Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu.  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+buzzer.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buzzer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Veri Yapıları}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}}
+\begin{DoxyCompactList}\small\item\em Müzikal nota bilgilerini saklayan yapı \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{buzzer_8c_abeed4b38208cb0179851d68db47de935}{init\+\_\+buzzer\+\_\+pwm}} (void)
+\begin{DoxyCompactList}\small\item\em Buzzer için özel olarak PWM\textquotesingle{}i başlatır. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}{set\+\_\+pwm\+\_\+frequency}} (uint slice\+\_\+num, float frequency)
+\begin{DoxyCompactList}\small\item\em Belirtilen dilim için PWM frekansını ayarlar. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae}{get\+\_\+frequency}} (const char \texorpdfstring{$\ast$}{*}note, int octave)
+\begin{DoxyCompactList}\small\item\em Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note}} (float frequency, int duration\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Belirtilen frekans ve sürede buzzer\textquotesingle{}da bir nota çalar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes}} (const char \texorpdfstring{$\ast$}{*}notes\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, int num\+\_\+notes, int duration)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Değişkenler}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}} \mbox{\hyperlink{buzzer_8c_aa87fb5951c13e021b9254a6ea02aa0f9}{note\+\_\+frequencies}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyEnumerate}
+\item oktavdaki müzikal notalar ve karşılık gelen frekanslarının dizisi 
+\end{DoxyEnumerate}\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu. 
+
+\begin{DoxyAuthor}{Yazar}
+Hakan KILIÇ\+ASLAN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Tarih}
+2024-\/12-\/4 Bu dosya, Pico Eğitim Kartı için buzzer ile ilgili fonksiyonların implementasyonunu, nota frekans hesaplamalarını ve ses üretimi için PWM kontrolünü içerir. 
+\end{DoxyDate}
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae}\index{buzzer.c@{buzzer.c}!get\_frequency@{get\_frequency}}
+\index{get\_frequency@{get\_frequency}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{get\_frequency()}{get\_frequency()}}
+{\footnotesize\ttfamily \label{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae} 
+double get\+\_\+frequency (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{note}{, }\item[{int}]{octave}{}\end{DoxyParamCaption})}
+
+
+
+Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar. 
+
+Bu fonksiyon, önceden tanımlanmış nota frekansları listesinden temel frekansını bularak ve belirtilen oktava göre ayarlayarak, belirtilen müzikal notanın frekansını belirler.
+
+
+\begin{DoxyParams}{Parametreler}
+{\em note} & Müzikal notayı temsil eden dize (örn. "{}\+A"{}, "{}\+C\#"{}, "{}\+G"{}) \\
+\hline
+{\em octave} & Oktav numarasını temsil eden tamsayı \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+Belirtilen oktavdaki notanın frekansı
+\end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Referans oktav 4\textquotesingle{}tür ve diğer oktavlar için frekanslar şu formül kullanılarak hesaplanır\+: f = f\+\_\+temel \texorpdfstring{$\ast$}{*} 2\texorpdfstring{$^\wedge$}{\string^}(oktav\+\_\+farkı) 
+\end{DoxyNote}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buzzer_8c_abeed4b38208cb0179851d68db47de935}\index{buzzer.c@{buzzer.c}!init\_buzzer\_pwm@{init\_buzzer\_pwm}}
+\index{init\_buzzer\_pwm@{init\_buzzer\_pwm}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{init\_buzzer\_pwm()}{init\_buzzer\_pwm()}}
+{\footnotesize\ttfamily \label{buzzer_8c_abeed4b38208cb0179851d68db47de935} 
+void init\+\_\+buzzer\+\_\+pwm (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Buzzer için özel olarak PWM\textquotesingle{}i başlatır. 
+
+Bu fonksiyon, buzzer\textquotesingle{}ın sessiz bir durumda başlamasını sağlamak için başlangıç frekansı ve sıfır görev döngüsü ile buzzer için PWM pinini ayarlar.
+
+\begin{DoxyNote}{Not}
+Bu fonksiyon, herhangi bir ses üretme girişiminden önce sistem başlatılırken bir kez çağrılmalıdır. 
+\end{DoxyNote}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{buzzer_8c_abeed4b38208cb0179851d68db47de935_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buzzer_8c_abeed4b38208cb0179851d68db47de935_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}\index{buzzer.c@{buzzer.c}!play\_note@{play\_note}}
+\index{play\_note@{play\_note}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{play\_note()}{play\_note()}}
+{\footnotesize\ttfamily \label{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738} 
+void play\+\_\+note (\begin{DoxyParamCaption}\item[{float}]{frequency}{, }\item[{int}]{duration\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Belirtilen frekans ve sürede buzzer\textquotesingle{}da bir nota çalar. 
+
+Bu fonksiyon, PWM kullanarak bir nota çalar ve nota çalma işlemi tamamlandıktan sonra uygun temizleme işlemlerini gerçekleştirir. Parametre doğrulaması içerir ve notalar arası temiz geçişleri sağlar.
+
+
+\begin{DoxyParams}{Parametreler}
+{\em frequency} & Çalınacak notanın Hertz cinsinden frekansı \\
+\hline
+{\em duration\+\_\+ms} & Notanın çalınması gereken süre (milisaniye cinsinden)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Not}
+Fonksiyon, notaların birbirine karışmasını önlemek ve temiz ses üretimini sağlamak için her notadan sonra küçük bir gecikme içerir 
+\end{DoxyNote}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}\index{buzzer.c@{buzzer.c}!play\_notes@{play\_notes}}
+\index{play\_notes@{play\_notes}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{play\_notes()}{play\_notes()}}
+{\footnotesize\ttfamily \label{buzzer_8c_ad3b93659dae6daec910b9f79e4546919} 
+void play\+\_\+notes (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{notes}{\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, }\item[{int}]{num\+\_\+notes}{, }\item[{int}]{duration}{}\end{DoxyParamCaption})}
+
+Bir dizi müzikal notanın çalınmasını sağlar.
+
+Bu fonksiyon, bir dizi notanın üzerinden yineleyerek, her bir notanın adına ve oktavına göre frekansını hesaplar ve belirtilen sürede notanın çalınmasını sağlar.
+
+
+\begin{DoxyParams}{Parametreler}
+{\em notes} & İki boyutlu bir dize dizisi, burada her bir eleman iki dize içerir\+: ilk dize nota adını (örn. "{}\+C"{}, "{}\+D\#"{}), ikinci dize oktavı (örn. "{}4"{}) temsil eder. \\
+\hline
+{\em num\+\_\+notes} & notes dizisindeki nota sayısı. \\
+\hline
+{\em duration} & Her bir notanın çalınacağı süre (milisaniye cinsinden). \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buzzer_8c_ad3b93659dae6daec910b9f79e4546919_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}\index{buzzer.c@{buzzer.c}!set\_pwm\_frequency@{set\_pwm\_frequency}}
+\index{set\_pwm\_frequency@{set\_pwm\_frequency}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{set\_pwm\_frequency()}{set\_pwm\_frequency()}}
+{\footnotesize\ttfamily \label{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9} 
+void set\+\_\+pwm\+\_\+frequency (\begin{DoxyParamCaption}\item[{uint}]{slice\+\_\+num}{, }\item[{float}]{frequency}{}\end{DoxyParamCaption})}
+
+
+
+Belirtilen dilim için PWM frekansını ayarlar. 
+
+Bu fonksiyon, \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}\textquotesingle{}den önceden tanımlanmış sabitleri kullanarak istenen frekans için PWM dilimini yapılandırır. İstenen frekansa ulaşmak için uygun bölücü değerlerini hesaplar.
+
+
+\begin{DoxyParams}{Parametreler}
+{\em slice\+\_\+num} & Yapılandırılacak PWM dilim numarası \\
+\hline
+{\em frequency} & İstenen frekans (Hz cinsinden)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Not}
+Fonksiyon, istenen frekansa en yakın eşleşmeyi elde etmek için bölücü değerlerini otomatik olarak ayarlar 
+\end{DoxyNote}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Değişken Dokümantasyonu}
+\Hypertarget{buzzer_8c_aa87fb5951c13e021b9254a6ea02aa0f9}\index{buzzer.c@{buzzer.c}!note\_frequencies@{note\_frequencies}}
+\index{note\_frequencies@{note\_frequencies}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{note\_frequencies}{note\_frequencies}}
+{\footnotesize\ttfamily \label{buzzer_8c_aa87fb5951c13e021b9254a6ea02aa0f9} 
+\mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}} note\+\_\+frequencies\mbox{[}$\,$\mbox{]}}
+
+{\bfseries İlk değer\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C4"{}},\ 261.63\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C\#4/Db4"{}},\ 277.18\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}D4"{}},\ 293.66\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}D\#4/Eb4"{}},\ 311.13\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}E4"{}},\ 329.63\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}F4"{}},\ 349.23\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}F\#4/Gb4"{}},\ 369.99\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}G4"{}},\ 392.00\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}G\#4/Ab4"{}},\ 415.30\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}A4"{}},\ 440.00\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}A\#4/Bb4"{}},\ 466.16\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}B4"{}},\ 493.88\}\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item oktavdaki müzikal notalar ve karşılık gelen frekanslarının dizisi 
+\end{DoxyEnumerate}
+
+Bu tablo, frekans hesaplamaları için referans oktav olarak kullanılan dördüncü oktavdaki müzikal notalar için standart frekansları içerir. 

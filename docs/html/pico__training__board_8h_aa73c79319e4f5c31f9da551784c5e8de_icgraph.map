@@ -1,0 +1,5 @@
+<map id="measure_distance" name="measure_distance">
+<area shape="rect" id="Node000001" title="Ultrasonik sensör kullanarak mesafe ölçer." alt="" coords="202,5,329,31"/>
+<area shape="rect" id="Node000002" href="$sensors_8c.html#a4628d8d278604d424be0693fd587e661" title="Birden fazla ölçümden ortalama mesafeyi alır." alt="" coords="5,5,154,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,21,154,21,154,16,186,16"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="keypadOku" name="keypadOku">
+<area shape="rect" id="Node000001" title="Analog tuş takımını okur ve basılan tuşu döndürür." alt="" coords="300,5,387,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="103,5,252,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,21,252,21,252,16,284,16"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

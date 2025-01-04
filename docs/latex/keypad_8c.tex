@@ -1,0 +1,106 @@
+\doxysection{keypad.\+c Dosya Referansı}
+\hypertarget{keypad_8c}{}\label{keypad_8c}\index{keypad.c@{keypad.c}}
+
+
+Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu.  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+keypad.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keypad_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypad\+Oku}} (void)
+\begin{DoxyCompactList}\small\item\em Analog tuş takımını okur ve basılan tuşu döndürür. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{keypad_8c_ab2bff14828e4757d93fe24490da85228}{analog\+\_\+button\+\_\+pressed}} (uint gpio)
+\begin{DoxyCompactList}\small\item\em Analog giriş kullanarak bir düğmeye basılıp basılmadığını kontrol eder. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Analog değeri okur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu. 
+
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{keypad_8c_ab2bff14828e4757d93fe24490da85228}\index{keypad.c@{keypad.c}!analog\_button\_pressed@{analog\_button\_pressed}}
+\index{analog\_button\_pressed@{analog\_button\_pressed}!keypad.c@{keypad.c}}
+\doxysubsubsection{\texorpdfstring{analog\_button\_pressed()}{analog\_button\_pressed()}}
+{\footnotesize\ttfamily \label{keypad_8c_ab2bff14828e4757d93fe24490da85228} 
+bool analog\+\_\+button\+\_\+pressed (\begin{DoxyParamCaption}\item[{uint}]{gpio}{}\end{DoxyParamCaption})}
+
+
+
+Analog giriş kullanarak bir düğmeye basılıp basılmadığını kontrol eder. 
+
+Bu fonksiyon, bir analog girişi okur ve ADC değerine göre bir düğmeye basılıp basılmadığını belirler ve debounce koruması içerir.
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & Okunacak GPIO pin numarası \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+bool düğmeye basılmışsa true, aksi halde false 
+\end{DoxyReturn}
+\Hypertarget{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}\index{keypad.c@{keypad.c}!keypadOku@{keypadOku}}
+\index{keypadOku@{keypadOku}!keypad.c@{keypad.c}}
+\doxysubsubsection{\texorpdfstring{keypadOku()}{keypadOku()}}
+{\footnotesize\ttfamily \label{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b} 
+char keypad\+Oku (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Analog tuş takımını okur ve basılan tuşu döndürür. 
+
+Bu fonksiyon, KEYPAD pinine (GPIO28) bağlı tuş takımından analog değeri okur ve ADC değerini karşılık gelen tuş takımı karakterlerine eşleştirir. Tuş takımı düğmeleri aşağıdaki matris şeklinde düzenlenmiştir\+: \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} 3 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 4 \texorpdfstring{$\vert$}{|} 5 \texorpdfstring{$\vert$}{|} 6 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 7 \texorpdfstring{$\vert$}{|} 8 \texorpdfstring{$\vert$}{|} 9 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\ast$}{*} \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} \# \texorpdfstring{$\vert$}{|}
+
+\begin{DoxyReturn}{Döndürdüğü değer}
+char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}\index{keypad.c@{keypad.c}!read\_analog@{read\_analog}}
+\index{read\_analog@{read\_analog}!keypad.c@{keypad.c}}
+\doxysubsubsection{\texorpdfstring{read\_analog()}{read\_analog()}}
+{\footnotesize\ttfamily \label{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995} 
+uint16\+\_\+t read\+\_\+analog (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Analog değeri okur. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em pin} & Okunacak ADC pin numarası \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+uint16\+\_\+t Okunan analog değer (0-\/4095 arası) 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995_icgraph}
+\end{center}
+\end{figure}

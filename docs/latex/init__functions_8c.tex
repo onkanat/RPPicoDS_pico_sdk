@@ -1,0 +1,163 @@
+\doxysection{init\+\_\+functions.\+c Dosya Referansı}
+\hypertarget{init__functions_8c}{}\label{init__functions_8c}\index{init\_functions.c@{init\_functions.c}}
+
+
+Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu.  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+init\+\_\+functions.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{init__functions_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e}{init\+\_\+adc}} (void)
+\begin{DoxyCompactList}\small\item\em Analog girişler için ADC\textquotesingle{}yi başlatır. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}{init\+\_\+pwm}} (void)
+\begin{DoxyCompactList}\small\item\em Buzzer ve LED çıkışları için PWM\textquotesingle{}i başlatır. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{init__functions_8c_a26e29c0194abe54781cea1d434aa4d2d}{init\+\_\+pwm\+\_\+pin}} (uint gpio, float frequency, uint16\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Belirli bir GPIO pini için PWM\textquotesingle{}i başlatır. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{init__functions_8c_aafed2ade168a085630c2fe8d776432f2}{init\+\_\+lcd}} (void)
+\begin{DoxyCompactList}\small\item\em I2C LCD ekranını başlatır. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board}} (void)
+\begin{DoxyCompactList}\small\item\em Tüm kart bileşenlerini başlatır. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu. 
+
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e}\index{init\_functions.c@{init\_functions.c}!init\_adc@{init\_adc}}
+\index{init\_adc@{init\_adc}!init\_functions.c@{init\_functions.c}}
+\doxysubsubsection{\texorpdfstring{init\_adc()}{init\_adc()}}
+{\footnotesize\ttfamily \label{init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e} 
+void init\+\_\+adc (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Analog girişler için ADC\textquotesingle{}yi başlatır. 
+
+Aşağıdakiler için ADC\textquotesingle{}yi yapılandırır ve GPIO pinlerini başlatır\+:
+\begin{DoxyItemize}
+\item Tuş takımı (GPIO28)
+\item Potansiyometre (GPIO27)
+\item Işık sensörü (GPIO26) 
+\end{DoxyItemize}Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{init__functions_8c_ab15cf82f0329bc4d7262c03559eaaa8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}\index{init\_functions.c@{init\_functions.c}!init\_board@{init\_board}}
+\index{init\_board@{init\_board}!init\_functions.c@{init\_functions.c}}
+\doxysubsubsection{\texorpdfstring{init\_board()}{init\_board()}}
+{\footnotesize\ttfamily \label{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15} 
+void init\+\_\+board (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Tüm kart bileşenlerini başlatır. 
+
+Diğer tüm başlatma fonksiyonlarını çağıran ve butonlar ve LED\textquotesingle{}ler için GPIO pinlerini ayarlayan ana başlatma fonksiyonu Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{init__functions_8c_aafed2ade168a085630c2fe8d776432f2}\index{init\_functions.c@{init\_functions.c}!init\_lcd@{init\_lcd}}
+\index{init\_lcd@{init\_lcd}!init\_functions.c@{init\_functions.c}}
+\doxysubsubsection{\texorpdfstring{init\_lcd()}{init\_lcd()}}
+{\footnotesize\ttfamily \label{init__functions_8c_aafed2ade168a085630c2fe8d776432f2} 
+void init\+\_\+lcd (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+I2C LCD ekranını başlatır. 
+
+I2C iletişimini yapılandırır ve LCD ekranını standart 16x2 yapılandırması ile başlatır Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{init__functions_8c_aafed2ade168a085630c2fe8d776432f2_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{init__functions_8c_aafed2ade168a085630c2fe8d776432f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562}\index{init\_functions.c@{init\_functions.c}!init\_pwm@{init\_pwm}}
+\index{init\_pwm@{init\_pwm}!init\_functions.c@{init\_functions.c}}
+\doxysubsubsection{\texorpdfstring{init\_pwm()}{init\_pwm()}}
+{\footnotesize\ttfamily \label{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562} 
+void init\+\_\+pwm (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Buzzer ve LED çıkışları için PWM\textquotesingle{}i başlatır. 
+
+Aşağıdakiler için PWM kanallarını yapılandırır\+:
+\begin{DoxyItemize}
+\item Buzzer
+\item RGB LED çıkışları 
+\end{DoxyItemize}Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{init__functions_8c_a3b053b746b94dc3174b4c7c5c6370562_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{init__functions_8c_a26e29c0194abe54781cea1d434aa4d2d}\index{init\_functions.c@{init\_functions.c}!init\_pwm\_pin@{init\_pwm\_pin}}
+\index{init\_pwm\_pin@{init\_pwm\_pin}!init\_functions.c@{init\_functions.c}}
+\doxysubsubsection{\texorpdfstring{init\_pwm\_pin()}{init\_pwm\_pin()}}
+{\footnotesize\ttfamily \label{init__functions_8c_a26e29c0194abe54781cea1d434aa4d2d} 
+uint init\+\_\+pwm\+\_\+pin (\begin{DoxyParamCaption}\item[{uint}]{gpio}{, }\item[{float}]{frequency}{, }\item[{uint16\+\_\+t}]{duty}{}\end{DoxyParamCaption})}
+
+
+
+Belirli bir GPIO pini için PWM\textquotesingle{}i başlatır. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & PWM için başlatılacak GPIO pin numarası \\
+\hline
+{\em frequency} & Başlangıç PWM frekansı Hz cinsinden (uygulanabilirse, varsayılan için 0) \\
+\hline
+{\em duty} & Başlangıç görev döngüsü (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+uint Yapılandırılmış PWM dilim numarası 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{init__functions_8c_a26e29c0194abe54781cea1d434aa4d2d_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,18 @@
+<map id="init_pwm_pin" name="init_pwm_pin">
+<area shape="rect" id="Node000001" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="517,55,614,80"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#abeed4b38208cb0179851d68db47de935" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="349,5,469,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,52,451,34,453,29,509,47"/>
+<area shape="rect" id="Node000006" href="$led__control_8c.html#a30c79869aed334b91ce300139ba2fb92" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="360,55,458,80"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="501,70,458,70,458,65,501,65"/>
+<area shape="rect" id="Node000007" href="$led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="360,104,458,130"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="509,88,453,106,451,101,507,83"/>
+<area shape="rect" id="Node000003" href="$init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,31,180,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,28,181,43,180,37,334,23"/>
+<area shape="rect" id="Node000005" href="$init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="228,56,301,82"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="357,39,303,59,301,54,355,34"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,46,55,46,55,41,87,41"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="212,61,180,54,181,49,213,56"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="345,71,302,71,302,66,345,65"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="353,101,301,83,303,78,355,96"/>
+</map>

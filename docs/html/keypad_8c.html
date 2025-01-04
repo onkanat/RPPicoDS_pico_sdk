@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: keypad.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonksiyonlar</a>  </div>
+  <div class="headertitle"><div class="title">keypad.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu.  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+keypad.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="keypad_8c__incl.png" border="0" usemap="#akeypad_8c" alt=""/></div>
+<map name="akeypad_8c" id="akeypad_8c">
+<area shape="rect" title="Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu." alt="" coords="438,5,513,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:aebb08491c3a53f97ff6598fa73ab671b" id="r_aebb08491c3a53f97ff6598fa73ab671b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebb08491c3a53f97ff6598fa73ab671b">keypadOku</a> (void)</td></tr>
+<tr class="memdesc:aebb08491c3a53f97ff6598fa73ab671b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog tuş takımını okur ve basılan tuşu döndürür.  <br /></td></tr>
+<tr class="separator:aebb08491c3a53f97ff6598fa73ab671b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bff14828e4757d93fe24490da85228" id="r_ab2bff14828e4757d93fe24490da85228"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2bff14828e4757d93fe24490da85228">analog_button_pressed</a> (uint gpio)</td></tr>
+<tr class="memdesc:ab2bff14828e4757d93fe24490da85228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog giriş kullanarak bir düğmeye basılıp basılmadığını kontrol eder.  <br /></td></tr>
+<tr class="separator:ab2bff14828e4757d93fe24490da85228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab6ffb1c01ffbbec732bb22dc297a995" id="r_aab6ffb1c01ffbbec732bb22dc297a995"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab6ffb1c01ffbbec732bb22dc297a995">read_analog</a> (uint8_t pin)</td></tr>
+<tr class="memdesc:aab6ffb1c01ffbbec732bb22dc297a995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analog değeri okur.  <br /></td></tr>
+<tr class="separator:aab6ffb1c01ffbbec732bb22dc297a995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu. </p>
+</div><h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="ab2bff14828e4757d93fe24490da85228" name="ab2bff14828e4757d93fe24490da85228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bff14828e4757d93fe24490da85228">&#9670;&#160;</a></span>analog_button_pressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool analog_button_pressed </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analog giriş kullanarak bir düğmeye basılıp basılmadığını kontrol eder. </p>
+<p>Bu fonksiyon, bir analog girişi okur ve ADC değerine göre bir düğmeye basılıp basılmadığını belirler ve debounce koruması içerir.</p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>Okunacak GPIO pin numarası </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>bool düğmeye basılmışsa true, aksi halde false </dd></dl>
+
+</div>
+</div>
+<a id="aebb08491c3a53f97ff6598fa73ab671b" name="aebb08491c3a53f97ff6598fa73ab671b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb08491c3a53f97ff6598fa73ab671b">&#9670;&#160;</a></span>keypadOku()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char keypadOku </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analog tuş takımını okur ve basılan tuşu döndürür. </p>
+<p>Bu fonksiyon, KEYPAD pinine (GPIO28) bağlı tuş takımından analog değeri okur ve ADC değerini karşılık gelen tuş takımı karakterlerine eşleştirir. Tuş takımı düğmeleri aşağıdaki matris şeklinde düzenlenmiştir: | 1 | 2 | 3 | | 4 | 5 | 6 | | 7 | 8 | 9 | | * | 0 | # |</p>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0 </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="keypad_8c_aebb08491c3a53f97ff6598fa73ab671b_cgraph.png" border="0" usemap="#akeypad_8c_aebb08491c3a53f97ff6598fa73ab671b_cgraph" alt=""/></div>
+<map name="akeypad_8c_aebb08491c3a53f97ff6598fa73ab671b_cgraph" id="akeypad_8c_aebb08491c3a53f97ff6598fa73ab671b_cgraph">
+<area shape="rect" title="Analog tuş takımını okur ve basılan tuşu döndürür." alt="" coords="5,5,93,31"/>
+<area shape="rect" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="141,5,218,31"/>
+<area shape="poly" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
+<area shape="rect" href="buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="266,5,404,31"/>
+<area shape="poly" title=" " alt="" coords="219,16,250,16,250,21,219,21"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="keypad_8c_aebb08491c3a53f97ff6598fa73ab671b_icgraph.png" border="0" usemap="#akeypad_8c_aebb08491c3a53f97ff6598fa73ab671b_icgraph" alt=""/></div>
+<map name="akeypad_8c_aebb08491c3a53f97ff6598fa73ab671b_icgraph" id="akeypad_8c_aebb08491c3a53f97ff6598fa73ab671b_icgraph">
+<area shape="rect" title="Analog tuş takımını okur ve basılan tuşu döndürür." alt="" coords="300,5,387,31"/>
+<area shape="rect" href="main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="103,5,252,31"/>
+<area shape="poly" title=" " alt="" coords="284,21,252,21,252,16,284,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab6ffb1c01ffbbec732bb22dc297a995" name="aab6ffb1c01ffbbec732bb22dc297a995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab6ffb1c01ffbbec732bb22dc297a995">&#9670;&#160;</a></span>read_analog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t read_analog </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analog değeri okur. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Okunacak ADC pin numarası </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>uint16_t Okunan analog değer (0-4095 arası) </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995_icgraph.png" border="0" usemap="#akeypad_8c_aab6ffb1c01ffbbec732bb22dc297a995_icgraph" alt=""/></div>
+<map name="akeypad_8c_aab6ffb1c01ffbbec732bb22dc297a995_icgraph" id="akeypad_8c_aab6ffb1c01ffbbec732bb22dc297a995_icgraph">
+<area shape="rect" title="Analog değeri okur." alt="" coords="299,46,390,72"/>
+<area shape="rect" href="main_8c.html#a7d8ac2b24aa8295048d311bb604dd6bd" title=" " alt="" coords="112,5,242,46"/>
+<area shape="poly" title=" " alt="" coords="283,50,242,41,243,36,284,44"/>
+<area shape="rect" href="main_8c.html#ab4495781c60f7539b4bd7ff5209151c3" title=" " alt="" coords="103,71,251,111"/>
+<area shape="poly" title=" " alt="" coords="284,73,252,79,251,74,283,68"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,46,55,72"/>
+<area shape="poly" title=" " alt="" coords="98,46,56,56,54,51,96,41"/>
+<area shape="poly" title=" " alt="" coords="87,74,55,67,56,62,88,69"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

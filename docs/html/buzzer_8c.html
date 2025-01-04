@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: buzzer.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Veri Yapıları</a> &#124;
+<a href="#func-members">Fonksiyonlar</a> &#124;
+<a href="#var-members">Değişkenler</a>  </div>
+  <div class="headertitle"><div class="title">buzzer.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu.  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+buzzer.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c__incl.png" border="0" usemap="#abuzzer_8c" alt=""/></div>
+<map name="abuzzer_8c" id="abuzzer_8c">
+<area shape="rect" title="Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu." alt="" coords="440,5,511,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Veri Yapıları</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_note_frequency.html">NoteFrequency</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Müzikal nota bilgilerini saklayan yapı  <a href="struct_note_frequency.html#details">Ayrıntılar...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:abeed4b38208cb0179851d68db47de935" id="r_abeed4b38208cb0179851d68db47de935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeed4b38208cb0179851d68db47de935">init_buzzer_pwm</a> (void)</td></tr>
+<tr class="memdesc:abeed4b38208cb0179851d68db47de935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buzzer için özel olarak PWM'i başlatır.  <br /></td></tr>
+<tr class="separator:abeed4b38208cb0179851d68db47de935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdecc1e0fa9f62344cd44d0797ed27d9" id="r_abdecc1e0fa9f62344cd44d0797ed27d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdecc1e0fa9f62344cd44d0797ed27d9">set_pwm_frequency</a> (uint slice_num, float frequency)</td></tr>
+<tr class="memdesc:abdecc1e0fa9f62344cd44d0797ed27d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Belirtilen dilim için PWM frekansını ayarlar.  <br /></td></tr>
+<tr class="separator:abdecc1e0fa9f62344cd44d0797ed27d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796bbc24fde48e1a34a660bd6a38dbae" id="r_a796bbc24fde48e1a34a660bd6a38dbae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a796bbc24fde48e1a34a660bd6a38dbae">get_frequency</a> (const char *note, int octave)</td></tr>
+<tr class="memdesc:a796bbc24fde48e1a34a660bd6a38dbae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar.  <br /></td></tr>
+<tr class="separator:a796bbc24fde48e1a34a660bd6a38dbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32887df3cd0b0fd7bad3aefa236f9738" id="r_a32887df3cd0b0fd7bad3aefa236f9738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a> (float frequency, int duration_ms)</td></tr>
+<tr class="memdesc:a32887df3cd0b0fd7bad3aefa236f9738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Belirtilen frekans ve sürede buzzer'da bir nota çalar.  <br /></td></tr>
+<tr class="separator:a32887df3cd0b0fd7bad3aefa236f9738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b93659dae6daec910b9f79e4546919" id="r_ad3b93659dae6daec910b9f79e4546919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3b93659dae6daec910b9f79e4546919">play_notes</a> (const char *notes[][2], int num_notes, int duration)</td></tr>
+<tr class="separator:ad3b93659dae6daec910b9f79e4546919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Değişkenler</h2></td></tr>
+<tr class="memitem:aa87fb5951c13e021b9254a6ea02aa0f9" id="r_aa87fb5951c13e021b9254a6ea02aa0f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_note_frequency.html">NoteFrequency</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa87fb5951c13e021b9254a6ea02aa0f9">note_frequencies</a> []</td></tr>
+<tr class="memdesc:aa87fb5951c13e021b9254a6ea02aa0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><ol type="1">
+<li>oktavdaki müzikal notalar ve karşılık gelen frekanslarının dizisi </li>
+</ol>
+ <br /></td></tr>
+<tr class="separator:aa87fb5951c13e021b9254a6ea02aa0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu. </p>
+<dl class="section author"><dt>Yazar</dt><dd>Hakan KILIÇASLAN </dd></dl>
+<dl class="section date"><dt>Tarih</dt><dd>2024-12-4 Bu dosya, Pico Eğitim Kartı için buzzer ile ilgili fonksiyonların implementasyonunu, nota frekans hesaplamalarını ve ses üretimi için PWM kontrolünü içerir. </dd></dl>
+</div><h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="a796bbc24fde48e1a34a660bd6a38dbae" name="a796bbc24fde48e1a34a660bd6a38dbae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a796bbc24fde48e1a34a660bd6a38dbae">&#9670;&#160;</a></span>get_frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double get_frequency </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>note</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>octave</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar. </p>
+<p>Bu fonksiyon, önceden tanımlanmış nota frekansları listesinden temel frekansını bularak ve belirtilen oktava göre ayarlayarak, belirtilen müzikal notanın frekansını belirler.</p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">note</td><td>Müzikal notayı temsil eden dize (örn. "A", "C#", "G") </td></tr>
+    <tr><td class="paramname">octave</td><td>Oktav numarasını temsil eden tamsayı </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>Belirtilen oktavdaki notanın frekansı</dd></dl>
+<dl class="section note"><dt>Not</dt><dd>Referans oktav 4'tür ve diğer oktavlar için frekanslar şu formül kullanılarak hesaplanır: f = f_temel * 2^(oktav_farkı) </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph.png" border="0" usemap="#abuzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph" alt=""/></div>
+<map name="abuzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph" id="abuzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph">
+<area shape="rect" title="Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar." alt="" coords="138,5,241,31"/>
+<area shape="rect" href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919" title=" " alt="" coords="5,5,90,31"/>
+<area shape="poly" title=" " alt="" coords="122,21,90,21,90,16,122,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abeed4b38208cb0179851d68db47de935" name="abeed4b38208cb0179851d68db47de935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeed4b38208cb0179851d68db47de935">&#9670;&#160;</a></span>init_buzzer_pwm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_buzzer_pwm </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buzzer için özel olarak PWM'i başlatır. </p>
+<p>Bu fonksiyon, buzzer'ın sessiz bir durumda başlamasını sağlamak için başlangıç frekansı ve sıfır görev döngüsü ile buzzer için PWM pinini ayarlar.</p>
+<dl class="section note"><dt>Not</dt><dd>Bu fonksiyon, herhangi bir ses üretme girişiminden önce sistem başlatılırken bir kez çağrılmalıdır. </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_abeed4b38208cb0179851d68db47de935_cgraph.png" border="0" usemap="#abuzzer_8c_abeed4b38208cb0179851d68db47de935_cgraph" alt=""/></div>
+<map name="abuzzer_8c_abeed4b38208cb0179851d68db47de935_cgraph" id="abuzzer_8c_abeed4b38208cb0179851d68db47de935_cgraph">
+<area shape="rect" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="5,5,125,31"/>
+<area shape="rect" href="init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="173,5,270,31"/>
+<area shape="poly" title=" " alt="" coords="125,16,157,16,157,21,125,21"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_abeed4b38208cb0179851d68db47de935_icgraph.png" border="0" usemap="#abuzzer_8c_abeed4b38208cb0179851d68db47de935_icgraph" alt=""/></div>
+<map name="abuzzer_8c_abeed4b38208cb0179851d68db47de935_icgraph" id="abuzzer_8c_abeed4b38208cb0179851d68db47de935_icgraph">
+<area shape="rect" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="349,5,469,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="334,21,180,21,180,16,334,16"/>
+<area shape="rect" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="228,31,301,56"/>
+<area shape="poly" title=" " alt="" coords="334,34,302,40,301,34,333,29"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<area shape="poly" title=" " alt="" coords="212,36,180,29,181,23,213,30"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32887df3cd0b0fd7bad3aefa236f9738" name="a32887df3cd0b0fd7bad3aefa236f9738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32887df3cd0b0fd7bad3aefa236f9738">&#9670;&#160;</a></span>play_note()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void play_note </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>frequency</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duration_ms</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Belirtilen frekans ve sürede buzzer'da bir nota çalar. </p>
+<p>Bu fonksiyon, PWM kullanarak bir nota çalar ve nota çalma işlemi tamamlandıktan sonra uygun temizleme işlemlerini gerçekleştirir. Parametre doğrulaması içerir ve notalar arası temiz geçişleri sağlar.</p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frequency</td><td>Çalınacak notanın Hertz cinsinden frekansı </td></tr>
+    <tr><td class="paramname">duration_ms</td><td>Notanın çalınması gereken süre (milisaniye cinsinden)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Not</dt><dd>Fonksiyon, notaların birbirine karışmasını önlemek ve temiz ses üretimini sağlamak için her notadan sonra küçük bir gecikme içerir </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_cgraph.png" border="0" usemap="#abuzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_cgraph" alt=""/></div>
+<map name="abuzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_cgraph" id="abuzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_cgraph">
+<area shape="rect" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="5,5,83,31"/>
+<area shape="rect" href="buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="131,5,269,31"/>
+<area shape="poly" title=" " alt="" coords="83,16,115,16,115,21,83,21"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_icgraph.png" border="0" usemap="#abuzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_icgraph" alt=""/></div>
+<map name="abuzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_icgraph" id="abuzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738_icgraph">
+<area shape="rect" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="435,31,513,56"/>
+<area shape="rect" href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b" title="Analog tuş takımını okur ve basılan tuşu döndürür." alt="" coords="300,5,387,31"/>
+<area shape="poly" title=" " alt="" coords="419,36,387,29,388,24,420,30"/>
+<area shape="rect" href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919" title=" " alt="" coords="302,55,386,80"/>
+<area shape="poly" title=" " alt="" coords="420,56,387,62,386,57,419,51"/>
+<area shape="rect" href="main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="103,5,252,31"/>
+<area shape="poly" title=" " alt="" coords="284,21,252,21,252,16,284,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad3b93659dae6daec910b9f79e4546919" name="ad3b93659dae6daec910b9f79e4546919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b93659dae6daec910b9f79e4546919">&#9670;&#160;</a></span>play_notes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void play_notes </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>notes</em></span>[][2], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_notes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bir dizi müzikal notanın çalınmasını sağlar.</p>
+<p>Bu fonksiyon, bir dizi notanın üzerinden yineleyerek, her bir notanın adına ve oktavına göre frekansını hesaplar ve belirtilen sürede notanın çalınmasını sağlar.</p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notes</td><td>İki boyutlu bir dize dizisi, burada her bir eleman iki dize içerir: ilk dize nota adını (örn. "C", "D#"), ikinci dize oktavı (örn. "4") temsil eder. </td></tr>
+    <tr><td class="paramname">num_notes</td><td>notes dizisindeki nota sayısı. </td></tr>
+    <tr><td class="paramname">duration</td><td>Her bir notanın çalınacağı süre (milisaniye cinsinden). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_ad3b93659dae6daec910b9f79e4546919_cgraph.png" border="0" usemap="#abuzzer_8c_ad3b93659dae6daec910b9f79e4546919_cgraph" alt=""/></div>
+<map name="abuzzer_8c_ad3b93659dae6daec910b9f79e4546919_cgraph" id="abuzzer_8c_ad3b93659dae6daec910b9f79e4546919_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,90,56"/>
+<area shape="rect" href="buzzer_8c.html#a796bbc24fde48e1a34a660bd6a38dbae" title="Adı ve oktavı verilen bir müzikal notanın frekansını hesaplar." alt="" coords="138,5,241,31"/>
+<area shape="poly" title=" " alt="" coords="90,33,122,27,123,33,91,39"/>
+<area shape="rect" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="151,55,228,80"/>
+<area shape="poly" title=" " alt="" coords="91,48,136,56,135,61,90,53"/>
+<area shape="rect" href="buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="289,55,427,80"/>
+<area shape="poly" title=" " alt="" coords="228,65,273,65,273,70,228,70"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abdecc1e0fa9f62344cd44d0797ed27d9" name="abdecc1e0fa9f62344cd44d0797ed27d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdecc1e0fa9f62344cd44d0797ed27d9">&#9670;&#160;</a></span>set_pwm_frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_pwm_frequency </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>slice_num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>frequency</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Belirtilen dilim için PWM frekansını ayarlar. </p>
+<p>Bu fonksiyon, <a class="el" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları">pico_training_board.h</a>'den önceden tanımlanmış sabitleri kullanarak istenen frekans için PWM dilimini yapılandırır. İstenen frekansa ulaşmak için uygun bölücü değerlerini hesaplar.</p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice_num</td><td>Yapılandırılacak PWM dilim numarası </td></tr>
+    <tr><td class="paramname">frequency</td><td>İstenen frekans (Hz cinsinden)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Not</dt><dd>Fonksiyon, istenen frekansa en yakın eşleşmeyi elde etmek için bölücü değerlerini otomatik olarak ayarlar </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9_icgraph.png" border="0" usemap="#abuzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9_icgraph" alt=""/></div>
+<map name="abuzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9_icgraph" id="abuzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9_icgraph">
+<area shape="rect" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="561,31,699,56"/>
+<area shape="rect" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="435,31,513,56"/>
+<area shape="poly" title=" " alt="" coords="545,46,513,46,513,41,545,41"/>
+<area shape="rect" href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b" title="Analog tuş takımını okur ve basılan tuşu döndürür." alt="" coords="300,5,387,31"/>
+<area shape="poly" title=" " alt="" coords="419,36,387,29,388,24,420,30"/>
+<area shape="rect" href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919" title=" " alt="" coords="302,55,386,80"/>
+<area shape="poly" title=" " alt="" coords="420,56,387,62,386,57,419,51"/>
+<area shape="rect" href="main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="103,5,252,31"/>
+<area shape="poly" title=" " alt="" coords="284,21,252,21,252,16,284,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Değişken Dokümantasyonu</h2>
+<a id="aa87fb5951c13e021b9254a6ea02aa0f9" name="aa87fb5951c13e021b9254a6ea02aa0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87fb5951c13e021b9254a6ea02aa0f9">&#9670;&#160;</a></span>note_frequencies</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_note_frequency.html">NoteFrequency</a> note_frequencies[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>İlk değer:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<span class="stringliteral">&quot;C4&quot;</span>, 261.63},</div>
+<div class="line">    {<span class="stringliteral">&quot;C#4/Db4&quot;</span>, 277.18},</div>
+<div class="line">    {<span class="stringliteral">&quot;D4&quot;</span>, 293.66},</div>
+<div class="line">    {<span class="stringliteral">&quot;D#4/Eb4&quot;</span>, 311.13},</div>
+<div class="line">    {<span class="stringliteral">&quot;E4&quot;</span>, 329.63},</div>
+<div class="line">    {<span class="stringliteral">&quot;F4&quot;</span>, 349.23},</div>
+<div class="line">    {<span class="stringliteral">&quot;F#4/Gb4&quot;</span>, 369.99},</div>
+<div class="line">    {<span class="stringliteral">&quot;G4&quot;</span>, 392.00},</div>
+<div class="line">    {<span class="stringliteral">&quot;G#4/Ab4&quot;</span>, 415.30},</div>
+<div class="line">    {<span class="stringliteral">&quot;A4&quot;</span>, 440.00},</div>
+<div class="line">    {<span class="stringliteral">&quot;A#4/Bb4&quot;</span>, 466.16},</div>
+<div class="line">    {<span class="stringliteral">&quot;B4&quot;</span>, 493.88}}</div>
+</div><!-- fragment -->
+<p><ol type="1">
+<li>oktavdaki müzikal notalar ve karşılık gelen frekanslarının dizisi </li>
+</ol>
+</p>
+<p>Bu tablo, frekans hesaplamaları için referans oktav olarak kullanılan dördüncü oktavdaki müzikal notalar için standart frekansları içerir. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

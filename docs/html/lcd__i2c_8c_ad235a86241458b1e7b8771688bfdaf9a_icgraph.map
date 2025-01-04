@@ -1,0 +1,9 @@
+<map id="lcd_clear" name="lcd_clear">
+<area shape="rect" id="Node000001" title="LCD ekranını temizler." alt="" coords="300,31,373,56"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="103,5,252,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,38,252,33,253,27,285,33"/>
+<area shape="rect" id="Node000004" href="$lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="LCD ekranını başlatır." alt="" coords="146,55,209,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="285,54,210,65,209,60,284,49"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="keypadOku" name="keypadOku">
+<area shape="rect" id="Node000001" title="Analog tuş takımını okur ve basılan tuşu döndürür." alt="" coords="5,5,93,31"/>
+<area shape="rect" id="Node000002" href="$buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar." alt="" coords="141,5,218,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,16,125,16,125,21,93,21"/>
+<area shape="rect" id="Node000003" href="$buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9" title="Belirtilen dilim için PWM frekansını ayarlar." alt="" coords="266,5,404,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,16,250,16,250,21,219,21"/>
+</map>

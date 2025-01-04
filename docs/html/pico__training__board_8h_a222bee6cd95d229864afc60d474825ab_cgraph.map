@@ -1,0 +1,5 @@
+<map id="get_button_hold_duration" name="get_button_hold_duration">
+<area shape="rect" id="Node000001" title="Bir butonun ne kadar süre al." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$buttons_8c.html#a4b8c57f5812628bb7892c3126085a7cb" title="GPIO pininden buton indeksini al." alt="" coords="220,5,340,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,16,204,16,204,21,172,21"/>
+</map>

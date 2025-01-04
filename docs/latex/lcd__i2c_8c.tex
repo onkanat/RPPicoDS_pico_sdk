@@ -1,0 +1,268 @@
+\doxysection{lcd\+\_\+i2c.\+c Dosya Referansı}
+\hypertarget{lcd__i2c_8c}{}\label{lcd__i2c_8c}\index{lcd\_i2c.c@{lcd\_i2c.c}}
+
+
+I2C iletişimi kullanan LCD kontrol fonksiyonları  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+lcd\+\_\+i2c.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{lcd__i2c_8c_ac3ec1b5d06ce5dd1a315251049f94ab6}{i2c\+\_\+write\+\_\+byte}} (uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em I2C LCD\textquotesingle{}ye tek byte veri yazar. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{lcd__i2c_8c_af425a04959f9e02cd8fa53c77dce73e1}{lcd\+\_\+toggle\+\_\+enable}} (uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em LCD\textquotesingle{}nin enable pinini değiştirir. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__i2c_8c_a31b5bba75b8e9f4d67830f7fad24e0c7}{lcd\+\_\+send\+\_\+byte}} (uint8\+\_\+t val, int mode)
+\begin{DoxyCompactList}\small\item\em LCD\textquotesingle{}ye bir byte veri gönderir. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear}} (void)
+\begin{DoxyCompactList}\small\item\em LCD ekranını temizler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\+\_\+set\+\_\+cursor}} (int line, int position)
+\begin{DoxyCompactList}\small\item\em LCD imlecini belirtilen konuma ayarlar. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{lcd__i2c_8c_a74043482e6e1083ad180ffd94ddc0109}{lcd\+\_\+char}} (char val)
+\begin{DoxyCompactList}\small\item\em LCD\textquotesingle{}ye bir karakter gönderir. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\+\_\+string}} (const char \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em LCD\textquotesingle{}ye bir metin dizisi gönderir. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em LCD ekranını başlatır. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Değişkenler}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{lcd__i2c_8c_aafb8164f20f79a2dd0290502a25367d1}{addr}} = \mbox{\hyperlink{pico__training__board_8h_a6a90c49be18cd45434c04afd79b0bf9d}{LCD\+\_\+\+ADDR}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+I2C iletişimi kullanan LCD kontrol fonksiyonları 
+
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{lcd__i2c_8c_ac3ec1b5d06ce5dd1a315251049f94ab6}\index{lcd\_i2c.c@{lcd\_i2c.c}!i2c\_write\_byte@{i2c\_write\_byte}}
+\index{i2c\_write\_byte@{i2c\_write\_byte}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_write\_byte()}{i2c\_write\_byte()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_ac3ec1b5d06ce5dd1a315251049f94ab6} 
+static void i2c\+\_\+write\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2C LCD\textquotesingle{}ye tek byte veri yazar. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em val} & Yazılacak byte değeri \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_ac3ec1b5d06ce5dd1a315251049f94ab6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_a74043482e6e1083ad180ffd94ddc0109}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_char@{lcd\_char}}
+\index{lcd\_char@{lcd\_char}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_char()}{lcd\_char()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_a74043482e6e1083ad180ffd94ddc0109} 
+static void lcd\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+LCD\textquotesingle{}ye bir karakter gönderir. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em val} & Gönderilecek karakter \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a74043482e6e1083ad180ffd94ddc0109_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a74043482e6e1083ad180ffd94ddc0109_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_clear@{lcd\_clear}}
+\index{lcd\_clear@{lcd\_clear}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_clear()}{lcd\_clear()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a} 
+void lcd\+\_\+clear (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+LCD ekranını temizler. 
+
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_init@{lcd\_init}}
+\index{lcd\_init@{lcd\_init}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_init()}{lcd\_init()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6} 
+void lcd\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+LCD ekranını başlatır. 
+
+LCD ekranını 4-\/bit mod, 2 satır ve 5x8 yazı tipi ile yapılandırır. Ayrıca ekranı temizler ve imleci başlangıç konumuna getirir. Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_a31b5bba75b8e9f4d67830f7fad24e0c7}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_send\_byte@{lcd\_send\_byte}}
+\index{lcd\_send\_byte@{lcd\_send\_byte}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_byte()}{lcd\_send\_byte()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_a31b5bba75b8e9f4d67830f7fad24e0c7} 
+void lcd\+\_\+send\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{val}{, }\item[{int}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+LCD\textquotesingle{}ye bir byte veri gönderir. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em val} & Gönderilecek byte \\
+\hline
+{\em mode} & Komutlar için LCD\+\_\+\+COMMAND, karakter verisi için LCD\+\_\+\+CHARACTER \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a31b5bba75b8e9f4d67830f7fad24e0c7_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a31b5bba75b8e9f4d67830f7fad24e0c7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_set\_cursor@{lcd\_set\_cursor}}
+\index{lcd\_set\_cursor@{lcd\_set\_cursor}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_set\_cursor()}{lcd\_set\_cursor()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2} 
+void lcd\+\_\+set\+\_\+cursor (\begin{DoxyParamCaption}\item[{int}]{line}{, }\item[{int}]{position}{}\end{DoxyParamCaption})}
+
+
+
+LCD imlecini belirtilen konuma ayarlar. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em line} & Satır numarası (0 veya 1) \\
+\hline
+{\em position} & Karakter pozisyonu (0-\/15) \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_string@{lcd\_string}}
+\index{lcd\_string@{lcd\_string}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_string()}{lcd\_string()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056} 
+void lcd\+\_\+string (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})}
+
+
+
+LCD\textquotesingle{}ye bir metin dizisi gönderir. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em s} & Null ile sonlandırılmış gönderilecek metin \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__i2c_8c_af425a04959f9e02cd8fa53c77dce73e1}\index{lcd\_i2c.c@{lcd\_i2c.c}!lcd\_toggle\_enable@{lcd\_toggle\_enable}}
+\index{lcd\_toggle\_enable@{lcd\_toggle\_enable}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_toggle\_enable()}{lcd\_toggle\_enable()}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_af425a04959f9e02cd8fa53c77dce73e1} 
+static void lcd\+\_\+toggle\+\_\+enable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+LCD\textquotesingle{}nin enable pinini değiştirir. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em val} & Mevcut byte değeri \\
+\hline
+\end{DoxyParams}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{lcd__i2c_8c_af425a04959f9e02cd8fa53c77dce73e1_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__i2c_8c_af425a04959f9e02cd8fa53c77dce73e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Değişken Dokümantasyonu}
+\Hypertarget{lcd__i2c_8c_aafb8164f20f79a2dd0290502a25367d1}\index{lcd\_i2c.c@{lcd\_i2c.c}!addr@{addr}}
+\index{addr@{addr}!lcd\_i2c.c@{lcd\_i2c.c}}
+\doxysubsubsection{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily \label{lcd__i2c_8c_aafb8164f20f79a2dd0290502a25367d1} 
+int addr = \mbox{\hyperlink{pico__training__board_8h_a6a90c49be18cd45434c04afd79b0bf9d}{LCD\+\_\+\+ADDR}}\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,243 @@
+\doxysection{stepper.\+c Dosya Referansı}
+\hypertarget{stepper_8c}{}\label{stepper_8c}\index{stepper.c@{stepper.c}}
+
+
+Step motor kontrol fonksiyonları  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+stepper.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stepper_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af}{init\+\_\+step\+\_\+motor}} (void)
+\begin{DoxyCompactList}\small\item\em Step motor GPIO pinlerini başlatır. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{stepper_8c_a968353a2852db9fae36f19a4985e2906}{is\+\_\+motor\+\_\+running}} (void)
+\item 
+\mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t}} \mbox{\hyperlink{stepper_8c_ac91c34166ec5420fe03bc8e353b52354}{get\+\_\+motor\+\_\+state}} (void)
+\item 
+void \mbox{\hyperlink{stepper_8c_a91a1a65f783ef1d3040dfc483143d3e0}{step\+\_\+stop}} (void)
+\begin{DoxyCompactList}\small\item\em Step motor için acil durdurma fonksiyonu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8}{step\+\_\+turn}} (\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} direction, uint speed, float \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}})
+\begin{DoxyCompactList}\small\item\em Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Değişkenler}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{stepper_8c_a9edcd7c81b99b7127211b0d4d0d69ef0}{step\+\_\+sequence}} \mbox{[}8\mbox{]}\mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Step motoru yarım adım sekans deseni. \end{DoxyCompactList}\item 
+static const uint \mbox{\hyperlink{stepper_8c_ac19a09119ddb28c85599b12224e66fc7}{motor\+\_\+pins}} \mbox{[}4\mbox{]}
+\item 
+static volatile \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t}} \mbox{\hyperlink{stepper_8c_a66ccad2156e1b99c1a0fbfb8b4ebf366}{motor\+\_\+state}} = \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a}{MOTOR\+\_\+\+STOPPED}}
+\item 
+static volatile bool \mbox{\hyperlink{stepper_8c_ae6785a75beb196aef377ee7fa9b30137}{emergency\+\_\+stop}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Step motor kontrol fonksiyonları 
+
+
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{stepper_8c_ac91c34166ec5420fe03bc8e353b52354}\index{stepper.c@{stepper.c}!get\_motor\_state@{get\_motor\_state}}
+\index{get\_motor\_state@{get\_motor\_state}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{get\_motor\_state()}{get\_motor\_state()}}
+{\footnotesize\ttfamily \label{stepper_8c_ac91c34166ec5420fe03bc8e353b52354} 
+\mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t}} get\+\_\+motor\+\_\+state (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{stepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af}\index{stepper.c@{stepper.c}!init\_step\_motor@{init\_step\_motor}}
+\index{init\_step\_motor@{init\_step\_motor}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{init\_step\_motor()}{init\_step\_motor()}}
+{\footnotesize\ttfamily \label{stepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af} 
+void init\+\_\+step\+\_\+motor (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Step motor GPIO pinlerini başlatır. 
+
+Bu fonksiyon, 4 fazlı bir step motorunu kontrol etmek için kullanılan GPIO pinlerini yapılandırır. Her pini başlatır ve motor bobinlerini sürmek için çıkış olarak ayarlar.
+
+\begin{DoxyNote}{Not}
+motor\+\_\+pins\mbox{[}\mbox{]} dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parametreler}
+{\em void} & Giriş parametresi yok \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+void Geri dönüş değeri yok 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stepper_8c_a8d8f8f8a9dde232c7092dbf83cc101af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{stepper_8c_a968353a2852db9fae36f19a4985e2906}\index{stepper.c@{stepper.c}!is\_motor\_running@{is\_motor\_running}}
+\index{is\_motor\_running@{is\_motor\_running}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{is\_motor\_running()}{is\_motor\_running()}}
+{\footnotesize\ttfamily \label{stepper_8c_a968353a2852db9fae36f19a4985e2906} 
+bool is\+\_\+motor\+\_\+running (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{stepper_8c_a91a1a65f783ef1d3040dfc483143d3e0}\index{stepper.c@{stepper.c}!step\_stop@{step\_stop}}
+\index{step\_stop@{step\_stop}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{step\_stop()}{step\_stop()}}
+{\footnotesize\ttfamily \label{stepper_8c_a91a1a65f783ef1d3040dfc483143d3e0} 
+void step\+\_\+stop (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Step motor için acil durdurma fonksiyonu. 
+
+Bu fonksiyon, step motorunu acil olarak durdurur\+:
+\begin{DoxyItemize}
+\item Acil durdurma bayrağını ayarlar
+\item Motor durumunu durdurulmuş olarak günceller
+\item Tüm motor bobinlerini enerjisiz hale getirir (GPIO pinlerini düşük seviyeye ayarlar)
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Not}
+motor\+\_\+pins\mbox{[}\mbox{]} dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parametreler}
+{\em void} & Giriş parametresi yok \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+void Geri dönüş değeri yok
+\end{DoxyReturn}
+\begin{DoxyWarning}{Uyarı}
+Bu fonksiyon, motoru yavaşlatmadan hemen durdurur, bu da mekanik strese neden olabilir 
+\end{DoxyWarning}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stepper_8c_a91a1a65f783ef1d3040dfc483143d3e0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8}\index{stepper.c@{stepper.c}!step\_turn@{step\_turn}}
+\index{step\_turn@{step\_turn}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{step\_turn()}{step\_turn()}}
+{\footnotesize\ttfamily \label{stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8} 
+void step\+\_\+turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}}}]{direction}{, }\item[{uint}]{speed}{, }\item[{float}]{revolutions}{}\end{DoxyParamCaption})}
+
+
+
+Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em direction} & Motor dönüş yönü (CW veya CCW) \\
+\hline
+{\em speed} & Motor hızı (adım/saniye) \\
+\hline
+{\em revolutions} & Yapılacak tam devir sayısı\\
+\hline
+\end{DoxyParams}
+Bu fonksiyon, yarım adım modu (her devir için 8 adım) kullanarak bir step motoru kontrol eder. Motor durumu yönetimi, acil durdurma işlevselliği ve hassas zamanlama kontrolü sağlar. Motor zaten çalışıyorsa fonksiyon başlamaz.
+
+\begin{DoxyNote}{Not}
+Fonksiyon, motor\+\_\+pins\mbox{[}\mbox{]} dizisinde tanımlanan GPIO pinlerini ve step\+\_\+sequence\mbox{[}\mbox{]}\mbox{[}\mbox{]} dizisinde tanımlanan adım sekanslarını kullanır.
+\end{DoxyNote}
+Kullanılan global değişkenler\+:
+\begin{DoxyItemize}
+\item motor\+\_\+state\+: Motorun mevcut durumu
+\item emergency\+\_\+stop\+: Acil durdurma bayrağı
+\item motor\+\_\+pins\mbox{[}\mbox{]}\+: Motor kontrolü için GPIO pin numaraları dizisi
+\item step\+\_\+sequence\mbox{[}\mbox{]}\mbox{[}\mbox{]}\+: Adım sekans desenlerini içeren dizi
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Döndürdüğü değer}
+void 
+\end{DoxyReturn}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{stepper_8c_ada890c90b978fea21eb7ea4c8c0467b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Değişken Dokümantasyonu}
+\Hypertarget{stepper_8c_ae6785a75beb196aef377ee7fa9b30137}\index{stepper.c@{stepper.c}!emergency\_stop@{emergency\_stop}}
+\index{emergency\_stop@{emergency\_stop}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{emergency\_stop}{emergency\_stop}}
+{\footnotesize\ttfamily \label{stepper_8c_ae6785a75beb196aef377ee7fa9b30137} 
+volatile bool emergency\+\_\+stop = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{stepper_8c_ac19a09119ddb28c85599b12224e66fc7}\index{stepper.c@{stepper.c}!motor\_pins@{motor\_pins}}
+\index{motor\_pins@{motor\_pins}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{motor\_pins}{motor\_pins}}
+{\footnotesize\ttfamily \label{stepper_8c_ac19a09119ddb28c85599b12224e66fc7} 
+const uint motor\+\_\+pins\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries İlk değer\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__stepper__motor_ga50001e7c29a28cd671033e08aa6d0a70}{STEP\_MOTOR\_A1}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__stepper__motor_ga026044984617dae4a9802188e6af7396}{STEP\_MOTOR\_A2}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__stepper__motor_ga689c19f870f487db42b6cdc7764fa6ef}{STEP\_MOTOR\_B1}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__stepper__motor_ga05840ec752b5cbc2337ff7e76bf96940}{STEP\_MOTOR\_B2}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{stepper_8c_a66ccad2156e1b99c1a0fbfb8b4ebf366}\index{stepper.c@{stepper.c}!motor\_state@{motor\_state}}
+\index{motor\_state@{motor\_state}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{motor\_state}{motor\_state}}
+{\footnotesize\ttfamily \label{stepper_8c_a66ccad2156e1b99c1a0fbfb8b4ebf366} 
+volatile \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t}} motor\+\_\+state = \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a}{MOTOR\+\_\+\+STOPPED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{stepper_8c_a9edcd7c81b99b7127211b0d4d0d69ef0}\index{stepper.c@{stepper.c}!step\_sequence@{step\_sequence}}
+\index{step\_sequence@{step\_sequence}!stepper.c@{stepper.c}}
+\doxysubsubsection{\texorpdfstring{step\_sequence}{step\_sequence}}
+{\footnotesize\ttfamily \label{stepper_8c_a9edcd7c81b99b7127211b0d4d0d69ef0} 
+const uint8\+\_\+t step\+\_\+sequence\mbox{[}8\mbox{]}\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries İlk değer\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{1,\ 1,\ 0,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 0,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{0,\ 1,\ 1,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 1,\ 0\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 1,\ 1\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{0,\ 0,\ 0,\ 1\},\ \ }
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 1\}\ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Step motoru yarım adım sekans deseni. 
+
+Bu dizi, 4 fazlı bir step motorunu yarım adım modunda kontrol etmek için 8 adımlı bir sekans tanımlar. Her satır, sekanstaki bir adımı ve her sütun bir motor bobininin durumunu temsil eder (1 = enerjili, 0 = enerjisiz).
+
+Sekans, tek bobinleri ve bitişik bobin çiftlerini sırayla enerjilendirerek daha düzgün motor dönüşü sağlar\+:
+\begin{DoxyItemize}
+\item Sekans başına 8 adım (satırlar)
+\item 4 bobin/faz (sütunlar)
+\item Saat yönünde dönüş için standart yarım adım deseni izler
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Not}
+Sürekli dönüş sağlamak için sekans son adımdan ilk adıma döner 
+\end{DoxyNote}

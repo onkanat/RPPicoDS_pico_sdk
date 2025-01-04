@@ -1,0 +1,96 @@
+\chapter{Raspberry Pi Pico Eğitim Kartı -\/ Örnek Çalışmalar}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r}{}\label{md__c_a_l_i_s_m_a_l_a_r}\index{Raspberry Pi Pico Eğitim Kartı -\/ Örnek Çalışmalar@{Raspberry Pi Pico Eğitim Kartı -\/ Örnek Çalışmalar}}
+\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md0}%
+\Hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md0}%
+ \hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md1}{}\doxysection{\texorpdfstring{Örnek Programlar}{Örnek Programlar}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md1}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md2}{}\doxysubsection{\texorpdfstring{1. Basit Mesaj Gösterme}{1. Basit Mesaj Gösterme}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ I2C\ ve\ LCD\ başlatma\ işlemleri...}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Merhaba\ Dünya!"{}});}
+\DoxyCodeLine{\ \ \ \ sleep\_ms(2000);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Raspberry\ Pi"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Pico"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md3}{}\doxysubsection{\texorpdfstring{2. Değişken Değer Gösterme}{2. Değişken Değer Gösterme}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ display\_temperature(\textcolor{keywordtype}{float}\ temp)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ buffer[16];}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Sicaklik:"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\ \ \ \ sprintf(buffer,\ \textcolor{stringliteral}{"{}\%.1f\ C"{}},\ temp);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(buffer);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md4}{}\doxysubsection{\texorpdfstring{3. Menü Gösterimi}{3. Menü Gösterimi}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ show\_menu\_item(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ item,\ \textcolor{keywordtype}{int}\ selected)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (selected)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}>\ "{}});}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}\ \ "{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(item);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md5}{}\doxysubsection{\texorpdfstring{4. Otomatik Pozisyonlama}{4. Otomatik Pozisyonlama}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ position\_control(\textcolor{keywordtype}{float}\ target\_position)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{float}\ current\_position\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(current\_position\ <\ target\_position)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ 50,\ 0.1);\ \ \textcolor{comment}{//\ 0.1\ tur\ adımlarla\ hareket}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ current\_position\ +=\ 0.1;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md6}{}\doxysubsection{\texorpdfstring{5. Hız Profili}{5. Hız Profili}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ speed\_profile(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Yavaşça\ hızlan}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 10;\ i\ <=\ 100;\ i\ +=\ 10)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ i,\ 0.5);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Yavaşça\ yavaşla}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 90;\ i\ >=\ 10;\ i\ -\/=\ 10)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ i,\ 0.5);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_a_l_i_s_m_a_l_a_r_autotoc_md7}{}\doxysubsection{\texorpdfstring{6. Sayaç}{6. Sayaç}}\label{md__c_a_l_i_s_m_a_l_a_r_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ display\_counter(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ counter\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ buffer[16];}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Sayac:"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sprintf(buffer,\ \textcolor{stringliteral}{"{}\%d"{}},\ counter++);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(buffer);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sleep\_ms(1000);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

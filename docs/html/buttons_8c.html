@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: buttons.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonksiyonlar</a> &#124;
+<a href="#var-members">Değişkenler</a>  </div>
+  <div class="headertitle"><div class="title">buttons.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pico Eğitim Kartı için buton kontrol implementasyonu.  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+buttons.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c__incl.png" border="0" usemap="#abuttons_8c" alt=""/></div>
+<map name="abuttons_8c" id="abuttons_8c">
+<area shape="rect" title="Pico Eğitim Kartı için buton kontrol implementasyonu." alt="" coords="438,5,513,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:a6863517b8b3b39834aa6aaaab29c4eaf" id="r_a6863517b8b3b39834aa6aaaab29c4eaf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a> (uint gpio)</td></tr>
+<tr class="memdesc:a6863517b8b3b39834aa6aaaab29c4eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce korumalı temel buton basma kontrolü  <br /></td></tr>
+<tr class="separator:a6863517b8b3b39834aa6aaaab29c4eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0b498404852847e48c5539c4d651e8" id="r_afe0b498404852847e48c5539c4d651e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe0b498404852847e48c5539c4d651e8">init_buttons</a> (void)</td></tr>
+<tr class="memdesc:afe0b498404852847e48c5539c4d651e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tüm buton GPIO pinlerini başlat.  <br /></td></tr>
+<tr class="separator:afe0b498404852847e48c5539c4d651e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8c57f5812628bb7892c3126085a7cb" id="r_a4b8c57f5812628bb7892c3126085a7cb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b8c57f5812628bb7892c3126085a7cb">get_button_index</a> (uint gpio)</td></tr>
+<tr class="memdesc:a4b8c57f5812628bb7892c3126085a7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pininden buton indeksini al.  <br /></td></tr>
+<tr class="separator:a4b8c57f5812628bb7892c3126085a7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b963b48e656f166999ae77284356434" id="r_a6b963b48e656f166999ae77284356434"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b963b48e656f166999ae77284356434">check_button_event</a> (uint gpio, <a class="el" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0db">ButtonEvent</a> event)</td></tr>
+<tr class="memdesc:a6b963b48e656f166999ae77284356434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Çeşitli zamanlama kontrolleriyle buton basma kontrolü  <br /></td></tr>
+<tr class="separator:a6b963b48e656f166999ae77284356434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a222bee6cd95d229864afc60d474825ab" id="r_a222bee6cd95d229864afc60d474825ab"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a222bee6cd95d229864afc60d474825ab">get_button_hold_duration</a> (uint gpio)</td></tr>
+<tr class="memdesc:a222bee6cd95d229864afc60d474825ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bir butonun ne kadar süre al.  <br /></td></tr>
+<tr class="separator:a222bee6cd95d229864afc60d474825ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00fcf54730781bcc9d059ee8542bb047" id="r_a00fcf54730781bcc9d059ee8542bb047"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00fcf54730781bcc9d059ee8542bb047">wait_for_button_press</a> (uint32_t timeout_ms)</td></tr>
+<tr class="memdesc:a00fcf54730781bcc9d059ee8542bb047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Herhangi bir buton basılmasını bekle.  <br /></td></tr>
+<tr class="separator:a00fcf54730781bcc9d059ee8542bb047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Değişkenler</h2></td></tr>
+<tr class="memitem:a16b6a8403e2097dbd0ac10382547401a" id="r_a16b6a8403e2097dbd0ac10382547401a"><td class="memItemLeft" >struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0237228ef1cb044a5a6dbb1b7d2ff0e6" id="r_a0237228ef1cb044a5a6dbb1b7d2ff0e6"><td class="memItemLeft" >&#160;&#160;&#160;absolute_time_t&#160;&#160;&#160;<a class="el" href="#a496ee83d1832dc57e64bb987b1ebced6">last_press_time</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a0237228ef1cb044a5a6dbb1b7d2ff0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2096c2d00f8953f0eece7db5796b7d53" id="r_a2096c2d00f8953f0eece7db5796b7d53"><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="#ad31152730371b8c40b42512b57166fb0">is_pressed</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a2096c2d00f8953f0eece7db5796b7d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb7b8e697ec71e00fcc2e8dc46f9489" id="r_affb7b8e697ec71e00fcc2e8dc46f9489"><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="#a47571161942ae4b5e6b80da2030ac0d8">was_pressed</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:affb7b8e697ec71e00fcc2e8dc46f9489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244943ac29a2ac8e1b629dceb36c0940" id="r_a244943ac29a2ac8e1b629dceb36c0940"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="#ae71fb9e85c3597885ea7cffd3c036a10">hold_duration</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a244943ac29a2ac8e1b629dceb36c0940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b6a8403e2097dbd0ac10382547401a" id="r_a16b6a8403e2097dbd0ac10382547401a"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16b6a8403e2097dbd0ac10382547401a">button_states</a> [3] = {0}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a16b6a8403e2097dbd0ac10382547401a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Pico Eğitim Kartı için buton kontrol implementasyonu. </p>
+<dl class="section author"><dt>Yazar</dt><dd>Hakan KILIÇASLAN </dd></dl>
+<dl class="section date"><dt>Tarih</dt><dd>2024-12-4</dd></dl>
+<p>Bu dosya, Pico Eğitim Kartı üzerindeki buton girişleri için fonksiyonlar sağlar, debounce koruması, basma algılama ve zamanlama özelliklerini içerir. </p>
+</div><h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="a6863517b8b3b39834aa6aaaab29c4eaf" name="a6863517b8b3b39834aa6aaaab29c4eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6863517b8b3b39834aa6aaaab29c4eaf">&#9670;&#160;</a></span>button_pressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool button_pressed </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Debounce korumalı temel buton basma kontrolü </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>Kontrol edilecek GPIO pini </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>bool buton basılıysa (debounce sonrası) true, değilse false</dd></dl>
+<p>Buton sıçramalarından kaynaklanan yanlış tetiklenmeleri önlemek için 100ms debounce süresi uygular. Sadece debounce süresi geçtikten sonra basma işlemini kaydeder. </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph.png" border="0" usemap="#abuttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph" alt=""/></div>
+<map name="abuttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph" id="abuttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph">
+<area shape="rect" title="Debounce korumalı temel buton basma kontrolü" alt="" coords="203,5,313,31"/>
+<area shape="rect" href="buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047" title="Herhangi bir buton basılmasını bekle." alt="" coords="5,5,155,31"/>
+<area shape="poly" title=" " alt="" coords="187,21,155,21,155,16,187,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b963b48e656f166999ae77284356434" name="a6b963b48e656f166999ae77284356434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b963b48e656f166999ae77284356434">&#9670;&#160;</a></span>check_button_event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool check_button_event </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0db">ButtonEvent</a></td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Çeşitli zamanlama kontrolleriyle buton basma kontrolü </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>Kontrol edilecek GPIO pini </td></tr>
+    <tr><td class="paramname">event</td><td>Kontrol edilecek buton olayı türü (BUTTON_PRESSED, BUTTON_RELEASED veya BUTTON_HELD) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>bool belirtilen olay gerçekleştiyse true</dd></dl>
+<p>Farklı buton olay türlerini işler:</p><ul>
+<li>BUTTON_PRESSED: Buton ilk basıldığında bir kez tetiklenir</li>
+<li>BUTTON_RELEASED: Buton bırakıldığında bir kez tetiklenir</li>
+<li>BUTTON_HELD: Buton 1 saniyeden fazla basılı tutulduğunda tetiklenir</li>
+</ul>
+<dl class="section note"><dt>Not</dt><dd>Debounce koruması içerir ve her buton için durum bilgisini saklar </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c_a6b963b48e656f166999ae77284356434_cgraph.png" border="0" usemap="#abuttons_8c_a6b963b48e656f166999ae77284356434_cgraph" alt=""/></div>
+<map name="abuttons_8c_a6b963b48e656f166999ae77284356434_cgraph" id="abuttons_8c_a6b963b48e656f166999ae77284356434_cgraph">
+<area shape="rect" title="Çeşitli zamanlama kontrolleriyle buton basma kontrolü" alt="" coords="5,5,144,31"/>
+<area shape="rect" href="buttons_8c.html#a4b8c57f5812628bb7892c3126085a7cb" title="GPIO pininden buton indeksini al." alt="" coords="192,5,312,31"/>
+<area shape="poly" title=" " alt="" coords="144,16,176,16,176,21,144,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a222bee6cd95d229864afc60d474825ab" name="a222bee6cd95d229864afc60d474825ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222bee6cd95d229864afc60d474825ab">&#9670;&#160;</a></span>get_button_hold_duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t get_button_hold_duration </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bir butonun ne kadar süre al. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>Kontrol edilecek GPIO pini </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>uint32_t Basılı tutulma süresi (milisaniye cinsinden), basılı değilse 0</dd></dl>
+<p>Butonun sürekli olarak ne kadar süre basılı tutulduğunu döndürür. Buton şu anda basılı değilse veya GPIO pini geçersizse 0 döndürür. </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c_a222bee6cd95d229864afc60d474825ab_cgraph.png" border="0" usemap="#abuttons_8c_a222bee6cd95d229864afc60d474825ab_cgraph" alt=""/></div>
+<map name="abuttons_8c_a222bee6cd95d229864afc60d474825ab_cgraph" id="abuttons_8c_a222bee6cd95d229864afc60d474825ab_cgraph">
+<area shape="rect" title="Bir butonun ne kadar süre al." alt="" coords="5,5,172,31"/>
+<area shape="rect" href="buttons_8c.html#a4b8c57f5812628bb7892c3126085a7cb" title="GPIO pininden buton indeksini al." alt="" coords="220,5,340,31"/>
+<area shape="poly" title=" " alt="" coords="172,16,204,16,204,21,172,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b8c57f5812628bb7892c3126085a7cb" name="a4b8c57f5812628bb7892c3126085a7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8c57f5812628bb7892c3126085a7cb">&#9670;&#160;</a></span>get_button_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int get_button_index </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>GPIO pininden buton indeksini al. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>GPIO pin numarası </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>int Buton indeksi (YUKARI için 0, TAMAM için 1, AŞAĞI için 2, geçersizse -1)</dd></dl>
+<p>GPIO pin numaralarını buton durumu takibi için dizi indekslerine eşler. GPIO pini geçerli bir buton pini değilse -1 döndürür. </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c_a4b8c57f5812628bb7892c3126085a7cb_icgraph.png" border="0" usemap="#abuttons_8c_a4b8c57f5812628bb7892c3126085a7cb_icgraph" alt=""/></div>
+<map name="abuttons_8c_a4b8c57f5812628bb7892c3126085a7cb_icgraph" id="abuttons_8c_a4b8c57f5812628bb7892c3126085a7cb_icgraph">
+<area shape="rect" title="GPIO pininden buton indeksini al." alt="" coords="220,31,340,56"/>
+<area shape="rect" href="buttons_8c.html#a6b963b48e656f166999ae77284356434" title="Çeşitli zamanlama kontrolleriyle buton basma kontrolü" alt="" coords="19,5,158,31"/>
+<area shape="poly" title=" " alt="" coords="204,36,158,30,158,25,205,31"/>
+<area shape="rect" href="buttons_8c.html#a222bee6cd95d229864afc60d474825ab" title="Bir butonun ne kadar süre al." alt="" coords="5,55,172,80"/>
+<area shape="poly" title=" " alt="" coords="205,56,173,60,172,54,204,50"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe0b498404852847e48c5539c4d651e8" name="afe0b498404852847e48c5539c4d651e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0b498404852847e48c5539c4d651e8">&#9670;&#160;</a></span>init_buttons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_buttons </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tüm buton GPIO pinlerini başlat. </p>
+<p>YUKARI, TAMAM ve AŞAĞI butonlarını pull-down dirençli giriş pinleri olarak yapılandırır. Bu, butonlar basılı değilken bilinen bir durumda olmalarını sağlar. </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c_afe0b498404852847e48c5539c4d651e8_icgraph.png" border="0" usemap="#abuttons_8c_afe0b498404852847e48c5539c4d651e8_icgraph" alt=""/></div>
+<map name="abuttons_8c_afe0b498404852847e48c5539c4d651e8_icgraph" id="abuttons_8c_afe0b498404852847e48c5539c4d651e8_icgraph">
+<area shape="rect" title="Tüm buton GPIO pinlerini başlat." alt="" coords="228,5,316,31"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="212,21,180,21,180,16,212,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a00fcf54730781bcc9d059ee8542bb047" name="a00fcf54730781bcc9d059ee8542bb047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00fcf54730781bcc9d059ee8542bb047">&#9670;&#160;</a></span>wait_for_button_press()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint wait_for_button_press </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timeout_ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Herhangi bir buton basılmasını bekle. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout_ms</td><td>Maksimum bekleme süresi (milisaniye cinsinden, sonsuz için 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Döndürdüğü değer</dt><dd>uint Basılan butonun GPIO pini, veya zaman aşımında UINT_MAX</dd></dl>
+<p>Şu durumlardan biri gerçekleşene kadar program akışını bloklar:</p><ol type="1">
+<li>Herhangi bir butona basılması (GPIO pin numarasını döndürür)</li>
+<li>Zaman aşımı süresinin dolması (UINT_MAX döndürür)</li>
+<li>timeout_ms 0 ise, sonsuza kadar bekler</li>
+</ol>
+<dl class="section note"><dt>Not</dt><dd>Verimli bekleme için tight_loop_contents() makrosunu kullanır </dd></dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="buttons_8c_a00fcf54730781bcc9d059ee8542bb047_cgraph.png" border="0" usemap="#abuttons_8c_a00fcf54730781bcc9d059ee8542bb047_cgraph" alt=""/></div>
+<map name="abuttons_8c_a00fcf54730781bcc9d059ee8542bb047_cgraph" id="abuttons_8c_a00fcf54730781bcc9d059ee8542bb047_cgraph">
+<area shape="rect" title="Herhangi bir buton basılmasını bekle." alt="" coords="5,5,155,31"/>
+<area shape="rect" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf" title="Debounce korumalı temel buton basma kontrolü" alt="" coords="203,5,313,31"/>
+<area shape="poly" title=" " alt="" coords="155,16,187,16,187,21,155,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Değişken Dokümantasyonu</h2>
+<a id="a16b6a8403e2097dbd0ac10382547401a" name="a16b6a8403e2097dbd0ac10382547401a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b6a8403e2097dbd0ac10382547401a">&#9670;&#160;</a></span>[struct]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  button_states[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae71fb9e85c3597885ea7cffd3c036a10" name="ae71fb9e85c3597885ea7cffd3c036a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71fb9e85c3597885ea7cffd3c036a10">&#9670;&#160;</a></span>hold_duration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t hold_duration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad31152730371b8c40b42512b57166fb0" name="ad31152730371b8c40b42512b57166fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31152730371b8c40b42512b57166fb0">&#9670;&#160;</a></span>is_pressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_pressed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a496ee83d1832dc57e64bb987b1ebced6" name="a496ee83d1832dc57e64bb987b1ebced6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496ee83d1832dc57e64bb987b1ebced6">&#9670;&#160;</a></span>last_press_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">absolute_time_t last_press_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47571161942ae4b5e6b80da2030ac0d8" name="a47571161942ae4b5e6b80da2030ac0d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47571161942ae4b5e6b80da2030ac0d8">&#9670;&#160;</a></span>was_pressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool was_pressed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

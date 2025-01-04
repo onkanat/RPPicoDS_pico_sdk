@@ -1,0 +1,5 @@
+<map id="get_average_distance" name="get_average_distance">
+<area shape="rect" id="Node000001" title="Birden fazla ölçümden ortalama mesafeyi alır." alt="" coords="5,5,154,31"/>
+<area shape="rect" id="Node000002" href="$sensors_8c.html#aa73c79319e4f5c31f9da551784c5e8de" title="Ultrasonik sensör kullanarak mesafe ölçer." alt="" coords="202,5,329,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>

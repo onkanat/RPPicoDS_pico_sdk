@@ -1,0 +1,254 @@
+\doxysection{buttons.\+c Dosya Referansı}
+\hypertarget{buttons_8c}{}\label{buttons_8c}\index{buttons.c@{buttons.c}}
+
+
+Pico Eğitim Kartı için buton kontrol implementasyonu.  
+
+
+{\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+buttons.\+c için içerme bağımlılık grafiği\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buttons_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonksiyonlar}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\+\_\+pressed}} (uint gpio)
+\begin{DoxyCompactList}\small\item\em Debounce korumalı temel buton basma kontrolü \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{buttons_8c_afe0b498404852847e48c5539c4d651e8}{init\+\_\+buttons}} (void)
+\begin{DoxyCompactList}\small\item\em Tüm buton GPIO pinlerini başlat. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{buttons_8c_a4b8c57f5812628bb7892c3126085a7cb}{get\+\_\+button\+\_\+index}} (uint gpio)
+\begin{DoxyCompactList}\small\item\em GPIO pininden buton indeksini al. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\+\_\+button\+\_\+event}} (uint gpio, \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db}{Button\+Event}} event)
+\begin{DoxyCompactList}\small\item\em Çeşitli zamanlama kontrolleriyle buton basma kontrolü \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{buttons_8c_a222bee6cd95d229864afc60d474825ab}{get\+\_\+button\+\_\+hold\+\_\+duration}} (uint gpio)
+\begin{DoxyCompactList}\small\item\em Bir butonun ne kadar süre al. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{buttons_8c_a00fcf54730781bcc9d059ee8542bb047}{wait\+\_\+for\+\_\+button\+\_\+press}} (uint32\+\_\+t timeout\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Herhangi bir buton basılmasını bekle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Değişkenler}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>absolute\_time\_t \mbox{\hyperlink{buttons_8c_a496ee83d1832dc57e64bb987b1ebced6}{last\_press\_time}}\\
+\>bool \mbox{\hyperlink{buttons_8c_ad31152730371b8c40b42512b57166fb0}{is\_pressed}}\\
+\>bool \mbox{\hyperlink{buttons_8c_a47571161942ae4b5e6b80da2030ac0d8}{was\_pressed}}\\
+\>uint32\_t \mbox{\hyperlink{buttons_8c_ae71fb9e85c3597885ea7cffd3c036a10}{hold\_duration}}\\
+\} \mbox{\hyperlink{buttons_8c_a16b6a8403e2097dbd0ac10382547401a}{button\_states}} \mbox{[}3\mbox{]} = \{0\}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Pico Eğitim Kartı için buton kontrol implementasyonu. 
+
+\begin{DoxyAuthor}{Yazar}
+Hakan KILIÇ\+ASLAN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Tarih}
+2024-\/12-\/4
+\end{DoxyDate}
+Bu dosya, Pico Eğitim Kartı üzerindeki buton girişleri için fonksiyonlar sağlar, debounce koruması, basma algılama ve zamanlama özelliklerini içerir. 
+
+\doxysubsection{Fonksiyon Dokümantasyonu}
+\Hypertarget{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}\index{buttons.c@{buttons.c}!button\_pressed@{button\_pressed}}
+\index{button\_pressed@{button\_pressed}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{button\_pressed()}{button\_pressed()}}
+{\footnotesize\ttfamily \label{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf} 
+bool button\+\_\+pressed (\begin{DoxyParamCaption}\item[{uint}]{gpio}{}\end{DoxyParamCaption})}
+
+
+
+Debounce korumalı temel buton basma kontrolü 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & Kontrol edilecek GPIO pini \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+bool buton basılıysa (debounce sonrası) true, değilse false
+\end{DoxyReturn}
+Buton sıçramalarından kaynaklanan yanlış tetiklenmeleri önlemek için 100ms debounce süresi uygular. Sadece debounce süresi geçtikten sonra basma işlemini kaydeder. Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buttons_8c_a6b963b48e656f166999ae77284356434}\index{buttons.c@{buttons.c}!check\_button\_event@{check\_button\_event}}
+\index{check\_button\_event@{check\_button\_event}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{check\_button\_event()}{check\_button\_event()}}
+{\footnotesize\ttfamily \label{buttons_8c_a6b963b48e656f166999ae77284356434} 
+bool check\+\_\+button\+\_\+event (\begin{DoxyParamCaption}\item[{uint}]{gpio}{, }\item[{\mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db}{Button\+Event}}}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Çeşitli zamanlama kontrolleriyle buton basma kontrolü 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & Kontrol edilecek GPIO pini \\
+\hline
+{\em event} & Kontrol edilecek buton olayı türü (BUTTON\+\_\+\+PRESSED, BUTTON\+\_\+\+RELEASED veya BUTTON\+\_\+\+HELD) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+bool belirtilen olay gerçekleştiyse true
+\end{DoxyReturn}
+Farklı buton olay türlerini işler\+:
+\begin{DoxyItemize}
+\item BUTTON\+\_\+\+PRESSED\+: Buton ilk basıldığında bir kez tetiklenir
+\item BUTTON\+\_\+\+RELEASED\+: Buton bırakıldığında bir kez tetiklenir
+\item BUTTON\+\_\+\+HELD\+: Buton 1 saniyeden fazla basılı tutulduğunda tetiklenir
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Not}
+Debounce koruması içerir ve her buton için durum bilgisini saklar 
+\end{DoxyNote}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{buttons_8c_a6b963b48e656f166999ae77284356434_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buttons_8c_a222bee6cd95d229864afc60d474825ab}\index{buttons.c@{buttons.c}!get\_button\_hold\_duration@{get\_button\_hold\_duration}}
+\index{get\_button\_hold\_duration@{get\_button\_hold\_duration}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{get\_button\_hold\_duration()}{get\_button\_hold\_duration()}}
+{\footnotesize\ttfamily \label{buttons_8c_a222bee6cd95d229864afc60d474825ab} 
+uint32\+\_\+t get\+\_\+button\+\_\+hold\+\_\+duration (\begin{DoxyParamCaption}\item[{uint}]{gpio}{}\end{DoxyParamCaption})}
+
+
+
+Bir butonun ne kadar süre al. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & Kontrol edilecek GPIO pini \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+uint32\+\_\+t Basılı tutulma süresi (milisaniye cinsinden), basılı değilse 0
+\end{DoxyReturn}
+Butonun sürekli olarak ne kadar süre basılı tutulduğunu döndürür. Buton şu anda basılı değilse veya GPIO pini geçersizse 0 döndürür. Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{buttons_8c_a222bee6cd95d229864afc60d474825ab_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buttons_8c_a4b8c57f5812628bb7892c3126085a7cb}\index{buttons.c@{buttons.c}!get\_button\_index@{get\_button\_index}}
+\index{get\_button\_index@{get\_button\_index}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{get\_button\_index()}{get\_button\_index()}}
+{\footnotesize\ttfamily \label{buttons_8c_a4b8c57f5812628bb7892c3126085a7cb} 
+static int get\+\_\+button\+\_\+index (\begin{DoxyParamCaption}\item[{uint}]{gpio}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+GPIO pininden buton indeksini al. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & GPIO pin numarası \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+int Buton indeksi (YUKARI için 0, TAMAM için 1, AŞ\+AĞI için 2, geçersizse -\/1)
+\end{DoxyReturn}
+GPIO pin numaralarını buton durumu takibi için dizi indekslerine eşler. GPIO pini geçerli bir buton pini değilse -\/1 döndürür. Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{buttons_8c_a4b8c57f5812628bb7892c3126085a7cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buttons_8c_afe0b498404852847e48c5539c4d651e8}\index{buttons.c@{buttons.c}!init\_buttons@{init\_buttons}}
+\index{init\_buttons@{init\_buttons}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{init\_buttons()}{init\_buttons()}}
+{\footnotesize\ttfamily \label{buttons_8c_afe0b498404852847e48c5539c4d651e8} 
+void init\+\_\+buttons (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Tüm buton GPIO pinlerini başlat. 
+
+YUKARI, TAMAM ve AŞ\+AĞI butonlarını pull-\/down dirençli giriş pinleri olarak yapılandırır. Bu, butonlar basılı değilken bilinen bir durumda olmalarını sağlar. Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{buttons_8c_afe0b498404852847e48c5539c4d651e8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{buttons_8c_a00fcf54730781bcc9d059ee8542bb047}\index{buttons.c@{buttons.c}!wait\_for\_button\_press@{wait\_for\_button\_press}}
+\index{wait\_for\_button\_press@{wait\_for\_button\_press}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_button\_press()}{wait\_for\_button\_press()}}
+{\footnotesize\ttfamily \label{buttons_8c_a00fcf54730781bcc9d059ee8542bb047} 
+uint wait\+\_\+for\+\_\+button\+\_\+press (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Herhangi bir buton basılmasını bekle. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em timeout\+\_\+ms} & Maksimum bekleme süresi (milisaniye cinsinden, sonsuz için 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Döndürdüğü değer}
+uint Basılan butonun GPIO pini, veya zaman aşımında UINT\+\_\+\+MAX
+\end{DoxyReturn}
+Şu durumlardan biri gerçekleşene kadar program akışını bloklar\+:
+\begin{DoxyEnumerate}
+\item Herhangi bir butona basılması (GPIO pin numarasını döndürür)
+\item Zaman aşımı süresinin dolması (UINT\+\_\+\+MAX döndürür)
+\item timeout\+\_\+ms 0 ise, sonsuza kadar bekler
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Not}
+Verimli bekleme için tight\+\_\+loop\+\_\+contents() makrosunu kullanır 
+\end{DoxyNote}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{buttons_8c_a00fcf54730781bcc9d059ee8542bb047_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Değişken Dokümantasyonu}
+\Hypertarget{buttons_8c_a16b6a8403e2097dbd0ac10382547401a}\index{buttons.c@{buttons.c}!button\_states@{button\_states}}
+\index{button\_states@{button\_states}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{buttons_8c_a16b6a8403e2097dbd0ac10382547401a} 
+struct  \{ ... \}  button\+\_\+states\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{buttons_8c_ae71fb9e85c3597885ea7cffd3c036a10}\index{buttons.c@{buttons.c}!hold\_duration@{hold\_duration}}
+\index{hold\_duration@{hold\_duration}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{hold\_duration}{hold\_duration}}
+{\footnotesize\ttfamily \label{buttons_8c_ae71fb9e85c3597885ea7cffd3c036a10} 
+uint32\+\_\+t hold\+\_\+duration}
+
+\Hypertarget{buttons_8c_ad31152730371b8c40b42512b57166fb0}\index{buttons.c@{buttons.c}!is\_pressed@{is\_pressed}}
+\index{is\_pressed@{is\_pressed}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{is\_pressed}{is\_pressed}}
+{\footnotesize\ttfamily \label{buttons_8c_ad31152730371b8c40b42512b57166fb0} 
+bool is\+\_\+pressed}
+
+\Hypertarget{buttons_8c_a496ee83d1832dc57e64bb987b1ebced6}\index{buttons.c@{buttons.c}!last\_press\_time@{last\_press\_time}}
+\index{last\_press\_time@{last\_press\_time}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{last\_press\_time}{last\_press\_time}}
+{\footnotesize\ttfamily \label{buttons_8c_a496ee83d1832dc57e64bb987b1ebced6} 
+absolute\+\_\+time\+\_\+t last\+\_\+press\+\_\+time}
+
+\Hypertarget{buttons_8c_a47571161942ae4b5e6b80da2030ac0d8}\index{buttons.c@{buttons.c}!was\_pressed@{was\_pressed}}
+\index{was\_pressed@{was\_pressed}!buttons.c@{buttons.c}}
+\doxysubsubsection{\texorpdfstring{was\_pressed}{was\_pressed}}
+{\footnotesize\ttfamily \label{buttons_8c_a47571161942ae4b5e6b80da2030ac0d8} 
+bool was\+\_\+pressed}
+

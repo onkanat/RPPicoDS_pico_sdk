@@ -1,0 +1,183 @@
+\doxysection{pico\+\_\+training\+\_\+board.\+h}
+\hypertarget{pico__training__board_8h_source}{}\label{pico__training__board_8h_source}\mbox{\hyperlink{pico__training__board_8h}{Bu dosyanın dokümantasyonuna git.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PICO\_TRAINING\_BOARD\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PICO\_TRAINING\_BOARD\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ Standart\ kütüphaneler\ */}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ Pico-\/SDK\ kütüphaneleri\ */}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}hardware/gpio.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}pico/multicore.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}pico/stdlib.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}hardware/pwm.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}hardware/adc.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}hardware/i2c.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KEYPAD\ 28\ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ POT\_1\ 27\ \ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LDR\_1\ 26\ \ }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BUTTON\_UP\ 5\ \ \ }}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BUTTON\_OK\ 6\ \ \ }}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BUTTON\_DOWN\ 7\ }}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LED\_RED\ 4\ \ \ \ }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LED\_YELLOW\ 3\ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LED\_GREEN\ 2\ \ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ RGB\_R\ 16\ \ \ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ RGB\_G\ 17\ \ \ \ \ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ RGB\_B\ 18\ \ \ \ \ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10\ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A1\ 11\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A2\ 12\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B1\ 13\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B2\ 14\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ STEP\_DELAY\_MIN\ 1000\ \ \ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ STEP\_DELAY\_MAX\ 10000\ \ \ \ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ STEPS\_PER\_REV\ 2048\ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a}{MOTOR\_STOPPED}}\ =\ 0,\ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a5b5420cf198711cf4ba843672f9f531b}{MOTOR\_RUNNING}}\ =\ 1,\ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6acf041eca57a2940c2c0c959dcd729d12}{MOTOR\_ERROR}}\ =\ 2\ \ \ \ \ }
+\DoxyCodeLine{00081\ \}\ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\_state\_t}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487}{CCW}}\ \ }
+\DoxyCodeLine{00089\ \}\ \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\_direction\_t}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ Motor\ kontrol\ fonksiyon\ prototipleri}}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}{is\_motor\_running}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00093\ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\_state\_t}}\ \mbox{\hyperlink{pico__training__board_8h_ac91c34166ec5420fe03bc8e353b52354}{get\_motor\_state}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\_direction\_t}}\ direction,\ uint\ speed,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}});}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\_stop}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a8d8f8f8a9dde232c7092dbf83cc101af}{init\_step\_motor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ac99006d5c9f207df6cede008585d9ded}{send\_motor\_parameters}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\_direction\_t}}\ direction,\ uint\ speed,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ Ultrasonik\ Sensör}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_TR\ 8\ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_EC\ 9\ }}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ Bluetooth\ Modülü}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ BLT\_TX\ 0\ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ BLT\_RX\ 1\ }}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ PIR\ Sensör}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ PIR\_DETECTOR\ 19\ }}
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ I2C\ LCD\ Ekran\ (Adres\ 0x27)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ I2C\_SDA\ 20\ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ I2C\_SCL\ 21\ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ LCD\_ADDR\ 0x27\ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ I2C\_PORT\ i2c0\ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ LCD\_ROWS\ 2\ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LCD\_COLS\ 16\ }}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ LCD\ için\ modlar}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ LCD\_CHARACTER\ 1\ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LCD\_COMMAND\ 0\ }}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ LCD\ kontrol\ bayrakları}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LCD\_CLEARDISPLAY\ 0x01\ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LCD\_RETURNHOME\ 0x02\ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYMODESET\ 0x04\ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYCONTROL\ 0x08\ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LCD\_CURSORSHIFT\ 0x10\ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LCD\_FUNCTIONSET\ 0x20\ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LCD\_SETCGRAMADDR\ 0x40\ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LCD\_SETDDRAMADDR\ 0x80\ }}
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ LCD\ giriş\ modu\ bayrakları}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTINCREMENT\ 0x01\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYLEFT\ 0x02\ }}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ LCD\ ekran\ kontrol\ bayrakları}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LCD\_BLINKON\ 0x01\ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LCD\_CURSORON\ 0x02\ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYON\ 0x04\ }}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ LCD\ ekran/imleç\ kaydırma\ bayrakları}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ LCD\_MOVERIGHT\ 0x04\ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYMOVE\ 0x08\ }}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ LCD\ fonksiyon\ ayar\ bayrakları}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ LCD\_5x10DOTS\ 0x04\ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ LCD\_2LINE\ 0x08\ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ LCD\_8BITMODE\ 0x10\ }}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ LCD\ arka\ ışık\ kontrolü}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ LCD\_BACKLIGHT\ 0x08\ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ LCD\_ENABLE\_BIT\ 0x04\ }}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ Genel\ tanımlar}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ HIGH\ 1\ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LOW\ 0\ }}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ PWM\ tanımlamaları}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ PWM\_FREQ\ 1000\ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ PWM\_DUTY\_MAX\ 4095\ }}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ Buzzer\ için\ PWM\ ayarları}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ BUZZER\_CLOCK\ 125000000\ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ BUZZER\_WRAP\ 4095\ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ BUZZER\_DUTY\_50\ 2048\ }}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ Nota\ frekans\ tanımlamaları}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ NOTE\_C4\ 261.63\ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ NOTE\_CS4\ 277.18\ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ NOTE\_D4\ 293.66\ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ NOTE\_DS4\ 311.13\ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ NOTE\_E4\ 329.63\ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ NOTE\_F4\ 349.23\ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ NOTE\_FS4\ 369.99\ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ NOTE\_G4\ 392.00\ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ NOTE\_GS4\ 415.30\ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ NOTE\_A4\ 440.00\ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ NOTE\_AS4\ 466.16\ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ NOTE\_B4\ 493.88\ }}
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ Fonksiyon\ prototipleri}}
+\DoxyCodeLine{00182\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{pico__training__board_8h_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00183\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_ab2bff14828e4757d93fe24490da85228}{analog\_button\_pressed}}(uint\ gpio);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ Buton\ olay\ türleri}}
+\DoxyCodeLine{00186\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00187\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b}{BUTTON\_PRESSED}},\ }
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461}{BUTTON\_RELEASED}},\ }
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c}{BUTTON\_HELD}}\ }
+\DoxyCodeLine{00191\ \}\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db}{ButtonEvent}};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ Buton\ fonksiyon\ prototipleri}}
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(uint\ gpio);}
+\DoxyCodeLine{00195\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_a6b963b48e656f166999ae77284356434}{check\_button\_event}}(uint\ gpio,\ \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db}{ButtonEvent}}\ event);}
+\DoxyCodeLine{00196\ uint32\_t\ \mbox{\hyperlink{pico__training__board_8h_a222bee6cd95d229864afc60d474825ab}{get\_button\_hold\_duration}}(uint\ gpio);}
+\DoxyCodeLine{00197\ uint\ \mbox{\hyperlink{pico__training__board_8h_a00fcf54730781bcc9d059ee8542bb047}{wait\_for\_button\_press}}(uint32\_t\ timeout\_ms);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{comment}{//\ Ek\ fonksiyon\ prototipleri}}
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ PWM\ fonksiyon\ prototipleri}}
+\DoxyCodeLine{00201\ uint\ \mbox{\hyperlink{pico__training__board_8h_a26e29c0194abe54781cea1d434aa4d2d}{init\_pwm\_pin}}(uint\ gpio,\ \textcolor{keywordtype}{float}\ frequency,\ uint16\_t\ duty);}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_abeed4b38208cb0179851d68db47de935}{init\_buzzer\_pwm}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_aac9c80df02474bfcf09db96e11f58b7f}{init\_rgb\_pwm}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a30c79869aed334b91ce300139ba2fb92}{init\_led\_pwm}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a98133f3bc8c62b912d63da405e2adb15}{init\_board}}(\textcolor{keywordtype}{void});\ \textcolor{comment}{//\ Tüm\ kart\ bileşenlerini\ başlat}}
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ab15cf82f0329bc4d7262c03559eaaa8e}{init\_adc}}(\textcolor{keywordtype}{void});\ \ \ \textcolor{comment}{//\ ADC'yi\ başlat}}
+\DoxyCodeLine{00207\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a3b053b746b94dc3174b4c7c5c6370562}{init\_pwm}}(\textcolor{keywordtype}{void});\ \ \ \textcolor{comment}{//\ Tüm\ PWM'leri\ başlat}}
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_aafed2ade168a085630c2fe8d776432f2}{init\_lcd}}(\textcolor{keywordtype}{void});\ \ \ \textcolor{comment}{//\ LCD'yi\ başlat}}
+\DoxyCodeLine{00209\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_afe0b498404852847e48c5539c4d651e8}{init\_buttons}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ uint16\_t\ \mbox{\hyperlink{pico__training__board_8h_aab6ffb1c01ffbbec732bb22dc297a995}{read\_analog}}(uint8\_t\ pin);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a63002d9e1a92cb83d1ece6899b442452}{set\_led\_pwm}}(uint\ gpio,\ uint16\_t\ duty);\ \textcolor{comment}{//\ LED\ PWM\ görev\ döngüsünü\ ayarla}}
+\DoxyCodeLine{00214\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_abdecc1e0fa9f62344cd44d0797ed27d9}{set\_pwm\_frequency}}(uint\ slice\_num,\ \textcolor{keywordtype}{float}\ frequency);}
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{pico__training__board_8h_a796bbc24fde48e1a34a660bd6a38dbae}{get\_frequency}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *note,\ \textcolor{keywordtype}{int}\ octave);}
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(\textcolor{keywordtype}{float}\ frequency,\ \textcolor{keywordtype}{int}\ duration\_ms);}
+\DoxyCodeLine{00217\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *notes[][2],\ \textcolor{keywordtype}{int}\ num\_notes,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{comment}{//\ LCD\ fonksiyon\ prototipleri}}
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00221\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a31b5bba75b8e9f4d67830f7fad24e0c7}{lcd\_send\_byte}}(uint8\_t\ val,\ \textcolor{keywordtype}{int}\ mode);}
+\DoxyCodeLine{00222\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00223\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(\textcolor{keywordtype}{int}\ line,\ \textcolor{keywordtype}{int}\ position);}
+\DoxyCodeLine{00224\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{comment}{//\ Sensör\ fonksiyon\ prototipleri}}
+\DoxyCodeLine{00227\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_af38f5ef820a2c8d443994ae6ead83789}{init\_ultrasonic}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00228\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_a45e774fb9ec2c151678550b5857847c4}{init\_pir}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00229\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\_distance}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00230\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\_motion}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_af61dcd1031a5ef723aadad8a4acd0a9f}{wait\_for\_motion}}(uint32\_t\ timeout\_ms);}
+\DoxyCodeLine{00232\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{pico__training__board_8h_a4628d8d278604d424be0693fd587e661}{get\_average\_distance}}(uint8\_t\ num\_samples,\ uint32\_t\ delay\_ms);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PICO\_TRAINING\_BOARD\_H}}
+
+\end{DoxyCode}

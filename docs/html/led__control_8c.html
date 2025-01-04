@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: led_control.c Dosya Referansı</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonksiyonlar</a>  </div>
+  <div class="headertitle"><div class="title">led_control.c Dosya Referansı</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pico Eğitim Kartı için led ve rgb kontrolü uygulaması  
+<a href="#details">Ayrıntılar...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pico__training__board_8h_source.html">pico_training_board.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+led_control.c için içerme bağımlılık grafiği:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c__incl.png" border="0" usemap="#aled__control_8c" alt=""/></div>
+<map name="aled__control_8c" id="aled__control_8c">
+<area shape="rect" title="Pico Eğitim Kartı için led ve rgb kontrolü uygulaması" alt="" coords="428,5,523,31"/>
+<area shape="rect" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları" alt="" coords="403,79,548,105"/>
+<area shape="poly" title=" " alt="" coords="478,31,478,63,473,63,473,31"/>
+<area shape="rect" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" title=" " alt="" coords="403,104,259,124,82,155,81,150,258,119,403,99"/>
+<area shape="rect" title=" " alt="" coords="90,153,152,178"/>
+<area shape="poly" title=" " alt="" coords="404,108,167,155,166,149,403,103"/>
+<area shape="rect" title=" " alt="" coords="175,153,240,178"/>
+<area shape="poly" title=" " alt="" coords="431,108,255,154,254,149,429,103"/>
+<area shape="rect" title=" " alt="" coords="264,153,327,178"/>
+<area shape="poly" title=" " alt="" coords="446,108,341,149,339,144,444,103"/>
+<area shape="rect" title=" " alt="" coords="351,153,464,178"/>
+<area shape="poly" title=" " alt="" coords="466,107,431,143,427,140,462,103"/>
+<area shape="rect" title=" " alt="" coords="488,153,602,178"/>
+<area shape="poly" title=" " alt="" coords="489,103,525,140,521,143,485,107"/>
+<area shape="rect" title=" " alt="" coords="626,153,717,178"/>
+<area shape="poly" title=" " alt="" coords="510,103,625,144,623,150,508,108"/>
+<area shape="rect" title=" " alt="" coords="741,153,858,178"/>
+<area shape="poly" title=" " alt="" coords="531,103,730,146,729,151,530,108"/>
+<area shape="rect" title=" " alt="" coords="882,153,992,178"/>
+<area shape="poly" title=" " alt="" coords="549,101,867,149,866,155,548,106"/>
+<area shape="rect" title=" " alt="" coords="1016,153,1122,178"/>
+<area shape="poly" title=" " alt="" coords="549,97,748,118,1001,150,1000,155,748,123,548,103"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonksiyonlar</h2></td></tr>
+<tr class="memitem:aac9c80df02474bfcf09db96e11f58b7f" id="r_aac9c80df02474bfcf09db96e11f58b7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac9c80df02474bfcf09db96e11f58b7f">init_rgb_pwm</a> (void)</td></tr>
+<tr class="memdesc:aac9c80df02474bfcf09db96e11f58b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB LED pinleri için PWM'i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır.  <br /></td></tr>
+<tr class="separator:aac9c80df02474bfcf09db96e11f58b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c79869aed334b91ce300139ba2fb92" id="r_a30c79869aed334b91ce300139ba2fb92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30c79869aed334b91ce300139ba2fb92">init_led_pwm</a> (void)</td></tr>
+<tr class="memdesc:a30c79869aed334b91ce300139ba2fb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standart LED çıkışları için PWM'i başlatır Kırmızı, Sarı ve Yeşil LED'ler için PWM'i yapılandırır.  <br /></td></tr>
+<tr class="separator:a30c79869aed334b91ce300139ba2fb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63002d9e1a92cb83d1ece6899b442452" id="r_a63002d9e1a92cb83d1ece6899b442452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63002d9e1a92cb83d1ece6899b442452">set_led_pwm</a> (uint gpio, uint16_t duty)</td></tr>
+<tr class="memdesc:a63002d9e1a92cb83d1ece6899b442452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bir LED için PWM görev döngüsünü ayarlar.  <br /></td></tr>
+<tr class="separator:a63002d9e1a92cb83d1ece6899b442452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bd211c029544866fdfc1ea9dcce2ab" id="r_ad0bd211c029544866fdfc1ea9dcce2ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0bd211c029544866fdfc1ea9dcce2ab">set_rgb_color</a> (uint16_t red, uint16_t green, uint16_t blue)</td></tr>
+<tr class="memdesc:ad0bd211c029544866fdfc1ea9dcce2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM kullanarak RGB LED rengini ayarlar.  <br /></td></tr>
+<tr class="separator:ad0bd211c029544866fdfc1ea9dcce2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ayrıntılı tanımlama</h2>
+<div class="textblock"><p>Pico Eğitim Kartı için led ve rgb kontrolü uygulaması </p>
+</div><h2 class="groupheader">Fonksiyon Dokümantasyonu</h2>
+<a id="a30c79869aed334b91ce300139ba2fb92" name="a30c79869aed334b91ce300139ba2fb92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c79869aed334b91ce300139ba2fb92">&#9670;&#160;</a></span>init_led_pwm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_led_pwm </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Standart LED çıkışları için PWM'i başlatır Kırmızı, Sarı ve Yeşil LED'ler için PWM'i yapılandırır. </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c_a30c79869aed334b91ce300139ba2fb92_cgraph.png" border="0" usemap="#aled__control_8c_a30c79869aed334b91ce300139ba2fb92_cgraph" alt=""/></div>
+<map name="aled__control_8c_a30c79869aed334b91ce300139ba2fb92_cgraph" id="aled__control_8c_a30c79869aed334b91ce300139ba2fb92_cgraph">
+<area shape="rect" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="5,5,103,31"/>
+<area shape="rect" href="init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="151,5,248,31"/>
+<area shape="poly" title=" " alt="" coords="103,16,135,16,135,21,103,21"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c_a30c79869aed334b91ce300139ba2fb92_icgraph.png" border="0" usemap="#aled__control_8c_a30c79869aed334b91ce300139ba2fb92_icgraph" alt=""/></div>
+<map name="aled__control_8c_a30c79869aed334b91ce300139ba2fb92_icgraph" id="aled__control_8c_a30c79869aed334b91ce300139ba2fb92_icgraph">
+<area shape="rect" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır." alt="" coords="349,5,447,31"/>
+<area shape="rect" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="228,5,301,31"/>
+<area shape="poly" title=" " alt="" coords="333,21,302,21,302,16,333,16"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="213,21,180,21,180,16,213,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aac9c80df02474bfcf09db96e11f58b7f" name="aac9c80df02474bfcf09db96e11f58b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9c80df02474bfcf09db96e11f58b7f">&#9670;&#160;</a></span>init_rgb_pwm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_rgb_pwm </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RGB LED pinleri için PWM'i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır. </p>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c_aac9c80df02474bfcf09db96e11f58b7f_cgraph.png" border="0" usemap="#aled__control_8c_aac9c80df02474bfcf09db96e11f58b7f_cgraph" alt=""/></div>
+<map name="aled__control_8c_aac9c80df02474bfcf09db96e11f58b7f_cgraph" id="aled__control_8c_aac9c80df02474bfcf09db96e11f58b7f_cgraph">
+<area shape="rect" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="5,5,104,31"/>
+<area shape="rect" href="init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="152,5,249,31"/>
+<area shape="poly" title=" " alt="" coords="104,16,136,16,136,21,104,21"/>
+</map>
+</div>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c_aac9c80df02474bfcf09db96e11f58b7f_icgraph.png" border="0" usemap="#aled__control_8c_aac9c80df02474bfcf09db96e11f58b7f_icgraph" alt=""/></div>
+<map name="aled__control_8c_aac9c80df02474bfcf09db96e11f58b7f_icgraph" id="aled__control_8c_aac9c80df02474bfcf09db96e11f58b7f_icgraph">
+<area shape="rect" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır." alt="" coords="349,5,448,31"/>
+<area shape="rect" href="init__functions_8c.html#a3b053b746b94dc3174b4c7c5c6370562" title="Buzzer ve LED çıkışları için PWM&#39;i başlatır." alt="" coords="228,5,301,31"/>
+<area shape="poly" title=" " alt="" coords="334,21,302,21,302,16,334,16"/>
+<area shape="rect" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır." alt="" coords="103,5,180,31"/>
+<area shape="poly" title=" " alt="" coords="213,21,180,21,180,16,213,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63002d9e1a92cb83d1ece6899b442452" name="a63002d9e1a92cb83d1ece6899b442452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63002d9e1a92cb83d1ece6899b442452">&#9670;&#160;</a></span>set_led_pwm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_led_pwm </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>gpio</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>duty</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bir LED için PWM görev döngüsünü ayarlar. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>LED'in GPIO pin numarası </td></tr>
+    <tr><td class="paramname">duty</td><td>Görev döngüsü değeri (0-PWM_DUTY_MAX) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c_a63002d9e1a92cb83d1ece6899b442452_icgraph.png" border="0" usemap="#aled__control_8c_a63002d9e1a92cb83d1ece6899b442452_icgraph" alt=""/></div>
+<map name="aled__control_8c_a63002d9e1a92cb83d1ece6899b442452_icgraph" id="aled__control_8c_a63002d9e1a92cb83d1ece6899b442452_icgraph">
+<area shape="rect" title="Bir LED için PWM görev döngüsünü ayarlar." alt="" coords="153,5,251,31"/>
+<area shape="rect" href="led__control_8c.html#ad0bd211c029544866fdfc1ea9dcce2ab" title="PWM kullanarak RGB LED rengini ayarlar." alt="" coords="5,5,105,31"/>
+<area shape="poly" title=" " alt="" coords="137,21,105,21,105,16,137,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0bd211c029544866fdfc1ea9dcce2ab" name="ad0bd211c029544866fdfc1ea9dcce2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bd211c029544866fdfc1ea9dcce2ab">&#9670;&#160;</a></span>set_rgb_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_rgb_color </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>red</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>green</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>blue</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM kullanarak RGB LED rengini ayarlar. </p>
+<dl class="params"><dt>Parametreler</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">red</td><td>Kırmızı bileşen (0-PWM_DUTY_MAX) </td></tr>
+    <tr><td class="paramname">green</td><td>Yeşil bileşen (0-PWM_DUTY_MAX) </td></tr>
+    <tr><td class="paramname">blue</td><td>Mavi bileşen (0-PWM_DUTY_MAX) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Bu fonksiyon için çağırılma şeması:</div>
+<div class="dyncontent">
+<div class="center"><img src="led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab_cgraph.png" border="0" usemap="#aled__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab_cgraph" alt=""/></div>
+<map name="aled__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab_cgraph" id="aled__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab_cgraph">
+<area shape="rect" title="PWM kullanarak RGB LED rengini ayarlar." alt="" coords="5,5,105,31"/>
+<area shape="rect" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452" title="Bir LED için PWM görev döngüsünü ayarlar." alt="" coords="153,5,251,31"/>
+<area shape="poly" title=" " alt="" coords="105,16,137,16,137,21,105,21"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,7 @@
+<map id="get_button_index" name="get_button_index">
+<area shape="rect" id="Node000001" title="GPIO pininden buton indeksini al." alt="" coords="220,31,340,56"/>
+<area shape="rect" id="Node000002" href="$buttons_8c.html#a6b963b48e656f166999ae77284356434" title="Çeşitli zamanlama kontrolleriyle buton basma kontrolü" alt="" coords="19,5,158,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,36,158,30,158,25,205,31"/>
+<area shape="rect" id="Node000003" href="$buttons_8c.html#a222bee6cd95d229864afc60d474825ab" title="Bir butonun ne kadar süre al." alt="" coords="5,55,172,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,56,173,60,172,54,204,50"/>
+</map>

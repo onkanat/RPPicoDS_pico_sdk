@@ -1,0 +1,5 @@
+<map id="init_buzzer_pwm" name="init_buzzer_pwm">
+<area shape="rect" id="Node000001" title="Buzzer için özel olarak PWM&#39;i başlatır." alt="" coords="5,5,125,31"/>
+<area shape="rect" id="Node000002" href="$init__functions_8c.html#a26e29c0194abe54781cea1d434aa4d2d" title="Belirli bir GPIO pini için PWM&#39;i başlatır." alt="" coords="173,5,270,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,16,157,16,157,21,125,21"/>
+</map>

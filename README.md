@@ -161,7 +161,7 @@ Bu yeni `README.md` dosyası, `pico_training_board.h` dosyasındaki güncel veri
 
 ## Dokümantasyon Üretimi (Doxygen)
 
-Bu proje Doxygen ile belgelenmiştir. HTML ve LaTeX çıktıları `./docs` klasörüne üretilir.
+Bu proje Doxygen ile belgelenmiştir. Çıktılar GitHub Pages ile uyumlu olacak şekilde `site/` dizinine üretilir.
 
 Gereksinimler:
 
@@ -180,13 +180,14 @@ doxygen Doxyfile
 
 Çıktılar:
 
-- HTML: `docs/html/index.html`
-- LaTeX: `docs/latex/`
+- HTML: `site/index.html`
+- LaTeX: Üretilmez (devre dışı)
 
 Notlar:
 
 - Doxygen Türkçe dil dosyası eski uyarısı görülebilir; işlevi etkilemez.
-- Dot kaynaklı hatalar varsa önce `docs/html` ve `docs/latex` dizinlerini silip tekrar çalıştırın.
+- Dot kaynaklı hatalar varsa önce `site/` dizinini temizleyip tekrar çalıştırın.
+- GitHub Actions, `main` branch’e merge sonrası `site/` çıktısını otomatik olarak GitHub Pages’e yayınlayacak şekilde yapılandırılmıştır.
 
 ## Sorun Giderme (Doxygen)
 

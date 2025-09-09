@@ -1,6 +1,7 @@
 /**
  * @file stepper.c
  * @brief Step motor kontrol fonksiyonları
+ * @see \ref howto_stepper
  */
 
 #include "pico_training_board.h"
@@ -47,9 +48,6 @@ static volatile bool emergency_stop = false;
  * Her pini başlatır ve motor bobinlerini sürmek için çıkış olarak ayarlar.
  * 
  * @note motor_pins[] dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır
- * 
- * @param void Giriş parametresi yok
- * @return void Geri dönüş değeri yok
  */
 void init_step_motor(void) {
     // Motor kontrol pinlerini başlat
@@ -60,11 +58,19 @@ void init_step_motor(void) {
 }
 
 // Motor durumunu kontrol et
+/**
+ * @brief Motorun çalışıp çalışmadığını kontrol eder
+ * @return true motor çalışıyorsa, aksi halde false
+ */
 bool is_motor_running(void) {
     return (motor_state == MOTOR_RUNNING);
 }
 
 // Motor durumunu döndür
+/**
+ * @brief Motorun mevcut durumunu döndürür
+ * @return motor_state_t MOTOR_STOPPED, MOTOR_RUNNING veya MOTOR_ERROR
+ */
 motor_state_t get_motor_state(void) {
     return motor_state;
 }
@@ -79,9 +85,6 @@ motor_state_t get_motor_state(void) {
  * - Tüm motor bobinlerini enerjisiz hale getirir (GPIO pinlerini düşük seviyeye ayarlar)
  * 
  * @note motor_pins[] dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır
- * 
- * @param void Giriş parametresi yok
- * @return void Geri dönüş değeri yok
  * 
  * @warning Bu fonksiyon, motoru yavaşlatmadan hemen durdurur, bu da mekanik strese neden olabilir
  */
@@ -113,8 +116,6 @@ void step_stop(void) {
  * - emergency_stop: Acil durdurma bayrağı
  * - motor_pins[]: Motor kontrolü için GPIO pin numaraları dizisi
  * - step_sequence[][]: Adım sekans desenlerini içeren dizi
- * 
- * @return void
  */
 void step_turn(motor_direction_t direction, uint speed, float revolutions) {
     if (motor_state == MOTOR_RUNNING) {

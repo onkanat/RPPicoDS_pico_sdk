@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Initialize button interrupts for motor control." alt="" coords="5,31,134,56"/>
 <area shape="rect" id="Node000002" href="$main_8c.html#adc9c0b00da41b4f750a502323595b1e6" title="Button interrupt callback function." alt="" coords="182,31,294,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,41,166,41,166,46,134,46"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#ac99006d5c9f207df6cede008585d9ded" title="Step motor parametrelerini Core1&#39;e gönderir." alt="" coords="342,5,503,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,33,326,29,327,34,295,38"/>
-<area shape="rect" id="Node000004" href="$stepper_8c.html#a91a1a65f783ef1d3040dfc483143d3e0" title="Step motor için acil durdurma fonksiyonu." alt="" coords="384,55,462,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="295,48,369,58,368,63,294,53"/>
+<area shape="rect" id="Node000003" href="$buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf" title="Debounce korumalı temel buton basma kontrolü" alt="" coords="368,5,478,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,33,352,25,352,30,295,38"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#ac99006d5c9f207df6cede008585d9ded" title="Step motor parametrelerini Core1&#39;e gönderir (yön, hız, devir)" alt="" coords="342,55,503,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="295,48,327,52,326,58,294,53"/>
 </map>

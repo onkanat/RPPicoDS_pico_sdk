@@ -1,4 +1,3 @@
-
 # Raspberry Pi Pico Eğitim Kartı
 
 ## Genel Bakış
@@ -159,3 +158,54 @@ Tüm komponentler `init_board()` fonksiyonu ile başlatılır. Bu fonksiyon:
 ```
 
 Bu yeni `README.md` dosyası, `pico_training_board.h` dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır.
+
+## Dokümantasyon Üretimi (Doxygen)
+
+Bu proje Doxygen ile belgelenmiştir. HTML ve LaTeX çıktıları `./docs` klasörüne üretilir.
+
+Gereksinimler:
+
+- Doxygen (1.9+ önerilir)
+- Graphviz (dot) — çağrı/çağıran grafikleri için
+
+Adımlar (macOS):
+
+```bash
+# Graphviz yoksa kurun
+brew install graphviz
+
+# Doxygen’i çalıştırın (repo kökünde)
+doxygen Doxyfile
+```
+
+Çıktılar:
+
+- HTML: `docs/html/index.html`
+- LaTeX: `docs/latex/`
+
+Notlar:
+
+- Doxygen Türkçe dil dosyası eski uyarısı görülebilir; işlevi etkilemez.
+- Dot kaynaklı hatalar varsa önce `docs/html` ve `docs/latex` dizinlerini silip tekrar çalıştırın.
+
+## Sorun Giderme (Doxygen)
+
+- Graphviz/dot bulunamadı uyarısı veya grafikler üretilmiyor:
+  - macOS için Graphviz kurulu olmalı ve `dot -V` çalışmalı.
+  - Doxyfile içinde `HAVE_DOT = YES`, `CALL_GRAPH = YES`, `CALLER_GRAPH = YES` olmalı.
+  - Gerekirse docs’u temizleyip yeniden üretin.
+- OUTPUT_LANGUAGE Turkish uyarısı:
+  - Doxygen Türkçe dil paketi eski olabilir; bu sadece bazı sabit metinlerin İngilizce görünmesine yol açar. İşlevselliği etkilemez.
+
+## Nasıl Kullanılır (How-To)
+
+Modül bazlı hızlı başlangıç rehberleri için Doxygen içinde şu bölüme bakın:
+
+- Nasıl Kullanılır İçindekiler: howto_index
+  - Butonlar, LCD, Buzzer, Sensörler, Step Motor, Tuş Takımı, LED/RGB
+
+## Kalite Kapıları
+
+- Build: Ninja ile proje derlenmeli (VS Code görevi: Compile Project).
+- Docs: Doxygen çalışmalı, Graphviz grafiklerini üretmeli.
+- Uyarılar: Yalnızca Türkçe dil uyarısı kabul edilebilir; diğer uyarılar çözülmeli.

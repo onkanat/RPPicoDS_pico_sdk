@@ -2,6 +2,7 @@
 \hypertarget{pico__training__board_8h_source}{}\label{pico__training__board_8h_source}\mbox{\hyperlink{pico__training__board_8h}{Bu dosyanın dokümantasyonuna git.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PICO\_TRAINING\_BOARD\_H}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PICO\_TRAINING\_BOARD\_H}}
 \DoxyCodeLine{00011\ }
@@ -19,26 +20,31 @@
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}hardware/adc.h"{}}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}hardware/i2c.h"{}}}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KEYPAD\ 28\ }}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ POT\_1\ 27\ \ }}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LDR\_1\ 26\ \ }}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BUTTON\_UP\ 5\ \ \ }}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BUTTON\_OK\ 6\ \ \ }}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BUTTON\_DOWN\ 7\ }}
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LED\_RED\ 4\ \ \ \ }}
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LED\_YELLOW\ 3\ }}
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LED\_GREEN\ 2\ \ }}
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ RGB\_R\ 16\ \ \ \ \ }}
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ RGB\_G\ 17\ \ \ \ \ }}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ RGB\_B\ 18\ \ \ \ \ }}
-\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10\ }}
-\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A1\ 11\ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A2\ 12\ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B1\ 13\ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B2\ 14\ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ STEP\_DELAY\_MIN\ 1000\ \ \ \ \ }}
-\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ STEP\_DELAY\_MAX\ 10000\ \ \ \ }}
-\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ STEPS\_PER\_REV\ 2048\ \ \ \ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KEYPAD\ 28\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ POT\_1\ 27\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LDR\_1\ 26\ \ }\textcolor{preprocessor}{}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BUTTON\_UP\ 5\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BUTTON\_OK\ 6\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BUTTON\_DOWN\ 7\ }\textcolor{preprocessor}{}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LED\_RED\ 4\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LED\_YELLOW\ 3\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LED\_GREEN\ 2\ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ RGB\_R\ 16\ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ RGB\_G\ 17\ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ RGB\_B\ 18\ \ \ \ \ }\textcolor{preprocessor}{}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A1\ 11\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A2\ 12\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B1\ 13\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B2\ 14\ \ \ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ STEP\_DELAY\_MIN\ 1000\ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ STEP\_DELAY\_MAX\ 10000\ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ STEPS\_PER\_REV\ 2048\ \ \ \ \ \ }\textcolor{preprocessor}{}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00073\ }
 \DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
 \DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a}{MOTOR\_STOPPED}}\ =\ 0,\ \ }
 \DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a5b5420cf198711cf4ba843672f9f531b}{MOTOR\_RUNNING}}\ =\ 1,\ \ }
@@ -59,72 +65,87 @@
 \DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pico__training__board_8h_ac99006d5c9f207df6cede008585d9ded}{send\_motor\_parameters}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\_direction\_t}}\ direction,\ uint\ speed,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}});}
 \DoxyCodeLine{00098\ }
 \DoxyCodeLine{00099\ \textcolor{comment}{//\ Ultrasonik\ Sensör}}
-\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_TR\ 8\ }}
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_EC\ 9\ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_TR\ 8\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_EC\ 9\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00102\ }
 \DoxyCodeLine{00103\ \textcolor{comment}{//\ Bluetooth\ Modülü}}
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ BLT\_TX\ 0\ }}
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ BLT\_RX\ 1\ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ BLT\_TX\ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ BLT\_RX\ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00106\ }
 \DoxyCodeLine{00107\ \textcolor{comment}{//\ PIR\ Sensör}}
-\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ PIR\_DETECTOR\ 19\ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ PIR\_DETECTOR\ 19\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00109\ }
 \DoxyCodeLine{00110\ \textcolor{comment}{//\ I2C\ LCD\ Ekran\ (Adres\ 0x27)}}
-\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ I2C\_SDA\ 20\ }}
-\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ I2C\_SCL\ 21\ }}
-\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ LCD\_ADDR\ 0x27\ }}
-\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ I2C\_PORT\ i2c0\ }}
-\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ LCD\_ROWS\ 2\ }}
-\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LCD\_COLS\ 16\ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ I2C\_SDA\ 20\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ I2C\_SCL\ 21\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ LCD\_ADDR\ 0x27\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ I2C\_PORT\ i2c0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ LCD\_ROWS\ 2\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LCD\_COLS\ 16\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00117\ }
 \DoxyCodeLine{00118\ \textcolor{comment}{//\ LCD\ için\ modlar}}
-\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ LCD\_CHARACTER\ 1\ }}
-\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LCD\_COMMAND\ 0\ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ LCD\_CHARACTER\ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LCD\_COMMAND\ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00121\ }
 \DoxyCodeLine{00122\ \textcolor{comment}{//\ LCD\ kontrol\ bayrakları}}
-\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LCD\_CLEARDISPLAY\ 0x01\ }}
-\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LCD\_RETURNHOME\ 0x02\ }}
-\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYMODESET\ 0x04\ }}
-\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYCONTROL\ 0x08\ }}
-\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LCD\_CURSORSHIFT\ 0x10\ }}
-\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LCD\_FUNCTIONSET\ 0x20\ }}
-\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LCD\_SETCGRAMADDR\ 0x40\ }}
-\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LCD\_SETDDRAMADDR\ 0x80\ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LCD\_CLEARDISPLAY\ 0x01\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LCD\_RETURNHOME\ 0x02\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYMODESET\ 0x04\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYCONTROL\ 0x08\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LCD\_CURSORSHIFT\ 0x10\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LCD\_FUNCTIONSET\ 0x20\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LCD\_SETCGRAMADDR\ 0x40\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LCD\_SETDDRAMADDR\ 0x80\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00131\ }
 \DoxyCodeLine{00132\ \textcolor{comment}{//\ LCD\ giriş\ modu\ bayrakları}}
-\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTINCREMENT\ 0x01\ }}
-\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYLEFT\ 0x02\ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTINCREMENT\ 0x01\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYLEFT\ 0x02\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00135\ }
 \DoxyCodeLine{00136\ \textcolor{comment}{//\ LCD\ ekran\ kontrol\ bayrakları}}
-\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LCD\_BLINKON\ 0x01\ }}
-\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LCD\_CURSORON\ 0x02\ }}
-\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYON\ 0x04\ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LCD\_BLINKON\ 0x01\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LCD\_CURSORON\ 0x02\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYON\ 0x04\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00140\ }
 \DoxyCodeLine{00141\ \textcolor{comment}{//\ LCD\ ekran/imleç\ kaydırma\ bayrakları}}
-\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ LCD\_MOVERIGHT\ 0x04\ }}
-\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYMOVE\ 0x08\ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ LCD\_MOVERIGHT\ 0x04\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYMOVE\ 0x08\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00144\ }
 \DoxyCodeLine{00145\ \textcolor{comment}{//\ LCD\ fonksiyon\ ayar\ bayrakları}}
-\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ LCD\_5x10DOTS\ 0x04\ }}
-\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ LCD\_2LINE\ 0x08\ }}
-\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ LCD\_8BITMODE\ 0x10\ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ LCD\_5x10DOTS\ 0x04\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ LCD\_2LINE\ 0x08\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ LCD\_8BITMODE\ 0x10\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00149\ }
 \DoxyCodeLine{00150\ \textcolor{comment}{//\ LCD\ arka\ ışık\ kontrolü}}
-\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ LCD\_BACKLIGHT\ 0x08\ }}
-\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ LCD\_ENABLE\_BIT\ 0x04\ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ LCD\_BACKLIGHT\ 0x08\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ LCD\_ENABLE\_BIT\ 0x04\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00153\ }
 \DoxyCodeLine{00154\ \textcolor{comment}{//\ Genel\ tanımlar}}
-\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ HIGH\ 1\ }}
-\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LOW\ 0\ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ HIGH\ 1\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LOW\ 0\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00157\ }
 \DoxyCodeLine{00158\ \textcolor{comment}{//\ PWM\ tanımlamaları}}
-\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ PWM\_FREQ\ 1000\ }}
-\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ PWM\_DUTY\_MAX\ 4095\ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ PWM\_FREQ\ 1000\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ PWM\_DUTY\_MAX\ 4095\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00161\ }
 \DoxyCodeLine{00162\ \textcolor{comment}{//\ Buzzer\ için\ PWM\ ayarları}}
-\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ BUZZER\_CLOCK\ 125000000\ }}
-\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ BUZZER\_WRAP\ 4095\ }}
-\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ BUZZER\_DUTY\_50\ 2048\ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ BUZZER\_CLOCK\ 125000000\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ BUZZER\_WRAP\ 4095\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ BUZZER\_DUTY\_50\ 2048\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00166\ }
 \DoxyCodeLine{00167\ \textcolor{comment}{//\ Nota\ frekans\ tanımlamaları}}
-\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ NOTE\_C4\ 261.63\ }}
-\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ NOTE\_CS4\ 277.18\ }}
-\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ NOTE\_D4\ 293.66\ }}
-\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ NOTE\_DS4\ 311.13\ }}
-\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ NOTE\_E4\ 329.63\ }}
-\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ NOTE\_F4\ 349.23\ }}
-\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ NOTE\_FS4\ 369.99\ }}
-\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ NOTE\_G4\ 392.00\ }}
-\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ NOTE\_GS4\ 415.30\ }}
-\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ NOTE\_A4\ 440.00\ }}
-\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ NOTE\_AS4\ 466.16\ }}
-\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ NOTE\_B4\ 493.88\ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ NOTE\_C4\ 261.63\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ NOTE\_CS4\ 277.18\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ NOTE\_D4\ 293.66\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ NOTE\_DS4\ 311.13\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ NOTE\_E4\ 329.63\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ NOTE\_F4\ 349.23\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ NOTE\_FS4\ 369.99\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ NOTE\_G4\ 392.00\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ NOTE\_GS4\ 415.30\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ NOTE\_A4\ 440.00\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ NOTE\_AS4\ 466.16\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ NOTE\_B4\ 493.88\ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00180\ }
 \DoxyCodeLine{00181\ \textcolor{comment}{//\ Fonksiyon\ prototipleri}}
 \DoxyCodeLine{00182\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{pico__training__board_8h_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}(\textcolor{keywordtype}{void});}
 \DoxyCodeLine{00183\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pico__training__board_8h_ab2bff14828e4757d93fe24490da85228}{analog\_button\_pressed}}(uint\ gpio);}

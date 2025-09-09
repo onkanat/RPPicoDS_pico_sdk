@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: Butonlar</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Ara" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('howto_buttons.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Butonlar </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>r</p>
+<p>Bu sayfa, kart üzerindeki YUKARI, TAMAM ve AŞAĞI butonlarının kullanımını özetler.</p>
+<ul>
+<li>Başlatma: <span class="tt"><a class="el" href="buttons_8c.html#afe0b498404852847e48c5539c4d651e8" title="Tüm buton GPIO pinlerini başlat.">init_buttons()</a></span></li>
+<li>Olay kontrolü: <span class="tt">button_pressed(gpio)</span>, <span class="tt">check_button_event(gpio, event)</span></li>
+<li>Bekleme: <span class="tt">wait_for_button_press(timeout_ms)</span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
+Hızlı Başlangıç</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="pico__training__board_8h.html">pico_training_board.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <a class="code hl_function" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a>();</div>
+<div class="line">  <a class="code hl_function" href="buttons_8c.html#afe0b498404852847e48c5539c4d651e8">init_buttons</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">while</span> (1) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>)) {</div>
+<div class="line">      gpio_put(<a class="code hl_define" href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a>, 1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a>)) {</div>
+<div class="line">      gpio_put(<a class="code hl_define" href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>, 1);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7e8516b8781963aa69154f9fc67b658a">BUTTON_DOWN</a>)) {</div>
+<div class="line">      gpio_put(<a class="code hl_define" href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>, 1);</div>
+<div class="line">    }</div>
+<div class="line">    tight_loop_contents();</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="abuttons_8c_html_a6863517b8b3b39834aa6aaaab29c4eaf"><div class="ttname"><a href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a></div><div class="ttdeci">bool button_pressed(uint gpio)</div><div class="ttdoc">Debounce korumalı temel buton basma kontrolü</div><div class="ttdef"><b>Definition</b> buttons.c:37</div></div>
+<div class="ttc" id="abuttons_8c_html_afe0b498404852847e48c5539c4d651e8"><div class="ttname"><a href="buttons_8c.html#afe0b498404852847e48c5539c4d651e8">init_buttons</a></div><div class="ttdeci">void init_buttons(void)</div><div class="ttdoc">Tüm buton GPIO pinlerini başlat.</div><div class="ttdef"><b>Definition</b> buttons.c:58</div></div>
+<div class="ttc" id="agroup__button__inputs_html_ga024aa4942c463926f0b7e023e7776421"><div class="ttname"><a href="group__button__inputs.html#ga024aa4942c463926f0b7e023e7776421">BUTTON_OK</a></div><div class="ttdeci">#define BUTTON_OK</div><div class="ttdef"><b>Definition</b> pico_training_board.h:40</div></div>
+<div class="ttc" id="agroup__button__inputs_html_ga7639b378d6f757175ed0f9e8552e6cea"><div class="ttname"><a href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a></div><div class="ttdeci">#define BUTTON_UP</div><div class="ttdef"><b>Definition</b> pico_training_board.h:39</div></div>
+<div class="ttc" id="agroup__button__inputs_html_ga7e8516b8781963aa69154f9fc67b658a"><div class="ttname"><a href="group__button__inputs.html#ga7e8516b8781963aa69154f9fc67b658a">BUTTON_DOWN</a></div><div class="ttdeci">#define BUTTON_DOWN</div><div class="ttdef"><b>Definition</b> pico_training_board.h:41</div></div>
+<div class="ttc" id="agroup__led__outputs_html_ga31e20330f8ce94e0dd10b005a15c5898"><div class="ttname"><a href="group__led__outputs.html#ga31e20330f8ce94e0dd10b005a15c5898">LED_RED</a></div><div class="ttdeci">#define LED_RED</div><div class="ttdef"><b>Definition</b> pico_training_board.h:48</div></div>
+<div class="ttc" id="agroup__led__outputs_html_gaca338dbd19d7940923334629f6e5f3b7"><div class="ttname"><a href="group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a></div><div class="ttdeci">#define LED_GREEN</div><div class="ttdef"><b>Definition</b> pico_training_board.h:50</div></div>
+<div class="ttc" id="agroup__led__outputs_html_gae3c73853c6d0a1eca2c7d9797f6494ea"><div class="ttname"><a href="group__led__outputs.html#gae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a></div><div class="ttdeci">#define LED_YELLOW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:49</div></div>
+<div class="ttc" id="ainit__functions_8c_html_a98133f3bc8c62b912d63da405e2adb15"><div class="ttname"><a href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a></div><div class="ttdeci">void init_board(void)</div><div class="ttdoc">Tüm kart bileşenlerini başlatır.</div><div class="ttdef"><b>Definition</b> init_functions.c:112</div></div>
+<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> main.c:244</div></div>
+<div class="ttc" id="apico__training__board_8h_html"><div class="ttname"><a href="pico__training__board_8h.html">pico_training_board.h</a></div><div class="ttdoc">Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları</div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
+IRQ Tabanlı Kullanım (Anti-Repeat)</h1>
+<p><span class="tt"><a class="el" href="main_8c.html" title="Ana program, adım motoru kontrolü için Raspberry Pi Pico Eğitim Kartı&#39;nı başlatır.">main.c</a></span> içinde örnek kesme geri çağrısı 50 ms anti-repeat kapısı uygular.</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#adc9c0b00da41b4f750a502323595b1e6">button_callback</a>(uint gpio, uint32_t events) {</div>
+<div class="line">  <span class="keyword">static</span> uint32_t <a class="code hl_variable" href="main_8c.html#a275883d877f30a17aee59c1a35bfece1">last_irq_time_us</a>; </div>
+<div class="line">  uint32_t now = time_us_32();</div>
+<div class="line">  <span class="keywordflow">if</span> ((now - <a class="code hl_variable" href="main_8c.html#a275883d877f30a17aee59c1a35bfece1">last_irq_time_us</a>) &lt; 50000) <span class="keywordflow">return</span>;</div>
+<div class="line">  <a class="code hl_variable" href="main_8c.html#a275883d877f30a17aee59c1a35bfece1">last_irq_time_us</a> = now;</div>
+<div class="line">  <span class="keywordflow">if</span> (gpio == <a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a> &amp;&amp; <a class="code hl_function" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf">button_pressed</a>(<a class="code hl_define" href="group__button__inputs.html#ga7639b378d6f757175ed0f9e8552e6cea">BUTTON_UP</a>)) { <span class="comment">/* ... */</span> }</div>
+<div class="line">}</div>
+<div class="ttc" id="amain_8c_html_a275883d877f30a17aee59c1a35bfece1"><div class="ttname"><a href="main_8c.html#a275883d877f30a17aee59c1a35bfece1">last_irq_time_us</a></div><div class="ttdeci">static volatile uint32_t last_irq_time_us</div><div class="ttdef"><b>Definition</b> main.c:24</div></div>
+<div class="ttc" id="amain_8c_html_adc9c0b00da41b4f750a502323595b1e6"><div class="ttname"><a href="main_8c.html#adc9c0b00da41b4f750a502323595b1e6">button_callback</a></div><div class="ttdeci">void button_callback(uint gpio, uint32_t events)</div><div class="ttdoc">Button interrupt callback function.</div><div class="ttdef"><b>Definition</b> main.c:37</div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
+Olay Türleri</h1>
+<p><span class="tt">check_button_event(gpio, event)</span> ile:</p>
+<ul>
+<li><span class="tt">BUTTON_PRESSED</span>: ilk basışta bir kez</li>
+<li><span class="tt">BUTTON_RELEASED</span>: bırakıldığında bir kez</li>
+<li><span class="tt">BUTTON_HELD</span>: &gt;1 s basılı</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
+Bloklu Bekleme</h1>
+<div class="fragment"><div class="line">uint pressed = <a class="code hl_function" href="buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047">wait_for_button_press</a>(3000);</div>
+<div class="line"><span class="keywordflow">if</span> (pressed != UINT_MAX) {</div>
+<div class="line">  <span class="comment">// buton basıldı</span></div>
+<div class="line">}</div>
+<div class="ttc" id="abuttons_8c_html_a00fcf54730781bcc9d059ee8542bb047"><div class="ttname"><a href="buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047">wait_for_button_press</a></div><div class="ttdeci">uint wait_for_button_press(uint32_t timeout_ms)</div><div class="ttdoc">Herhangi bir buton basılmasını bekle.</div><div class="ttdef"><b>Definition</b> buttons.c:180</div></div>
+</div><!-- fragment --><dl class="section see"><dt>Ayrıca Bakınız</dt><dd><a class="el" href="buttons_8c.html" title="Pico Eğitim Kartı için buton kontrol implementasyonu.">buttons.c</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Oluşturan <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

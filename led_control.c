@@ -1,6 +1,7 @@
 /**
  * @file led_control.c
  * @brief Pico Eğitim Kartı için led ve rgb kontrolü uygulaması
+ * @see \ref howto_leds
  */
 #include "pico_training_board.h"
 
@@ -45,6 +46,11 @@ void set_led_pwm(uint gpio, uint16_t duty) {
  * @param red Kırmızı bileşen (0-PWM_DUTY_MAX)
  * @param green Yeşil bileşen (0-PWM_DUTY_MAX)
  * @param blue Mavi bileşen (0-PWM_DUTY_MAX)
+ *
+ * @code{.c}
+ * init_rgb_pwm();
+ * set_rgb_color(0, PWM_DUTY_MAX, 0); // Yeşil
+ * @endcode
  */
 void set_rgb_color(uint16_t red, uint16_t green, uint16_t blue) {
     set_led_pwm(RGB_R, red);

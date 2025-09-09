@@ -1,0 +1,31 @@
+\chapter{Step Motor }
+\hypertarget{howto_stepper}{}\label{howto_stepper}\index{Step Motor@{Step Motor}}
+r
+
+
+\begin{DoxyItemize}
+\item Başlatma\+: {\ttfamily \doxylink{pico__training__board_8h_a8d8f8f8a9dde232c7092dbf83cc101af}{init\+\_\+step\+\_\+motor()}} (gerekirse)
+\item Dönüş\+: {\ttfamily step\+\_\+turn(direction, speed, revolutions)}
+\item Acil durdur\+: {\ttfamily \doxylink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\+\_\+stop()}}
+\item Durum\+: {\ttfamily \doxylink{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}{is\+\_\+motor\+\_\+running()}}, {\ttfamily \doxylink{pico__training__board_8h_ac91c34166ec5420fe03bc8e353b52354}{get\+\_\+motor\+\_\+state()}}
+\end{DoxyItemize}\hypertarget{howto_stepper_autotoc_md55}{}\doxysection{\texorpdfstring{Core1 ile Kullanım (Önerilen)}{Core1 ile Kullanım (Önerilen)}}\label{howto_stepper_autotoc_md55}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multicore\_launch\_core1(\mbox{\hyperlink{main_8c_ab148110bebfeb5468545d63e65d8095f}{core1\_main}});}
+\DoxyCodeLine{\mbox{\hyperlink{main_8c_ac99006d5c9f207df6cede008585d9ded}{send\_motor\_parameters}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ 900,\ 2.0f);}
+
+\end{DoxyCode}
+\hypertarget{howto_stepper_autotoc_md56}{}\doxysection{\texorpdfstring{Doğrudan Çağrı}{Doğrudan Çağrı}}\label{howto_stepper_autotoc_md56}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\_turn}}(\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}},\ 600,\ 1.5f);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Uyarı}
+{\ttfamily \doxylink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\+\_\+stop()}} aniden durdurur; mekanik stres olabilir.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{stepper_8c}{stepper.\+c} 
+\end{DoxySeeAlso}

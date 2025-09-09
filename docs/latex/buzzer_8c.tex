@@ -6,6 +6,7 @@ Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu.
 
 
 {\ttfamily \#include "{}pico\+\_\+training\+\_\+board.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
 buzzer.\+c için içerme bağımlılık grafiği\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -30,11 +31,11 @@ double \mbox{\hyperlink{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae}{get\+\_\+fr
 void \mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note}} (float frequency, int duration\+\_\+ms)
 \begin{DoxyCompactList}\small\item\em Belirtilen frekans ve sürede buzzer\textquotesingle{}da bir nota çalar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes}} (const char \texorpdfstring{$\ast$}{*}notes\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, int num\+\_\+notes, int duration)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Bir dizi müzikal notanın çalınmasını sağlar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Değişkenler}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}} \mbox{\hyperlink{buzzer_8c_aa87fb5951c13e021b9254a6ea02aa0f9}{note\+\_\+frequencies}} \mbox{[}$\,$\mbox{]}
+static const \mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}} \mbox{\hyperlink{buzzer_8c_a9b41b5418b04971f672009b4fd48706b}{note\+\_\+frequencies}} \mbox{[}$\,$\mbox{]}
 \begin{DoxyCompactList}\small\item\em 
 \begin{DoxyEnumerate}
 \item oktavdaki müzikal notalar ve karşılık gelen frekanslarının dizisi 
@@ -48,10 +49,15 @@ Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu.
 Hakan KILIÇ\+ASLAN 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Tarih}
-2024-\/12-\/4 Bu dosya, Pico Eğitim Kartı için buzzer ile ilgili fonksiyonların implementasyonunu, nota frekans hesaplamalarını ve ses üretimi için PWM kontrolünü içerir. 
+2024-\/12-\/4 Bu dosya, Pico Eğitim Kartı için buzzer ile ilgili fonksiyonların implementasyonunu, nota frekans hesaplamalarını ve ses üretimi için PWM kontrolünü içerir.
 \end{DoxyDate}
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxysectlink{howto_buzzer}{Buzzer}{0} 
+\end{DoxySeeAlso}
 
 
+\label{doc-func-members}
+\Hypertarget{buzzer_8c_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae}\index{buzzer.c@{buzzer.c}!get\_frequency@{get\_frequency}}
 \index{get\_frequency@{get\_frequency}!buzzer.c@{buzzer.c}}
@@ -82,7 +88,7 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=257pt]{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph}
+\includegraphics[width=350pt]{buzzer_8c_a796bbc24fde48e1a34a660bd6a38dbae_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{buzzer_8c_abeed4b38208cb0179851d68db47de935}\index{buzzer.c@{buzzer.c}!init\_buzzer\_pwm@{init\_buzzer\_pwm}}
@@ -156,24 +162,42 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 {\footnotesize\ttfamily \label{buzzer_8c_ad3b93659dae6daec910b9f79e4546919} 
 void play\+\_\+notes (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{notes}{\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, }\item[{int}]{num\+\_\+notes}{, }\item[{int}]{duration}{}\end{DoxyParamCaption})}
 
-Bir dizi müzikal notanın çalınmasını sağlar.
 
-Bu fonksiyon, bir dizi notanın üzerinden yineleyerek, her bir notanın adına ve oktavına göre frekansını hesaplar ve belirtilen sürede notanın çalınmasını sağlar.
+
+Bir dizi müzikal notanın çalınmasını sağlar. 
+
+Bu fonksiyon, bir dizi notanın üzerinden yineleyerek her bir nota için frekansı hesaplar ve belirtilen sürede çalar.
 
 
 \begin{DoxyParams}{Parametreler}
-{\em notes} & İki boyutlu bir dize dizisi, burada her bir eleman iki dize içerir\+: ilk dize nota adını (örn. "{}\+C"{}, "{}\+D\#"{}), ikinci dize oktavı (örn. "{}4"{}) temsil eder. \\
+{\em notes} & Her elemanı \{nota, oktav\} olan iki boyutlu dize dizisi. Örn. \{"{}\+C"{},"{}4"{}\}, \{"{}\+D\#"{},"{}4"{}\} \\
 \hline
-{\em num\+\_\+notes} & notes dizisindeki nota sayısı. \\
+{\em num\+\_\+notes} & Dizideki nota sayısı \\
 \hline
-{\em duration} & Her bir notanın çalınacağı süre (milisaniye cinsinden). \\
+{\em duration} & Her bir notanın çalma süresi (ms)\\
 \hline
 \end{DoxyParams}
+\begin{DoxyNote}{Not}
+Nota adı karşılaştırması önekle yapılır; diyez notasyonu kullanın ("{}\+Db"{} yerine "{}\+C\#"{}). 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *MELODY[][2]\ =\ \{\{\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}4"{}}\},\{\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}4"{}}\},\{\textcolor{stringliteral}{"{}G"{}},\textcolor{stringliteral}{"{}4"{}}\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(MELODY,\ (\textcolor{keywordtype}{int})(\textcolor{keyword}{sizeof}(MELODY)/\textcolor{keyword}{sizeof}(MELODY[0])),\ 200);}
+
+\end{DoxyCode}
+ 
+\end{DoxyNote}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{buzzer_8c_ad3b93659dae6daec910b9f79e4546919_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{buzzer_8c_ad3b93659dae6daec910b9f79e4546919_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{buzzer_8c_abdecc1e0fa9f62344cd44d0797ed27d9}\index{buzzer.c@{buzzer.c}!set\_pwm\_frequency@{set\_pwm\_frequency}}
@@ -207,12 +231,14 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \end{figure}
 
 
+\label{doc-var-members}
+\Hypertarget{buzzer_8c_doc-var-members}
 \doxysubsection{Değişken Dokümantasyonu}
-\Hypertarget{buzzer_8c_aa87fb5951c13e021b9254a6ea02aa0f9}\index{buzzer.c@{buzzer.c}!note\_frequencies@{note\_frequencies}}
+\Hypertarget{buzzer_8c_a9b41b5418b04971f672009b4fd48706b}\index{buzzer.c@{buzzer.c}!note\_frequencies@{note\_frequencies}}
 \index{note\_frequencies@{note\_frequencies}!buzzer.c@{buzzer.c}}
 \doxysubsubsection{\texorpdfstring{note\_frequencies}{note\_frequencies}}
-{\footnotesize\ttfamily \label{buzzer_8c_aa87fb5951c13e021b9254a6ea02aa0f9} 
-\mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}} note\+\_\+frequencies\mbox{[}$\,$\mbox{]}}
+{\footnotesize\ttfamily \label{buzzer_8c_a9b41b5418b04971f672009b4fd48706b} 
+const \mbox{\hyperlink{struct_note_frequency}{Note\+Frequency}} note\+\_\+frequencies\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries İlk değer\+:}
 \begin{DoxyCode}{0}

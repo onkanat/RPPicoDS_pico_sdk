@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['wait_5ffor_5fbutton_5fpress_0',['wait_for_button_press',['../buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047',1,'wait_for_button_press(uint32_t timeout_ms):&#160;buttons.c'],['../pico__training__board_8h.html#a00fcf54730781bcc9d059ee8542bb047',1,'wait_for_button_press(uint32_t timeout_ms):&#160;buttons.c']]],
-  ['wait_5ffor_5fmotion_1',['wait_for_motion',['../pico__training__board_8h.html#af61dcd1031a5ef723aadad8a4acd0a9f',1,'wait_for_motion(uint32_t timeout_ms):&#160;sensors.c'],['../sensors_8c.html#af61dcd1031a5ef723aadad8a4acd0a9f',1,'wait_for_motion(uint32_t timeout_ms):&#160;sensors.c']]],
-  ['was_5fpressed_2',['was_pressed',['../buttons_8c.html#a47571161942ae4b5e6b80da2030ac0d8',1,'buttons.c']]],
-  ['write_5fanalog_5fto_5flcd_3',['write_analog_to_lcd',['../main_8c.html#a089559d7b66bf6918dba57f2864a0b15',1,'main.c']]]
+  ['ve_20fonksiyonları_0',['ve Fonksiyonları',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md10',1,'Pin Grupları ve Fonksiyonları'],['../md__r_e_a_d_m_e.html#autotoc_md22',1,'Pin Grupları ve Fonksiyonları']]],
+  ['ve_20konfigürasyon_1',['ve Konfigürasyon',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md18',1,'Başlatma ve Konfigürasyon'],['../md__r_e_a_d_m_e.html#autotoc_md30',1,'Başlatma ve Konfigürasyon']]],
+  ['ve_20kontrolleri_2',['Adım Motoru Tanımlamaları ve Kontrolleri',['../group__stepper__motor.html',1,'']]],
+  ['ve_20rgb_20led_3',['LED ve RGB LED',['../howto_leds.html',1,'']]]
 ];

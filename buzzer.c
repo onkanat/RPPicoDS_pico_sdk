@@ -5,10 +5,34 @@
  * @date 2024-12-4
  * Bu dosya, Pico Eğitim Kartı için buzzer ile ilgili fonksiyonların implementasyonunu,
  * nota frekans hesaplamalarını ve ses üretimi için PWM kontrolünü içerir.
-
+ *
+ * @see \ref howto_buzzer
  */
 
 #include "pico_training_board.h"
+#include <stdlib.h>
+
+/**
+ * @section usage Kullanım
+ *
+ * Basit bir melodi çalmak için nota ve oktav çiftlerinden oluşan bir dizi tanımlayıp
+ * play_notes fonksiyonuna verin:
+ *
+ * @code{.c}
+ * // Her eleman { nota, oktav } biçiminde dize çiftidir
+ * static const char *MELODY[][2] = {
+ *     {"C",  "4"},
+ *     {"D#", "4"},
+ *     {"F",  "4"}
+ * };
+ *
+ * // Her notayı 250 ms çal
+ * play_notes(MELODY, (int)(sizeof(MELODY) / sizeof(MELODY[0])), 250);
+ * @endcode
+ *
+ * @note Desteklenen nota adlandırması doğal ve diyez notasyonudur (A, A#, B, C, C#, ...).
+ *       Bemol için eşdeğer diyez notasyonu kullanılmalıdır (örn. Db yerine C#).
+ */
 
 /**
  * @struct NoteFrequency
@@ -21,8 +45,8 @@
  */
 typedef struct
 {
-    char *note;
-    double frequency;
+    const char *note;  /**< Nota adı öneki (örn. "C", "C#") */
+    double frequency;  /**< 4. oktavdaki temel frekans (Hz) */
 } NoteFrequency;
 
 /**
@@ -31,7 +55,7 @@ typedef struct
  * Bu tablo, frekans hesaplamaları için referans oktav olarak kullanılan
  * dördüncü oktavdaki müzikal notalar için standart frekansları içerir.
  */
-NoteFrequency note_frequencies[] = {
+static const NoteFrequency note_frequencies[] = {
     {"C4", 261.63},
     {"C#4/Db4", 277.18},
     {"D4", 293.66},
@@ -147,17 +171,21 @@ void play_note(float frequency, int duration_ms)
     sleep_us(50); // Notaların birbirine karışmasını önlemek için küçük gecikme
 }
 /**
- * Bir dizi müzikal notanın çalınmasını sağlar.
+ * @brief Bir dizi müzikal notanın çalınmasını sağlar
  *
- * Bu fonksiyon, bir dizi notanın üzerinden yineleyerek,
- * her bir notanın adına ve oktavına göre frekansını hesaplar
- * ve belirtilen sürede notanın çalınmasını sağlar.
+ * Bu fonksiyon, bir dizi notanın üzerinden yineleyerek her bir nota için
+ * frekansı hesaplar ve belirtilen sürede çalar.
  *
- * @param notes İki boyutlu bir dize dizisi, burada her bir eleman iki
- *              dize içerir: ilk dize nota adını (örn. "C", "D#"),
- *              ikinci dize oktavı (örn. "4") temsil eder.
- * @param num_notes notes dizisindeki nota sayısı.
- * @param duration Her bir notanın çalınacağı süre (milisaniye cinsinden).
+ * @param notes  Her elemanı {nota, oktav} olan iki boyutlu dize dizisi.
+ *               Örn. {"C","4"}, {"D#","4"}
+ * @param num_notes Dizideki nota sayısı
+ * @param duration Her bir notanın çalma süresi (ms)
+ *
+ * @note Nota adı karşılaştırması önekle yapılır; diyez notasyonu kullanın ("Db" yerine "C#").
+ * @code{.c}
+ * static const char *MELODY[][2] = {{"C","4"},{"E","4"},{"G","4"}};
+ * play_notes(MELODY, (int)(sizeof(MELODY)/sizeof(MELODY[0])), 200);
+ * @endcode
  */
 void play_notes(const char *notes[][2], int num_notes, int duration) {
     for (int i = 0; i < num_notes; i++) {

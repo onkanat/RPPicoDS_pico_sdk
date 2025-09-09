@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['örnek_20çalışmalar_0',['Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar',['../md__c_a_l_i_s_m_a_l_a_r.html',1,'']]]
+  ['alma_0',['Ortalama Alma',['../howto_sensors.html#autotoc_md53',1,'']]],
+  ['analog_1',['Tuş Takımı (Analog)',['../howto_keypad.html',1,'']]],
+  ['analog_20girişler_2',['Analog Girişler',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md11',1,'1. Analog Girişler'],['../md__r_e_a_d_m_e.html#autotoc_md23',1,'1. Analog Girişler']]],
+  ['anti_20repeat_3',['IRQ Tabanlı Kullanım (Anti-Repeat)',['../howto_buttons.html#autotoc_md38',1,'']]]
 ];

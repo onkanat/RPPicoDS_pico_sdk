@@ -1,5 +1,5 @@
 <map id="send_motor_parameters" name="send_motor_parameters">
-<area shape="rect" id="Node000001" title="Step motor parametrelerini Core1&#39;e gönderir." alt="" coords="439,5,601,31"/>
+<area shape="rect" id="Node000001" title="Step motor parametrelerini Core1&#39;e gönderir (yön, hız, devir)" alt="" coords="439,5,601,31"/>
 <area shape="rect" id="Node000002" href="$main_8c.html#adc9c0b00da41b4f750a502323595b1e6" title="Button interrupt callback function." alt="" coords="279,5,391,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="423,21,392,21,392,16,423,16"/>
 <area shape="rect" id="Node000003" href="$main_8c.html#ac28c401d97df35ec8dca9ad6535a4815" title="Initialize button interrupts for motor control." alt="" coords="103,5,231,31"/>

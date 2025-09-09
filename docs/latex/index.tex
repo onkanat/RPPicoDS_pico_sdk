@@ -1,183 +1,31 @@
-\chapter{Raspberry Pi Pico Eğitim Kartı}
-\hypertarget{index}{}\label{index}\index{Raspberry Pi Pico Eğitim Kartı@{Raspberry Pi Pico Eğitim Kartı}}
-\label{index_md__r_e_a_d_m_e}%
-\Hypertarget{index_md__r_e_a_d_m_e}%
- \hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Genel Bakış}{Genel Bakış}}\label{index_autotoc_md21}
-Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{Pin Grupları ve Fonksiyonları}{Pin Grupları ve Fonksiyonları}}\label{index_autotoc_md22}
-\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{1. Analog Girişler}{1. Analog Girişler}}\label{index_autotoc_md23}
+\chapter{Pico Eğitim Kartı — Genel Bakış }
+\hypertarget{index}{}\label{index}\index{Pico Eğitim Kartı — Genel Bakış@{Pico Eğitim Kartı — Genel Bakış}}
+Bu dokümantasyon, Raspberry Pi Pico tabanlı Eğitim Kartı’nı ve örnek kodları kapsar.
+
 
 \begin{DoxyItemize}
-\item {\bfseries{Keypad (GPIO28)}}
+\item Hızlı başlangıç\+: {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} tüm alt sistemleri başlatır.
+\item Kaynak kodlar\+: {\ttfamily .c} ve {\ttfamily .h} dosyaları proje kökünde bulunur.
+\end{DoxyItemize}\hypertarget{index_autotoc_md58}{}\doxysection{\texorpdfstring{Hızlı Erişim}{Hızlı Erişim}}\label{index_autotoc_md58}
+
 \begin{DoxyItemize}
-\item 3x4 matris keypad için analog okuma
-\item Tuş takımı düzeni\+:
+\item Nasıl Kullanılır İçindekiler → \doxysectlink{howto_index}{Nasıl Kullanılır -\/ İçindekiler}{0}
+\begin{DoxyItemize}
+\item Butonlar → \doxysectlink{howto_buttons}{Butonlar}{0}
+\item LCD (I2C) → \doxysectlink{howto_lcd}{LCD (I2C)}{0}
+\item Buzzer → \doxysectlink{howto_buzzer}{Buzzer}{0}
+\item Sensörler (PIR + Ultrasonik) → \doxysectlink{howto_sensors}{Sensörler (PIR + Ultrasonik)}{0}
+\item Step Motor → \doxysectlink{howto_stepper}{Step Motor}{0}
+\item Tuş Takımı (Analog) → \doxysectlink{howto_keypad}{Tuş Takımı (Analog)}{0}
+\item LED ve RGB LED → \doxysectlink{howto_leds}{LED ve RGB LED}{0}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md59}{}\doxysection{\texorpdfstring{İçerik}{İçerik}}\label{index_autotoc_md59}
+
+\begin{DoxyItemize}
+\item Donanım bileşenleri\+: butonlar, LED/\+RGB, LCD (I2C), buzzer, tuş takımı, sensörler, step motor.
+\item Çok çekirdekli kullanım\+: Core1 ile step motor kontrolü (FIFO).
+\item Doxygen grafikleri için Graphviz (dot) gereklidir.
 \end{DoxyItemize}
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{|\ 1\ |\ 2\ |\ 3\ |}
-\DoxyCodeLine{|\ 4\ |\ 5\ |\ 6\ |}
-\DoxyCodeLine{|\ 7\ |\ 8\ |\ 9\ |}
-\DoxyCodeLine{|\ *\ |\ 0\ |\ \#\ |}
-
-\end{DoxyCode}
-
-\begin{DoxyItemize}
-\item {\ttfamily \doxylink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypad\+Oku()}} fonksiyonu ile kontrol edilir
-\item ADC değer aralıkları tanımlıdır
-\end{DoxyItemize}
-\item {\bfseries{Potansiyometre (GPIO27)}}
-\begin{DoxyItemize}
-\item Analog değer okuma
-\item 0-\/4095 arası ADC değeri
-\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile okunur
-\end{DoxyItemize}
-\item {\bfseries{LDR Sensör (GPIO26)}}
-\begin{DoxyItemize}
-\item Işık seviyesi ölçümü
-\item Analog değer okuma
-\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile okunur
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{2. Dijital Butonlar}{2. Dijital Butonlar}}\label{index_autotoc_md24}
-
-\begin{DoxyItemize}
-\item {\bfseries{Buton Grubu}}
-\begin{DoxyItemize}
-\item BUTTON\+\_\+\+UP ({\bfseries{GPIO5}})\+: Yukarı ok tuşu
-\item BUTTON\+\_\+\+OK ({\bfseries{GPIO6}})\+: Onay/\+Enter tuşu
-\item BUTTON\+\_\+\+DOWN ({\bfseries{GPIO7}})\+: Aşağı ok tuşu
-\item Debounce korumalı okuma
-\item {\ttfamily \doxylink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\+\_\+pressed()}} ve {\ttfamily \doxylink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\+\_\+button\+\_\+event()}} fonksiyonları ile kontrol
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{3. LED Çıkışları}{3. LED Çıkışları}}\label{index_autotoc_md25}
-
-\begin{DoxyItemize}
-\item {\bfseries{Basit LED\textquotesingle{}ler}}
-\begin{DoxyItemize}
-\item LED\+\_\+\+RED ({\bfseries{GPIO4}})\+: Kırmızı LED
-\item LED\+\_\+\+YELLOW ({\bfseries{GPIO3}})\+: Sarı LED
-\item LED\+\_\+\+GREEN ({\bfseries{GPIO2}})\+: Yeşil LED
-\item Dijital çıkış veya PWM kontrolü
-\end{DoxyItemize}
-\item {\bfseries{RGB LED (PWM Kontrollü)}}
-\begin{DoxyItemize}
-\item RGB\+\_\+R ({\bfseries{GPIO16}})\+: Kırmızı kanal
-\item RGB\+\_\+G ({\bfseries{GPIO17}})\+: Yeşil kanal
-\item RGB\+\_\+B ({\bfseries{GPIO18}})\+: Mavi kanal
-\item PWM ile parlaklık kontrolü
-\item {\ttfamily \doxylink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\+\_\+led\+\_\+pwm()}} fonksiyonu ile kontrol
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{4. Ses Çıkışı}{4. Ses Çıkışı}}\label{index_autotoc_md26}
-
-\begin{DoxyItemize}
-\item {\bfseries{Buzzer (GPIO10)}}
-\begin{DoxyItemize}
-\item PWM kontrollü ses üretimi
-\item Nota çalma kapasitesi
-\item {\ttfamily \doxylink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note()}} ve {\ttfamily \doxylink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes()}} fonksiyonları
-\item Frekans ve süre parametreleri ile kontrol
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{5. Step Motor}{5. Step Motor}}\label{index_autotoc_md27}
-
-\begin{DoxyItemize}
-\item {\bfseries{4-\/Pin Kontrol}}
-\begin{DoxyItemize}
-\item A1 ({\bfseries{GPIO11}})
-\item A2 ({\bfseries{GPIO12}})
-\item B1 ({\bfseries{GPIO13}})
-\item B2 ({\bfseries{GPIO14}})
-\item Tam adım ve yarım adım kontrol
-\item {\ttfamily \doxylink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\+\_\+turn()}} fonksiyonu ile kontrol
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{6. Sensör Modülleri}{6. Sensör Modülleri}}\label{index_autotoc_md28}
-
-\begin{DoxyItemize}
-\item {\bfseries{Ultrasonik Sensör}}
-\begin{DoxyItemize}
-\item TR ({\bfseries{GPIO8}})\+: Trigger pin
-\item EC ({\bfseries{GPIO9}})\+: Echo pin
-\item Mesafe ölçümü yapılır
-\item {\ttfamily \doxylink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\+\_\+distance()}} fonksiyonu ile kontrol
-\end{DoxyItemize}
-\item {\bfseries{PIR Sensör (GPIO19)}}
-\begin{DoxyItemize}
-\item Hareket algılama
-\item Dijital giriş
-\item {\ttfamily \doxylink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\+\_\+motion()}} fonksiyonu ile kontrol
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{7. Haberleşme Modülleri}{7. Haberleşme Modülleri}}\label{index_autotoc_md29}
-
-\begin{DoxyItemize}
-\item {\bfseries{Bluetooth}}
-\begin{DoxyItemize}
-\item TX ({\bfseries{GPIO0}})
-\item RX ({\bfseries{GPIO1}})
-\item UART haberleşme
-\end{DoxyItemize}
-\item {\bfseries{I2C LCD Display}}
-\begin{DoxyItemize}
-\item SDA ({\bfseries{GPIO20}})
-\item SCL ({\bfseries{GPIO21}})
-\item Adres\+: {\bfseries{0x27}}
-\item 2x16 karakter gösterim
-\item {\ttfamily \doxylink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init()}}, {\ttfamily \doxylink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear()}}, {\ttfamily \doxylink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\+\_\+string()}} fonksiyonları
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md30}{}\doxysection{\texorpdfstring{Başlatma ve Konfigürasyon}{Başlatma ve Konfigürasyon}}\label{index_autotoc_md30}
-Tüm komponentler {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} fonksiyonu ile başlatılır. Bu fonksiyon\+:
-
-
-\begin{DoxyItemize}
-\item ADC başlatma
-\item PWM konfigürasyonu
-\item GPIO yönlendirmeleri
-\item I2C başlatma
-\item LCD başlatma işlemlerini gerçekleştirir.
-\end{DoxyItemize}\hypertarget{index_autotoc_md31}{}\doxysection{\texorpdfstring{Pin Özeti}{Pin Özeti}}\label{index_autotoc_md31}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{comment}{//\ Analog\ inputs}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ KEYPAD\ 28\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ giriş}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ POT\_1\ 27\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ giriş}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ LDR\_1\ 26\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ giriş}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ Buttons\ inputs}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUTTON\_UP\ 5\ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ input\ (Arrow\ Up)}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUTTON\_OK\ 6\ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ input\ Arrow\ OK}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUTTON\_DOWN\ 7\ \ \ \ }\textcolor{comment}{//\ Digital\ input\ Arrow\ Down}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ LED\ outputs}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ LED\_RED\ 4\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ output\ Red\ led}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ LED\_YELLOW\ 3\ \ \ \ \ }\textcolor{comment}{//\ Digital\ output\ Yellow\ led}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ LED\_GREEN\ 2\ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ output\ Green\ led}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RGB\_R\ 16\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ output\ (PWM)\ red}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RGB\_G\ 17\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ output\ (PWM)\ green}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ RGB\_B\ 18\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Digital\ output\ (PWM)\ blue}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ Sound}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 10\ \ \ \ }\textcolor{comment}{//\ Digital\ output\ Alarm}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ Step\ motor\ module}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A1\ 11}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_A2\ 12}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B1\ 13}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ STEP\_MOTOR\_B2\ 14}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ Ultra\ sonic\ sensor\ module}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_TR\ 8\ }\textcolor{comment}{//\ TR\ time}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ ULTRA\_SONIC\_EC\ 9\ }\textcolor{comment}{//\ EC\ time}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ Bluetooth\ module}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BLT\_TX\ 0}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BLT\_RX\ 1}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ PIR\ module}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ PIR\_DETECTOR\ 19}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ LCD\ Display\ I2C\ (Adres:\ 0x27)}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SDA\ 20}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SCL\ 21}}
-
-\end{DoxyCode}
-
-
-Bu yeni {\ttfamily \doxylink{_r_e_a_d_m_e_8md}{README.\+md}} dosyası, {\ttfamily \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}} dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır. 
+\begin{quote}
+Not\+: Türkçe çıktı bazı sabit metinlerde İngilizce içerebilir (Doxygen dil dosyası uyarısı). \end{quote}

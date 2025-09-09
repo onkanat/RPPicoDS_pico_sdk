@@ -1,9 +1,12 @@
 <map id="lcd_clear" name="lcd_clear">
-<area shape="rect" id="Node000001" title="LCD ekranını temizler." alt="" coords="300,31,373,56"/>
-<area shape="rect" id="Node000002" href="$main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title=" " alt="" coords="103,5,252,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,38,252,33,253,27,285,33"/>
-<area shape="rect" id="Node000004" href="$lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="LCD ekranını başlatır." alt="" coords="146,55,209,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="285,54,210,65,209,60,284,49"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<area shape="rect" id="Node000001" title="LCD ekranını temizler." alt="" coords="300,81,373,107"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a99ee5ab42b5701edb8f2d8f245d8b4d8" title="Keypad’den tuş okur ve LCD’ye gösterir." alt="" coords="103,5,252,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="297,76,251,53,210,34,212,29,253,48,299,71"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,56"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="284,88,55,50,56,45,285,83"/>
+<area shape="rect" id="Node000004" href="$lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="LCD ekranını başlatır." alt="" coords="146,107,208,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="285,105,210,117,209,112,284,100"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a477347080371609eeb1d19e8e48314d3" title="Hareket algılandığında melodi çalar ve mesafeyi LCD&#39;ye yazar." alt="" coords="126,156,229,182"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="305,118,253,147,226,158,224,153,251,142,302,114"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,36,55,42,54,37,87,31"/>
 </map>

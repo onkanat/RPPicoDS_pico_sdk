@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: LED ve RGB LED</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Ara" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('howto_leds.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">LED ve RGB LED </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>D</p>
+<ul>
+<li>PWM başlatma: <span class="tt"><a class="el" href="led__control_8c.html#a30c79869aed334b91ce300139ba2fb92" title="Standart LED çıkışları için PWM&#39;i başlatır Kırmızı, Sarı ve Yeşil LED&#39;ler için PWM&#39;i yapılandırır.">init_led_pwm()</a></span>, <span class="tt"><a class="el" href="led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f" title="RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır.">init_rgb_pwm()</a></span></li>
+<li>Tek LED: <span class="tt">set_led_pwm(gpio, duty)</span></li>
+<li>RGB: <span class="tt">set_rgb_color(r, g, b)</span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md50"></a>
+Hızlı Başlangıç</h1>
+<div class="fragment"><div class="line"><a class="code hl_function" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a>();</div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f">init_rgb_pwm</a>();</div>
+<div class="line"><a class="code hl_function" href="led__control_8c.html#ad0bd211c029544866fdfc1ea9dcce2ab">set_rgb_color</a>(0, <a class="code hl_define" href="pico__training__board_8h.html#a2831df0aa8b292da039c902373faa384">PWM_DUTY_MAX</a>, 0); <span class="comment">// yeşil</span></div>
+<div class="ttc" id="ainit__functions_8c_html_a98133f3bc8c62b912d63da405e2adb15"><div class="ttname"><a href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a></div><div class="ttdeci">void init_board(void)</div><div class="ttdoc">Tüm kart bileşenlerini başlatır.</div><div class="ttdef"><b>Definition</b> init_functions.c:112</div></div>
+<div class="ttc" id="aled__control_8c_html_aac9c80df02474bfcf09db96e11f58b7f"><div class="ttname"><a href="led__control_8c.html#aac9c80df02474bfcf09db96e11f58b7f">init_rgb_pwm</a></div><div class="ttdeci">void init_rgb_pwm(void)</div><div class="ttdoc">RGB LED pinleri için PWM&#39;i başlatır Tüm üç RGB LED kanalını PWM ile yapılandırır.</div><div class="ttdef"><b>Definition</b> led_control.c:12</div></div>
+<div class="ttc" id="aled__control_8c_html_ad0bd211c029544866fdfc1ea9dcce2ab"><div class="ttname"><a href="led__control_8c.html#ad0bd211c029544866fdfc1ea9dcce2ab">set_rgb_color</a></div><div class="ttdeci">void set_rgb_color(uint16_t red, uint16_t green, uint16_t blue)</div><div class="ttdoc">PWM kullanarak RGB LED rengini ayarlar.</div><div class="ttdef"><b>Definition</b> led_control.c:55</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a2831df0aa8b292da039c902373faa384"><div class="ttname"><a href="pico__training__board_8h.html#a2831df0aa8b292da039c902373faa384">PWM_DUTY_MAX</a></div><div class="ttdeci">#define PWM_DUTY_MAX</div><div class="ttdef"><b>Definition</b> pico_training_board.h:160</div></div>
+</div><!-- fragment --><dl class="section see"><dt>Ayrıca Bakınız</dt><dd><a class="el" href="led__control_8c.html" title="Pico Eğitim Kartı için led ve rgb kontrolü uygulaması">led_control.c</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Oluşturan <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

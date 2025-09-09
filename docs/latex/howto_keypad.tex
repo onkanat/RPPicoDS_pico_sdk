@@ -1,0 +1,26 @@
+\chapter{Tuş Takımı (Analog) }
+\hypertarget{howto_keypad}{}\label{howto_keypad}\index{Tuş Takımı (Analog)@{Tuş Takımı (Analog)}}
+)
+
+
+\begin{DoxyItemize}
+\item Okuma\+: {\ttfamily \doxylink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypad\+Oku()}}
+\item Analog buton örneği\+: {\ttfamily analog\+\_\+button\+\_\+pressed(gpio)}
+\end{DoxyItemize}\hypertarget{howto_keypad_autotoc_md46}{}\doxysection{\texorpdfstring{Hızlı Başlangıç}{Hızlı Başlangıç}}\label{howto_keypad_autotoc_md46}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ k\ =\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (k)\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(0,0);}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{char}\ msg[16];}
+\DoxyCodeLine{\ \ snprintf(msg,\ \textcolor{keyword}{sizeof}(msg),\ \textcolor{stringliteral}{"{}Key:\%c"{}},\ k);}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(msg);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{keypad_8c}{keypad.\+c} 
+\end{DoxySeeAlso}

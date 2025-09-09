@@ -1,10 +1,10 @@
-\chapter{Raspberry Pi Pico Eğitim Kartı}
+\chapter{Raspberry Pi Pico Eğitim Kartı }
 \hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Raspberry Pi Pico Eğitim Kartı@{Raspberry Pi Pico Eğitim Kartı}}
-\label{md__r_e_a_d_m_e_autotoc_md3}%
-\Hypertarget{md__r_e_a_d_m_e_autotoc_md3}%
- \hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Genel Bakış}{Genel Bakış}}\label{md__r_e_a_d_m_e_autotoc_md4}
-Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{Pin Grupları ve Fonksiyonları}{Pin Grupları ve Fonksiyonları}}\label{md__r_e_a_d_m_e_autotoc_md5}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{1. Analog Girişler}{1. Analog Girişler}}\label{md__r_e_a_d_m_e_autotoc_md6}
+\label{md__r_e_a_d_m_e_autotoc_md20}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md20}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysection{\texorpdfstring{Genel Bakış}{Genel Bakış}}\label{md__r_e_a_d_m_e_autotoc_md21}
+Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysection{\texorpdfstring{Pin Grupları ve Fonksiyonları}{Pin Grupları ve Fonksiyonları}}\label{md__r_e_a_d_m_e_autotoc_md22}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsection{\texorpdfstring{1. Analog Girişler}{1. Analog Girişler}}\label{md__r_e_a_d_m_e_autotoc_md23}
 
 \begin{DoxyItemize}
 \item {\bfseries{Keypad (GPIO28)}}
@@ -30,72 +30,72 @@ Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi 
 \begin{DoxyItemize}
 \item Analog değer okuma
 \item 0-\/4095 arası ADC değeri
-\item {\ttfamily read\+\_\+analog()} fonksiyonu ile okunur
+\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile okunur
 \end{DoxyItemize}
 \item {\bfseries{LDR Sensör (GPIO26)}}
 \begin{DoxyItemize}
 \item Işık seviyesi ölçümü
 \item Analog değer okuma
-\item {\ttfamily read\+\_\+analog()} fonksiyonu ile okunur
+\item {\ttfamily \doxylink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read\+\_\+analog()}} fonksiyonu ile okunur
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{2. Dijital Butonlar}{2. Dijital Butonlar}}\label{md__r_e_a_d_m_e_autotoc_md7}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysubsection{\texorpdfstring{2. Dijital Butonlar}{2. Dijital Butonlar}}\label{md__r_e_a_d_m_e_autotoc_md24}
 
 \begin{DoxyItemize}
 \item {\bfseries{Buton Grubu}}
 \begin{DoxyItemize}
-\item BUTTON\+\_\+\+UP (GPIO5)\+: Yukarı ok tuşu
-\item BUTTON\+\_\+\+OK (GPIO6)\+: Onay/\+Enter tuşu
-\item BUTTON\+\_\+\+DOWN (GPIO7)\+: Aşağı ok tuşu
+\item BUTTON\+\_\+\+UP ({\bfseries{GPIO5}})\+: Yukarı ok tuşu
+\item BUTTON\+\_\+\+OK ({\bfseries{GPIO6}})\+: Onay/\+Enter tuşu
+\item BUTTON\+\_\+\+DOWN ({\bfseries{GPIO7}})\+: Aşağı ok tuşu
 \item Debounce korumalı okuma
 \item {\ttfamily \doxylink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\+\_\+pressed()}} ve {\ttfamily \doxylink{buttons_8c_a6b963b48e656f166999ae77284356434}{check\+\_\+button\+\_\+event()}} fonksiyonları ile kontrol
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{3. LED Çıkışları}{3. LED Çıkışları}}\label{md__r_e_a_d_m_e_autotoc_md8}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysubsection{\texorpdfstring{3. LED Çıkışları}{3. LED Çıkışları}}\label{md__r_e_a_d_m_e_autotoc_md25}
 
 \begin{DoxyItemize}
 \item {\bfseries{Basit LED\textquotesingle{}ler}}
 \begin{DoxyItemize}
-\item LED\+\_\+\+RED (GPIO4)\+: Kırmızı LED
-\item LED\+\_\+\+YELLOW (GPIO3)\+: Sarı LED
-\item LED\+\_\+\+GREEN (GPIO2)\+: Yeşil LED
+\item LED\+\_\+\+RED ({\bfseries{GPIO4}})\+: Kırmızı LED
+\item LED\+\_\+\+YELLOW ({\bfseries{GPIO3}})\+: Sarı LED
+\item LED\+\_\+\+GREEN ({\bfseries{GPIO2}})\+: Yeşil LED
 \item Dijital çıkış veya PWM kontrolü
 \end{DoxyItemize}
 \item {\bfseries{RGB LED (PWM Kontrollü)}}
 \begin{DoxyItemize}
-\item RGB\+\_\+R (GPIO16)\+: Kırmızı kanal
-\item RGB\+\_\+G (GPIO17)\+: Yeşil kanal
-\item RGB\+\_\+B (GPIO18)\+: Mavi kanal
+\item RGB\+\_\+R ({\bfseries{GPIO16}})\+: Kırmızı kanal
+\item RGB\+\_\+G ({\bfseries{GPIO17}})\+: Yeşil kanal
+\item RGB\+\_\+B ({\bfseries{GPIO18}})\+: Mavi kanal
 \item PWM ile parlaklık kontrolü
 \item {\ttfamily \doxylink{led__control_8c_a63002d9e1a92cb83d1ece6899b442452}{set\+\_\+led\+\_\+pwm()}} fonksiyonu ile kontrol
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{4. Ses Çıkışı}{4. Ses Çıkışı}}\label{md__r_e_a_d_m_e_autotoc_md9}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsection{\texorpdfstring{4. Ses Çıkışı}{4. Ses Çıkışı}}\label{md__r_e_a_d_m_e_autotoc_md26}
 
 \begin{DoxyItemize}
 \item {\bfseries{Buzzer (GPIO10)}}
 \begin{DoxyItemize}
 \item PWM kontrollü ses üretimi
 \item Nota çalma kapasitesi
-\item {\ttfamily \doxylink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note()}} ve {\ttfamily play\+\_\+notes()} fonksiyonları
+\item {\ttfamily \doxylink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note()}} ve {\ttfamily \doxylink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes()}} fonksiyonları
 \item Frekans ve süre parametreleri ile kontrol
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{5. Step Motor}{5. Step Motor}}\label{md__r_e_a_d_m_e_autotoc_md10}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysubsection{\texorpdfstring{5. Step Motor}{5. Step Motor}}\label{md__r_e_a_d_m_e_autotoc_md27}
 
 \begin{DoxyItemize}
 \item {\bfseries{4-\/Pin Kontrol}}
 \begin{DoxyItemize}
-\item A1 (GPIO11)
-\item A2 (GPIO12)
-\item B1 (GPIO13)
-\item B2 (GPIO14)
+\item A1 ({\bfseries{GPIO11}})
+\item A2 ({\bfseries{GPIO12}})
+\item B1 ({\bfseries{GPIO13}})
+\item B2 ({\bfseries{GPIO14}})
 \item Tam adım ve yarım adım kontrol
 \item {\ttfamily \doxylink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\+\_\+turn()}} fonksiyonu ile kontrol
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{\texorpdfstring{6. Sensör Modülleri}{6. Sensör Modülleri}}\label{md__r_e_a_d_m_e_autotoc_md11}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsection{\texorpdfstring{6. Sensör Modülleri}{6. Sensör Modülleri}}\label{md__r_e_a_d_m_e_autotoc_md28}
 
 \begin{DoxyItemize}
 \item {\bfseries{Ultrasonik Sensör}}
 \begin{DoxyItemize}
-\item TR (GPIO8)\+: Trigger pin
-\item EC (GPIO9)\+: Echo pin
+\item TR ({\bfseries{GPIO8}})\+: Trigger pin
+\item EC ({\bfseries{GPIO9}})\+: Echo pin
 \item Mesafe ölçümü yapılır
 \item {\ttfamily \doxylink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\+\_\+distance()}} fonksiyonu ile kontrol
 \end{DoxyItemize}
@@ -105,24 +105,24 @@ Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi 
 \item Dijital giriş
 \item {\ttfamily \doxylink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\+\_\+motion()}} fonksiyonu ile kontrol
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{7. Haberleşme Modülleri}{7. Haberleşme Modülleri}}\label{md__r_e_a_d_m_e_autotoc_md12}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysubsection{\texorpdfstring{7. Haberleşme Modülleri}{7. Haberleşme Modülleri}}\label{md__r_e_a_d_m_e_autotoc_md29}
 
 \begin{DoxyItemize}
 \item {\bfseries{Bluetooth}}
 \begin{DoxyItemize}
-\item TX (GPIO0)
-\item RX (GPIO1)
+\item TX ({\bfseries{GPIO0}})
+\item RX ({\bfseries{GPIO1}})
 \item UART haberleşme
 \end{DoxyItemize}
 \item {\bfseries{I2C LCD Display}}
 \begin{DoxyItemize}
-\item SDA (GPIO20)
-\item SCL (GPIO21)
-\item Adres\+: 0x27
+\item SDA ({\bfseries{GPIO20}})
+\item SCL ({\bfseries{GPIO21}})
+\item Adres\+: {\bfseries{0x27}}
 \item 2x16 karakter gösterim
 \item {\ttfamily \doxylink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init()}}, {\ttfamily \doxylink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear()}}, {\ttfamily \doxylink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\+\_\+string()}} fonksiyonları
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysection{\texorpdfstring{Başlatma ve Konfigürasyon}{Başlatma ve Konfigürasyon}}\label{md__r_e_a_d_m_e_autotoc_md13}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysection{\texorpdfstring{Başlatma ve Konfigürasyon}{Başlatma ve Konfigürasyon}}\label{md__r_e_a_d_m_e_autotoc_md30}
 Tüm komponentler {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} fonksiyonu ile başlatılır. Bu fonksiyon\+:
 
 
@@ -132,7 +132,7 @@ Tüm komponentler {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63d
 \item GPIO yönlendirmeleri
 \item I2C başlatma
 \item LCD başlatma işlemlerini gerçekleştirir.
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysection{\texorpdfstring{Pin Özeti}{Pin Özeti}}\label{md__r_e_a_d_m_e_autotoc_md14}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysection{\texorpdfstring{Pin Özeti}{Pin Özeti}}\label{md__r_e_a_d_m_e_autotoc_md31}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ Analog\ inputs}}
@@ -178,4 +178,72 @@ Tüm komponentler {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63d
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ SCL\ 21}}
 
 \end{DoxyCode}
- 
+
+
+Bu yeni {\ttfamily \doxylink{_r_e_a_d_m_e_8md}{README.\+md}} dosyası, {\ttfamily \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}} dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır.\hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysection{\texorpdfstring{Dokümantasyon Üretimi (Doxygen)}{Dokümantasyon Üretimi (Doxygen)}}\label{md__r_e_a_d_m_e_autotoc_md32}
+Bu proje Doxygen ile belgelenmiştir. HTML ve La\+TeX çıktıları {\ttfamily ./docs} klasörüne üretilir.
+
+Gereksinimler\+:
+
+
+\begin{DoxyItemize}
+\item Doxygen (1.\+9+ önerilir)
+\item Graphviz (dot) — çağrı/çağıran grafikleri için
+\end{DoxyItemize}
+
+Adımlar (mac\+OS)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Graphviz\ yoksa\ kurun}
+\DoxyCodeLine{brew\ install\ graphviz}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Doxygen’i\ çalıştırın\ (repo\ kökünde)}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+
+
+Çıktılar\+:
+
+
+\begin{DoxyItemize}
+\item HTML\+: {\ttfamily docs/html/index.\+html}
+\item La\+TeX\+: {\ttfamily docs/latex/}
+\end{DoxyItemize}
+
+Notlar\+:
+
+
+\begin{DoxyItemize}
+\item Doxygen Türkçe dil dosyası eski uyarısı görülebilir; işlevi etkilemez.
+\item Dot kaynaklı hatalar varsa önce {\ttfamily docs/html} ve {\ttfamily docs/latex} dizinlerini silip tekrar çalıştırın.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysection{\texorpdfstring{Sorun Giderme (Doxygen)}{Sorun Giderme (Doxygen)}}\label{md__r_e_a_d_m_e_autotoc_md33}
+
+\begin{DoxyItemize}
+\item Graphviz/dot bulunamadı uyarısı veya grafikler üretilmiyor\+:
+\begin{DoxyItemize}
+\item mac\+OS için Graphviz kurulu olmalı ve {\ttfamily dot -\/V} çalışmalı.
+\item Doxyfile içinde {\ttfamily HAVE\+\_\+\+DOT = YES}, {\ttfamily CALL\+\_\+\+GRAPH = YES}, {\ttfamily CALLER\+\_\+\+GRAPH = YES} olmalı.
+\item Gerekirse docs’u temizleyip yeniden üretin.
+\end{DoxyItemize}
+\item OUTPUT\+\_\+\+LANGUAGE Turkish uyarısı\+:
+\begin{DoxyItemize}
+\item Doxygen Türkçe dil paketi eski olabilir; bu sadece bazı sabit metinlerin İngilizce görünmesine yol açar. İşlevselliği etkilemez.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysection{\texorpdfstring{Nasıl Kullanılır (How-\/\+To)}{Nasıl Kullanılır (How-\/\+To)}}\label{md__r_e_a_d_m_e_autotoc_md34}
+Modül bazlı hızlı başlangıç rehberleri için Doxygen içinde şu bölüme bakın\+:
+
+
+\begin{DoxyItemize}
+\item Nasıl Kullanılır İçindekiler\+: howto\+\_\+index
+\begin{DoxyItemize}
+\item Butonlar, LCD, Buzzer, Sensörler, Step Motor, Tuş Takımı, LED/\+RGB
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysection{\texorpdfstring{Kalite Kapıları}{Kalite Kapıları}}\label{md__r_e_a_d_m_e_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Build\+: Ninja ile proje derlenmeli (VS Code görevi\+: Compile Project).
+\item Docs\+: Doxygen çalışmalı, Graphviz grafiklerini üretmeli.
+\item Uyarılar\+: Yalnızca Türkçe dil uyarısı kabul edilebilir; diğer uyarılar çözülmeli. 
+\end{DoxyItemize}

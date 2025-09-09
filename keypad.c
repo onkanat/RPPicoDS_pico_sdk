@@ -1,6 +1,7 @@
 /**
  * @file keypad.c
  * @brief Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu
+ * @see \ref howto_keypad
  */
 
 #include "pico_training_board.h"
@@ -17,6 +18,17 @@
  * | * | 0 | # |
  *
  * @return char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0
+ *
+ * @code{.c}
+ * char k = keypadOku();
+ * if (k) {
+ *   lcd_clear();
+ *   lcd_set_cursor(0,0);
+ *   char msg[16];
+ *   snprintf(msg, sizeof(msg), "Key:%c", k);
+ *   lcd_string(msg);
+ * }
+ * @endcode
  */
 char keypadOku(void) {
     // Tuş takımı için ADC girişini seç (GPIO28)
@@ -64,6 +76,7 @@ char keypadOku(void) {
  *
  * @param gpio Okunacak GPIO pin numarası
  * @return bool düğmeye basılmışsa true, aksi halde false
+ * @note Minimum 200 ms debounce uygulanır.
  */
 bool analog_button_pressed(uint gpio) {
     static absolute_time_t last_press_time = {0};

@@ -1,0 +1,5 @@
+<map id="play_notes" name="play_notes">
+<area shape="rect" id="Node000001" title="Bir dizi müzikal notanın çalınmasını sağlar." alt="" coords="157,5,241,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a477347080371609eeb1d19e8e48314d3" title="Hareket algılandığında melodi çalar ve mesafeyi LCD&#39;ye yazar." alt="" coords="5,5,109,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,21,109,21,109,16,141,16"/>
+</map>

@@ -197,9 +197,9 @@ enum \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}{is\+\_\+motor\+\_\+running}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Motorun çalışıp çalışmadığını kontrol eder. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t}} \mbox{\hyperlink{pico__training__board_8h_ac91c34166ec5420fe03bc8e353b52354}{get\+\_\+motor\+\_\+state}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Motorun mevcut durumunu döndürür. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\+\_\+turn}} (\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} direction, uint speed, float \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}})
 \begin{DoxyCompactList}\small\item\em Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0}{step\+\_\+stop}} (void)
@@ -207,7 +207,7 @@ void \mbox{\hyperlink{pico__training__board_8h_a91a1a65f783ef1d3040dfc483143d3e0
 void \mbox{\hyperlink{pico__training__board_8h_a8d8f8f8a9dde232c7092dbf83cc101af}{init\+\_\+step\+\_\+motor}} (void)
 \begin{DoxyCompactList}\small\item\em Step motor GPIO pinlerini başlatır. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pico__training__board_8h_ac99006d5c9f207df6cede008585d9ded}{send\+\_\+motor\+\_\+parameters}} (\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} direction, uint speed, float \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}})
-\begin{DoxyCompactList}\small\item\em Step motor parametrelerini Core1\textquotesingle{}e gönderir. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Step motor parametrelerini Core1\textquotesingle{}e gönderir (yön, hız, devir) \end{DoxyCompactList}\item 
 char \mbox{\hyperlink{pico__training__board_8h_aebb08491c3a53f97ff6598fa73ab671b}{keypad\+Oku}} (void)
 \begin{DoxyCompactList}\small\item\em Analog tuş takımını okur ve basılan tuşu döndürür. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{pico__training__board_8h_ab2bff14828e4757d93fe24490da85228}{analog\+\_\+button\+\_\+pressed}} (uint gpio)
@@ -249,7 +249,7 @@ double \mbox{\hyperlink{pico__training__board_8h_a796bbc24fde48e1a34a660bd6a38db
 void \mbox{\hyperlink{pico__training__board_8h_a32887df3cd0b0fd7bad3aefa236f9738}{play\+\_\+note}} (float frequency, int duration\+\_\+ms)
 \begin{DoxyCompactList}\small\item\em Belirtilen frekans ve sürede buzzer\textquotesingle{}da bir nota çalar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes}} (const char \texorpdfstring{$\ast$}{*}notes\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, int num\+\_\+notes, int duration)
-\item 
+\begin{DoxyCompactList}\small\item\em Bir dizi müzikal notanın çalınmasını sağlar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pico__training__board_8h_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init}} (void)
 \begin{DoxyCompactList}\small\item\em LCD ekranını başlatır. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{pico__training__board_8h_a31b5bba75b8e9f4d67830f7fad24e0c7}{lcd\+\_\+send\+\_\+byte}} (uint8\+\_\+t val, int mode)
@@ -285,6 +285,8 @@ Hakan KILIÇ\+ASLAN
 \end{DoxyDate}
 
 
+\label{doc-define-members}
+\Hypertarget{pico__training__board_8h_doc-define-members}
 \doxysubsection{Makro Dokümantasyonu}
 \Hypertarget{pico__training__board_8h_a2f60b7891cdd75567e928971fcd217e2}\index{pico\_training\_board.h@{pico\_training\_board.h}!BLT\_RX@{BLT\_RX}}
 \index{BLT\_RX@{BLT\_RX}!pico\_training\_board.h@{pico\_training\_board.h}}
@@ -606,6 +608,8 @@ Yankı pini \Hypertarget{pico__training__board_8h_a608bbec30c43f7862ef0887bb2e6f
 
 Tetikleme pini 
 
+\label{doc-enum-members}
+\Hypertarget{pico__training__board_8h_doc-enum-members}
 \doxysubsection{Enümerasyon Tipi Dokümantasyonu}
 \Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db}\index{pico\_training\_board.h@{pico\_training\_board.h}!ButtonEvent@{ButtonEvent}}
 \index{ButtonEvent@{ButtonEvent}!pico\_training\_board.h@{pico\_training\_board.h}}
@@ -613,16 +617,16 @@ Tetikleme pini
 {\footnotesize\ttfamily \label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db} 
 enum \mbox{\hyperlink{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db}{Button\+Event}}}
 
-\begin{DoxyEnumFields}{Enümeratör}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_PRESSED@{BUTTON\_PRESSED}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!BUTTON\_PRESSED@{BUTTON\_PRESSED}}}\Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b}\label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db} 
+\begin{DoxyEnumFields}[2]{Enümeratör}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_PRESSED@{BUTTON\_PRESSED}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!BUTTON\_PRESSED@{BUTTON\_PRESSED}}}\Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b}\label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dbabd19dea9e19d02d7d39464dfdde1e48b} 
 BUTTON\+\_\+\+PRESSED&Buton basıldı \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_RELEASED@{BUTTON\_RELEASED}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!BUTTON\_RELEASED@{BUTTON\_RELEASED}}}\Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461}\label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_RELEASED@{BUTTON\_RELEASED}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!BUTTON\_RELEASED@{BUTTON\_RELEASED}}}\Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461}\label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba666f5349284be6384467ac357ec7d461} 
 BUTTON\+\_\+\+RELEASED&Buton bırakıldı \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_HELD@{BUTTON\_HELD}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!BUTTON\_HELD@{BUTTON\_HELD}}}\Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c}\label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0db} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_HELD@{BUTTON\_HELD}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!BUTTON\_HELD@{BUTTON\_HELD}}}\Hypertarget{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c}\label{pico__training__board_8h_a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c} 
 BUTTON\+\_\+\+HELD&Buton tutuldu \\
 \hline
 
@@ -637,12 +641,12 @@ enum \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd
 
 Motor yönü numaralandırması 
 
-\begin{DoxyEnumFields}{Enümeratör}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{CW@{CW}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!CW@{CW}}}\Hypertarget{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}\label{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd} 
+\begin{DoxyEnumFields}[2]{Enümeratör}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CW@{CW}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!CW@{CW}}}\Hypertarget{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}\label{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419} 
 CW&Saat yönünde \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{CCW@{CCW}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!CCW@{CCW}}}\Hypertarget{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487}\label{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CCW@{CCW}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!CCW@{CCW}}}\Hypertarget{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487}\label{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda896dd0842cf7e102469756cf97117487} 
 CCW&Saat yönünün tersine \\
 \hline
 
@@ -657,22 +661,24 @@ enum \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6
 
 Motor durumu numaralandırması 
 
-\begin{DoxyEnumFields}{Enümeratör}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_STOPPED@{MOTOR\_STOPPED}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!MOTOR\_STOPPED@{MOTOR\_STOPPED}}}\Hypertarget{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a}\label{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6} 
+\begin{DoxyEnumFields}[2]{Enümeratör}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_STOPPED@{MOTOR\_STOPPED}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!MOTOR\_STOPPED@{MOTOR\_STOPPED}}}\Hypertarget{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a}\label{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a02c50778bea0b18671e7d446647c788a} 
 MOTOR\+\_\+\+STOPPED&Motor durmuş durumda \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_RUNNING@{MOTOR\_RUNNING}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!MOTOR\_RUNNING@{MOTOR\_RUNNING}}}\Hypertarget{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a5b5420cf198711cf4ba843672f9f531b}\label{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_RUNNING@{MOTOR\_RUNNING}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!MOTOR\_RUNNING@{MOTOR\_RUNNING}}}\Hypertarget{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a5b5420cf198711cf4ba843672f9f531b}\label{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6a5b5420cf198711cf4ba843672f9f531b} 
 MOTOR\+\_\+\+RUNNING&Motor çalışıyor \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_ERROR@{MOTOR\_ERROR}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!MOTOR\_ERROR@{MOTOR\_ERROR}}}\Hypertarget{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6acf041eca57a2940c2c0c959dcd729d12}\label{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_ERROR@{MOTOR\_ERROR}!pico\_training\_board.h@{pico\_training\_board.h}}\index{pico\_training\_board.h@{pico\_training\_board.h}!MOTOR\_ERROR@{MOTOR\_ERROR}}}\Hypertarget{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6acf041eca57a2940c2c0c959dcd729d12}\label{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6acf041eca57a2940c2c0c959dcd729d12} 
 MOTOR\+\_\+\+ERROR&Hata durumu \\
 \hline
 
 \end{DoxyEnumFields}
 
 
+\label{doc-func-members}
+\Hypertarget{pico__training__board_8h_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{pico__training__board_8h_ab2bff14828e4757d93fe24490da85228}\index{pico\_training\_board.h@{pico\_training\_board.h}!analog\_button\_pressed@{analog\_button\_pressed}}
 \index{analog\_button\_pressed@{analog\_button\_pressed}!pico\_training\_board.h@{pico\_training\_board.h}}
@@ -694,6 +700,9 @@ Bu fonksiyon, bir analog girişi okur ve ADC değerine göre bir düğmeye bası
 \begin{DoxyReturn}{Döndürdüğü değer}
 bool düğmeye basılmışsa true, aksi halde false 
 \end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Minimum 200 ms debounce uygulanır. 
+\end{DoxyNote}
 \Hypertarget{pico__training__board_8h_a6863517b8b3b39834aa6aaaab29c4eaf}\index{pico\_training\_board.h@{pico\_training\_board.h}!button\_pressed@{button\_pressed}}
 \index{button\_pressed@{button\_pressed}!pico\_training\_board.h@{pico\_training\_board.h}}
 \doxysubsubsection{\texorpdfstring{button\_pressed()}{button\_pressed()}}
@@ -716,7 +725,7 @@ Buton sıçramalarından kaynaklanan yanlış tetiklenmeleri önlemek için 100m
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=311pt]{pico__training__board_8h_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph}
+\includegraphics[width=350pt]{pico__training__board_8h_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{pico__training__board_8h_a6b963b48e656f166999ae77284356434}\index{pico\_training\_board.h@{pico\_training\_board.h}!check\_button\_event@{check\_button\_event}}
@@ -794,8 +803,11 @@ Birden fazla ölçümden ortalama mesafeyi alır.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Döndürdüğü değer}
-float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -\/1.\+0 
+float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -\/1.\+0
 \end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Negatif dönen ölçümler (zaman aşımı) ortalamaya dahil edilmez. 
+\end{DoxyNote}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -857,7 +869,7 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=257pt]{pico__training__board_8h_a796bbc24fde48e1a34a660bd6a38dbae_icgraph}
+\includegraphics[width=350pt]{pico__training__board_8h_a796bbc24fde48e1a34a660bd6a38dbae_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{pico__training__board_8h_ac91c34166ec5420fe03bc8e353b52354}\index{pico\_training\_board.h@{pico\_training\_board.h}!get\_motor\_state@{get\_motor\_state}}
@@ -866,6 +878,13 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 {\footnotesize\ttfamily \label{pico__training__board_8h_ac91c34166ec5420fe03bc8e353b52354} 
 \mbox{\hyperlink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t}} get\+\_\+motor\+\_\+state (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Motorun mevcut durumunu döndürür. 
+
+\begin{DoxyReturn}{Döndürdüğü değer}
+\doxylink{pico__training__board_8h_ab261a5f660ee185f6574b191c393ded6}{motor\+\_\+state\+\_\+t} MOTOR\+\_\+\+STOPPED, MOTOR\+\_\+\+RUNNING veya MOTOR\+\_\+\+ERROR 
+\end{DoxyReturn}
 \Hypertarget{pico__training__board_8h_ab15cf82f0329bc4d7262c03559eaaa8e}\index{pico\_training\_board.h@{pico\_training\_board.h}!init\_adc@{init\_adc}}
 \index{init\_adc@{init\_adc}!pico\_training\_board.h@{pico\_training\_board.h}}
 \doxysubsubsection{\texorpdfstring{init\_adc()}{init\_adc()}}
@@ -1117,16 +1136,8 @@ Step motor GPIO pinlerini başlatır.
 Bu fonksiyon, 4 fazlı bir step motorunu kontrol etmek için kullanılan GPIO pinlerini yapılandırır. Her pini başlatır ve motor bobinlerini sürmek için çıkış olarak ayarlar.
 
 \begin{DoxyNote}{Not}
-motor\+\_\+pins\mbox{[}\mbox{]} dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır
+motor\+\_\+pins\mbox{[}\mbox{]} dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır 
 \end{DoxyNote}
-
-\begin{DoxyParams}{Parametreler}
-{\em void} & Giriş parametresi yok \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Döndürdüğü değer}
-void Geri dönüş değeri yok 
-\end{DoxyReturn}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1148,7 +1159,7 @@ Tetikleme pinini çıkış ve yankı pinini giriş olarak yapılandırır Bu fon
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=323pt]{pico__training__board_8h_af38f5ef820a2c8d443994ae6ead83789_icgraph}
+\includegraphics[width=343pt]{pico__training__board_8h_af38f5ef820a2c8d443994ae6ead83789_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906}\index{pico\_training\_board.h@{pico\_training\_board.h}!is\_motor\_running@{is\_motor\_running}}
@@ -1157,6 +1168,13 @@ Tetikleme pinini çıkış ve yankı pinini giriş olarak yapılandırır Bu fon
 {\footnotesize\ttfamily \label{pico__training__board_8h_a968353a2852db9fae36f19a4985e2906} 
 bool is\+\_\+motor\+\_\+running (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Motorun çalışıp çalışmadığını kontrol eder. 
+
+\begin{DoxyReturn}{Döndürdüğü değer}
+true motor çalışıyorsa, aksi halde false 
+\end{DoxyReturn}
 \Hypertarget{pico__training__board_8h_aebb08491c3a53f97ff6598fa73ab671b}\index{pico\_training\_board.h@{pico\_training\_board.h}!keypadOku@{keypadOku}}
 \index{keypadOku@{keypadOku}!pico\_training\_board.h@{pico\_training\_board.h}}
 \doxysubsubsection{\texorpdfstring{keypadOku()}{keypadOku()}}
@@ -1170,9 +1188,21 @@ Analog tuş takımını okur ve basılan tuşu döndürür.
 Bu fonksiyon, KEYPAD pinine (GPIO28) bağlı tuş takımından analog değeri okur ve ADC değerini karşılık gelen tuş takımı karakterlerine eşleştirir. Tuş takımı düğmeleri aşağıdaki matris şeklinde düzenlenmiştir\+: \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} 3 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 4 \texorpdfstring{$\vert$}{|} 5 \texorpdfstring{$\vert$}{|} 6 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 7 \texorpdfstring{$\vert$}{|} 8 \texorpdfstring{$\vert$}{|} 9 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\ast$}{*} \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} \# \texorpdfstring{$\vert$}{|}
 
 \begin{DoxyReturn}{Döndürdüğü değer}
-char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0 
+char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0
 \end{DoxyReturn}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ k\ =\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (k)\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(0,0);}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{char}\ msg[16];}
+\DoxyCodeLine{\ \ snprintf(msg,\ \textcolor{keyword}{sizeof}(msg),\ \textcolor{stringliteral}{"{}Key:\%c"{}},\ k);}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(msg);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1329,8 +1359,13 @@ float measure\+\_\+distance (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyP
 Ultrasonik sensör kullanarak mesafe ölçer. 
 
 \begin{DoxyReturn}{Döndürdüğü değer}
-float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -\/1.\+0 
+float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -\/1.\+0
 \end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Ölçüm aralığı tipik olarak \texorpdfstring{$\sim$}{\string~}2 cm ile \texorpdfstring{$\sim$}{\string~}450 cm arasındadır. Zaman aşımlarında -\/1.\+0 döner. 
+
+Ölçüm öncesi {\ttfamily \doxylink{sensors_8c_af38f5ef820a2c8d443994ae6ead83789}{init\+\_\+ultrasonic()}} çağrılmış olmalıdır. 
+\end{DoxyNote}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1380,24 +1415,42 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 {\footnotesize\ttfamily \label{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919} 
 void play\+\_\+notes (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{notes}{\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, }\item[{int}]{num\+\_\+notes}{, }\item[{int}]{duration}{}\end{DoxyParamCaption})}
 
-Bir dizi müzikal notanın çalınmasını sağlar.
 
-Bu fonksiyon, bir dizi notanın üzerinden yineleyerek, her bir notanın adına ve oktavına göre frekansını hesaplar ve belirtilen sürede notanın çalınmasını sağlar.
+
+Bir dizi müzikal notanın çalınmasını sağlar. 
+
+Bu fonksiyon, bir dizi notanın üzerinden yineleyerek her bir nota için frekansı hesaplar ve belirtilen sürede çalar.
 
 
 \begin{DoxyParams}{Parametreler}
-{\em notes} & İki boyutlu bir dize dizisi, burada her bir eleman iki dize içerir\+: ilk dize nota adını (örn. "{}\+C"{}, "{}\+D\#"{}), ikinci dize oktavı (örn. "{}4"{}) temsil eder. \\
+{\em notes} & Her elemanı \{nota, oktav\} olan iki boyutlu dize dizisi. Örn. \{"{}\+C"{},"{}4"{}\}, \{"{}\+D\#"{},"{}4"{}\} \\
 \hline
-{\em num\+\_\+notes} & notes dizisindeki nota sayısı. \\
+{\em num\+\_\+notes} & Dizideki nota sayısı \\
 \hline
-{\em duration} & Her bir notanın çalınacağı süre (milisaniye cinsinden). \\
+{\em duration} & Her bir notanın çalma süresi (ms)\\
 \hline
 \end{DoxyParams}
+\begin{DoxyNote}{Not}
+Nota adı karşılaştırması önekle yapılır; diyez notasyonu kullanın ("{}\+Db"{} yerine "{}\+C\#"{}). 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *MELODY[][2]\ =\ \{\{\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}4"{}}\},\{\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}4"{}}\},\{\textcolor{stringliteral}{"{}G"{}},\textcolor{stringliteral}{"{}4"{}}\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(MELODY,\ (\textcolor{keywordtype}{int})(\textcolor{keyword}{sizeof}(MELODY)/\textcolor{keyword}{sizeof}(MELODY[0])),\ 200);}
+
+\end{DoxyCode}
+ 
+\end{DoxyNote}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919_cgraph}
+\end{center}
+\end{figure}
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{pico__training__board_8h_ad3b93659dae6daec910b9f79e4546919_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{pico__training__board_8h_aab6ffb1c01ffbbec732bb22dc297a995}\index{pico\_training\_board.h@{pico\_training\_board.h}!read\_analog@{read\_analog}}
@@ -1433,32 +1486,17 @@ void send\+\_\+motor\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hype
 
 
 
-Step motor parametrelerini Core1\textquotesingle{}e gönderir. 
-
-Bu fonksiyon, step motor kontrolü için gerekli parametreleri Core0\textquotesingle{}dan Core1\textquotesingle{}e multicore FIFO üzerinden gönderir. Gönderilen parametreler\+:
-\begin{DoxyEnumerate}
-\item Motor dönüş yönü
-\item Motor hızı
-\item Devir sayısı
-\end{DoxyEnumerate}
+Step motor parametrelerini Core1\textquotesingle{}e gönderir (yön, hız, devir) 
 
 
 \begin{DoxyParams}{Parametreler}
-{\em direction} & Motor dönüş yönü (CW\+: saat yönü, CCW\+: saat yönü tersi) \\
+{\em direction} & Motor yönü \\
 \hline
-{\em speed} & Motor hızı (adım/saniye) \\
+{\em speed} & Adım/saniye \\
 \hline
-{\em revolutions} & Yapılacak devir sayısı\\
+{\em revolutions} & Devir sayısı (float) \\
 \hline
 \end{DoxyParams}
-\begin{DoxyNote}{Not}
-Fonksiyon, her parametre için FIFO\textquotesingle{}ya bloklu gönderim yapar ve Core1\textquotesingle{}in verileri almasını bekler
-\end{DoxyNote}
-\begin{DoxySeeAlso}{Ayrıca Bakınız}
-\doxylink{main_8c_ab148110bebfeb5468545d63e65d8095f}{core1\+\_\+main()} Core1\textquotesingle{}de çalışan ve bu parametreleri alan fonksiyon 
-
-\doxylink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\+\_\+turn()} Gönderilen parametrelerle motoru kontrol eden fonksiyon 
-\end{DoxySeeAlso}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1539,14 +1577,6 @@ Bu fonksiyon, step motorunu acil olarak durdurur\+:
 \begin{DoxyNote}{Not}
 motor\+\_\+pins\mbox{[}\mbox{]} dizisinin step motorunun 4 fazı için geçerli GPIO pin numaralarını içerdiği varsayılır
 \end{DoxyNote}
-
-\begin{DoxyParams}{Parametreler}
-{\em void} & Giriş parametresi yok \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Döndürdüğü değer}
-void Geri dönüş değeri yok
-\end{DoxyReturn}
 \begin{DoxyWarning}{Uyarı}
 Bu fonksiyon, motoru yavaşlatmadan hemen durdurur, bu da mekanik strese neden olabilir 
 \end{DoxyWarning}
@@ -1586,13 +1616,8 @@ Kullanılan global değişkenler\+:
 \item motor\+\_\+state\+: Motorun mevcut durumu
 \item emergency\+\_\+stop\+: Acil durdurma bayrağı
 \item motor\+\_\+pins\mbox{[}\mbox{]}\+: Motor kontrolü için GPIO pin numaraları dizisi
-\item step\+\_\+sequence\mbox{[}\mbox{]}\mbox{[}\mbox{]}\+: Adım sekans desenlerini içeren dizi
-\end{DoxyItemize}
-
-\begin{DoxyReturn}{Döndürdüğü değer}
-void 
-\end{DoxyReturn}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\item step\+\_\+sequence\mbox{[}\mbox{]}\mbox{[}\mbox{]}\+: Adım sekans desenlerini içeren dizi 
+\end{DoxyItemize}Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1657,9 +1682,18 @@ Zaman aşımı ile hareket algılamayı bekler.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Döndürdüğü değer}
-Hareket algılandıysa true, zaman aşımı oluştuysa false 
+Hareket algılandıysa true, zaman aşımı oluştuysa false
 \end{DoxyReturn}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{pico__training__board_8h_af61dcd1031a5ef723aadad8a4acd0a9f}{wait\_for\_motion}}(5000))\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ 5\ saniye\ içinde\ hareket\ algılandı}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ zaman\ aşımı}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

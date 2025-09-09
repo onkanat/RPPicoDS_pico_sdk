@@ -42,8 +42,13 @@ float \mbox{\hyperlink{sensors_8c_a4628d8d278604d424be0693fd587e661}{get\+\_\+av
 \doxysubsection{Ayrıntılı tanımlama}
 Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması 
 
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxysectlink{howto_sensors}{Sensörler (PIR + Ultrasonik)}{0} 
+\end{DoxySeeAlso}
 
 
+\label{doc-define-members}
+\Hypertarget{sensors_8c_doc-define-members}
 \doxysubsection{Makro Dokümantasyonu}
 \Hypertarget{sensors_8c_a14a2da9c8115152359067820613055ae}\index{sensors.c@{sensors.c}!SENSOR\_TIMEOUT@{SENSOR\_TIMEOUT}}
 \index{SENSOR\_TIMEOUT@{SENSOR\_TIMEOUT}!sensors.c@{sensors.c}}
@@ -65,6 +70,8 @@ Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanma
 
 
 
+\label{doc-func-members}
+\Hypertarget{sensors_8c_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{sensors_8c_a0d72618a59f5257cb5fbe8cbcbe7e5ce}\index{sensors.c@{sensors.c}!detect\_motion@{detect\_motion}}
 \index{detect\_motion@{detect\_motion}!sensors.c@{sensors.c}}
@@ -104,8 +111,11 @@ Birden fazla ölçümden ortalama mesafeyi alır.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Döndürdüğü değer}
-float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -\/1.\+0 
+float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -\/1.\+0
 \end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Negatif dönen ölçümler (zaman aşımı) ortalamaya dahil edilmez. 
+\end{DoxyNote}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -144,7 +154,7 @@ Tetikleme pinini çıkış ve yankı pinini giriş olarak yapılandırır Bu fon
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=323pt]{sensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph}
+\includegraphics[width=343pt]{sensors_8c_af38f5ef820a2c8d443994ae6ead83789_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{sensors_8c_aa73c79319e4f5c31f9da551784c5e8de}\index{sensors.c@{sensors.c}!measure\_distance@{measure\_distance}}
@@ -158,8 +168,13 @@ float measure\+\_\+distance (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyP
 Ultrasonik sensör kullanarak mesafe ölçer. 
 
 \begin{DoxyReturn}{Döndürdüğü değer}
-float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -\/1.\+0 
+float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -\/1.\+0
 \end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Ölçüm aralığı tipik olarak \texorpdfstring{$\sim$}{\string~}2 cm ile \texorpdfstring{$\sim$}{\string~}450 cm arasındadır. Zaman aşımlarında -\/1.\+0 döner. 
+
+Ölçüm öncesi {\ttfamily \doxylink{sensors_8c_af38f5ef820a2c8d443994ae6ead83789}{init\+\_\+ultrasonic()}} çağrılmış olmalıdır. 
+\end{DoxyNote}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -183,9 +198,18 @@ Zaman aşımı ile hareket algılamayı bekler.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Döndürdüğü değer}
-Hareket algılandıysa true, zaman aşımı oluştuysa false 
+Hareket algılandıysa true, zaman aşımı oluştuysa false
 \end{DoxyReturn}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{pico__training__board_8h_af61dcd1031a5ef723aadad8a4acd0a9f}{wait\_for\_motion}}(5000))\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ 5\ saniye\ içinde\ hareket\ algılandı}}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ zaman\ aşımı}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

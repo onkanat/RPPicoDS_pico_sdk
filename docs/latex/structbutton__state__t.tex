@@ -1,0 +1,80 @@
+\doxysection{button\+\_\+state\+\_\+t Yapı(Struct) Referans}
+\hypertarget{structbutton__state__t}{}\label{structbutton__state__t}\index{button\_state\_t@{button\_state\_t}}
+
+
+Bir butonun durumunu ve zamanlamasını takip eden yapı tipi.  
+
+
+
+
+button\+\_\+state\+\_\+t için işbirliği (collaboration) şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{structbutton__state__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Veri Alanları}
+\begin{DoxyCompactItemize}
+\item 
+absolute\+\_\+time\+\_\+t \mbox{\hyperlink{structbutton__state__t_a892350bf9e99e56f98a4a1981d77a1b6}{last\+\_\+press\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Son kayıtlı buton basma zamanı \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structbutton__state__t_a6df576c0f4dc02f9740b101446ba6cf7}{is\+\_\+pressed}}
+\begin{DoxyCompactList}\small\item\em Butonun mevcut basılı durumu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structbutton__state__t_a92120275eeb99a8ec45b801fb2845e32}{was\+\_\+pressed}}
+\begin{DoxyCompactList}\small\item\em Butonun önceki basılı durumu. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structbutton__state__t_a28a6d8fd52a1d1b75b37c4828497da80}{hold\+\_\+duration}}
+\begin{DoxyCompactList}\small\item\em Basılı tutulma süresi (ms) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ayrıntılı tanımlama}
+Bir butonun durumunu ve zamanlamasını takip eden yapı tipi. 
+
+\label{doc-variable-members}
+\Hypertarget{structbutton__state__t_doc-variable-members}
+\doxysubsection{Alan Dokümantasyonu}
+\Hypertarget{structbutton__state__t_a28a6d8fd52a1d1b75b37c4828497da80}\index{button\_state\_t@{button\_state\_t}!hold\_duration@{hold\_duration}}
+\index{hold\_duration@{hold\_duration}!button\_state\_t@{button\_state\_t}}
+\doxysubsubsection{\texorpdfstring{hold\_duration}{hold\_duration}}
+{\footnotesize\ttfamily \label{structbutton__state__t_a28a6d8fd52a1d1b75b37c4828497da80} 
+uint32\+\_\+t button\+\_\+state\+\_\+t\+::hold\+\_\+duration}
+
+
+
+Basılı tutulma süresi (ms) 
+
+\Hypertarget{structbutton__state__t_a6df576c0f4dc02f9740b101446ba6cf7}\index{button\_state\_t@{button\_state\_t}!is\_pressed@{is\_pressed}}
+\index{is\_pressed@{is\_pressed}!button\_state\_t@{button\_state\_t}}
+\doxysubsubsection{\texorpdfstring{is\_pressed}{is\_pressed}}
+{\footnotesize\ttfamily \label{structbutton__state__t_a6df576c0f4dc02f9740b101446ba6cf7} 
+bool button\+\_\+state\+\_\+t\+::is\+\_\+pressed}
+
+
+
+Butonun mevcut basılı durumu. 
+
+\Hypertarget{structbutton__state__t_a892350bf9e99e56f98a4a1981d77a1b6}\index{button\_state\_t@{button\_state\_t}!last\_press\_time@{last\_press\_time}}
+\index{last\_press\_time@{last\_press\_time}!button\_state\_t@{button\_state\_t}}
+\doxysubsubsection{\texorpdfstring{last\_press\_time}{last\_press\_time}}
+{\footnotesize\ttfamily \label{structbutton__state__t_a892350bf9e99e56f98a4a1981d77a1b6} 
+absolute\+\_\+time\+\_\+t button\+\_\+state\+\_\+t\+::last\+\_\+press\+\_\+time}
+
+
+
+Son kayıtlı buton basma zamanı 
+
+\Hypertarget{structbutton__state__t_a92120275eeb99a8ec45b801fb2845e32}\index{button\_state\_t@{button\_state\_t}!was\_pressed@{was\_pressed}}
+\index{was\_pressed@{was\_pressed}!button\_state\_t@{button\_state\_t}}
+\doxysubsubsection{\texorpdfstring{was\_pressed}{was\_pressed}}
+{\footnotesize\ttfamily \label{structbutton__state__t_a92120275eeb99a8ec45b801fb2845e32} 
+bool button\+\_\+state\+\_\+t\+::was\+\_\+pressed}
+
+
+
+Butonun önceki basılı durumu. 
+
+
+
+Bu yapı(struct) için dokümantasyon aşağıdaki dosyadan üretilmiştir\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{buttons_8c}{buttons.\+c}}\end{DoxyCompactItemize}

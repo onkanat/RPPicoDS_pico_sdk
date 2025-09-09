@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: LCD (I2C)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Ara" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('howto_lcd.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">LCD (I2C) </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>)</p>
+<ul>
+<li>Başlatma: <span class="tt"><a class="el" href="init__functions_8c.html#aafed2ade168a085630c2fe8d776432f2" title="I2C LCD ekranını başlatır.">init_lcd()</a></span> veya doğrudan <span class="tt"><a class="el" href="lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="LCD ekranını başlatır.">lcd_init()</a></span> (projede <span class="tt"><a class="el" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır.">init_board()</a></span> içinde çağrılır)</li>
+<li>Metin yazma: <span class="tt"><a class="el" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056" title="LCD&#39;ye bir metin dizisi gönderir.">lcd_string(const char *s)</a></span></li>
+<li>İmleç: <span class="tt">lcd_set_cursor(line, pos)</span></li>
+<li>Temizleme: <span class="tt"><a class="el" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="LCD ekranını temizler.">lcd_clear()</a></span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
+Hızlı Başlangıç</h1>
+<div class="fragment"><div class="line"><a class="code hl_function" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a>();</div>
+<div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
+<div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(0, 0);</div>
+<div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Merhaba&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(1, 0);</div>
+<div class="line"><a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Pico LCD&quot;</span>);</div>
+<div class="ttc" id="ainit__functions_8c_html_a98133f3bc8c62b912d63da405e2adb15"><div class="ttname"><a href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a></div><div class="ttdeci">void init_board(void)</div><div class="ttdoc">Tüm kart bileşenlerini başlatır.</div><div class="ttdef"><b>Definition</b> init_functions.c:112</div></div>
+<div class="ttc" id="alcd__i2c_8c_html_a9d654d1616bd1fb53ea0f25f09d499a2"><div class="ttname"><a href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(int line, int position)</div><div class="ttdoc">LCD imlecini belirtilen konuma ayarlar.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:64</div></div>
+<div class="ttc" id="alcd__i2c_8c_html_aa4fb28cf57e5ade779793927a072f056"><div class="ttname"><a href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a></div><div class="ttdeci">void lcd_string(const char *s)</div><div class="ttdoc">LCD&#39;ye bir metin dizisi gönderir.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:83</div></div>
+<div class="ttc" id="alcd__i2c_8c_html_ad235a86241458b1e7b8771688bfdaf9a"><div class="ttname"><a href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a></div><div class="ttdeci">void lcd_clear(void)</div><div class="ttdoc">LCD ekranını temizler.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:54</div></div>
+</div><!-- fragment --><dl class="section see"><dt>Ayrıca Bakınız</dt><dd><a class="el" href="lcd__i2c_8c.html" title="I2C iletişimi kullanan LCD kontrol fonksiyonları">lcd_i2c.c</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Oluşturan <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

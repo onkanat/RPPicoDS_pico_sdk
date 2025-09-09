@@ -13,6 +13,11 @@ buttons.\+c için içerme bağımlılık grafiği\+:\nopagebreak
 \includegraphics[width=350pt]{buttons_8c__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Veri Yapıları}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbutton__state__t}{button\+\_\+state\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Bir butonun durumunu ve zamanlamasını takip eden yapı tipi. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonksiyonlar}
 \begin{DoxyCompactItemize}
 \item 
@@ -31,16 +36,8 @@ uint \mbox{\hyperlink{buttons_8c_a00fcf54730781bcc9d059ee8542bb047}{wait\+\_\+fo
 \doxysubsubsection*{Değişkenler}
 \begin{DoxyCompactItemize}
 \item 
-\begin{tabbing}
-xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
-struct \{\\
-\>absolute\_time\_t \mbox{\hyperlink{buttons_8c_a496ee83d1832dc57e64bb987b1ebced6}{last\_press\_time}}\\
-\>bool \mbox{\hyperlink{buttons_8c_ad31152730371b8c40b42512b57166fb0}{is\_pressed}}\\
-\>bool \mbox{\hyperlink{buttons_8c_a47571161942ae4b5e6b80da2030ac0d8}{was\_pressed}}\\
-\>uint32\_t \mbox{\hyperlink{buttons_8c_ae71fb9e85c3597885ea7cffd3c036a10}{hold\_duration}}\\
-\} \mbox{\hyperlink{buttons_8c_a16b6a8403e2097dbd0ac10382547401a}{button\_states}} \mbox{[}3\mbox{]} = \{0\}\\
-
-\end{tabbing}\end{DoxyCompactItemize}
+static \mbox{\hyperlink{structbutton__state__t}{button\+\_\+state\+\_\+t}} \mbox{\hyperlink{buttons_8c_a4ed571fef7c10e69da9ad3e04ada2372}{button\+\_\+states}} \mbox{[}3\mbox{]} = \{0\}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Ayrıntılı tanımlama}
@@ -52,8 +49,15 @@ Hakan KILIÇ\+ASLAN
 \begin{DoxyDate}{Tarih}
 2024-\/12-\/4
 \end{DoxyDate}
-Bu dosya, Pico Eğitim Kartı üzerindeki buton girişleri için fonksiyonlar sağlar, debounce koruması, basma algılama ve zamanlama özelliklerini içerir. 
+Bu dosya, Pico Eğitim Kartı üzerindeki buton girişleri için fonksiyonlar sağlar, debounce koruması, basma algılama ve zamanlama özelliklerini içerir.
 
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxysectlink{howto_buttons}{Butonlar}{0} 
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{buttons_8c_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}\index{buttons.c@{buttons.c}!button\_pressed@{button\_pressed}}
 \index{button\_pressed@{button\_pressed}!buttons.c@{buttons.c}}
@@ -77,7 +81,7 @@ Buton sıçramalarından kaynaklanan yanlış tetiklenmeleri önlemek için 100m
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=311pt]{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph}
+\includegraphics[width=350pt]{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{buttons_8c_a6b963b48e656f166999ae77284356434}\index{buttons.c@{buttons.c}!check\_button\_event@{check\_button\_event}}
@@ -146,7 +150,7 @@ Butonun sürekli olarak ne kadar süre basılı tutulduğunu döndürür. Buton 
 \index{get\_button\_index@{get\_button\_index}!buttons.c@{buttons.c}}
 \doxysubsubsection{\texorpdfstring{get\_button\_index()}{get\_button\_index()}}
 {\footnotesize\ttfamily \label{buttons_8c_a4b8c57f5812628bb7892c3126085a7cb} 
-static int get\+\_\+button\+\_\+index (\begin{DoxyParamCaption}\item[{uint}]{gpio}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+int get\+\_\+button\+\_\+index (\begin{DoxyParamCaption}\item[{uint}]{gpio}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -221,34 +225,12 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \end{figure}
 
 
+\label{doc-var-members}
+\Hypertarget{buttons_8c_doc-var-members}
 \doxysubsection{Değişken Dokümantasyonu}
-\Hypertarget{buttons_8c_a16b6a8403e2097dbd0ac10382547401a}\index{buttons.c@{buttons.c}!button\_states@{button\_states}}
+\Hypertarget{buttons_8c_a4ed571fef7c10e69da9ad3e04ada2372}\index{buttons.c@{buttons.c}!button\_states@{button\_states}}
 \index{button\_states@{button\_states}!buttons.c@{buttons.c}}
-\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
-{\footnotesize\ttfamily \label{buttons_8c_a16b6a8403e2097dbd0ac10382547401a} 
-struct  \{ ... \}  button\+\_\+states\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
-
-\Hypertarget{buttons_8c_ae71fb9e85c3597885ea7cffd3c036a10}\index{buttons.c@{buttons.c}!hold\_duration@{hold\_duration}}
-\index{hold\_duration@{hold\_duration}!buttons.c@{buttons.c}}
-\doxysubsubsection{\texorpdfstring{hold\_duration}{hold\_duration}}
-{\footnotesize\ttfamily \label{buttons_8c_ae71fb9e85c3597885ea7cffd3c036a10} 
-uint32\+\_\+t hold\+\_\+duration}
-
-\Hypertarget{buttons_8c_ad31152730371b8c40b42512b57166fb0}\index{buttons.c@{buttons.c}!is\_pressed@{is\_pressed}}
-\index{is\_pressed@{is\_pressed}!buttons.c@{buttons.c}}
-\doxysubsubsection{\texorpdfstring{is\_pressed}{is\_pressed}}
-{\footnotesize\ttfamily \label{buttons_8c_ad31152730371b8c40b42512b57166fb0} 
-bool is\+\_\+pressed}
-
-\Hypertarget{buttons_8c_a496ee83d1832dc57e64bb987b1ebced6}\index{buttons.c@{buttons.c}!last\_press\_time@{last\_press\_time}}
-\index{last\_press\_time@{last\_press\_time}!buttons.c@{buttons.c}}
-\doxysubsubsection{\texorpdfstring{last\_press\_time}{last\_press\_time}}
-{\footnotesize\ttfamily \label{buttons_8c_a496ee83d1832dc57e64bb987b1ebced6} 
-absolute\+\_\+time\+\_\+t last\+\_\+press\+\_\+time}
-
-\Hypertarget{buttons_8c_a47571161942ae4b5e6b80da2030ac0d8}\index{buttons.c@{buttons.c}!was\_pressed@{was\_pressed}}
-\index{was\_pressed@{was\_pressed}!buttons.c@{buttons.c}}
-\doxysubsubsection{\texorpdfstring{was\_pressed}{was\_pressed}}
-{\footnotesize\ttfamily \label{buttons_8c_a47571161942ae4b5e6b80da2030ac0d8} 
-bool was\+\_\+pressed}
+\doxysubsubsection{\texorpdfstring{button\_states}{button\_states}}
+{\footnotesize\ttfamily \label{buttons_8c_a4ed571fef7c10e69da9ad3e04ada2372} 
+\mbox{\hyperlink{structbutton__state__t}{button\+\_\+state\+\_\+t}} button\+\_\+states\mbox{[}3\mbox{]} = \{0\}\hspace{0.3cm}{\ttfamily [static]}}
 

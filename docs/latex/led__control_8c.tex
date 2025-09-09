@@ -29,8 +29,13 @@ void \mbox{\hyperlink{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab}{set\+\_
 \doxysubsection{Ayrıntılı tanımlama}
 Pico Eğitim Kartı için led ve rgb kontrolü uygulaması 
 
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxysectlink{howto_leds}{LED ve RGB LED}{0} 
+\end{DoxySeeAlso}
 
 
+\label{doc-func-members}
+\Hypertarget{led__control_8c_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{led__control_8c_a30c79869aed334b91ce300139ba2fb92}\index{led\_control.c@{led\_control.c}!init\_led\_pwm@{init\_led\_pwm}}
 \index{init\_led\_pwm@{init\_led\_pwm}!led\_control.c@{led\_control.c}}
@@ -120,10 +125,16 @@ PWM kullanarak RGB LED rengini ayarlar.
 \hline
 {\em green} & Yeşil bileşen (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
 \hline
-{\em blue} & Mavi bileşen (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX) \\
+{\em blue} & Mavi bileşen (0-\/PWM\+\_\+\+DUTY\+\_\+\+MAX)\\
 \hline
 \end{DoxyParams}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f}{init\_rgb\_pwm}}();}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab}{set\_rgb\_color}}(0,\ \mbox{\hyperlink{pico__training__board_8h_a2831df0aa8b292da039c902373faa384}{PWM\_DUTY\_MAX}},\ 0);\ \textcolor{comment}{//\ Yeşil}}
+
+\end{DoxyCode}
+ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

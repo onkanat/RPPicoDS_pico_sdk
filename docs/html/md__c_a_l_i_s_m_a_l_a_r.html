@@ -3,22 +3,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Pico Eğitim Kartı: Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -29,37 +35,44 @@
    </div>
   </td>
  </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Ara" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td></tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
-<!-- Oluşturan Doxygen 1.11.0 -->
+<!-- Oluşturan Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
 </script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
-/* @license-end */
+$(function() { codefold.init(); });
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Ara',false);
-  $(function() { init_search(); });
-});
-/* @license-end */
+$(function(){initNavTree('md__c_a_l_i_s_m_a_l_a_r.html','',''); });
 </script>
-<div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
-/* @license-end */
-</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,16 +94,14 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar</div></div>
+  <div class="headertitle"><div class="title">Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Örnek Programlar</h1>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 1. Basit Mesaj Gösterme</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    <span class="comment">// I2C ve LCD başlatma işlemleri...</span></div>
@@ -104,11 +115,11 @@ $(function(){ initResizable(false); });
 <div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a>(1, 0);</div>
 <div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(<span class="stringliteral">&quot;Pico&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="alcd__i2c_8c_html_a9d654d1616bd1fb53ea0f25f09d499a2"><div class="ttname"><a href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(int line, int position)</div><div class="ttdoc">LCD imlecini belirtilen konuma ayarlar.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:63</div></div>
-<div class="ttc" id="alcd__i2c_8c_html_aa4fb28cf57e5ade779793927a072f056"><div class="ttname"><a href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a></div><div class="ttdeci">void lcd_string(const char *s)</div><div class="ttdoc">LCD'ye bir metin dizisi gönderir.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:82</div></div>
-<div class="ttc" id="alcd__i2c_8c_html_ad235a86241458b1e7b8771688bfdaf9a"><div class="ttname"><a href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a></div><div class="ttdeci">void lcd_clear(void)</div><div class="ttdoc">LCD ekranını temizler.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:53</div></div>
-<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> main.c:196</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+<div class="ttc" id="alcd__i2c_8c_html_a9d654d1616bd1fb53ea0f25f09d499a2"><div class="ttname"><a href="lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(int line, int position)</div><div class="ttdoc">LCD imlecini belirtilen konuma ayarlar.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:64</div></div>
+<div class="ttc" id="alcd__i2c_8c_html_aa4fb28cf57e5ade779793927a072f056"><div class="ttname"><a href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a></div><div class="ttdeci">void lcd_string(const char *s)</div><div class="ttdoc">LCD&#39;ye bir metin dizisi gönderir.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:83</div></div>
+<div class="ttc" id="alcd__i2c_8c_html_ad235a86241458b1e7b8771688bfdaf9a"><div class="ttname"><a href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a></div><div class="ttdeci">void lcd_clear(void)</div><div class="ttdoc">LCD ekranını temizler.</div><div class="ttdef"><b>Definition</b> lcd_i2c.c:54</div></div>
+<div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> main.c:244</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 2. Değişken Değer Gösterme</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> display_temperature(<span class="keywordtype">float</span> temp) {</div>
 <div class="line">    <span class="keywordtype">char</span> buffer[16];</div>
@@ -118,7 +129,7 @@ $(function(){ initResizable(false); });
 <div class="line">    sprintf(buffer, <span class="stringliteral">&quot;%.1f C&quot;</span>, temp);</div>
 <div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(buffer);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 3. Menü Gösterimi</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> show_menu_item(<span class="keyword">const</span> <span class="keywordtype">char</span>* item, <span class="keywordtype">int</span> selected) {</div>
 <div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a">lcd_clear</a>();</div>
@@ -129,7 +140,7 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    <a class="code hl_function" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056">lcd_string</a>(item);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 4. Otomatik Pozisyonlama</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> position_control(<span class="keywordtype">float</span> target_position) {</div>
 <div class="line">    <span class="keywordtype">float</span> current_position = 0;</div>
@@ -139,8 +150,8 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="apico__training__board_8h_html_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419"><div class="ttname"><a href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a></div><div class="ttdeci">@ CW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:87</div></div>
-<div class="ttc" id="apico__training__board_8h_html_ada890c90b978fea21eb7ea4c8c0467b8"><div class="ttname"><a href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a></div><div class="ttdeci">void step_turn(motor_direction_t direction, uint speed, float revolutions)</div><div class="ttdoc">Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder.</div><div class="ttdef"><b>Definition</b> stepper.c:119</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+<div class="ttc" id="apico__training__board_8h_html_ada890c90b978fea21eb7ea4c8c0467b8"><div class="ttname"><a href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a></div><div class="ttdeci">void step_turn(motor_direction_t direction, uint speed, float revolutions)</div><div class="ttdoc">Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder.</div><div class="ttdef"><b>Definition</b> stepper.c:120</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 5. Hız Profili</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> speed_profile(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="comment">// Yavaşça hızlan</span></div>
@@ -153,7 +164,7 @@ $(function(){ initResizable(false); });
 <div class="line">        <a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, i, 0.5);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 6. Sayaç</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> display_counter(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="keywordtype">int</span> counter = 0;</div>
@@ -170,10 +181,20 @@ $(function(){ initResizable(false); });
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Oluşturan <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 /**
  * @file init_functions.c
  * @brief Pico Eğitim Kartı için başlatma fonksiyonlarının implementasyonu
+ * @see \ref howto_index
  */
 
 #include "pico_training_board.h"

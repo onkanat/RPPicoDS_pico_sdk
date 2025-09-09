@@ -1,6 +1,7 @@
 /**
  * @file lcd_i2c.c
  * @brief I2C iletişimi kullanan LCD kontrol fonksiyonları
+ * @see \ref howto_lcd
  */
 
 #include "pico_training_board.h"
@@ -102,3 +103,18 @@ void lcd_init(void) {
     lcd_send_byte(LCD_DISPLAYCONTROL | LCD_DISPLAYON, LCD_COMMAND);
     lcd_clear();
 }
+
+/**
+ * @section lcd_usage LCD Kullanım Örneği
+ *
+ * @code{.c}
+ * // I2C yapılandırması proje genelinde yapılmış varsayılır
+ * lcd_init();
+ * lcd_set_cursor(0, 0);
+ * lcd_string("Merhaba");
+ * lcd_set_cursor(1, 0);
+ * lcd_string("Pico LCD");
+ * @endcode
+ *
+ * @note LCD_ADDR, I2C_PORT ve pin konfigürasyonları `pico_training_board.h` içinde tanımlıdır.
+ */

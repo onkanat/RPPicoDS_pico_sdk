@@ -1,0 +1,22 @@
+\chapter{LED ve RGB LED }
+\hypertarget{howto_leds}{}\label{howto_leds}\index{LED ve RGB LED@{LED ve RGB LED}}
+D
+
+
+\begin{DoxyItemize}
+\item PWM başlatma\+: {\ttfamily \doxylink{led__control_8c_a30c79869aed334b91ce300139ba2fb92}{init\+\_\+led\+\_\+pwm()}}, {\ttfamily \doxylink{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f}{init\+\_\+rgb\+\_\+pwm()}}
+\item Tek LED\+: {\ttfamily set\+\_\+led\+\_\+pwm(gpio, duty)}
+\item RGB\+: {\ttfamily set\+\_\+rgb\+\_\+color(r, g, b)}
+\end{DoxyItemize}\hypertarget{howto_leds_autotoc_md50}{}\doxysection{\texorpdfstring{Hızlı Başlangıç}{Hızlı Başlangıç}}\label{howto_leds_autotoc_md50}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\_board}}();}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_aac9c80df02474bfcf09db96e11f58b7f}{init\_rgb\_pwm}}();}
+\DoxyCodeLine{\mbox{\hyperlink{led__control_8c_ad0bd211c029544866fdfc1ea9dcce2ab}{set\_rgb\_color}}(0,\ \mbox{\hyperlink{pico__training__board_8h_a2831df0aa8b292da039c902373faa384}{PWM\_DUTY\_MAX}},\ 0);\ \textcolor{comment}{//\ yeşil}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{led__control_8c}{led\+\_\+control.\+c} 
+\end{DoxySeeAlso}

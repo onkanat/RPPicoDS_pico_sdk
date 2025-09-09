@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['çalışmalar_0',['Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar',['../md__c_a_l_i_s_m_a_l_a_r.html',1,'']]]
+  ['7_20haberleşme_20modülleri_0',['7 Haberleşme Modülleri',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md17',1,'7. Haberleşme Modülleri'],['../index.html#autotoc_md29',1,'7. Haberleşme Modülleri']]]
 ];

@@ -1,8 +1,8 @@
-\chapter{Raspberry Pi Pico Eğitim Kartı}
+\chapter{Raspberry Pi Pico Eğitim Kartı }
 \hypertarget{index}{}\label{index}\index{Raspberry Pi Pico Eğitim Kartı@{Raspberry Pi Pico Eğitim Kartı}}
 \label{index_md__r_e_a_d_m_e}%
 \Hypertarget{index_md__r_e_a_d_m_e}%
- \hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Genel Bakış}{Genel Bakış}}\label{index_autotoc_md21}
+\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Genel Bakış}{Genel Bakış}}\label{index_autotoc_md21}
 Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-\/\+SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{Pin Grupları ve Fonksiyonları}{Pin Grupları ve Fonksiyonları}}\label{index_autotoc_md22}
 \hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{1. Analog Girişler}{1. Analog Girişler}}\label{index_autotoc_md23}
 
@@ -180,4 +180,70 @@ Tüm komponentler {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63d
 \end{DoxyCode}
 
 
-Bu yeni {\ttfamily \doxylink{_r_e_a_d_m_e_8md}{README.\+md}} dosyası, {\ttfamily \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}} dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır. 
+Bu yeni {\ttfamily \doxylink{_r_e_a_d_m_e_8md}{README.\+md}} dosyası, {\ttfamily \doxylink{pico__training__board_8h}{pico\+\_\+training\+\_\+board.\+h}} dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır.\hypertarget{index_autotoc_md32}{}\doxysection{\texorpdfstring{Dokümantasyon Üretimi (Doxygen)}{Dokümantasyon Üretimi (Doxygen)}}\label{index_autotoc_md32}
+Bu proje Doxygen ile belgelenmiştir. HTML ve La\+TeX çıktıları {\ttfamily ./docs} klasörüne üretilir.
+
+Gereksinimler\+:
+
+
+\begin{DoxyItemize}
+\item Doxygen (1.\+9+ önerilir)
+\item Graphviz (dot) — çağrı/çağıran grafikleri için
+\end{DoxyItemize}
+
+Adımlar (mac\+OS)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Graphviz\ yoksa\ kurun}
+\DoxyCodeLine{brew\ install\ graphviz}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Doxygen’i\ çalıştırın\ (repo\ kökünde)}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+
+
+Çıktılar\+:
+
+
+\begin{DoxyItemize}
+\item HTML\+: {\ttfamily docs/html/index.\+html}
+\item La\+TeX\+: {\ttfamily docs/latex/}
+\end{DoxyItemize}
+
+Notlar\+:
+
+
+\begin{DoxyItemize}
+\item Doxygen Türkçe dil dosyası eski uyarısı görülebilir; işlevi etkilemez.
+\item Dot kaynaklı hatalar varsa önce {\ttfamily docs/html} ve {\ttfamily docs/latex} dizinlerini silip tekrar çalıştırın.
+\end{DoxyItemize}\hypertarget{index_autotoc_md33}{}\doxysection{\texorpdfstring{Sorun Giderme (Doxygen)}{Sorun Giderme (Doxygen)}}\label{index_autotoc_md33}
+
+\begin{DoxyItemize}
+\item Graphviz/dot bulunamadı uyarısı veya grafikler üretilmiyor\+:
+\begin{DoxyItemize}
+\item mac\+OS için Graphviz kurulu olmalı ve {\ttfamily dot -\/V} çalışmalı.
+\item Doxyfile içinde {\ttfamily HAVE\+\_\+\+DOT = YES}, {\ttfamily CALL\+\_\+\+GRAPH = YES}, {\ttfamily CALLER\+\_\+\+GRAPH = YES} olmalı.
+\item Gerekirse docs’u temizleyip yeniden üretin.
+\end{DoxyItemize}
+\item OUTPUT\+\_\+\+LANGUAGE Turkish uyarısı\+:
+\begin{DoxyItemize}
+\item Doxygen Türkçe dil paketi eski olabilir; bu sadece bazı sabit metinlerin İngilizce görünmesine yol açar. İşlevselliği etkilemez.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md34}{}\doxysection{\texorpdfstring{Nasıl Kullanılır (How-\/\+To)}{Nasıl Kullanılır (How-\/\+To)}}\label{index_autotoc_md34}
+Modül bazlı hızlı başlangıç rehberleri için Doxygen içinde şu bölüme bakın\+:
+
+
+\begin{DoxyItemize}
+\item Nasıl Kullanılır İçindekiler\+: howto\+\_\+index
+\begin{DoxyItemize}
+\item Butonlar, LCD, Buzzer, Sensörler, Step Motor, Tuş Takımı, LED/\+RGB
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md35}{}\doxysection{\texorpdfstring{Kalite Kapıları}{Kalite Kapıları}}\label{index_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Build\+: Ninja ile proje derlenmeli (VS Code görevi\+: Compile Project).
+\item Docs\+: Doxygen çalışmalı, Graphviz grafiklerini üretmeli.
+\item Uyarılar\+: Yalnızca Türkçe dil uyarısı kabul edilebilir; diğer uyarılar çözülmeli. 
+\end{DoxyItemize}

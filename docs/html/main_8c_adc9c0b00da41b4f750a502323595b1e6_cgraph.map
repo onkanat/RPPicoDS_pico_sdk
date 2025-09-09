@@ -1,7 +1,7 @@
 <map id="button_callback" name="button_callback">
 <area shape="rect" id="Node000001" title="Button interrupt callback function." alt="" coords="5,31,118,56"/>
-<area shape="rect" id="Node000002" href="$main_8c.html#ac99006d5c9f207df6cede008585d9ded" title="Step motor parametrelerini Core1&#39;e gönderir." alt="" coords="166,5,327,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,150,29,151,34,118,38"/>
-<area shape="rect" id="Node000003" href="$stepper_8c.html#a91a1a65f783ef1d3040dfc483143d3e0" title="Step motor için acil durdurma fonksiyonu." alt="" coords="207,55,286,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,48,192,58,192,63,118,53"/>
+<area shape="rect" id="Node000002" href="$buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf" title="Debounce korumalı temel buton basma kontrolü" alt="" coords="191,5,302,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,175,25,176,30,118,38"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ac99006d5c9f207df6cede008585d9ded" title="Step motor parametrelerini Core1&#39;e gönderir (yön, hız, devir)" alt="" coords="166,55,327,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,48,151,52,150,58,118,53"/>
 </map>

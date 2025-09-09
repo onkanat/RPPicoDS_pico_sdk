@@ -27,8 +27,13 @@ uint16\+\_\+t \mbox{\hyperlink{keypad_8c_aab6ffb1c01ffbbec732bb22dc297a995}{read
 \doxysubsection{Ayrıntılı tanımlama}
 Pico Eğitim Kartı için tuş takımı okuma işlevselliği implementasyonu. 
 
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxysectlink{howto_keypad}{Tuş Takımı (Analog)}{0} 
+\end{DoxySeeAlso}
 
 
+\label{doc-func-members}
+\Hypertarget{keypad_8c_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{keypad_8c_ab2bff14828e4757d93fe24490da85228}\index{keypad.c@{keypad.c}!analog\_button\_pressed@{analog\_button\_pressed}}
 \index{analog\_button\_pressed@{analog\_button\_pressed}!keypad.c@{keypad.c}}
@@ -50,6 +55,9 @@ Bu fonksiyon, bir analog girişi okur ve ADC değerine göre bir düğmeye bası
 \begin{DoxyReturn}{Döndürdüğü değer}
 bool düğmeye basılmışsa true, aksi halde false 
 \end{DoxyReturn}
+\begin{DoxyNote}{Not}
+Minimum 200 ms debounce uygulanır. 
+\end{DoxyNote}
 \Hypertarget{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}\index{keypad.c@{keypad.c}!keypadOku@{keypadOku}}
 \index{keypadOku@{keypadOku}!keypad.c@{keypad.c}}
 \doxysubsubsection{\texorpdfstring{keypadOku()}{keypadOku()}}
@@ -63,9 +71,21 @@ Analog tuş takımını okur ve basılan tuşu döndürür.
 Bu fonksiyon, KEYPAD pinine (GPIO28) bağlı tuş takımından analog değeri okur ve ADC değerini karşılık gelen tuş takımı karakterlerine eşleştirir. Tuş takımı düğmeleri aşağıdaki matris şeklinde düzenlenmiştir\+: \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} 3 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 4 \texorpdfstring{$\vert$}{|} 5 \texorpdfstring{$\vert$}{|} 6 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 7 \texorpdfstring{$\vert$}{|} 8 \texorpdfstring{$\vert$}{|} 9 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\ast$}{*} \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} \# \texorpdfstring{$\vert$}{|}
 
 \begin{DoxyReturn}{Döndürdüğü değer}
-char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0 
+char Basılan tuşa karşılık gelen karakter, hiçbir tuşa basılmamışsa 0
 \end{DoxyReturn}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ k\ =\ \mbox{\hyperlink{keypad_8c_aebb08491c3a53f97ff6598fa73ab671b}{keypadOku}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (k)\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(0,0);}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{char}\ msg[16];}
+\DoxyCodeLine{\ \ snprintf(msg,\ \textcolor{keyword}{sizeof}(msg),\ \textcolor{stringliteral}{"{}Key:\%c"{}},\ k);}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(msg);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -1,10 +1,10 @@
 <map id="display_potentiometer_value" name="display_potentiometer_value">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,154,85"/>
+<area shape="rect" id="Node000001" title="Potansiyometre değerini okuyup LCD’nin ilk satırına yazar." alt="" coords="5,44,154,85"/>
 <area shape="rect" id="Node000002" href="$lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2" title="LCD imlecini belirtilen konuma ayarlar." alt="" coords="386,5,492,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,45,201,37,371,19,371,25,202,42,155,51"/>
 <area shape="rect" id="Node000006" href="$keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur." alt="" coords="224,52,316,78"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="154,62,208,62,208,68,154,68"/>
-<area shape="rect" id="Node000007" href="$main_8c.html#a089559d7b66bf6918dba57f2864a0b15" title=" " alt="" coords="202,101,338,127"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a089559d7b66bf6918dba57f2864a0b15" title="LCD ekrana isim:değer formatında yazı yazar." alt="" coords="202,101,338,127"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="155,81,203,94,202,99,153,87"/>
 <area shape="rect" id="Node000003" href="$lcd__i2c_8c.html#a31b5bba75b8e9f4d67830f7fad24e0c7" title="LCD&#39;ye bir byte veri gönderir." alt="" coords="659,40,764,66"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="493,22,643,42,643,47,492,27"/>
@@ -13,7 +13,7 @@
 <area shape="rect" id="Node000005" href="$lcd__i2c_8c.html#af425a04959f9e02cd8fa53c77dce73e1" title="LCD&#39;nin enable pinini değiştirir." alt="" coords="812,65,937,91"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="765,58,797,63,796,69,764,64"/>
 <area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="937,66,970,61,970,66,938,71"/>
-<area shape="rect" id="Node000008" href="$lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056" title="LCD&#39;ye bir metin dizisi gönderir." alt="" coords="401,77,478,103"/>
+<area shape="rect" id="Node000008" href="$lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056" title="LCD&#39;ye bir metin dizisi gönderir." alt="" coords="400,77,478,103"/>
 <area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="338,102,385,95,386,100,339,107"/>
 <area shape="rect" id="Node000009" href="$lcd__i2c_8c.html#a74043482e6e1083ad180ffd94ddc0109" title="LCD&#39;ye bir karakter gönderir." alt="" coords="540,65,611,91"/>
 <area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="478,84,524,80,525,85,479,89"/>

@@ -1,10 +1,10 @@
 <map id="display_ldr_sensor_value" name="display_ldr_sensor_value">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,135,85"/>
+<area shape="rect" id="Node000001" title="LDR değerini okuyup LCD’nin ikinci satırına yazar." alt="" coords="5,44,135,85"/>
 <area shape="rect" id="Node000002" href="$lcd__i2c_8c.html#a9d654d1616bd1fb53ea0f25f09d499a2" title="LCD imlecini belirtilen konuma ayarlar." alt="" coords="367,5,473,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,46,182,37,270,26,352,19,352,24,271,31,183,42,136,51"/>
-<area shape="rect" id="Node000006" href="$keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur." alt="" coords="205,52,297,78"/>
+<area shape="rect" id="Node000006" href="$keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur." alt="" coords="205,52,296,78"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="135,62,190,62,190,68,135,68"/>
-<area shape="rect" id="Node000007" href="$main_8c.html#a089559d7b66bf6918dba57f2864a0b15" title=" " alt="" coords="183,101,319,127"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a089559d7b66bf6918dba57f2864a0b15" title="LCD ekrana isim:değer formatında yazı yazar." alt="" coords="183,101,319,127"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="136,80,188,94,186,99,134,85"/>
 <area shape="rect" id="Node000003" href="$lcd__i2c_8c.html#a31b5bba75b8e9f4d67830f7fad24e0c7" title="LCD&#39;ye bir byte veri gönderir." alt="" coords="640,40,745,66"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,22,624,42,624,47,473,27"/>

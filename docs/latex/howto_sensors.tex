@@ -1,0 +1,34 @@
+\chapter{Sensörler (PIR + Ultrasonik) }
+\hypertarget{howto_sensors}{}\label{howto_sensors}\index{Sensörler (PIR + Ultrasonik)@{Sensörler (PIR + Ultrasonik)}}
+)
+
+
+\begin{DoxyItemize}
+\item PIR başlatma\+: {\ttfamily \doxylink{pico__training__board_8h_a45e774fb9ec2c151678550b5857847c4}{init\+\_\+pir()}} / Okuma\+: {\ttfamily \doxylink{pico__training__board_8h_a0d72618a59f5257cb5fbe8cbcbe7e5ce}{detect\+\_\+motion()}}
+\item Ultrasonik başlatma\+: {\ttfamily \doxylink{pico__training__board_8h_af38f5ef820a2c8d443994ae6ead83789}{init\+\_\+ultrasonic()}} / Mesafe\+: {\ttfamily \doxylink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\+\_\+distance()}}
+\item Zaman aşımlı bekleme\+: {\ttfamily wait\+\_\+for\+\_\+motion(timeout\+\_\+ms)}
+\item Ortalama mesafe\+: {\ttfamily get\+\_\+average\+\_\+distance(n, delay\+\_\+ms)}
+\end{DoxyItemize}\hypertarget{howto_sensors_autotoc_md52}{}\doxysection{\texorpdfstring{Hızlı Başlangıç}{Hızlı Başlangıç}}\label{howto_sensors_autotoc_md52}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\_board}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{pico__training__board_8h_af61dcd1031a5ef723aadad8a4acd0a9f}{wait\_for\_motion}}(5000))\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{float}\ d\ =\ \mbox{\hyperlink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\_distance}}();}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ d\ <\ 0\ ise\ ölçüm\ başarısız}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{howto_sensors_autotoc_md53}{}\doxysection{\texorpdfstring{Ortalama Alma}{Ortalama Alma}}\label{howto_sensors_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ avg\ =\ \mbox{\hyperlink{pico__training__board_8h_a4628d8d278604d424be0693fd587e661}{get\_average\_distance}}(5,\ 50);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Not}
+{\ttfamily \doxylink{pico__training__board_8h_aa73c79319e4f5c31f9da551784c5e8de}{measure\+\_\+distance()}} dönüşü -\/1.\+0 ise zaman aşımı demektir.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{sensors_8c}{sensors.\+c} 
+\end{DoxySeeAlso}

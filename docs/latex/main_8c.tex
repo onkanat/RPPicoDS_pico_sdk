@@ -23,27 +23,35 @@ void \mbox{\hyperlink{main_8c_ac28c401d97df35ec8dca9ad6535a4815}{init\+\_\+motor
 void \mbox{\hyperlink{main_8c_ab148110bebfeb5468545d63e65d8095f}{core1\+\_\+main}} ()
 \begin{DoxyCompactList}\small\item\em Core 1\textquotesingle{}de çalışacak işlev. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_ac99006d5c9f207df6cede008585d9ded}{send\+\_\+motor\+\_\+parameters}} (\mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} direction, uint speed, float \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}})
-\begin{DoxyCompactList}\small\item\em Step motor parametrelerini Core1\textquotesingle{}e gönderir. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Step motor parametrelerini Core1\textquotesingle{}e gönderir (yön, hız, devir) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_a089559d7b66bf6918dba57f2864a0b15}{write\+\_\+analog\+\_\+to\+\_\+lcd}} (char \texorpdfstring{$\ast$}{*}component\+\_\+name, float value)
-\item 
+\begin{DoxyCompactList}\small\item\em LCD ekrana isim\+:değer formatında yazı yazar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_a99ee5ab42b5701edb8f2d8f245d8b4d8}{display\+\_\+keypad\+\_\+value}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Keypad’den tuş okur ve LCD’ye gösterir. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_ab4495781c60f7539b4bd7ff5209151c3}{display\+\_\+potentiometer\+\_\+value}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Potansiyometre değerini okuyup LCD’nin ilk satırına yazar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_a7d8ac2b24aa8295048d311bb604dd6bd}{display\+\_\+ldr\+\_\+sensor\+\_\+value}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em LDR değerini okuyup LCD’nin ikinci satırına yazar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a477347080371609eeb1d19e8e48314d3}{motion\+\_\+detect}} (void)
+\begin{DoxyCompactList}\small\item\em Hareket algılandığında melodi çalar ve mesafeyi LCD\textquotesingle{}ye yazar. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Değişkenler}
 \begin{DoxyCompactItemize}
 \item 
 static volatile bool \mbox{\hyperlink{main_8c_a3342dc1bf35a68efa2e54726c12d2db5}{motor\+\_\+running}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em Kart üzerindeki motor durumunu tutan değişkenler. \end{DoxyCompactList}\item 
 static volatile bool \mbox{\hyperlink{main_8c_ab94f468efc8e1f9f498be0849b1f99b1}{motor\+\_\+command\+\_\+pending}} = false
 \item 
 static volatile \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} \mbox{\hyperlink{main_8c_ac4e035ec61964b2511285817444feb61}{current\+\_\+direction}} = \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}}
 \item 
 static volatile \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} \mbox{\hyperlink{main_8c_a2bcc4e19f42476b0cdcc9bd16d534366}{requested\+\_\+direction}} = \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8c_ab3ba6556341f3f42a33c00462ce70b8d}{MELODY1}} \mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}
+\item 
+static volatile uint32\+\_\+t \mbox{\hyperlink{main_8c_a275883d877f30a17aee59c1a35bfece1}{last\+\_\+irq\+\_\+time\+\_\+us}} = 0
+\item 
+static const uint32\+\_\+t \mbox{\hyperlink{main_8c_ae94bf25706d7dc5b9306838153889670}{IRQ\+\_\+\+MIN\+\_\+\+INTERVAL\+\_\+\+US}} = 50000
 \item 
 float \mbox{\hyperlink{main_8c_a723654056ec2af24511008f45c2058fe}{revolutions}}
 \end{DoxyCompactItemize}
@@ -56,10 +64,12 @@ Ana program, adım motoru kontrolü için Raspberry Pi Pico Eğitim Kartı\textq
 Hakan KILIÇ\+ASLAN 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Tarih}
-2024-\/12-\/7 
+2024-\/02-\/07 
 \end{DoxyDate}
 
 
+\label{doc-func-members}
+\Hypertarget{main_8c_doc-func-members}
 \doxysubsection{Fonksiyon Dokümantasyonu}
 \Hypertarget{main_8c_adc9c0b00da41b4f750a502323595b1e6}\index{main.c@{main.c}!button\_callback@{button\_callback}}
 \index{button\_callback@{button\_callback}!main.c@{main.c}}
@@ -71,6 +81,15 @@ void button\+\_\+callback (\begin{DoxyParamCaption}\item[{uint}]{gpio}{, }\item[
 
 Button interrupt callback function. 
 
+FIXME\+: Birden fazla komut geliyor kontrolü yapılacak !!!!
+
+Buton kesme geri çağrısı 
+\begin{DoxyParams}{Parametreler}
+{\em gpio} & Tetikleyen GPIO pini \\
+\hline
+{\em events} & IRQ olay bayrakları \\
+\hline
+\end{DoxyParams}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -113,9 +132,9 @@ Bu fonksiyon sonsuz bir döngüde çalışır ve Core 0\textquotesingle{}ın ver
 
 multicore\+\_\+fifo\+\_\+pop\+\_\+blocking() 
 
-multicore\+\_\+fifo\+\_\+push\+\_\+blocking() 
+multicore\+\_\+fifo\+\_\+push\+\_\+blocking()
 \end{DoxySeeAlso}
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+Core1 ana döngüsü; FIFO üzerinden gelen step motor komutlarını işler Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -134,6 +153,10 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{display\_keypad\_value()}{display\_keypad\_value()}}
 {\footnotesize\ttfamily \label{main_8c_a99ee5ab42b5701edb8f2d8f245d8b4d8} 
 void display\+\_\+keypad\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Keypad’den tuş okur ve LCD’ye gösterir. 
 
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
@@ -155,6 +178,10 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 {\footnotesize\ttfamily \label{main_8c_a7d8ac2b24aa8295048d311bb604dd6bd} 
 void display\+\_\+ldr\+\_\+sensor\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+LDR değerini okuyup LCD’nin ikinci satırına yazar. 
+
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -174,6 +201,10 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{display\_potentiometer\_value()}{display\_potentiometer\_value()}}
 {\footnotesize\ttfamily \label{main_8c_ab4495781c60f7539b4bd7ff5209151c3} 
 void display\+\_\+potentiometer\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Potansiyometre değerini okuyup LCD’nin ilk satırına yazar. 
 
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
@@ -199,7 +230,9 @@ void init\+\_\+motor\+\_\+buttons (\begin{DoxyParamCaption}\item[{void}]{}{}\end
 
 Initialize button interrupts for motor control. 
 
-Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+FIXME\+: buton callbak değişecek birden fazla komut gidiyor !!!
+
+Motor kontrolü için buton kesmelerini başlatır Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -233,6 +266,23 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \includegraphics[width=350pt]{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{main_8c_a477347080371609eeb1d19e8e48314d3}\index{main.c@{main.c}!motion\_detect@{motion\_detect}}
+\index{motion\_detect@{motion\_detect}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{motion\_detect()}{motion\_detect()}}
+{\footnotesize\ttfamily \label{main_8c_a477347080371609eeb1d19e8e48314d3} 
+void motion\+\_\+detect (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Hareket algılandığında melodi çalar ve mesafeyi LCD\textquotesingle{}ye yazar. 
+
+Bu fonksiyon için çağırılma şeması\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a477347080371609eeb1d19e8e48314d3_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{main_8c_ac99006d5c9f207df6cede008585d9ded}\index{main.c@{main.c}!send\_motor\_parameters@{send\_motor\_parameters}}
 \index{send\_motor\_parameters@{send\_motor\_parameters}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{send\_motor\_parameters()}{send\_motor\_parameters()}}
@@ -241,32 +291,17 @@ void send\+\_\+motor\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hype
 
 
 
-Step motor parametrelerini Core1\textquotesingle{}e gönderir. 
-
-Bu fonksiyon, step motor kontrolü için gerekli parametreleri Core0\textquotesingle{}dan Core1\textquotesingle{}e multicore FIFO üzerinden gönderir. Gönderilen parametreler\+:
-\begin{DoxyEnumerate}
-\item Motor dönüş yönü
-\item Motor hızı
-\item Devir sayısı
-\end{DoxyEnumerate}
+Step motor parametrelerini Core1\textquotesingle{}e gönderir (yön, hız, devir) 
 
 
 \begin{DoxyParams}{Parametreler}
-{\em direction} & Motor dönüş yönü (CW\+: saat yönü, CCW\+: saat yönü tersi) \\
+{\em direction} & Motor yönü \\
 \hline
-{\em speed} & Motor hızı (adım/saniye) \\
+{\em speed} & Adım/saniye \\
 \hline
-{\em revolutions} & Yapılacak devir sayısı\\
+{\em revolutions} & Devir sayısı (float) \\
 \hline
 \end{DoxyParams}
-\begin{DoxyNote}{Not}
-Fonksiyon, her parametre için FIFO\textquotesingle{}ya bloklu gönderim yapar ve Core1\textquotesingle{}in verileri almasını bekler
-\end{DoxyNote}
-\begin{DoxySeeAlso}{Ayrıca Bakınız}
-\doxylink{main_8c_ab148110bebfeb5468545d63e65d8095f}{core1\+\_\+main()} Core1\textquotesingle{}de çalışan ve bu parametreleri alan fonksiyon 
-
-\doxylink{pico__training__board_8h_ada890c90b978fea21eb7ea4c8c0467b8}{step\+\_\+turn()} Gönderilen parametrelerle motoru kontrol eden fonksiyon 
-\end{DoxySeeAlso}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -280,6 +315,17 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 {\footnotesize\ttfamily \label{main_8c_a089559d7b66bf6918dba57f2864a0b15} 
 void write\+\_\+analog\+\_\+to\+\_\+lcd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{component\+\_\+name}{, }\item[{float}]{value}{}\end{DoxyParamCaption})}
 
+
+
+LCD ekrana isim\+:değer formatında yazı yazar. 
+
+
+\begin{DoxyParams}{Parametreler}
+{\em component\+\_\+name} & Bileşen adı (ör. POT\+\_\+1) \\
+\hline
+{\em value} & Yazdırılacak değer \\
+\hline
+\end{DoxyParams}
 Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -296,6 +342,8 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 \end{figure}
 
 
+\label{doc-var-members}
+\Hypertarget{main_8c_doc-var-members}
 \doxysubsection{Değişken Dokümantasyonu}
 \Hypertarget{main_8c_ac4e035ec61964b2511285817444feb61}\index{main.c@{main.c}!current\_direction@{current\_direction}}
 \index{current\_direction@{current\_direction}!main.c@{main.c}}
@@ -303,6 +351,32 @@ Bu fonksiyon için çağırılma şeması\+:\nopagebreak
 {\footnotesize\ttfamily \label{main_8c_ac4e035ec61964b2511285817444feb61} 
 volatile \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abd}{motor\+\_\+direction\+\_\+t}} current\+\_\+direction = \mbox{\hyperlink{pico__training__board_8h_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419}{CW}}\hspace{0.3cm}{\ttfamily [static]}}
 
+\Hypertarget{main_8c_ae94bf25706d7dc5b9306838153889670}\index{main.c@{main.c}!IRQ\_MIN\_INTERVAL\_US@{IRQ\_MIN\_INTERVAL\_US}}
+\index{IRQ\_MIN\_INTERVAL\_US@{IRQ\_MIN\_INTERVAL\_US}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IRQ\_MIN\_INTERVAL\_US}{IRQ\_MIN\_INTERVAL\_US}}
+{\footnotesize\ttfamily \label{main_8c_ae94bf25706d7dc5b9306838153889670} 
+const uint32\+\_\+t IRQ\+\_\+\+MIN\+\_\+\+INTERVAL\+\_\+\+US = 50000\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{main_8c_a275883d877f30a17aee59c1a35bfece1}\index{main.c@{main.c}!last\_irq\_time\_us@{last\_irq\_time\_us}}
+\index{last\_irq\_time\_us@{last\_irq\_time\_us}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{last\_irq\_time\_us}{last\_irq\_time\_us}}
+{\footnotesize\ttfamily \label{main_8c_a275883d877f30a17aee59c1a35bfece1} 
+volatile uint32\+\_\+t last\+\_\+irq\+\_\+time\+\_\+us = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{main_8c_ab3ba6556341f3f42a33c00462ce70b8d}\index{main.c@{main.c}!MELODY1@{MELODY1}}
+\index{MELODY1@{MELODY1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MELODY1}{MELODY1}}
+{\footnotesize\ttfamily \label{main_8c_ab3ba6556341f3f42a33c00462ce70b8d} 
+const char\texorpdfstring{$\ast$}{*} MELODY1\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries İlk değer\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \{\textcolor{stringliteral}{"{}D"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \{\textcolor{stringliteral}{"{}E"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \{\textcolor{stringliteral}{"{}F"{}},\ \textcolor{stringliteral}{"{}4"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}G"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \{\textcolor{stringliteral}{"{}A"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \{\textcolor{stringliteral}{"{}B"{}},\ \textcolor{stringliteral}{"{}4"{}}\},\ \{\textcolor{stringliteral}{"{}C"{}},\ \textcolor{stringliteral}{"{}5"{}}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
 \Hypertarget{main_8c_ab94f468efc8e1f9f498be0849b1f99b1}\index{main.c@{main.c}!motor\_command\_pending@{motor\_command\_pending}}
 \index{motor\_command\_pending@{motor\_command\_pending}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{motor\_command\_pending}{motor\_command\_pending}}
@@ -314,6 +388,10 @@ volatile bool motor\+\_\+command\+\_\+pending = false\hspace{0.3cm}{\ttfamily [s
 \doxysubsubsection{\texorpdfstring{motor\_running}{motor\_running}}
 {\footnotesize\ttfamily \label{main_8c_a3342dc1bf35a68efa2e54726c12d2db5} 
 volatile bool motor\+\_\+running = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Kart üzerindeki motor durumunu tutan değişkenler. 
 
 \Hypertarget{main_8c_a2bcc4e19f42476b0cdcc9bd16d534366}\index{main.c@{main.c}!requested\_direction@{requested\_direction}}
 \index{requested\_direction@{requested\_direction}!main.c@{main.c}}

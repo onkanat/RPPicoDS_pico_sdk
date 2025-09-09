@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['çıkışı_0',['Çıkışı',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md14',1,'4. Ses Çıkışı'],['../index.html#autotoc_md26',1,'4. Ses Çıkışı']]],
-  ['çıkış_20pin_20tanımlamaları_1',['LED Çıkış Pin Tanımlamaları',['../group__led__outputs.html',1,'']]],
-  ['çıkışları_2',['Çıkışları',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md13',1,'3. LED Çıkışları'],['../index.html#autotoc_md25',1,'3. LED Çıkışları']]],
-  ['çalışmalar_3',['Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar',['../md__c_a_l_i_s_m_a_l_a_r.html',1,'']]]
+  ['wait_5ffor_5fbutton_5fpress_0',['wait_for_button_press',['../buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047',1,'wait_for_button_press(uint32_t timeout_ms):&#160;buttons.c'],['../pico__training__board_8h.html#a00fcf54730781bcc9d059ee8542bb047',1,'wait_for_button_press(uint32_t timeout_ms):&#160;buttons.c']]],
+  ['wait_5ffor_5fmotion_1',['wait_for_motion',['../pico__training__board_8h.html#af61dcd1031a5ef723aadad8a4acd0a9f',1,'wait_for_motion(uint32_t timeout_ms):&#160;sensors.c'],['../sensors_8c.html#af61dcd1031a5ef723aadad8a4acd0a9f',1,'wait_for_motion(uint32_t timeout_ms):&#160;sensors.c']]],
+  ['was_5fpressed_2',['was_pressed',['../structbutton__state__t.html#a92120275eeb99a8ec45b801fb2845e32',1,'button_state_t']]],
+  ['write_5fanalog_5fto_5flcd_3',['write_analog_to_lcd',['../main_8c.html#a089559d7b66bf6918dba57f2864a0b15',1,'main.c']]]
 ];

@@ -1,0 +1,26 @@
+\chapter{LCD (I2C) }
+\hypertarget{howto_lcd}{}\label{howto_lcd}\index{LCD (I2C)@{LCD (I2C)}}
+)
+
+
+\begin{DoxyItemize}
+\item Başlatma\+: {\ttfamily \doxylink{init__functions_8c_aafed2ade168a085630c2fe8d776432f2}{init\+\_\+lcd()}} veya doğrudan {\ttfamily \doxylink{lcd__i2c_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init()}} (projede {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} içinde çağrılır)
+\item Metin yazma\+: {\ttfamily \doxylink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\+\_\+string(const char \texorpdfstring{$\ast$}{*}s)}}
+\item İmleç\+: {\ttfamily lcd\+\_\+set\+\_\+cursor(line, pos)}
+\item Temizleme\+: {\ttfamily \doxylink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear()}}
+\end{DoxyItemize}\hypertarget{howto_lcd_autotoc_md48}{}\doxysection{\texorpdfstring{Hızlı Başlangıç}{Hızlı Başlangıç}}\label{howto_lcd_autotoc_md48}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\_board}}();}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_clear}}();}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(0,\ 0);}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Merhaba"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_a9d654d1616bd1fb53ea0f25f09d499a2}{lcd\_set\_cursor}}(1,\ 0);}
+\DoxyCodeLine{\mbox{\hyperlink{lcd__i2c_8c_aa4fb28cf57e5ade779793927a072f056}{lcd\_string}}(\textcolor{stringliteral}{"{}Pico\ LCD"{}});}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{lcd__i2c_8c}{lcd\+\_\+i2c.\+c} 
+\end{DoxySeeAlso}

@@ -1,0 +1,71 @@
+\chapter{Butonlar }
+\hypertarget{howto_buttons}{}\label{howto_buttons}\index{Butonlar@{Butonlar}}
+r
+
+Bu sayfa, kart üzerindeki YUKARI, TAMAM ve AŞ\+AĞI butonlarının kullanımını özetler.
+
+
+\begin{DoxyItemize}
+\item Başlatma\+: {\ttfamily \doxylink{buttons_8c_afe0b498404852847e48c5539c4d651e8}{init\+\_\+buttons()}}
+\item Olay kontrolü\+: {\ttfamily button\+\_\+pressed(gpio)}, {\ttfamily check\+\_\+button\+\_\+event(gpio, event)}
+\item Bekleme\+: {\ttfamily wait\+\_\+for\+\_\+button\+\_\+press(timeout\+\_\+ms)}
+\end{DoxyItemize}\hypertarget{howto_buttons_autotoc_md37}{}\doxysection{\texorpdfstring{Hızlı Başlangıç}{Hızlı Başlangıç}}\label{howto_buttons_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pico__training__board_8h}{pico\_training\_board.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\_board}}();}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{buttons_8c_afe0b498404852847e48c5539c4d651e8}{init\_buttons}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_gaca338dbd19d7940923334629f6e5f3b7}{LED\_GREEN}},\ 1);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga024aa4942c463926f0b7e023e7776421}{BUTTON\_OK}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_gae3c73853c6d0a1eca2c7d9797f6494ea}{LED\_YELLOW}},\ 1);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7e8516b8781963aa69154f9fc67b658a}{BUTTON\_DOWN}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ gpio\_put(\mbox{\hyperlink{group__led__outputs_ga31e20330f8ce94e0dd10b005a15c5898}{LED\_RED}},\ 1);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ tight\_loop\_contents();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{howto_buttons_autotoc_md38}{}\doxysection{\texorpdfstring{IRQ Tabanlı Kullanım (Anti-\/\+Repeat)}{IRQ Tabanlı Kullanım (Anti-\/\+Repeat)}}\label{howto_buttons_autotoc_md38}
+{\ttfamily \doxylink{main_8c}{main.\+c}} içinde örnek kesme geri çağrısı 50 ms anti-\/repeat kapısı uygular.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_adc9c0b00da41b4f750a502323595b1e6}{button\_callback}}(uint\ gpio,\ uint32\_t\ events)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{main_8c_a275883d877f30a17aee59c1a35bfece1}{last\_irq\_time\_us}};\ }
+\DoxyCodeLine{\ \ uint32\_t\ now\ =\ time\_us\_32();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ ((now\ -\/\ \mbox{\hyperlink{main_8c_a275883d877f30a17aee59c1a35bfece1}{last\_irq\_time\_us}})\ <\ 50000)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{main_8c_a275883d877f30a17aee59c1a35bfece1}{last\_irq\_time\_us}}\ =\ now;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (gpio\ ==\ \mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}}\ \&\&\ \mbox{\hyperlink{buttons_8c_a6863517b8b3b39834aa6aaaab29c4eaf}{button\_pressed}}(\mbox{\hyperlink{group__button__inputs_ga7639b378d6f757175ed0f9e8552e6cea}{BUTTON\_UP}}))\ \{\ \textcolor{comment}{/*\ ...\ */}\ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{howto_buttons_autotoc_md39}{}\doxysection{\texorpdfstring{Olay Türleri}{Olay Türleri}}\label{howto_buttons_autotoc_md39}
+{\ttfamily check\+\_\+button\+\_\+event(gpio, event)} ile\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily BUTTON\+\_\+\+PRESSED}\+: ilk basışta bir kez
+\item {\ttfamily BUTTON\+\_\+\+RELEASED}\+: bırakıldığında bir kez
+\item {\ttfamily BUTTON\+\_\+\+HELD}\+: \texorpdfstring{$>$}{>}1 s basılı
+\end{DoxyItemize}\hypertarget{howto_buttons_autotoc_md40}{}\doxysection{\texorpdfstring{Bloklu Bekleme}{Bloklu Bekleme}}\label{howto_buttons_autotoc_md40}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint\ pressed\ =\ \mbox{\hyperlink{buttons_8c_a00fcf54730781bcc9d059ee8542bb047}{wait\_for\_button\_press}}(3000);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pressed\ !=\ UINT\_MAX)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ buton\ basıldı}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{buttons_8c}{buttons.\+c} 
+\end{DoxySeeAlso}

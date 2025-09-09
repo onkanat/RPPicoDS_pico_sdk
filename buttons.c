@@ -6,24 +6,23 @@
  * 
  * Bu dosya, Pico Eğitim Kartı üzerindeki buton girişleri için fonksiyonlar sağlar,
  * debounce koruması, basma algılama ve zamanlama özelliklerini içerir.
+ *
+ * @see \ref howto_buttons
  */
 #include "pico_training_board.h"
 
 /**
- * @struct button_state
- * @brief Bir butonun durumunu ve zamanlamasını takip eden yapı
- * 
- * @var last_press_time Son kayıtlı buton basma zamanı
- * @var is_pressed Butonun mevcut basılı durumu
- * @var was_pressed Butonun önceki basılı durumu
- * @var hold_duration Butonun basılı tutulma süresi (milisaniye cinsinden)
+ * @brief Bir butonun durumunu ve zamanlamasını takip eden yapı tipi
  */
-static struct {
-    absolute_time_t last_press_time;
-    bool is_pressed;
-    bool was_pressed;
-    uint32_t hold_duration;
-} button_states[3] = {0}; // YUKARI, TAMAM ve AŞAĞI butonları için dizi
+typedef struct {
+    absolute_time_t last_press_time; ///< Son kayıtlı buton basma zamanı
+    bool is_pressed;                 ///< Butonun mevcut basılı durumu
+    bool was_pressed;                ///< Butonun önceki basılı durumu
+    uint32_t hold_duration;          ///< Basılı tutulma süresi (ms)
+} button_state_t;
+
+// YUKARI, TAMAM ve AŞAĞI butonları için durum dizisi
+static button_state_t button_states[3] = {0};
 
 /**
  * @brief Debounce korumalı temel buton basma kontrolü

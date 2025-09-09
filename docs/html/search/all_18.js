@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['tanımlamaları_0',['Tanımlamaları',['../group__analog__inputs.html',1,'Analog Giriş Pin Tanımlamaları'],['../group__button__inputs.html',1,'Buton Giriş Pin Tanımlamaları'],['../group__led__outputs.html',1,'LED Çıkış Pin Tanımlamaları']]],
-  ['tanımlamaları_20ve_20kontrolleri_1',['Adım Motoru Tanımlamaları ve Kontrolleri',['../group__stepper__motor.html',1,'']]],
-  ['trigger_5fpulse_2',['TRIGGER_PULSE',['../sensors_8c.html#a86e97eae3eb2560c642cf1085e6a7642',1,'sensors.c']]]
+  ['sayaç_0',['6. Sayaç',['../md__c_a_l_i_s_m_a_l_a_r.html#autotoc_md7',1,'']]],
+  ['send_5fmotor_5fparameters_1',['send_motor_parameters',['../main_8c.html#ac99006d5c9f207df6cede008585d9ded',1,'send_motor_parameters(motor_direction_t direction, uint speed, float revolutions):&#160;main.c'],['../pico__training__board_8h.html#ac99006d5c9f207df6cede008585d9ded',1,'send_motor_parameters(motor_direction_t direction, uint speed, float revolutions):&#160;main.c']]],
+  ['sensör_20modülleri_2',['Sensör Modülleri',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md16',1,'6. Sensör Modülleri'],['../index.html#autotoc_md28',1,'6. Sensör Modülleri']]],
+  ['sensörler_20pir_20ultrasonik_3',['Sensörler (PIR + Ultrasonik)',['../howto_sensors.html',1,'']]],
+  ['sensor_5ftimeout_4',['SENSOR_TIMEOUT',['../sensors_8c.html#a14a2da9c8115152359067820613055ae',1,'sensors.c']]],
+  ['sensors_2ec_5',['sensors.c',['../sensors_8c.html',1,'']]],
+  ['sensors_2emd_6',['sensors.md',['../sensors_8md.html',1,'']]],
+  ['ses_20çıkışı_7',['Ses Çıkışı',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md14',1,'4. Ses Çıkışı'],['../index.html#autotoc_md26',1,'4. Ses Çıkışı']]],
+  ['set_5fled_5fpwm_8',['set_led_pwm',['../led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452',1,'set_led_pwm(uint gpio, uint16_t duty):&#160;led_control.c'],['../pico__training__board_8h.html#a63002d9e1a92cb83d1ece6899b442452',1,'set_led_pwm(uint gpio, uint16_t duty):&#160;led_control.c']]],
+  ['set_5fpwm_5ffrequency_9',['set_pwm_frequency',['../buzzer_8c.html#abdecc1e0fa9f62344cd44d0797ed27d9',1,'set_pwm_frequency(uint slice_num, float frequency):&#160;buzzer.c'],['../pico__training__board_8h.html#abdecc1e0fa9f62344cd44d0797ed27d9',1,'set_pwm_frequency(uint slice_num, float frequency):&#160;buzzer.c']]],
+  ['set_5frgb_5fcolor_10',['set_rgb_color',['../led__control_8c.html#ad0bd211c029544866fdfc1ea9dcce2ab',1,'led_control.c']]],
+  ['sorun_20giderme_20doxygen_11',['Sorun Giderme (Doxygen)',['../index.html#autotoc_md33',1,'']]],
+  ['sound_5fspeed_12',['SOUND_SPEED',['../sensors_8c.html#ae73d78f8ad1955fc7efc65b109987632',1,'sensors.c']]],
+  ['step_20motor_13',['Step Motor',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md15',1,'5. Step Motor'],['../index.html#autotoc_md27',1,'5. Step Motor'],['../howto_stepper.html',1,'Step Motor']]],
+  ['step_5fdelay_5fmax_14',['STEP_DELAY_MAX',['../group__stepper__motor.html#ga62713d3ac08413665d18d1c7246d558e',1,'pico_training_board.h']]],
+  ['step_5fdelay_5fmin_15',['STEP_DELAY_MIN',['../group__stepper__motor.html#ga4fa7ab105d91ee43c6cf688c07df5606',1,'pico_training_board.h']]],
+  ['step_5fmotor_5fa1_16',['STEP_MOTOR_A1',['../group__stepper__motor.html#ga50001e7c29a28cd671033e08aa6d0a70',1,'pico_training_board.h']]],
+  ['step_5fmotor_5fa2_17',['STEP_MOTOR_A2',['../group__stepper__motor.html#ga026044984617dae4a9802188e6af7396',1,'pico_training_board.h']]],
+  ['step_5fmotor_5fb1_18',['STEP_MOTOR_B1',['../group__stepper__motor.html#ga689c19f870f487db42b6cdc7764fa6ef',1,'pico_training_board.h']]],
+  ['step_5fmotor_5fb2_19',['STEP_MOTOR_B2',['../group__stepper__motor.html#ga05840ec752b5cbc2337ff7e76bf96940',1,'pico_training_board.h']]],
+  ['step_5fsequence_20',['step_sequence',['../stepper_8c.html#a9edcd7c81b99b7127211b0d4d0d69ef0',1,'stepper.c']]],
+  ['step_5fstop_21',['step_stop',['../pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0',1,'step_stop(void):&#160;stepper.c'],['../stepper_8c.html#a91a1a65f783ef1d3040dfc483143d3e0',1,'step_stop(void):&#160;stepper.c']]],
+  ['step_5fturn_22',['step_turn',['../pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8',1,'step_turn(motor_direction_t direction, uint speed, float revolutions):&#160;stepper.c'],['../stepper_8c.html#ada890c90b978fea21eb7ea4c8c0467b8',1,'step_turn(motor_direction_t direction, uint speed, float revolutions):&#160;stepper.c']]],
+  ['stepper_2ec_23',['stepper.c',['../stepper_8c.html',1,'']]],
+  ['stepper_2emd_24',['stepper.md',['../stepper_8md.html',1,'']]],
+  ['steps_5fper_5frev_25',['STEPS_PER_REV',['../group__stepper__motor.html#ga2d05bcc021d66ae0458c269139222edc',1,'pico_training_board.h']]]
 ];

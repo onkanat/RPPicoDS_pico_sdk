@@ -1,5 +1,7 @@
 <map id="detect_motion" name="detect_motion">
-<area shape="rect" id="Node000001" title="PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder." alt="" coords="167,5,270,31"/>
-<area shape="rect" id="Node000002" href="$sensors_8c.html#af61dcd1031a5ef723aadad8a4acd0a9f" title="Zaman aşımı ile hareket algılamayı bekler." alt="" coords="5,5,119,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,21,119,21,119,16,151,16"/>
+<area shape="rect" id="Node000001" title="PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder." alt="" coords="167,31,270,56"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a477347080371609eeb1d19e8e48314d3" title="Hareket algılandığında melodi çalar ve mesafeyi LCD&#39;ye yazar." alt="" coords="10,5,114,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,35,114,29,114,24,152,30"/>
+<area shape="rect" id="Node000003" href="$sensors_8c.html#af61dcd1031a5ef723aadad8a4acd0a9f" title="Zaman aşımı ile hareket algılamayı bekler." alt="" coords="5,55,119,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,56,120,61,119,56,151,51"/>
 </map>

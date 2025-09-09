@@ -1,0 +1,31 @@
+\chapter{Buzzer }
+\hypertarget{howto_buzzer}{}\label{howto_buzzer}\index{Buzzer@{Buzzer}}
+r
+
+
+\begin{DoxyItemize}
+\item Başlatma\+: {\ttfamily \doxylink{buzzer_8c_abeed4b38208cb0179851d68db47de935}{init\+\_\+buzzer\+\_\+pwm()}} (projede {\ttfamily \doxylink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\+\_\+board()}} çağırır)
+\item Tek nota\+: {\ttfamily play\+\_\+note(frequency, duration\+\_\+ms)}
+\item Melodi\+: {\ttfamily \doxylink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\+\_\+notes(const char \texorpdfstring{$\ast$}{*}notes\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, int num\+\_\+notes, int duration\+\_\+ms)}}
+\end{DoxyItemize}\hypertarget{howto_buzzer_autotoc_md42}{}\doxysection{\texorpdfstring{Frekansla Çalma}{Frekansla Çalma}}\label{howto_buzzer_autotoc_md42}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{init__functions_8c_a98133f3bc8c62b912d63da405e2adb15}{init\_board}}();}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_a32887df3cd0b0fd7bad3aefa236f9738}{play\_note}}(440.0f,\ 300);\ \textcolor{comment}{//\ A4,\ 300\ ms}}
+
+\end{DoxyCode}
+\hypertarget{howto_buzzer_autotoc_md43}{}\doxysection{\texorpdfstring{Nota + Oktav ile Çalma}{Nota + Oktav ile Çalma}}\label{howto_buzzer_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *MELODY[][2]\ =\ \{\{\textcolor{stringliteral}{"{}C"{}},\textcolor{stringliteral}{"{}4"{}}\},\{\textcolor{stringliteral}{"{}E"{}},\textcolor{stringliteral}{"{}4"{}}\},\{\textcolor{stringliteral}{"{}G"{}},\textcolor{stringliteral}{"{}4"{}}\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(MELODY,\ (\textcolor{keywordtype}{int})(\textcolor{keyword}{sizeof}(MELODY)/\textcolor{keyword}{sizeof}(MELODY[0])),\ 200);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Not}
+Nota adında diyez kullanın (Db yerine C\#).
+\end{DoxyNote}
+\begin{DoxySeeAlso}{Ayrıca Bakınız}
+\doxylink{buzzer_8c}{buzzer.\+c} 
+\end{DoxySeeAlso}

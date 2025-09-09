@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: Step Motor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">Step Motor </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>r</p>
+<ul>
+<li>Başlatma: <span class="tt"><a class="el" href="pico__training__board_8h.html#a8d8f8f8a9dde232c7092dbf83cc101af" title="Step motor GPIO pinlerini başlatır.">init_step_motor()</a></span> (gerekirse)</li>
+<li>Dönüş: <span class="tt">step_turn(direction, speed, revolutions)</span></li>
+<li>Acil durdur: <span class="tt"><a class="el" href="pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0" title="Step motor için acil durdurma fonksiyonu.">step_stop()</a></span></li>
+<li>Durum: <span class="tt"><a class="el" href="pico__training__board_8h.html#a968353a2852db9fae36f19a4985e2906" title="Motorun çalışıp çalışmadığını kontrol eder.">is_motor_running()</a></span>, <span class="tt"><a class="el" href="pico__training__board_8h.html#ac91c34166ec5420fe03bc8e353b52354" title="Motorun mevcut durumunu döndürür.">get_motor_state()</a></span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md55"></a>
+Core1 ile Kullanım (Önerilen)</h1>
+<div class="fragment"><div class="line">multicore_launch_core1(<a class="code hl_function" href="main_8c.html#ab148110bebfeb5468545d63e65d8095f">core1_main</a>);</div>
+<div class="line"><a class="code hl_function" href="main_8c.html#ac99006d5c9f207df6cede008585d9ded">send_motor_parameters</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, 900, 2.0f);</div>
+<div class="ttc" id="amain_8c_html_ab148110bebfeb5468545d63e65d8095f"><div class="ttname"><a href="main_8c.html#ab148110bebfeb5468545d63e65d8095f">core1_main</a></div><div class="ttdeci">void core1_main()</div><div class="ttdoc">Core 1&#39;de çalışacak işlev.</div><div class="ttdef"><b>Definition</b> main.c:117</div></div>
+<div class="ttc" id="amain_8c_html_ac99006d5c9f207df6cede008585d9ded"><div class="ttname"><a href="main_8c.html#ac99006d5c9f207df6cede008585d9ded">send_motor_parameters</a></div><div class="ttdeci">void send_motor_parameters(motor_direction_t direction, uint speed, float revolutions)</div><div class="ttdoc">Step motor parametrelerini Core1&#39;e gönderir (yön, hız, devir)</div><div class="ttdef"><b>Definition</b> main.c:147</div></div>
+<div class="ttc" id="apico__training__board_8h_html_a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419"><div class="ttname"><a href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a></div><div class="ttdeci">@ CW</div><div class="ttdef"><b>Definition</b> pico_training_board.h:87</div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
+Doğrudan Çağrı</h1>
+<div class="fragment"><div class="line"><a class="code hl_function" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a>(<a class="code hl_enumvalue" href="pico__training__board_8h.html#a6dd01ecf36ba5b10af977e38a9168abda9d07bb3abb37dd009c410769de235419">CW</a>, 600, 1.5f);</div>
+<div class="ttc" id="apico__training__board_8h_html_ada890c90b978fea21eb7ea4c8c0467b8"><div class="ttname"><a href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8">step_turn</a></div><div class="ttdeci">void step_turn(motor_direction_t direction, uint speed, float revolutions)</div><div class="ttdoc">Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder.</div><div class="ttdef"><b>Definition</b> stepper.c:120</div></div>
+</div><!-- fragment --><dl class="section warning"><dt>Uyarı</dt><dd><span class="tt"><a class="el" href="pico__training__board_8h.html#a91a1a65f783ef1d3040dfc483143d3e0" title="Step motor için acil durdurma fonksiyonu.">step_stop()</a></span> aniden durdurur; mekanik stres olabilir.</dd></dl>
+<dl class="section see"><dt>Ayrıca Bakınız</dt><dd><a class="el" href="stepper_8c.html" title="Step motor kontrol fonksiyonları">stepper.c</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

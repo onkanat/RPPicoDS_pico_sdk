@@ -3,15 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Pico Eğitim Kartı: Raspberry Pi Pico Eğitim Kartı</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -33,35 +31,24 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Oluşturan Doxygen 1.11.0 -->
+<!-- Oluşturan Doxygen 1.14.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
 </script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
-/* @license-end */
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','Ara',false);
   $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="doc-content">
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
-/* @license-end */
-</script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -87,13 +74,13 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Raspberry Pi Pico Eğitim Kartı </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> </p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 Genel Bakış</h1>
 <p>Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.</p>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 Pin Grupları ve Fonksiyonları</h1>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 1. Analog Girişler</h2>
 <ul>
 <li><p class="startli"><b>Keypad (GPIO28)</b></p><ul>
@@ -105,24 +92,24 @@ Pin Grupları ve Fonksiyonları</h1>
 <div class="line">| 7 | 8 | 9 |</div>
 <div class="line">| * | 0 | # |</div>
 </div><!-- fragment --><ul>
-<li><code><a class="el" href="keypad_8c.html#aebb08491c3a53f97ff6598fa73ab671b" title="Analog tuş takımını okur ve basılan tuşu döndürür.">keypadOku()</a></code> fonksiyonu ile kontrol edilir</li>
+<li><span class="tt">keypadOku()</span> fonksiyonu ile kontrol edilir</li>
 <li>ADC değer aralıkları tanımlıdır</li>
 </ul>
 </li>
 <li><b>Potansiyometre (GPIO27)</b><ul>
 <li>Analog değer okuma</li>
 <li>0-4095 arası ADC değeri</li>
-<li><code><a class="el" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur.">read_analog()</a></code> fonksiyonu ile okunur</li>
+<li><span class="tt">read_analog()</span> fonksiyonu ile okunur</li>
 </ul>
 </li>
 <li><b>LDR Sensör (GPIO26)</b><ul>
 <li>Işık seviyesi ölçümü</li>
 <li>Analog değer okuma</li>
-<li><code><a class="el" href="keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995" title="Analog değeri okur.">read_analog()</a></code> fonksiyonu ile okunur</li>
+<li><span class="tt">read_analog()</span> fonksiyonu ile okunur</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 2. Dijital Butonlar</h2>
 <ul>
 <li><b>Buton Grubu</b><ul>
@@ -130,11 +117,11 @@ Pin Grupları ve Fonksiyonları</h1>
 <li>BUTTON_OK (<b>GPIO6</b>): Onay/Enter tuşu</li>
 <li>BUTTON_DOWN (<b>GPIO7</b>): Aşağı ok tuşu</li>
 <li>Debounce korumalı okuma</li>
-<li><code><a class="el" href="buttons_8c.html#a6863517b8b3b39834aa6aaaab29c4eaf" title="Debounce korumalı temel buton basma kontrolü">button_pressed()</a></code> ve <code><a class="el" href="buttons_8c.html#a6b963b48e656f166999ae77284356434" title="Çeşitli zamanlama kontrolleriyle buton basma kontrolü">check_button_event()</a></code> fonksiyonları ile kontrol</li>
+<li><span class="tt">button_pressed()</span> ve <span class="tt">check_button_event()</span> fonksiyonları ile kontrol</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 3. LED Çıkışları</h2>
 <ul>
 <li><b>Basit LED'ler</b><ul>
@@ -149,22 +136,22 @@ Pin Grupları ve Fonksiyonları</h1>
 <li>RGB_G (<b>GPIO17</b>): Yeşil kanal</li>
 <li>RGB_B (<b>GPIO18</b>): Mavi kanal</li>
 <li>PWM ile parlaklık kontrolü</li>
-<li><code><a class="el" href="led__control_8c.html#a63002d9e1a92cb83d1ece6899b442452" title="Bir LED için PWM görev döngüsünü ayarlar.">set_led_pwm()</a></code> fonksiyonu ile kontrol</li>
+<li><span class="tt">set_led_pwm()</span> fonksiyonu ile kontrol</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 4. Ses Çıkışı</h2>
 <ul>
 <li><b>Buzzer (GPIO10)</b><ul>
 <li>PWM kontrollü ses üretimi</li>
 <li>Nota çalma kapasitesi</li>
-<li><code><a class="el" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738" title="Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar.">play_note()</a></code> ve <code><a class="el" href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919">play_notes()</a></code> fonksiyonları</li>
+<li><span class="tt">play_note()</span> ve <span class="tt">play_notes()</span> fonksiyonları</li>
 <li>Frekans ve süre parametreleri ile kontrol</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
 5. Step Motor</h2>
 <ul>
 <li><b>4-Pin Kontrol</b><ul>
@@ -173,28 +160,28 @@ Pin Grupları ve Fonksiyonları</h1>
 <li>B1 (<b>GPIO13</b>)</li>
 <li>B2 (<b>GPIO14</b>)</li>
 <li>Tam adım ve yarım adım kontrol</li>
-<li><code><a class="el" href="pico__training__board_8h.html#ada890c90b978fea21eb7ea4c8c0467b8" title="Belirtilen yön, hız ve devir sayısı ile step motor dönüşünü kontrol eder.">step_turn()</a></code> fonksiyonu ile kontrol</li>
+<li><span class="tt">step_turn()</span> fonksiyonu ile kontrol</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
 6. Sensör Modülleri</h2>
 <ul>
 <li><b>Ultrasonik Sensör</b><ul>
 <li>TR (<b>GPIO8</b>): Trigger pin</li>
 <li>EC (<b>GPIO9</b>): Echo pin</li>
 <li>Mesafe ölçümü yapılır</li>
-<li><code><a class="el" href="pico__training__board_8h.html#aa73c79319e4f5c31f9da551784c5e8de" title="Ultrasonik sensör kullanarak mesafe ölçer.">measure_distance()</a></code> fonksiyonu ile kontrol</li>
+<li><span class="tt">measure_distance()</span> fonksiyonu ile kontrol</li>
 </ul>
 </li>
 <li><b>PIR Sensör (GPIO19)</b><ul>
 <li>Hareket algılama</li>
 <li>Dijital giriş</li>
-<li><code><a class="el" href="pico__training__board_8h.html#a0d72618a59f5257cb5fbe8cbcbe7e5ce" title="PIR sensörü tarafından hareket algılanıp algılanmadığını kontrol eder.">detect_motion()</a></code> fonksiyonu ile kontrol</li>
+<li><span class="tt">detect_motion()</span> fonksiyonu ile kontrol</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
 7. Haberleşme Modülleri</h2>
 <ul>
 <li><b>Bluetooth</b><ul>
@@ -208,13 +195,13 @@ Pin Grupları ve Fonksiyonları</h1>
 <li>SCL (<b>GPIO21</b>)</li>
 <li>Adres: <b>0x27</b></li>
 <li>2x16 karakter gösterim</li>
-<li><code><a class="el" href="lcd__i2c_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="LCD ekranını başlatır.">lcd_init()</a></code>, <code><a class="el" href="lcd__i2c_8c.html#ad235a86241458b1e7b8771688bfdaf9a" title="LCD ekranını temizler.">lcd_clear()</a></code>, <code><a class="el" href="lcd__i2c_8c.html#aa4fb28cf57e5ade779793927a072f056" title="LCD&#39;ye bir metin dizisi gönderir.">lcd_string()</a></code> fonksiyonları</li>
+<li><span class="tt">lcd_init()</span>, <span class="tt">lcd_clear()</span>, <span class="tt">lcd_string()</span> fonksiyonları</li>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
 Başlatma ve Konfigürasyon</h1>
-<p>Tüm komponentler <code><a class="el" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır.">init_board()</a></code> fonksiyonu ile başlatılır. Bu fonksiyon:</p>
+<p>Tüm komponentler <span class="tt">init_board()</span> fonksiyonu ile başlatılır. Bu fonksiyon:</p>
 <ul>
 <li>ADC başlatma</li>
 <li>PWM konfigürasyonu</li>
@@ -222,7 +209,7 @@ Başlatma ve Konfigürasyon</h1>
 <li>I2C başlatma</li>
 <li>LCD başlatma işlemlerini gerçekleştirir.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
 Pin Özeti</h1>
 <div class="fragment"><div class="line"><span class="comment">// Analog inputs</span></div>
 <div class="line"><span class="preprocessor">#define KEYPAD 28        </span><span class="comment">// Analog giriş</span></div>
@@ -265,13 +252,67 @@ Pin Özeti</h1>
 <div class="line"><span class="comment">// LCD Display I2C (Adres: 0x27)</span></div>
 <div class="line"><span class="preprocessor">#define SDA 20</span></div>
 <div class="line"><span class="preprocessor">#define SCL 21</span></div>
-</div><!-- fragment --><p>Bu yeni <code><a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a></code> dosyası, <code><a class="el" href="pico__training__board_8h.html" title="Raspberry Pi Pico eğitim kartı için pin tanımlamaları ve yapılandırmaları">pico_training_board.h</a></code> dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır. </p>
+</div><!-- fragment --><p>Bu yeni <span class="tt">README.md</span> dosyası, <span class="tt">pico_training_board.h</span> dosyasındaki güncel verileri ve diğer dokümanlardaki bilgileri birleştirerek kapsamlı bir rehber sunmaktadır.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+Dokümantasyon Üretimi (Doxygen)</h1>
+<p>Bu proje Doxygen ile belgelenmiştir. HTML ve LaTeX çıktıları <span class="tt">./docs</span> klasörüne üretilir.</p>
+<p>Gereksinimler:</p>
+<ul>
+<li>Doxygen (1.9+ önerilir)</li>
+<li>Graphviz (dot) — çağrı/çağıran grafikleri için</li>
+</ul>
+<p>Adımlar (macOS):</p>
+<div class="fragment"><div class="line"># Graphviz yoksa kurun</div>
+<div class="line">brew install graphviz</div>
+<div class="line"> </div>
+<div class="line"># Doxygen’i çalıştırın (repo kökünde)</div>
+<div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p>Çıktılar:</p>
+<ul>
+<li>HTML: <span class="tt">docs/html/index.html</span></li>
+<li>LaTeX: <span class="tt">docs/latex/</span></li>
+</ul>
+<p>Notlar:</p>
+<ul>
+<li>Doxygen Türkçe dil dosyası eski uyarısı görülebilir; işlevi etkilemez.</li>
+<li>Dot kaynaklı hatalar varsa önce <span class="tt">docs/html</span> ve <span class="tt">docs/latex</span> dizinlerini silip tekrar çalıştırın.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+Sorun Giderme (Doxygen)</h1>
+<ul>
+<li>Graphviz/dot bulunamadı uyarısı veya grafikler üretilmiyor:<ul>
+<li>macOS için Graphviz kurulu olmalı ve <span class="tt">dot -V</span> çalışmalı.</li>
+<li>Doxyfile içinde <span class="tt">HAVE_DOT = YES</span>, <span class="tt">CALL_GRAPH = YES</span>, <span class="tt">CALLER_GRAPH = YES</span> olmalı.</li>
+<li>Gerekirse docs’u temizleyip yeniden üretin.</li>
+</ul>
+</li>
+<li>OUTPUT_LANGUAGE Turkish uyarısı:<ul>
+<li>Doxygen Türkçe dil paketi eski olabilir; bu sadece bazı sabit metinlerin İngilizce görünmesine yol açar. İşlevselliği etkilemez.</li>
+</ul>
+</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
+Nasıl Kullanılır (How-To)</h1>
+<p>Modül bazlı hızlı başlangıç rehberleri için Doxygen içinde şu bölüme bakın:</p>
+<ul>
+<li>Nasıl Kullanılır İçindekiler: howto_index<ul>
+<li>Butonlar, LCD, Buzzer, Sensörler, Step Motor, Tuş Takımı, LED/RGB</li>
+</ul>
+</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+Kalite Kapıları</h1>
+<ul>
+<li>Build: Ninja ile proje derlenmeli (VS Code görevi: Compile Project).</li>
+<li>Docs: Doxygen çalışmalı, Graphviz grafiklerini üretmeli.</li>
+<li>Uyarılar: Yalnızca Türkçe dil uyarısı kabul edilebilir; diğer uyarılar çözülmeli. </li>
+</ul>
 </div></div><!-- PageDoc -->
-<a href="doxygen_crawl.html"/>
+<a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
 </small></address>
 </div><!-- doc-content -->
 </body>

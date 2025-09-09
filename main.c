@@ -8,19 +8,41 @@
 #include "pico_training_board.h"
 
 /**
- * @brief 
+ * @brief Kart üzerindeki motor durumunu tutan değişkenler
  */
 static volatile bool motor_running = false;
 static volatile bool motor_command_pending = false;
 static volatile motor_direction_t current_direction = CW;
 static volatile motor_direction_t requested_direction = CW;
+// Oynatılacak melodi: her eleman { nota, oktav } biçiminde olmalı
+static const char *MELODY1[][2] = {
+    {"C", "4"}, {"D", "4"}, {"E", "4"}, {"F", "4"},
+    {"G", "4"}, {"A", "4"}, {"B", "4"}, {"C", "5"}
+};
+
+// IRQ anti-repeat gating için minimum aralık (mikrosaniye)
+static volatile uint32_t last_irq_time_us = 0;
+static const uint32_t IRQ_MIN_INTERVAL_US = 50000; // 50 ms
 
 /**
  * @brief Button interrupt callback function
+ *
+ *  FIXME: Birden fazla komut geliyor kontrolü yapılacak !!!!
  */
-//FIXME: Birden fazla komut geliyor !!!!
+/**
+ * @brief Buton kesme geri çağrısı
+ * @param gpio Tetikleyen GPIO pini
+ * @param events IRQ olay bayrakları
+ */
 void button_callback(uint gpio, uint32_t events)
 {
+    // Anti-repeat: minimum aralık kontrolü
+    uint32_t now = time_us_32();
+    if ((now - last_irq_time_us) < IRQ_MIN_INTERVAL_US) {
+        return;
+    }
+    last_irq_time_us = now;
+
     if (gpio == BUTTON_UP && button_pressed(BUTTON_UP))
     {
         gpio_put(LED_GREEN, HIGH);
@@ -43,8 +65,12 @@ void button_callback(uint gpio, uint32_t events)
 
 /**
  * @brief Initialize button interrupts for motor control
+ *
+ * FIXME: buton callbak değişecek birden fazla komut gidiyor !!!
+*/
+/**
+ * @brief Motor kontrolü için buton kesmelerini başlatır
  */
-//FIXME: buton callbak değişecek birden fazla komut gidiyor !!!
 void init_motor_buttons(void)
 {
     // Configure button GPIO interrupts
@@ -85,6 +111,9 @@ void init_motor_buttons(void)
  * @see multicore_fifo_pop_blocking()
  * @see multicore_fifo_push_blocking()
  */
+/**
+ * @brief Core1 ana döngüsü; FIFO üzerinden gelen step motor komutlarını işler
+ */
 void core1_main()
 {
     while (true)
@@ -110,23 +139,10 @@ void core1_main()
 float revolutions;
 
 /**
- * @brief Step motor parametrelerini Core1'e gönderir
- *
- * Bu fonksiyon, step motor kontrolü için gerekli parametreleri Core0'dan Core1'e
- * multicore FIFO üzerinden gönderir. Gönderilen parametreler:
- * 1. Motor dönüş yönü
- * 2. Motor hızı
- * 3. Devir sayısı
- *
- * @param direction Motor dönüş yönü (CW: saat yönü, CCW: saat yönü tersi)
- * @param speed Motor hızı (adım/saniye)
- * @param revolutions Yapılacak devir sayısı
- * 
- * @note Fonksiyon, her parametre için FIFO'ya bloklu gönderim yapar ve
- *       Core1'in verileri almasını bekler
- * 
- * @see core1_main() Core1'de çalışan ve bu parametreleri alan fonksiyon
- * @see step_turn() Gönderilen parametrelerle motoru kontrol eden fonksiyon
+ * @brief Step motor parametrelerini Core1'e gönderir (yön, hız, devir)
+ * @param direction Motor yönü
+ * @param speed Adım/saniye
+ * @param revolutions Devir sayısı (float)
  */
 void send_motor_parameters(motor_direction_t direction, uint speed, float revolutions)
 {
@@ -136,7 +152,11 @@ void send_motor_parameters(motor_direction_t direction, uint speed, float revolu
     multicore_fifo_push_blocking(*(uint32_t *)&revolutions);
 }
 
-// LCD ekrana veri yazan fonksiyon
+/**
+ * @brief LCD ekrana isim:değer formatında yazı yazar
+ * @param component_name Bileşen adı (ör. POT_1)
+ * @param value Yazdırılacak değer
+ */
 void write_analog_to_lcd(char *component_name, float value)
 {
     // Bildiri mesajını hazırla
@@ -148,7 +168,9 @@ void write_analog_to_lcd(char *component_name, float value)
     sleep_ms(100);
 }
 
-// Keypad analog girişini LCD'e yazan fonksiyon
+/**
+ * @brief Keypad’den tuş okur ve LCD’ye gösterir
+ */
 void display_keypad_value()
 {
 
@@ -167,7 +189,9 @@ void display_keypad_value()
     }
 }
 
-// Potansiyometre analog girişini LCD'e yazan fonksiyon
+/**
+ * @brief Potansiyometre değerini okuyup LCD’nin ilk satırına yazar
+ */
 void display_potentiometer_value()
 {
 
@@ -176,13 +200,35 @@ void display_potentiometer_value()
     write_analog_to_lcd("POT_1", pot_value);
 }
 
-// LDR sensör analog girişini LCD'e yazan fonksiyon
+/**
+ * @brief LDR değerini okuyup LCD’nin ikinci satırına yazar
+ */
 void display_ldr_sensor_value()
 {
 
     lcd_set_cursor(1, 0);
     float light_level = read_analog(0);
     write_analog_to_lcd("LDR_1", light_level);
+}
+
+// Hareket algılandığında melodiyi çalan fonksiyon
+// TODO: Fonksiyonu hareket algılandığında bir eylem yapacak hale getir.
+// LCD'e yazsın, mesafe sensorunu aktif hale getirsin ve buzzer'ı çalsın
+// LCD'e mesafe değerini yaz
+/**
+ * @brief Hareket algılandığında melodi çalar ve mesafeyi LCD'ye yazar
+ */
+void motion_detect(void)
+{
+    if (detect_motion()) {
+        // Her notayı 250 ms çal (gerektiğinde parametreleştirilebilir)
+        play_notes(MELODY1, (int)(sizeof(MELODY1) / sizeof(MELODY1[0])), 250);
+    }
+    // LCD'e mesafe değerini yaz
+    lcd_clear();
+    init_ultrasonic();
+    float distance = measure_distance();
+    write_analog_to_lcd("Distance", distance);
 }
 
 /**
@@ -233,11 +279,12 @@ int main()
             display_ldr_sensor_value();
             display_potentiometer_value();
             tight_loop_contents(); // Bekleme sırasında işlemciyi serbest bırak
-            
+            //motion_detect(); // Hareket algılandığında melodi çal
             lcd_set_cursor(0, 11);
             sprintf(buffer, "C:%d", counter++);
             lcd_string(buffer);
             sleep_ms(1000);
+
         }
         uint32_t result = multicore_fifo_pop_blocking();
         if (result == 0xDEAD)

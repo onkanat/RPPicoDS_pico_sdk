@@ -136,7 +136,7 @@
   }
   % ToC, LoF, LoT, bibliography, and index
   % Indices & bibliography
-  \usepackage{natbib}
+  \usepackage[numbers]{natbib}
   \usepackage[titles]{tocloft}
   \setcounter{tocdepth}{3}
   \setcounter{secnumdepth}{5}
@@ -222,7 +222,7 @@
   \begin{center}%
   {\Large Pico Eğitim Kartı}\\
   \vspace*{1cm}
-  {\large Oluşturan Doxygen 1.11.0}\\
+  {\large Oluşturan Doxygen 1.14.0}\\
   \end{center}
   \end{titlepage}
   \clearemptydoublepage
@@ -236,6 +236,14 @@
 \input{index}
 \input{md__c_a_l_i_s_m_a_l_a_r}
 \input{md__h_i_z_l_i_b_a_s_l_a}
+\input{howto_buttons}
+\input{howto_buzzer}
+\input{howto_index}
+\input{howto_keypad}
+\input{howto_lcd}
+\input{howto_leds}
+\input{howto_sensors}
+\input{howto_stepper}
 \chapter{Topic Index}
 \input{topics}
 \chapter{Veri Yapıları İndeksi}
@@ -248,12 +256,20 @@
 \input{group__led__outputs}
 \input{group__stepper__motor}
 \chapter{Veri Yapıları Dokümantasyonu}
-\input{structbutton__state}
+\input{structbutton__state__t}
 \input{struct_note_frequency}
 \chapter{Dosya Dokümantasyonu}
 \input{buttons_8c}
 \input{buzzer_8c}
 \input{_c_a_l_i_s_m_a_l_a_r_8md}
+\input{buttons_8md}
+\input{buzzer_8md}
+\input{index_8md}
+\input{keypad_8md}
+\input{lcd_8md}
+\input{leds_8md}
+\input{sensors_8md}
+\input{stepper_8md}
 \input{_h_i_z_l_i_b_a_s_l_a_8md}
 \input{init__functions_8c}
 \input{keypad_8c}

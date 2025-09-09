@@ -1,5 +1,11 @@
 <map id="button_pressed" name="button_pressed">
-<area shape="rect" id="Node000001" title="Debounce korumalı temel buton basma kontrolü" alt="" coords="203,5,313,31"/>
-<area shape="rect" id="Node000002" href="$buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047" title="Herhangi bir buton basılmasını bekle." alt="" coords="5,5,155,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,21,155,21,155,16,187,16"/>
+<area shape="rect" id="Node000001" title="Debounce korumalı temel buton basma kontrolü" alt="" coords="476,31,587,56"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#adc9c0b00da41b4f750a502323595b1e6" title="Button interrupt callback function." alt="" coords="298,5,410,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,36,410,29,410,23,461,31"/>
+<area shape="rect" id="Node000005" href="$buttons_8c.html#a00fcf54730781bcc9d059ee8542bb047" title="Herhangi bir buton basılmasını bekle." alt="" coords="279,55,428,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="461,56,429,60,428,55,460,50"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ac28c401d97df35ec8dca9ad6535a4815" title="Initialize button interrupts for motor control." alt="" coords="103,5,231,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="282,21,231,21,231,16,282,16"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

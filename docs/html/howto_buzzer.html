@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pico Eğitim Kartı: Buzzer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Pico Eğitim Kartı
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Oluşturan Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Ara',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Yüklüyor...</div>
+<div class="SRStatus" id="Searching">Arıyor...</div>
+<div class="SRStatus" id="NoMatches">Eşleşme Yok</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">Buzzer </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>r</p>
+<ul>
+<li>Başlatma: <span class="tt"><a class="el" href="buzzer_8c.html#abeed4b38208cb0179851d68db47de935" title="Buzzer için özel olarak PWM&#39;i başlatır.">init_buzzer_pwm()</a></span> (projede <span class="tt"><a class="el" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15" title="Tüm kart bileşenlerini başlatır.">init_board()</a></span> çağırır)</li>
+<li>Tek nota: <span class="tt">play_note(frequency, duration_ms)</span></li>
+<li>Melodi: <span class="tt"><a class="el" href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919" title="Bir dizi müzikal notanın çalınmasını sağlar.">play_notes(const char *notes[][2], int num_notes, int duration_ms)</a></span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
+Frekansla Çalma</h1>
+<div class="fragment"><div class="line"><a class="code hl_function" href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a>();</div>
+<div class="line"><a class="code hl_function" href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a>(440.0f, 300); <span class="comment">// A4, 300 ms</span></div>
+<div class="ttc" id="abuzzer_8c_html_a32887df3cd0b0fd7bad3aefa236f9738"><div class="ttname"><a href="buzzer_8c.html#a32887df3cd0b0fd7bad3aefa236f9738">play_note</a></div><div class="ttdeci">void play_note(float frequency, int duration_ms)</div><div class="ttdoc">Belirtilen frekans ve sürede buzzer&#39;da bir nota çalar.</div><div class="ttdef"><b>Definition</b> buzzer.c:160</div></div>
+<div class="ttc" id="ainit__functions_8c_html_a98133f3bc8c62b912d63da405e2adb15"><div class="ttname"><a href="init__functions_8c.html#a98133f3bc8c62b912d63da405e2adb15">init_board</a></div><div class="ttdeci">void init_board(void)</div><div class="ttdoc">Tüm kart bileşenlerini başlatır.</div><div class="ttdef"><b>Definition</b> init_functions.c:112</div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
+Nota + Oktav ile Çalma</h1>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *MELODY[][2] = {{<span class="stringliteral">&quot;C&quot;</span>,<span class="stringliteral">&quot;4&quot;</span>},{<span class="stringliteral">&quot;E&quot;</span>,<span class="stringliteral">&quot;4&quot;</span>},{<span class="stringliteral">&quot;G&quot;</span>,<span class="stringliteral">&quot;4&quot;</span>}};</div>
+<div class="line"><a class="code hl_function" href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919">play_notes</a>(MELODY, (<span class="keywordtype">int</span>)(<span class="keyword">sizeof</span>(MELODY)/<span class="keyword">sizeof</span>(MELODY[0])), 200);</div>
+<div class="ttc" id="abuzzer_8c_html_ad3b93659dae6daec910b9f79e4546919"><div class="ttname"><a href="buzzer_8c.html#ad3b93659dae6daec910b9f79e4546919">play_notes</a></div><div class="ttdeci">void play_notes(const char *notes[][2], int num_notes, int duration)</div><div class="ttdoc">Bir dizi müzikal notanın çalınmasını sağlar.</div><div class="ttdef"><b>Definition</b> buzzer.c:190</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Not</dt><dd>Nota adında diyez kullanın (Db yerine C#).</dd></dl>
+<dl class="section see"><dt>Ayrıca Bakınız</dt><dd><a class="el" href="buzzer_8c.html" title="Pico Eğitim Kartı için buzzer nota çalma işlevselliği implementasyonu.">buzzer.c</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Oluşturan&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

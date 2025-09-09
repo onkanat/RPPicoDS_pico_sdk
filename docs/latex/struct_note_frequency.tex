@@ -11,13 +11,13 @@ Note\+Frequency için işbirliği (collaboration) şeması\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=156pt]{struct_note_frequency__coll__graph}
+\includegraphics[width=155pt]{struct_note_frequency__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Veri Alanları}
 \begin{DoxyCompactItemize}
 \item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_note_frequency_a3a429d8178711edf28c9223bc53bad00}{note}}
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_note_frequency_ac509aa3ec2b17446fa1a69928677c9b8}{note}}
 \item 
 double \mbox{\hyperlink{struct_note_frequency_ab6535958e9ba9df0dbdbea807b8cc078}{frequency}}
 \end{DoxyCompactItemize}
@@ -26,6 +26,31 @@ double \mbox{\hyperlink{struct_note_frequency_ab6535958e9ba9df0dbdbea807b8cc078}
 \doxysubsection{Ayrıntılı tanımlama}
 Müzikal nota bilgilerini saklayan yapı 
 
+\hypertarget{struct_note_frequency_usage}{}\doxysubsection{\texorpdfstring{Kullanım}{Kullanım}}\label{struct_note_frequency_usage}
+Basit bir melodi çalmak için nota ve oktav çiftlerinden oluşan bir dizi tanımlayıp play\+\_\+notes fonksiyonuna verin\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Her\ eleman\ \{\ nota,\ oktav\ \}\ biçiminde\ dize\ çiftidir}}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *MELODY[][2]\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}C"{}},\ \ \textcolor{stringliteral}{"{}4"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}D\#"{}},\ \textcolor{stringliteral}{"{}4"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}F"{}},\ \ \textcolor{stringliteral}{"{}4"{}}\}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Her\ notayı\ 250\ ms\ çal}}
+\DoxyCodeLine{\mbox{\hyperlink{buzzer_8c_ad3b93659dae6daec910b9f79e4546919}{play\_notes}}(MELODY,\ (\textcolor{keywordtype}{int})(\textcolor{keyword}{sizeof}(MELODY)\ /\ \textcolor{keyword}{sizeof}(MELODY[0])),\ 250);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Not}
+Desteklenen nota adlandırması doğal ve diyez notasyonudur (A, A\#, B, C, C\#, ...). Bemol için eşdeğer diyez notasyonu kullanılmalıdır (örn. Db yerine C\#).
+\end{DoxyNote}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_note_frequency_doc-variable-members}
 \doxysubsection{Alan Dokümantasyonu}
 \Hypertarget{struct_note_frequency_ab6535958e9ba9df0dbdbea807b8cc078}\index{NoteFrequency@{NoteFrequency}!frequency@{frequency}}
 \index{frequency@{frequency}!NoteFrequency@{NoteFrequency}}
@@ -33,11 +58,18 @@ Müzikal nota bilgilerini saklayan yapı
 {\footnotesize\ttfamily \label{struct_note_frequency_ab6535958e9ba9df0dbdbea807b8cc078} 
 double Note\+Frequency\+::frequency}
 
-Notanın Hertz cinsinden frekans değeri \Hypertarget{struct_note_frequency_a3a429d8178711edf28c9223bc53bad00}\index{NoteFrequency@{NoteFrequency}!note@{note}}
+
+\begin{DoxyEnumerate}
+\item oktavdaki temel frekans (Hz)
+\end{DoxyEnumerate}
+
+Notanın Hertz cinsinden frekans değeri \Hypertarget{struct_note_frequency_ac509aa3ec2b17446fa1a69928677c9b8}\index{NoteFrequency@{NoteFrequency}!note@{note}}
 \index{note@{note}!NoteFrequency@{NoteFrequency}}
 \doxysubsubsection{\texorpdfstring{note}{note}}
-{\footnotesize\ttfamily \label{struct_note_frequency_a3a429d8178711edf28c9223bc53bad00} 
-char\texorpdfstring{$\ast$}{*} Note\+Frequency\+::note}
+{\footnotesize\ttfamily \label{struct_note_frequency_ac509aa3ec2b17446fa1a69928677c9b8} 
+const char\texorpdfstring{$\ast$}{*} Note\+Frequency\+::note}
+
+Nota adı öneki (örn. "{}\+C"{}, "{}\+C\#"{})
 
 Müzikal notanın dize gösterimi 
 

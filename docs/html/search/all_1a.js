@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ve_20fonksiyonları_0',['ve Fonksiyonları',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md10',1,'Pin Grupları ve Fonksiyonları'],['../index.html#autotoc_md22',1,'Pin Grupları ve Fonksiyonları']]],
-  ['ve_20konfigürasyon_1',['ve Konfigürasyon',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md18',1,'Başlatma ve Konfigürasyon'],['../index.html#autotoc_md30',1,'Başlatma ve Konfigürasyon']]],
-  ['ve_20kontrolleri_2',['Adım Motoru Tanımlamaları ve Kontrolleri',['../group__stepper__motor.html',1,'']]]
+  ['ultra_5fsonic_5fec_0',['ULTRA_SONIC_EC',['../pico__training__board_8h.html#a2cd2c278a736a7cafacf4d7d4dfa59fb',1,'pico_training_board.h']]],
+  ['ultra_5fsonic_5ftr_1',['ULTRA_SONIC_TR',['../pico__training__board_8h.html#a608bbec30c43f7862ef0887bb2e6f9ab',1,'pico_training_board.h']]],
+  ['ultrasonik_2',['Sensörler (PIR + Ultrasonik)',['../howto_sensors.html',1,'']]]
 ];

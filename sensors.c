@@ -1,6 +1,7 @@
 /**
  * @file sensors.c
  * @brief Pico Eğitim Kartı için PIR ve ultrasonik sensör fonksiyonlarının uygulanması
+ * @see \ref howto_sensors
  */
 
 #include "pico_training_board.h"
@@ -51,6 +52,9 @@ void init_ultrasonic(void) {
  * @brief Ultrasonik sensör kullanarak mesafe ölçer
  * 
  * @return float Santimetre cinsinden mesafe veya ölçüm başarısız olursa -1.0
+ *
+ * @note Ölçüm aralığı tipik olarak ~2 cm ile ~450 cm arasındadır. Zaman aşımlarında -1.0 döner.
+ * @note Ölçüm öncesi `init_ultrasonic()` çağrılmış olmalıdır.
  */
 float measure_distance(void) {
     uint64_t start_time, end_time;
@@ -95,6 +99,14 @@ float measure_distance(void) {
  * 
  * @param timeout_ms Beklenecek maksimum süre (milisaniye), 0 ise zaman aşımı yok
  * @return Hareket algılandıysa true, zaman aşımı oluştuysa false
+ *
+ * @code{.c}
+ * if (wait_for_motion(5000)) {
+ *   // 5 saniye içinde hareket algılandı
+ * } else {
+ *   // zaman aşımı
+ * }
+ * @endcode
  */
 bool wait_for_motion(uint32_t timeout_ms) {
     absolute_time_t start_time = get_absolute_time();
@@ -116,6 +128,8 @@ bool wait_for_motion(uint32_t timeout_ms) {
  * @param num_samples Ortalama alınacak örnek sayısı
  * @param delay_ms Örnekler arasındaki gecikme süresi (milisaniye)
  * @return float Santimetre cinsinden ortalama mesafe veya ölçümler başarısız olursa -1.0
+ *
+ * @note Negatif dönen ölçümler (zaman aşımı) ortalamaya dahil edilmez.
  */
 float get_average_distance(uint8_t num_samples, uint32_t delay_ms) {
     if (num_samples == 0) return -1.0f;

@@ -3,6 +3,10 @@
 [![Docs Build](https://github.com/onkanat/RPPicoDS_pico_sdk/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/onkanat/RPPicoDS_pico_sdk/actions/workflows/pages.yml)
 [![Docs Website](https://img.shields.io/website?url=https%3A%2F%2Fonkanat.github.io%2FRPPicoDS_pico_sdk%2F)](https://onkanat.github.io/RPPicoDS_pico_sdk/)
 
+![Raspberry Pi Pico Eğitim Kartı](docs/image/image_1950.webp)
+
+Eğitim kartı genel görünüm.
+
 ## Genel Bakış
 
 Bu eğitim kartı, Raspberry Pi Pico ile C programlama ve Pico-SDK eğitimi için tasarlanmış 12 farklı komponent grubunu içerir. Her komponent grubu için gerekli pin tanımlamaları ve kullanım örnekleri aşağıda belirtilmiştir.

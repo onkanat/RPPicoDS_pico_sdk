@@ -1,1 +1,13 @@
-build
+# Build artifacts (local only)
+/build
+/site
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Logs
+*.log

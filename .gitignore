@@ -1,1 +1,2 @@
-build
+# Local Doxygen Pages output (published via Actions)
+/sitebuild

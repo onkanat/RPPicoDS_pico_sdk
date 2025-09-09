@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['raspberry_20pi_20pico_20eğitim_20kartı_0',['Raspberry Pi Pico Eğitim Kartı',['../index.html',1,'']]],
+  ['raspberry_20pi_20pico_20eğitim_20kartı_0',['Raspberry Pi Pico Eğitim Kartı',['../md__r_e_a_d_m_e.html',1,'']]],
   ['raspberry_20pi_20pico_20eğitim_20kartı_20örnek_20çalışmalar_1',['Raspberry Pi Pico Eğitim Kartı - Örnek Çalışmalar',['../md__c_a_l_i_s_m_a_l_a_r.html',1,'']]],
   ['raspberry_20pi_20pico_20eğitim_20kartı_20hızlı_20başlangıç_2',['Raspberry Pi Pico Eğitim Kartı - Hızlı Başlangıç',['../md__h_i_z_l_i_b_a_s_l_a.html',1,'']]],
   ['read_5fanalog_3',['read_analog',['../keypad_8c.html#aab6ffb1c01ffbbec732bb22dc297a995',1,'read_analog(uint8_t pin):&#160;keypad.c'],['../pico__training__board_8h.html#aab6ffb1c01ffbbec732bb22dc297a995',1,'read_analog(uint8_t pin):&#160;keypad.c']]],

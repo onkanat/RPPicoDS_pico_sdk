@@ -3,7 +3,7 @@
 **Feature Branch**: `001-pico-e-itim`  
 **Created**: 2025-09-09  
 **Status**: Draft  
-**Input**: User description: "README.md’de listelenen tüm donanım bileşenleri için kütüphaneler oluşturulacak ve eğitim amaçlı Doxygen ile dokümante edilecek. CMake ve Pico-SDK kullanılıyor. main.c değişken uygulamalar içerir; pico_training_board.h genel tanımlar içerir. Tüm kodlarda Doxygen yorumları olmalı ve `doxygen` ile derlenip ./docs altında yayınlanmalı."
+**Input**: User description: "README.md’de listelenen tüm donanım bileşenleri için kütüphaneler oluşturulacak ve eğitim amaçlı Doxygen ile dokümante edilecek. CMake ve Pico-SDK kullanılıyor. main.c değişken uygulamalar içerir; pico_training_board.h genel tanımlar içerir. Tüm kodlarda Doxygen yorumları olmalı ve `doxygen` ile derlenip /docs altında yayınlanmalı."
 
 ---
 

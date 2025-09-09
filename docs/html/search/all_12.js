@@ -41,7 +41,7 @@ var searchData=
   ['ldr_5f1_38',['LDR_1',['../group__analog__inputs.html#ga6961ef798f9e5d5c38e1abfba0c7ff71',1,'pico_training_board.h']]],
   ['led_39',['LED ve RGB LED',['../howto_leds.html',1,'']]],
   ['led_20çıkış_20pin_20tanımlamaları_40',['LED Çıkış Pin Tanımlamaları',['../group__led__outputs.html',1,'']]],
-  ['led_20çıkışları_41',['LED Çıkışları',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md13',1,'3. LED Çıkışları'],['../index.html#autotoc_md25',1,'3. LED Çıkışları']]],
+  ['led_20çıkışları_41',['LED Çıkışları',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md13',1,'3. LED Çıkışları'],['../md__r_e_a_d_m_e.html#autotoc_md25',1,'3. LED Çıkışları']]],
   ['led_20ve_20rgb_20led_42',['LED ve RGB LED',['../howto_leds.html',1,'']]],
   ['led_5fcontrol_2ec_43',['led_control.c',['../led__control_8c.html',1,'']]],
   ['led_5fgreen_44',['LED_GREEN',['../group__led__outputs.html#gaca338dbd19d7940923334629f6e5f3b7',1,'pico_training_board.h']]],

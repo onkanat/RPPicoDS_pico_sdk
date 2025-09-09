@@ -1,7 +1,7 @@
 var searchData=
 [
   ['nasıl_20kullanılır_20i̇çindekiler_0',['Nasıl Kullanılır - İçindekiler',['../howto_index.html',1,'']]],
-  ['nasıl_20kullanılır_20how_20to_1',['Nasıl Kullanılır (How-To)',['../index.html#autotoc_md34',1,'']]],
+  ['nasıl_20kullanılır_20how_20to_1',['Nasıl Kullanılır (How-To)',['../md__r_e_a_d_m_e.html#autotoc_md34',1,'']]],
   ['nota_20oktav_20ile_20çalma_2',['Nota + Oktav ile Çalma',['../howto_buzzer.html#autotoc_md43',1,'']]],
   ['note_3',['note',['../struct_note_frequency.html#ac509aa3ec2b17446fa1a69928677c9b8',1,'NoteFrequency']]],
   ['note_5fa4_4',['NOTE_A4',['../pico__training__board_8h.html#a4ede898d3fa744ffb02d5e9b66994ef3',1,'pico_training_board.h']]],

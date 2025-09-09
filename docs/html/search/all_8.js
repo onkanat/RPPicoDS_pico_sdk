@@ -1,15 +1,15 @@
 var searchData=
 [
   ['başlangıç_0',['Başlangıç',['../howto_buttons.html#autotoc_md37',1,'Hızlı Başlangıç'],['../howto_keypad.html#autotoc_md46',1,'Hızlı Başlangıç'],['../howto_lcd.html#autotoc_md48',1,'Hızlı Başlangıç'],['../howto_leds.html#autotoc_md50',1,'Hızlı Başlangıç'],['../howto_sensors.html#autotoc_md52',1,'Hızlı Başlangıç'],['../md__h_i_z_l_i_b_a_s_l_a.html',1,'Raspberry Pi Pico Eğitim Kartı - Hızlı Başlangıç']]],
-  ['başlatma_20ve_20konfigürasyon_1',['Başlatma ve Konfigürasyon',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md18',1,'Başlatma ve Konfigürasyon'],['../index.html#autotoc_md30',1,'Başlatma ve Konfigürasyon']]],
-  ['bakış_2',['Bakış',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md9',1,'Genel Bakış'],['../index.html#autotoc_md21',1,'Genel Bakış']]],
+  ['başlatma_20ve_20konfigürasyon_1',['Başlatma ve Konfigürasyon',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md18',1,'Başlatma ve Konfigürasyon'],['../md__r_e_a_d_m_e.html#autotoc_md30',1,'Başlatma ve Konfigürasyon']]],
+  ['bakış_2',['Bakış',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md9',1,'Genel Bakış'],['../md__r_e_a_d_m_e.html#autotoc_md21',1,'Genel Bakış'],['../index.html',1,'Pico Eğitim Kartı — Genel Bakış']]],
   ['basit_20mesaj_20gösterme_3',['1. Basit Mesaj Gösterme',['../md__c_a_l_i_s_m_a_l_a_r.html#autotoc_md2',1,'']]],
   ['bekleme_4',['Bloklu Bekleme',['../howto_buttons.html#autotoc_md40',1,'']]],
   ['bloklu_20bekleme_5',['Bloklu Bekleme',['../howto_buttons.html#autotoc_md40',1,'']]],
   ['blt_5frx_6',['BLT_RX',['../pico__training__board_8h.html#a2f60b7891cdd75567e928971fcd217e2',1,'pico_training_board.h']]],
   ['blt_5ftx_7',['BLT_TX',['../pico__training__board_8h.html#a79048d4bb6353482353ef7d9a390d0ee',1,'pico_training_board.h']]],
   ['buton_20giriş_20pin_20tanımlamaları_8',['Buton Giriş Pin Tanımlamaları',['../group__button__inputs.html',1,'']]],
-  ['butonlar_9',['Butonlar',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md12',1,'2. Dijital Butonlar'],['../index.html#autotoc_md24',1,'2. Dijital Butonlar'],['../howto_buttons.html',1,'Butonlar']]],
+  ['butonlar_9',['Butonlar',['../md__h_i_z_l_i_b_a_s_l_a.html#autotoc_md12',1,'2. Dijital Butonlar'],['../md__r_e_a_d_m_e.html#autotoc_md24',1,'2. Dijital Butonlar'],['../howto_buttons.html',1,'Butonlar']]],
   ['button_5fcallback_10',['button_callback',['../main_8c.html#adc9c0b00da41b4f750a502323595b1e6',1,'main.c']]],
   ['button_5fdown_11',['BUTTON_DOWN',['../group__button__inputs.html#ga7e8516b8781963aa69154f9fc67b658a',1,'pico_training_board.h']]],
   ['button_5fheld_12',['BUTTON_HELD',['../pico__training__board_8h.html#a0c77398f416844d1f79e0a06ff20d0dba60c06ab1325643b750ee17c1e75af06c',1,'pico_training_board.h']]],
